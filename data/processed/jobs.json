@@ -1,0 +1,20 @@
+{
+  "_comment": "НАЗНАЧЕНИЕ: нормализованные заявки для backend. ВХОД: data/raw/*.csv через scripts/prepare_data.py. ВЫХОД: читается backend/app/services/loader.py. СВЯЗИ: data/reference/*.json, examples/expected_plan.json.",
+  "jobs": [
+    {
+      "id": "305927238",
+      "source": "east_control",
+      "type": "Подключение",
+      "skill": "Работы на подключение и дознаказы",
+      "priority": "Обычная",
+      "district": "Кузьминки",
+      "address": "Город Москва, пр-кт.Волгоградский, д. 128 к 5, кв. 1",
+      "coords": [55.7123, 37.7654],
+      "window_start": "2026-08-17T20:00:00",
+      "window_end":   "2026-08-17T22:00:00",
+      "duration_min": 60,
+      "required_vehicle": null,
+      "status": "planned"
+    }
+  ]
+}
