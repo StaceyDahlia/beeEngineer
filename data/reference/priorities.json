@@ -1,0 +1,7 @@
+{
+  "_comment": "НАЗНАЧЕНИЕ: приоритеты заявок. ВХОД: ТЗ п.2.4.1. ВЫХОД: optimizer.py (сортировка), replanner.py. СВЯЗИ: jobs.json.",
+  "priorities": [
+    { "id": "normal",  "name": "Обычная",  "weight": 1 },
+    { "id": "urgent",  "name": "Срочная",  "weight": 10 }
+  ]
+}
