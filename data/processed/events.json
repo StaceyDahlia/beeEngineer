@@ -1,0 +1,21 @@
+{
+  "_comment": "НАЗНАЧЕНИЕ: события перепланирования для сценария демо. ВХОД: ручное заполнение / scripts/run_demo.py. ВЫХОД: backend/app/api/routes_replan.py. СВЯЗИ: backend/app/schemas/event.py.",
+  "events": [
+    {
+      "type": "urgent_job",
+      "time": "2026-08-17T14:30:00",
+      "payload": {
+        "id": "URG-001",
+        "skill": "Аварийные работы",
+        "address": "Город Москва, ул.Окская, д. 32",
+        "coords": [55.7180, 37.7620],
+        "window_start": "2026-08-17T15:00:00",
+        "window_end":   "2026-08-17T17:00:00",
+        "duration_min": 45,
+        "priority": "Срочная"
+      }
+    },
+    { "type": "cancel_job", "time": "2026-08-17T15:00:00", "payload": { "job_id": "305738126" } },
+    { "type": "engineer_unavailable", "time": "2026-08-17T15:10:00", "payload": { "engineer_id": "eng-matveev" } }
+  ]
+}
