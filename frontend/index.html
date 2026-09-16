@@ -1,0 +1,24 @@
+<!--
+НАЗНАЧЕНИЕ: точка входа фронта. Основа — ваш frontend2.txt.
+ВХОД:  src/*.js, src/styles.css, public/demo-data.json.
+ВЫХОД: страница диспетчера с картой, сайдбаром, таймлайном, метриками.
+СВЯЗИ:
+  - src/api.js     → HTTP к backend
+  - src/map.js     → Leaflet
+  - src/sidebar.js → список заявок/инженеров
+  - src/timeline.js→ таймлайн
+  - src/main.js    → state и оркестрация
+
+ЧТО ИЗМЕНИТЬ ОТНОСИТЕЛЬНО frontend2.txt:
+  1. Убрать захардкоженные state.jobs/state.engineers —
+     грузить из /api/v1/jobs и /api/v1/engineers.
+  2. Убрать захардкоженные coords — брать из jobs.json.
+  3. fetchOptimizationData() → реальный POST /optimize.
+  4. Добавить кнопку «Перепланировать» → POST /replan.
+  5. Добавить блок «Что изменилось» после replan.
+  6. Кнопки «Срочная заявка», «Отменить», «Инженер недоступен».
+-->
+<!doctype html>
+<html lang="ru">
+  ...
+</html>
