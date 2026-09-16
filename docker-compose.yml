@@ -1,0 +1,24 @@
+# НАЗНАЧЕНИЕ: поднять backend (+ опционально frontend/БД) одной командой.
+# ВХОД: Dockerfile в backend/, .env.
+# ВЫХОД: контейнеры на портах из .env.
+# СВЯЗИ: backend/Dockerfile, .env, frontend/ (если отдаём статику через nginx).
+#
+# Минимальный вариант: только backend. Frontend можно открыть как статику.
+version: "3.9"
+services:
+  backend:
+    build: ./backend
+    env_file: .env
+    ports:
+      - "${BACKEND_PORT}:8000"
+    volumes:
+      - ./data:/app/data          # чтобы processed читались/писались
+      - ./backend:/app            # hot-reload в dev
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+  frontend:
+    image: nginx:alpine
+    volumes:
+      - ./frontend:/usr/share/nginx/html:ro
+    ports:
+      - "8080:80"
