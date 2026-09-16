@@ -1,0 +1,11 @@
+/* НАЗНАЧЕНИЕ: кастомные стили поверх Tailwind (вынести из frontend2.txt).
+   ВХОД/ВЫХОД: нет.
+   СВЯЗИ: index.html, все src/*.js.
+   СОДЕРЖИТ:
+     - CSS-переменные палитры Билайн (--violet, --pink, ...)
+     - .app-shell, .brand-header, .brand-orb
+     - .panel-card, .metric-box, .tab-button, .filter-button
+     - .job-card, .map-marker (.marker-assigned / -express / -unassigned)
+     - .timeline-grid, .timeline-block (.route-ivanov / -petrov / -express)
+     - .explain-panel, .toast, .modal-backdrop, .status-dot
+*/
