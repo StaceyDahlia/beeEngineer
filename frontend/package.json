@@ -1,0 +1,10 @@
+{
+  "_comment": "НАЗНАЧЕНИЕ: метаданные frontend. Для статики можно не использовать, но удобно для линта/деплоя. ВХОД/ВЫХОД: npm-скрипты. СВЯЗИ: index.html, src/*, .github/workflows/pages.yml.",
+  "name": "beeEngineer-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve .",
+    "lint": "echo 'lint optional'"
+  }
+}
