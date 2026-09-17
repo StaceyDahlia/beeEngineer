@@ -1,0 +1,40 @@
+{
+  "scenarios": [
+    {
+      "scenario_id": "east",
+      "equipment_demand": {
+        "router": 21,
+        "tv_box": 12
+      },
+      "jobs_with_equipment": 30,
+      "jobs_without_initial_candidate_ignoring_travel": [],
+      "office_stock_balanced": true,
+      "joint_route_feasibility": "not_checked",
+      "note": "Stock sufficiency in total and per-job candidates do not guarantee a feasible joint plan."
+    },
+    {
+      "scenario_id": "southeast",
+      "equipment_demand": {
+        "router": 31,
+        "tv_box": 8
+      },
+      "jobs_with_equipment": 35,
+      "jobs_without_initial_candidate_ignoring_travel": [],
+      "office_stock_balanced": true,
+      "joint_route_feasibility": "not_checked",
+      "note": "Stock sufficiency in total and per-job candidates do not guarantee a feasible joint plan."
+    },
+    {
+      "scenario_id": "southcenter",
+      "equipment_demand": {
+        "router": 19,
+        "tv_box": 11
+      },
+      "jobs_with_equipment": 25,
+      "jobs_without_initial_candidate_ignoring_travel": [],
+      "office_stock_balanced": true,
+      "joint_route_feasibility": "not_checked",
+      "note": "Stock sufficiency in total and per-job candidates do not guarantee a feasible joint plan."
+    }
+  ]
+}

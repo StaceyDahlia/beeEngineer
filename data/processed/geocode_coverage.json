@@ -1,0 +1,43 @@
+{
+  "scenarios": [
+    {
+      "scenario_id": "east",
+      "locations": {
+        "matched_external_corrected": 1,
+        "matched_building": 61,
+        "matched_external_building": 3,
+        "matched_address_multiple_buildings": 1
+      },
+      "jobs_with_coords": 66,
+      "jobs_total": 66,
+      "office_resolved": true,
+      "locations_requiring_source_confirmation": 0
+    },
+    {
+      "scenario_id": "southeast",
+      "locations": {
+        "matched_external_interpreted": 1,
+        "matched_external_building": 7,
+        "matched_building": 66,
+        "matched_address_multiple_buildings": 1,
+        "approximate_nearby_building": 1
+      },
+      "jobs_with_coords": 83,
+      "jobs_total": 83,
+      "office_resolved": true,
+      "locations_requiring_source_confirmation": 2
+    },
+    {
+      "scenario_id": "southcenter",
+      "locations": {
+        "matched_building": 53,
+        "matched_external_building": 1,
+        "matched_address_multiple_buildings": 2
+      },
+      "jobs_with_coords": 56,
+      "jobs_total": 56,
+      "office_resolved": true,
+      "locations_requiring_source_confirmation": 0
+    }
+  ]
+}

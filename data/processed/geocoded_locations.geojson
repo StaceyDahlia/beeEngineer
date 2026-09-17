@@ -1,0 +1,3174 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.77392,
+          55.702293
+        ]
+      },
+      "properties": {
+        "id": "east:office",
+        "address": "г. Москва, ул Юных Ленинцев, д 83с 4",
+        "scenario": "east",
+        "status": "matched_external_corrected"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7822191,
+          55.700846
+        ]
+      },
+      "properties": {
+        "id": "east:loc-001",
+        "address": "Город Москва, пр-кт.Волгоградский, д. 128 к 5",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6599082,
+          55.7397743
+        ]
+      },
+      "properties": {
+        "id": "east:loc-002",
+        "address": "Город Москва, пер.Маяковского, д. 2",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7319259,
+          55.7183547
+        ]
+      },
+      "properties": {
+        "id": "east:loc-003",
+        "address": "Город Москва, ул.Грайвороновская, д. 10 к 2",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7659603,
+          55.7270299
+        ]
+      },
+      "properties": {
+        "id": "east:loc-004",
+        "address": "Город Москва, ул.Михайлова, д. 14",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7821899,
+          55.7219922
+        ]
+      },
+      "properties": {
+        "id": "east:loc-005",
+        "address": "Город Москва, ул.3-я Институтская, д. 5 к 2",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7897959,
+          55.714359
+        ]
+      },
+      "properties": {
+        "id": "east:loc-006",
+        "address": "Город Москва, ул.1-я Новокузьминская, д. 16 к 1",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7695221,
+          55.7144711
+        ]
+      },
+      "properties": {
+        "id": "east:loc-007",
+        "address": "Город Москва, ул.Окская, д. 32",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7786035,
+          55.6981178
+        ]
+      },
+      "properties": {
+        "id": "east:loc-008",
+        "address": "Город Москва, ул.Юных Ленинцев, д. 84",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6878434,
+          55.7431752
+        ]
+      },
+      "properties": {
+        "id": "east:loc-009",
+        "address": "Город Москва, ул.Международная, д. 28 стр. 1",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6845796,
+          55.740895
+        ]
+      },
+      "properties": {
+        "id": "east:loc-010",
+        "address": "Город Москва, ул.Новорогожская, д. 8",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.741942,
+          55.696506
+        ]
+      },
+      "properties": {
+        "id": "east:loc-011",
+        "address": "Город Москва, ул.Чистова, д. 12",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7907198,
+          55.7217574
+        ]
+      },
+      "properties": {
+        "id": "east:loc-012",
+        "address": "Город Москва, ул.Паперника, д. 19",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7794008,
+          55.7176399
+        ]
+      },
+      "properties": {
+        "id": "east:loc-013",
+        "address": "Город Москва, ул.Окская, д. 48/2",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6768493,
+          55.7020048
+        ]
+      },
+      "properties": {
+        "id": "east:loc-014",
+        "address": "Город Москва, ул.Трофимова, д. 24 к 2",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6695609,
+          55.7267393
+        ]
+      },
+      "properties": {
+        "id": "east:loc-015",
+        "address": "Город Москва, ул.1-я Дубровская, д. 6",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6777676,
+          55.7456189
+        ]
+      },
+      "properties": {
+        "id": "east:loc-016",
+        "address": "Город Москва, ул.Рогожский Вал, д. 2/50",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6733454,
+          55.7369925
+        ]
+      },
+      "properties": {
+        "id": "east:loc-017",
+        "address": "Город Москва, ул.Талалихина, д. 2/1 к 4",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7365767,
+          55.6972845
+        ]
+      },
+      "properties": {
+        "id": "east:loc-018",
+        "address": "Город Москва, ул.Артюхиной, д. 20А",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7438382,
+          55.6980379
+        ]
+      },
+      "properties": {
+        "id": "east:loc-019",
+        "address": "Город Москва, ул.Малышева, д. 13",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.759554,
+          55.7314152
+        ]
+      },
+      "properties": {
+        "id": "east:loc-020",
+        "address": "Город Москва, ул.Бронницкая, д. 12",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7153975,
+          55.7523201
+        ]
+      },
+      "properties": {
+        "id": "east:loc-021",
+        "address": "Город Москва, ул.Авиамоторная, д. 14",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7719481,
+          55.7136559
+        ]
+      },
+      "properties": {
+        "id": "east:loc-022",
+        "address": "Город Москва, ул.Фёдора Полетаева, д. 2 к 6",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7772242,
+          55.7279678
+        ]
+      },
+      "properties": {
+        "id": "east:loc-023",
+        "address": "Город Москва, ул.Зарайская, д. 51 к 2",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7378743,
+          55.7145577
+        ]
+      },
+      "properties": {
+        "id": "east:loc-024",
+        "address": "Город Москва, ул.Саратовская, д. 14/1",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7186987,
+          55.7324552
+        ]
+      },
+      "properties": {
+        "id": "east:loc-025",
+        "address": "Город Москва, ул.Нижегородская, д. 63",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7085631,
+          55.7367411
+        ]
+      },
+      "properties": {
+        "id": "east:loc-026",
+        "address": "Город Москва, ул.Смирновская, д. 6",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7178025,
+          55.732503
+        ]
+      },
+      "properties": {
+        "id": "east:loc-027",
+        "address": "Город Москва, ул.Нижегородская, д. 61",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7708367,
+          55.7118436
+        ]
+      },
+      "properties": {
+        "id": "east:loc-028",
+        "address": "Город Москва, ул.Зеленодольская, д. 28Б",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7377998,
+          55.6984967
+        ]
+      },
+      "properties": {
+        "id": "east:loc-029",
+        "address": "Город Москва, ул.Артюхиной, д. 16",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7445677,
+          55.7337571
+        ]
+      },
+      "properties": {
+        "id": "east:loc-030",
+        "address": "Город Москва, ул.3-я Карачаровская, д. 4 к 1",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7902547,
+          55.7184554
+        ]
+      },
+      "properties": {
+        "id": "east:loc-031",
+        "address": "Город Москва, пр-кт.Рязанский, д. 73",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.8250104,
+          55.7010782
+        ]
+      },
+      "properties": {
+        "id": "east:loc-032",
+        "address": "Город Москва, ул.Ферганская, д. 28/7",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.8193568,
+          55.7000662
+        ]
+      },
+      "properties": {
+        "id": "east:loc-033",
+        "address": "Город Москва, б-р.Самаркандский Квартал 137а, д. к5",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7156999,
+          55.7693914
+        ]
+      },
+      "properties": {
+        "id": "east:loc-034",
+        "address": "Город Москва, ул.Боровая, д. 14",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6737801,
+          55.7347571
+        ]
+      },
+      "properties": {
+        "id": "east:loc-035",
+        "address": "Город Москва, ул.Стройковская, д. 8",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.713106,
+          55.762673
+        ]
+      },
+      "properties": {
+        "id": "east:loc-036",
+        "address": "Город Москва, ул.2-я Синичкина, д. 9 к 1",
+        "scenario": "east",
+        "status": "matched_external_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7534715,
+          55.7311522
+        ]
+      },
+      "properties": {
+        "id": "east:loc-037",
+        "address": "Москва, проезд Орехово-Зуевский, д. 18/8",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6676447,
+          55.7420001
+        ]
+      },
+      "properties": {
+        "id": "east:loc-038",
+        "address": "Город Москва, пер.Большой Рогожский, д. 10 к 2",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6518889,
+          55.764253
+        ]
+      },
+      "properties": {
+        "id": "east:loc-039",
+        "address": "Город Москва, ул.Машкова, д. 13 стр. 1",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.743173,
+          55.70694
+        ]
+      },
+      "properties": {
+        "id": "east:loc-040",
+        "address": "Город Москва, ул.11-я Текстильщиков, д. 10",
+        "scenario": "east",
+        "status": "matched_external_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7935117,
+          55.7213231
+        ]
+      },
+      "properties": {
+        "id": "east:loc-041",
+        "address": "Город Москва, ул.Паперника, д. 18",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6862063,
+          55.7361675
+        ]
+      },
+      "properties": {
+        "id": "east:loc-042",
+        "address": "Город Москва, ул.Большая Калитниковская, д. 38",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7620114,
+          55.6971444
+        ]
+      },
+      "properties": {
+        "id": "east:loc-043",
+        "address": "Город Москва, ул.Маршала Чуйкова, д. 9 к 2",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.676817,
+          55.7355002
+        ]
+      },
+      "properties": {
+        "id": "east:loc-044",
+        "address": "Город Москва, ул.Талалихина, д. 16",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7522297,
+          55.6965373
+        ]
+      },
+      "properties": {
+        "id": "east:loc-045",
+        "address": "Город Москва, б-р.Волжский, д. 50 к 2",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7378149,
+          55.7029289
+        ]
+      },
+      "properties": {
+        "id": "east:loc-046",
+        "address": "Город Москва, ул.Артюхиной, д. 3",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.8248567,
+          55.6940635
+        ]
+      },
+      "properties": {
+        "id": "east:loc-047",
+        "address": "Город Москва, проезд.Ферганский, д. 7 к 5",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6571501,
+          55.7586892
+        ]
+      },
+      "properties": {
+        "id": "east:loc-048",
+        "address": "Город Москва, ул.Земляной Вал, д. 24/30 стр. 1",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7471726,
+          55.7333702
+        ]
+      },
+      "properties": {
+        "id": "east:loc-049",
+        "address": "Город Москва, ул.3-я Карачаровская, д. 8 к 2",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.758355,
+          55.7306095
+        ]
+      },
+      "properties": {
+        "id": "east:loc-050",
+        "address": "Город Москва, ул.Чистопольская, д. 2 к 2",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7147651,
+          55.770292
+        ]
+      },
+      "properties": {
+        "id": "east:loc-051",
+        "address": "Город Москва, ул.Боровая, д. 12",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.699531,
+          55.758735
+        ]
+      },
+      "properties": {
+        "id": "east:loc-052",
+        "address": "Город Москва, ул.Красноказарменная, д. 9Б стр. 1",
+        "scenario": "east",
+        "status": "matched_external_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7168314,
+          55.7647986
+        ]
+      },
+      "properties": {
+        "id": "east:loc-053",
+        "address": "Город Москва, ул.Сторожевая, д. 31",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6832489,
+          55.740048
+        ]
+      },
+      "properties": {
+        "id": "east:loc-054",
+        "address": "Город Москва, ул.Новорогожская, д. 10",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6944616,
+          55.7374783
+        ]
+      },
+      "properties": {
+        "id": "east:loc-055",
+        "address": "Город Москва, ул.Нижегородская, д. 25",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7514109,
+          55.710308
+        ]
+      },
+      "properties": {
+        "id": "east:loc-056",
+        "address": "Город Москва, ул.Окская, д. 6 к 1",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7518635,
+          55.7078213
+        ]
+      },
+      "properties": {
+        "id": "east:loc-057",
+        "address": "Город Москва, пр-кт.Волгоградский, д. 97 к 1",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.8126854,
+          55.6977027
+        ]
+      },
+      "properties": {
+        "id": "east:loc-058",
+        "address": "г.Город Москва, б-р.Самаркандский, д. 32к1",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.8263129,
+          55.7064866
+        ]
+      },
+      "properties": {
+        "id": "east:loc-059",
+        "address": "г.Город Москва, б-р.Самаркандский, д. 10к2",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6880379,
+          55.73903
+        ]
+      },
+      "properties": {
+        "id": "east:loc-060",
+        "address": "г.Город Москва, ул.Новорогожская, д. 20",
+        "scenario": "east",
+        "status": "matched_address_multiple_buildings"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.8130634,
+          55.703974
+        ]
+      },
+      "properties": {
+        "id": "east:loc-061",
+        "address": "г.Город Москва, ул.Ташкентская, д. 16к2",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7401969,
+          55.7150007
+        ]
+      },
+      "properties": {
+        "id": "east:loc-062",
+        "address": "г.Город Москва, ул.Саратовская, д. 16",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7082611,
+          55.7785658
+        ]
+      },
+      "properties": {
+        "id": "east:loc-063",
+        "address": "г.Город Москва, наб.Семеновская, д. 3/1к2",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7046831,
+          55.7768615
+        ]
+      },
+      "properties": {
+        "id": "east:loc-064",
+        "address": "г.Город Москва, наб.Семеновская, д. 2/1",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7828754,
+          55.7023381
+        ]
+      },
+      "properties": {
+        "id": "east:loc-065",
+        "address": "г.Город Москва, пр-кт.Волгоградский, д. 128к1",
+        "scenario": "east",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.665589,
+          55.602278
+        ]
+      },
+      "properties": {
+        "id": "southeast:office",
+        "address": "г. Москва, ул Бирюлёвская, д 1с1",
+        "scenario": "southeast",
+        "status": "matched_external_interpreted"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.770155,
+          55.440674
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-001",
+        "address": "Домодедово, проезд.Советский 1-й, д. 1А",
+        "scenario": "southeast",
+        "status": "matched_external_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7536622,
+          55.6074243
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-002",
+        "address": "Город Москва, проезд.Гурьевский, д. 23 к 1",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7516036,
+          55.6188601
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-003",
+        "address": "Город Москва, ул.Кустанайская, д. 8 к 1",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7219087,
+          55.5996618
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-004",
+        "address": "Город Москва, ш.Каширское, д. 136",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7700594,
+          55.425109
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-005",
+        "address": "Домодедово, ул.Зеленая, д. 85",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6548482,
+          55.643317
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-006",
+        "address": "Город Москва, ул.Москворечье, д. 4 к 6",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6775523,
+          55.5780853
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-007",
+        "address": "Город Москва, проезд.Загорьевский, д. 9",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6607974,
+          55.6048694
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-008",
+        "address": "Город Москва, ул.6-я Радиальная, д. 5 к 3",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6658771,
+          55.5881256
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-009",
+        "address": "Город Москва, ул.Бирюлёвская, д. 39",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.1934317,
+          54.8386455
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-010",
+        "address": "Кашира, ул.Победы, д. 9",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7692583,
+          55.6362442
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-011",
+        "address": "Город Москва, ул.Братеевская, д. 18 к 1",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7354256,
+          55.6149375
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-012",
+        "address": "Город Москва, б-р.Ореховый, д. 35 к 1",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6533634,
+          55.6360111
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-013",
+        "address": "Город Москва, пр-кт.Пролетарский, д. 14А",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7779539,
+          55.4226672
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-014",
+        "address": "Домодедово, ул.Корнеева, д. 50",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7783486,
+          55.4255128
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-015",
+        "address": "Домодедово, ул.Корнеева, д. 40",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6790583,
+          55.629584
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-016",
+        "address": "Город Москва, ул.Ереванская, д. 29",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6538926,
+          55.6234951
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-017",
+        "address": "Город Москва, ул.Севанская, д. 15 к 1",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6510228,
+          55.6037747
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-018",
+        "address": "Город Москва, ул.6-я Радиальная, д. 7/1 к 2",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.2453976,
+          54.8423286
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-019",
+        "address": "Кашира, ул.Садовая, д. 18",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.2443522,
+          54.8500604
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-020",
+        "address": "Кашира, ул.Садовая, д. 2/11",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7630982,
+          55.6369125
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-021",
+        "address": "Город Москва, ул.Паромная, д. 9 к 1",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7658937,
+          55.6343465
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-022",
+        "address": "Город Москва, ул.Братеевская, д. 16 к 1",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7518423,
+          55.6379834
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-023",
+        "address": "Город Москва, ул.Борисовские Пруды, д. 20 к 1",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.2494867,
+          54.8400884
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-024",
+        "address": "Кашира, ул.Юбилейная, д. 9",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.239748,
+          54.844548
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-025",
+        "address": "Кашира, ул.8 Марта, д. 22",
+        "scenario": "southeast",
+        "status": "matched_external_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7060471,
+          55.6096657
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-026",
+        "address": "Город Москва, б-р.Ореховый, д. 7 к 1",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7137838,
+          55.614969
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-027",
+        "address": "Город Москва, ш.Каширское, д. 94 к 1",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7128459,
+          55.6108754
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-028",
+        "address": "Город Москва, б-р.Ореховый, д. 11 к 1",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7226952,
+          55.6144125
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-029",
+        "address": "Город Москва, проезд.Борисовский, д. 44 к 3",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7307244,
+          55.6165342
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-030",
+        "address": "Город Москва, проезд.Ореховый, д. 41",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.8378227,
+          55.4105367
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-031",
+        "address": "Домодедово, ул.Ильюшина, д. 20",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.248056,
+          54.8419626
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-032",
+        "address": "Кашира, ул.Юбилейная, д. 8",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7543157,
+          55.6180751
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-033",
+        "address": "Город Москва, ул.Кустанайская, д. 9 к 1",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6538396,
+          55.6338547
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-034",
+        "address": "Город Москва, пр-кт.Пролетарский, д. 18 к 4",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.2399045,
+          54.8398702
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-035",
+        "address": "Кашира, ул.Кржижановского, д. 7",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6483741,
+          55.5899951
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-036",
+        "address": "Город Москва, ул.Медынская, д. 5 к 1",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.739521,
+          55.451588
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-037",
+        "address": "Домодедово, ул.Гагарина, д. 55/2",
+        "scenario": "southeast",
+        "status": "matched_external_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7444395,
+          55.4546029
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-038",
+        "address": "Домодедово, ул.1-я Коммунистическая, д. 39",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7747995,
+          55.6418225
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-039",
+        "address": "Город Москва, ул.Борисовские Пруды, д. 48 к 2",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.0692054,
+          54.8917937
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-040",
+        "address": "Ступино, ул.Калинина, д. 34",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7067109,
+          55.6060564
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-041",
+        "address": "Город Москва, проезд.Шипиловский, д. 59 к 2",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6461681,
+          55.5760549
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-042",
+        "address": "Город Москва, проезд.Востряковский, д. 15 к 2",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6681476,
+          55.5806701
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-043",
+        "address": "Город Москва, ул.Бирюлёвская, д. 58 к 3",
+        "scenario": "southeast",
+        "status": "matched_address_multiple_buildings"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7161258,
+          55.6039003
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-044",
+        "address": "Город Москва, ул.Домодедовская, д. 31",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6631328,
+          55.6235129
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-045",
+        "address": "Город Москва, ул.Весёлая, д. 33 к 7",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.8424754,
+          55.4144868
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-046",
+        "address": "Домодедово, ул.Ильюшина, д. 11 к 2",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6492402,
+          55.5768738
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-047",
+        "address": "Город Москва, проезд.Востряковский, д. 15 к 4",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7782889,
+          55.4235837
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-048",
+        "address": "Домодедово, ул.Корнеева, д. 48",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.665112,
+          55.6248172
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-049",
+        "address": "Город Москва, ул.Луганская, д. 4 к 1",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.664554,
+          55.6278364
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-050",
+        "address": "Город Москва, ул.Луганская, д. 3 к 1",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6637203,
+          55.6287028
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-051",
+        "address": "Город Москва, ул.Луганская, д. 1",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6773965,
+          55.6351144
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-052",
+        "address": "Город Москва, ул.Кантемировская, д. 5 к 2",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6663646,
+          55.574132
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-053",
+        "address": "Город Москва, проезд.Загорьевский, д. 7 к 2",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6958848,
+          55.6204412
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-054",
+        "address": "Город Москва, ул.Маршала Захарова, д. 18 к 1",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7261342,
+          55.6072105
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-055",
+        "address": "Город Москва, ул.Генерала Белова, д. 45 к 2",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7245073,
+          55.6205105
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-056",
+        "address": "Город Москва, ул.Шипиловская, д. 38",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7503407,
+          55.607134
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-057",
+        "address": "Город Москва, проезд.Гурьевский, д. 19 к 2",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7313782,
+          55.6228247
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-058",
+        "address": "Город Москва, проезд.Ореховый, д. 23 к 1",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6475142,
+          55.5812013
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-059",
+        "address": "Город Москва, ул.Булатниковская, д. 4 к 1",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7583887,
+          55.6170816
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-060",
+        "address": "Город Москва, б-р.Ореховый, д. 61 к 1",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7619456,
+          55.4371874
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-061",
+        "address": "Домодедово, проезд.Кутузовский, д. 16",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.1907273,
+          54.8429121
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-062",
+        "address": "Кашира, ул.Ленина, д. 11 к 3",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.1897638,
+          54.8409976
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-063",
+        "address": "Кашира, ул.Металлургов, д. 5 к 3",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7437967,
+          55.6274499
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-064",
+        "address": "Город Москва, ул.Мусы Джалиля, д. 9 к 1",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.839621,
+          55.41209
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-065",
+        "address": "обл.Московская область, г.Домодедово, пгт.Востряково-1, ул.Жуковского, д. 14/18",
+        "scenario": "southeast",
+        "status": "matched_external_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.2397671,
+          54.8421235
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-066",
+        "address": "МО, г. Кашира Центральная ул. д. 21",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.239527,
+          54.840976
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-067",
+        "address": "МО, г. Кашира Кржижановского ул. д. 5/1",
+        "scenario": "southeast",
+        "status": "matched_external_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.2415926,
+          54.8399225
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-068",
+        "address": "МО, г. Кашира Кржижановского ул. д. 7к2",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.242986,
+          54.840831
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-069",
+        "address": "МО, г. Кашира Кржижановского ул. д. 5/3",
+        "scenario": "southeast",
+        "status": "matched_external_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.242023,
+          54.840664
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-070",
+        "address": "МО, г. Кашира Кржижановского ул. д. 5/2",
+        "scenario": "southeast",
+        "status": "matched_external_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.0821597,
+          54.8858274
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-071",
+        "address": "МО, г. Ступино Андропова ул. д. 37",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.082999,
+          54.8857555
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-072",
+        "address": "МО, г. Ступино Андропова ул. д. 33",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.2407727,
+          54.8415134
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-073",
+        "address": "МО, г. Кашира Центральная ул. д. 19",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.664394,
+          55.58642
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-074",
+        "address": "Москва Бирюлевская ул. д. 44",
+        "scenario": "southeast",
+        "status": "approximate_nearby_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6513869,
+          55.5936117
+        ]
+      },
+      "properties": {
+        "id": "southeast:loc-075",
+        "address": "Москва Булатниковский пр-зд. д. 6к1",
+        "scenario": "southeast",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6158385,
+          55.6647568
+        ]
+      },
+      "properties": {
+        "id": "southcenter:office",
+        "address": "г.Москва проезд Симферопольский, д.7",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6405504,
+          55.7107376
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-001",
+        "address": "Город Москва, проезд.3-й Павелецкий, д. 9",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6604783,
+          55.7169675
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-002",
+        "address": "Город Москва, ул.Восточная, д. 2 к 2",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6370701389,
+          55.7193551268
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-003",
+        "address": "Город Москва, ул.Дубининская, д. 59 к 2",
+        "scenario": "southcenter",
+        "status": "matched_external_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5927091,
+          55.6890678
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-004",
+        "address": "Город Москва, ул.Шверника, д. 18 к 2",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5892003,
+          55.6702038
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-005",
+        "address": "Город Москва, ул.Нагорная, д. 44 к 2",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5678576,
+          55.6520916
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-006",
+        "address": "Город Москва, ул.Херсонская, д. 18",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.573364,
+          55.6894338
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-007",
+        "address": "Город Москва, пр-кт.60-летия Октября, д. 18 к 2",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5809496,
+          55.6858472
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-008",
+        "address": "Город Москва, ул.Дмитрия Ульянова, д. 27",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5634155,
+          55.7242516
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-009",
+        "address": "Город Москва, ул.Усачёва, д. 29 к 1",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5883596,
+          55.6854662
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-010",
+        "address": "Город Москва, ул.Винокурова, д. 12 к 4",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5959185,
+          55.6423446
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-011",
+        "address": "Город Москва, пр-кт.Балаклавский, д. 20 к 4",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6527567,
+          55.6710631
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-012",
+        "address": "Город Москва, ул.Садовники, д. 10 к 1",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5899929,
+          55.6510015
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-013",
+        "address": "Город Москва, ул.Каховка, д. 7 к 1",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6351637,
+          55.7261963
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-014",
+        "address": "Город Москва, ул.Большая Пионерская, д. 33 к 2",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5763858,
+          55.7411713
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-015",
+        "address": "Город Москва, ул.Плющиха, д. 42",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6804749,
+          55.6848526
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-016",
+        "address": "Город Москва, ул.Судостроительная, д. 31 к 3",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6875838,
+          55.6841931
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-017",
+        "address": "Город Москва, ул.Судостроительная, д. 36",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6884067,
+          55.6790858
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-018",
+        "address": "Город Москва, ул.Затонная, д. 11 к 3",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6576591,
+          55.706526
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-019",
+        "address": "Город Москва, ул.Автозаводская, д. 11",
+        "scenario": "southcenter",
+        "status": "matched_address_multiple_buildings"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5866891,
+          55.6913492
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-020",
+        "address": "Город Москва, ул.Шверника, д. 12/2 к 3",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6793639,
+          55.683529
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-021",
+        "address": "Город Москва, ул.Судостроительная, д. 27 к 2",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5818461,
+          55.694198
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-022",
+        "address": "Город Москва, ул.Шверника, д. 3",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5978906,
+          55.6448239
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-023",
+        "address": "Город Москва, б-р.Черноморский, д. 19 к 2",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.583089,
+          55.6572931
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-024",
+        "address": "Город Москва, ул.Керченская, д. 6 к 2",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6732411,
+          55.6827402
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-025",
+        "address": "Город Москва, б-р.Кленовый, д. 10 к 1",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.704796,
+          55.6821727
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-026",
+        "address": "Город Москва, ул.Коломенская, д. 5",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5835089,
+          55.742465
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-027",
+        "address": "Город Москва, б-р.Смоленский, д. 17 стр. 1",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5651309,
+          55.7249586
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-028",
+        "address": "Город Москва, ул.Усачёва, д. 25",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5798241,
+          55.6953306
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-029",
+        "address": "Город Москва, пр-кт.60-летия Октября, д. 17",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6040072,
+          55.6757919
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-030",
+        "address": "Город Москва, ул.Ремизова, д. 15 к 2",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5827805,
+          55.6945964
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-031",
+        "address": "Город Москва, ул.Шверника, д. 5 к 2",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6498005,
+          55.6700206
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-032",
+        "address": "Город Москва, ул.Академика Миллионщикова, д. 13 к 1",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5850112,
+          55.6898618
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-033",
+        "address": "Город Москва, ул.Винокурова, д. 5/6 к 2",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5705283,
+          55.6494293
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-034",
+        "address": "Город Москва, пр-кт.Балаклавский, д. 50",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6062192,
+          55.6486775
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-035",
+        "address": "Город Москва, б-р.Симферопольский, д. 27",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6095951,
+          55.655272
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-036",
+        "address": "Город Москва, ул.Болотниковская, д. 9 к 2",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6614474,
+          55.7011084
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-037",
+        "address": "Город Москва, ул.Трофимова, д. 4А",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6943031,
+          55.6777277
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-038",
+        "address": "Город Москва, ул.Коломенская, д. 21",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6872923,
+          55.687915
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-039",
+        "address": "Город Москва, наб.Нагатинская, д. 60 к 2",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.658283,
+          55.6688423
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-040",
+        "address": "Город Москва, проезд.Коломенский, д. 27 к 3",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6857562,
+          55.6771232
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-041",
+        "address": "Город Москва, ул.Затонная, д. 12 к 1",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6180122,
+          55.7150778
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-042",
+        "address": "Город Москва, ул.Городская, д. 9",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6075362,
+          55.6911832
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-043",
+        "address": "Город Москва, пр-кт.Севастопольский, д. 9 к 1",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6418372,
+          55.710645
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-044",
+        "address": "Город Москва, проезд.3-й Павелецкий, д. 7 к 2",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6286049,
+          55.7233901
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-045",
+        "address": "Город Москва, ул.Большая Серпуховская, д. 31 к 6",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6125848,
+          55.7092888
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-046",
+        "address": "Город Москва, ул.2-я Рощинская, д. 11",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6603865,
+          55.7131672
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-047",
+        "address": "Город Москва, пер.Ослябинский, д. 3",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5902587,
+          55.6899877
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-048",
+        "address": "Город Москва, ул.Шверника, д. 14/1 к 2",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5694046,
+          55.6864404
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-049",
+        "address": "Город Москва, ул.Профсоюзная, д. 8 к 2",
+        "scenario": "southcenter",
+        "status": "matched_address_multiple_buildings"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5590236,
+          55.6807498
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-050",
+        "address": "Город Москва, пр-кт.Нахимовский, д. 50",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6036892,
+          55.6543202
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-051",
+        "address": "Город Москва, б-р.Чонгарский, д. 22 к 2",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6224055,
+          55.7273725
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-052",
+        "address": "Город Москва, ул.Люсиновская, д. 4",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6157017,
+          55.6520362
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-053",
+        "address": "Город Москва, б-р.Чонгарский, д. 1 к 4",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5816709,
+          55.6556242
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-054",
+        "address": "Город Москва, ул.Керченская, д. 10 к 2",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5407755,
+          55.6879261
+        ]
+      },
+      "properties": {
+        "id": "southcenter:loc-055",
+        "address": "г.Город Москва, пр-кт.Ленинский, д. 70/11",
+        "scenario": "southcenter",
+        "status": "matched_building"
+      }
+    }
+  ],
+  "attribution": "Coordinates combine © OpenStreetMap contributors (ODbL), 2GIS and mos.ru open data; see per-feature source in locations.json."
+}

@@ -1,20 +1,3169 @@
 {
-  "_comment": "НАЗНАЧЕНИЕ: нормализованные заявки для backend. ВХОД: data/raw/*.csv через scripts/prepare_data.py. ВЫХОД: читается backend/app/services/loader.py. СВЯЗИ: data/reference/*.json, examples/expected_plan.json.",
   "jobs": [
     {
-      "id": "305927238",
-      "source": "east_control",
+      "id": "east:74198",
+      "original_id": "74198",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 2,
+      "input_order": 0,
       "type": "Подключение",
-      "skill": "Работы на подключение и дознаказы",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
       "priority": "Обычная",
       "district": "Кузьминки",
-      "address": "Город Москва, пр-кт.Волгоградский, д. 128 к 5, кв. 1",
-      "coords": [55.7123, 37.7654],
-      "window_start": "2026-08-17T20:00:00",
-      "window_end":   "2026-08-17T22:00:00",
-      "duration_min": 60,
+      "district_raw": "Кузьминки",
+      "address": "Город Москва, пр-кт.Волгоградский, д. 128 к 5",
+      "location_id": "east:loc-001",
+      "coords": [
+        55.700846,
+        37.7822191
+      ],
+      "window_start": "2026-08-17T20:00:00+03:00",
+      "window_end": "2026-08-17T22:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
       "required_vehicle": null,
-      "status": "planned"
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-001"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "east:86160",
+      "original_id": "86160",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 3,
+      "input_order": 1,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Таганский",
+      "district_raw": "Таганский",
+      "address": "Город Москва, пер.Маяковского, д. 2",
+      "location_id": "east:loc-002",
+      "coords": [
+        55.7397743,
+        37.6599082
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-002"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "east:50104",
+      "original_id": "50104",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 4,
+      "input_order": 2,
+      "type": "Подключение",
+      "subtype": "Заявка на подключение",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Текстильщики",
+      "district_raw": "Текстильщики",
+      "address": "Город Москва, ул.Грайвороновская, д. 10 к 2",
+      "location_id": "east:loc-003",
+      "coords": [
+        55.7183547,
+        37.7319259
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": true,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-003"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:46393",
+      "original_id": "46393",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 5,
+      "input_order": 3,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Рязанский",
+      "district_raw": "Рязанский",
+      "address": "Город Москва, ул.Михайлова, д. 14",
+      "location_id": "east:loc-004",
+      "coords": [
+        55.7270299,
+        37.7659603
+      ],
+      "window_start": "2026-08-17T20:00:00+03:00",
+      "window_end": "2026-08-17T22:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-004"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "east:10135",
+      "original_id": "10135",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 6,
+      "input_order": 4,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Рязанский",
+      "district_raw": "Рязанский",
+      "address": "Город Москва, ул.3-я Институтская, д. 5 к 2",
+      "location_id": "east:loc-005",
+      "coords": [
+        55.7219922,
+        37.7821899
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-005"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "east:18754",
+      "original_id": "18754",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 7,
+      "input_order": 5,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Рязанский",
+      "district_raw": "Рязанский",
+      "address": "Город Москва, ул.1-я Новокузьминская, д. 16 к 1",
+      "location_id": "east:loc-006",
+      "coords": [
+        55.714359,
+        37.7897959
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-006"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "east:84627",
+      "original_id": "84627",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 8,
+      "input_order": 6,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Кузьминки",
+      "district_raw": "Кузьминки",
+      "address": "Город Москва, ул.Окская, д. 32",
+      "location_id": "east:loc-007",
+      "coords": [
+        55.7144711,
+        37.7695221
+      ],
+      "window_start": "2026-08-17T20:00:00+03:00",
+      "window_end": "2026-08-17T22:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-007"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "east:61540",
+      "original_id": "61540",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 9,
+      "input_order": 7,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Кузьминки",
+      "district_raw": "Кузьминки",
+      "address": "Город Москва, ул.Юных Ленинцев, д. 84",
+      "location_id": "east:loc-008",
+      "coords": [
+        55.6981178,
+        37.7786035
+      ],
+      "window_start": "2026-08-17T16:00:00+03:00",
+      "window_end": "2026-08-17T18:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-008"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "east:74949",
+      "original_id": "74949",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 10,
+      "input_order": 8,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Таганский",
+      "district_raw": "Таганский",
+      "address": "Город Москва, ул.Международная, д. 28 стр. 1",
+      "location_id": "east:loc-009",
+      "coords": [
+        55.7431752,
+        37.6878434
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-009"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:41077",
+      "original_id": "41077",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 11,
+      "input_order": 9,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Таганский",
+      "district_raw": "Таганский",
+      "address": "Город Москва, ул.Новорогожская, д. 8",
+      "location_id": "east:loc-010",
+      "coords": [
+        55.740895,
+        37.6845796
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-010"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "east:87693",
+      "original_id": "87693",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 12,
+      "input_order": 10,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Текстильщики",
+      "district_raw": "Текстильщики",
+      "address": "Город Москва, ул.Чистова, д. 12",
+      "location_id": "east:loc-011",
+      "coords": [
+        55.696506,
+        37.741942
+      ],
+      "window_start": "2026-08-17T16:00:00+03:00",
+      "window_end": "2026-08-17T18:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-011"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:93086",
+      "original_id": "93086",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 13,
+      "input_order": 11,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Рязанский",
+      "district_raw": "Рязанский",
+      "address": "Город Москва, ул.Паперника, д. 19",
+      "location_id": "east:loc-012",
+      "coords": [
+        55.7217574,
+        37.7907198
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-012"
+        }
+      },
+      "required_equipment": {
+        "router": 1,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "east:57866",
+      "original_id": "57866",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 14,
+      "input_order": 12,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Рязанский",
+      "district_raw": "Рязанский",
+      "address": "Город Москва, ул.Окская, д. 48/2",
+      "location_id": "east:loc-013",
+      "coords": [
+        55.7176399,
+        37.7794008
+      ],
+      "window_start": "2026-08-17T14:00:00+03:00",
+      "window_end": "2026-08-17T16:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-013"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "east:35675",
+      "original_id": "35675",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 15,
+      "input_order": 13,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Южнопортовый",
+      "district_raw": "Южнопортовый",
+      "address": "Город Москва, ул.Трофимова, д. 24 к 2",
+      "location_id": "east:loc-014",
+      "coords": [
+        55.7020048,
+        37.6768493
+      ],
+      "window_start": "2026-08-17T16:00:00+03:00",
+      "window_end": "2026-08-17T18:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-014"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:82388",
+      "original_id": "82388",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 16,
+      "input_order": 14,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Южнопортовый",
+      "district_raw": "Южнопортовый",
+      "address": "Город Москва, ул.1-я Дубровская, д. 6",
+      "location_id": "east:loc-015",
+      "coords": [
+        55.7267393,
+        37.6695609
+      ],
+      "window_start": "2026-08-17T14:00:00+03:00",
+      "window_end": "2026-08-17T16:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-015"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:23380",
+      "original_id": "23380",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 17,
+      "input_order": 15,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Таганский",
+      "district_raw": "Таганский",
+      "address": "Город Москва, ул.Рогожский Вал, д. 2/50",
+      "location_id": "east:loc-016",
+      "coords": [
+        55.7456189,
+        37.6777676
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-016"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:37272",
+      "original_id": "37272",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 18,
+      "input_order": 16,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Таганский",
+      "district_raw": "Таганский",
+      "address": "Город Москва, ул.Талалихина, д. 2/1 к 4",
+      "location_id": "east:loc-017",
+      "coords": [
+        55.7369925,
+        37.6733454
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-017"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:71388",
+      "original_id": "71388",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 19,
+      "input_order": 17,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Текстильщики",
+      "district_raw": "Текстильщики",
+      "address": "Город Москва, ул.Артюхиной, д. 20А",
+      "location_id": "east:loc-018",
+      "coords": [
+        55.6972845,
+        37.7365767
+      ],
+      "window_start": "2026-08-17T14:00:00+03:00",
+      "window_end": "2026-08-17T16:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-018"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "east:34366",
+      "original_id": "34366",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 20,
+      "input_order": 18,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Текстильщики",
+      "district_raw": "Текстильщики",
+      "address": "Город Москва, ул.Малышева, д. 13",
+      "location_id": "east:loc-019",
+      "coords": [
+        55.6980379,
+        37.7438382
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-019"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:67554",
+      "original_id": "67554",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 21,
+      "input_order": 19,
+      "type": "Подключение",
+      "subtype": "Заявка на подключение",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Нижегородский",
+      "district_raw": "Нижегородский",
+      "address": "Город Москва, ул.Бронницкая, д. 12",
+      "location_id": "east:loc-020",
+      "coords": [
+        55.7314152,
+        37.759554
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-020"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:94409",
+      "original_id": "94409",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 22,
+      "input_order": 20,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Лефортово",
+      "district_raw": "Лефортово",
+      "address": "Город Москва, ул.Авиамоторная, д. 14",
+      "location_id": "east:loc-021",
+      "coords": [
+        55.7523201,
+        37.7153975
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-021"
+        }
+      },
+      "required_equipment": {
+        "router": 1,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "east:10245",
+      "original_id": "10245",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 23,
+      "input_order": 21,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Кузьминки",
+      "district_raw": "Кузьминки",
+      "address": "Город Москва, ул.Фёдора Полетаева, д. 2 к 6",
+      "location_id": "east:loc-022",
+      "coords": [
+        55.7136559,
+        37.7719481
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-022"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "east:52405",
+      "original_id": "52405",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 24,
+      "input_order": 22,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Рязанский",
+      "district_raw": "Рязанский",
+      "address": "Город Москва, ул.Зарайская, д. 51 к 2",
+      "location_id": "east:loc-023",
+      "coords": [
+        55.7279678,
+        37.7772242
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-023"
+        }
+      },
+      "required_equipment": {
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "east:30769",
+      "original_id": "30769",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 25,
+      "input_order": 23,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Текстильщики",
+      "district_raw": "Текстильщики",
+      "address": "Город Москва, ул.Саратовская, д. 14/1",
+      "location_id": "east:loc-024",
+      "coords": [
+        55.7145577,
+        37.7378743
+      ],
+      "window_start": "2026-08-17T14:00:00+03:00",
+      "window_end": "2026-08-17T16:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-024"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "east:98182",
+      "original_id": "98182",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 26,
+      "input_order": 24,
+      "type": "Подключение",
+      "subtype": "Заявка на подключение",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Нижегородский",
+      "district_raw": "Нижегородский",
+      "address": "Город Москва, ул.Нижегородская, д. 63",
+      "location_id": "east:loc-025",
+      "coords": [
+        55.7324552,
+        37.7186987
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-025"
+        }
+      },
+      "required_equipment": {
+        "router": 1,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "east:76082",
+      "original_id": "76082",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 27,
+      "input_order": 25,
+      "type": "Подключение",
+      "subtype": "Заказ подключения/Дозаказ оборудования",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Нижегородский",
+      "district_raw": "Нижегородский",
+      "address": "Город Москва, ул.Смирновская, д. 6",
+      "location_id": "east:loc-026",
+      "coords": [
+        55.7367411,
+        37.7085631
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FTTB",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-026"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "east:29890",
+      "original_id": "29890",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 28,
+      "input_order": 26,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Нижегородский",
+      "district_raw": "Нижегородский",
+      "address": "Город Москва, ул.Нижегородская, д. 61",
+      "location_id": "east:loc-027",
+      "coords": [
+        55.732503,
+        37.7178025
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-027"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "east:77563",
+      "original_id": "77563",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 29,
+      "input_order": 27,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Кузьминки",
+      "district_raw": "Кузьминки",
+      "address": "Город Москва, ул.Зеленодольская, д. 28Б",
+      "location_id": "east:loc-028",
+      "coords": [
+        55.7118436,
+        37.7708367
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-028"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "east:53587",
+      "original_id": "53587",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 30,
+      "input_order": 28,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Текстильщики",
+      "district_raw": "Текстильщики",
+      "address": "Город Москва, ул.Артюхиной, д. 16",
+      "location_id": "east:loc-029",
+      "coords": [
+        55.6984967,
+        37.7377998
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-029"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:82808",
+      "original_id": "82808",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 31,
+      "input_order": 29,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Нижегородский",
+      "district_raw": "Нижегородский",
+      "address": "Город Москва, ул.3-я Карачаровская, д. 4 к 1",
+      "location_id": "east:loc-030",
+      "coords": [
+        55.7337571,
+        37.7445677
+      ],
+      "window_start": "2026-08-17T14:00:00+03:00",
+      "window_end": "2026-08-17T16:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-030"
+        }
+      },
+      "required_equipment": {
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "east:7939",
+      "original_id": "7939",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 32,
+      "input_order": 30,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Рязанский",
+      "district_raw": "Рязанский",
+      "address": "Город Москва, пр-кт.Рязанский, д. 73",
+      "location_id": "east:loc-031",
+      "coords": [
+        55.7184554,
+        37.7902547
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-031"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "east:92031",
+      "original_id": "92031",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 33,
+      "input_order": 31,
+      "type": "Дозаказ",
+      "subtype": "Дозаказ оборудования",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Выхино",
+      "district_raw": "Выхино",
+      "address": "Город Москва, ул.Ферганская, д. 28/7",
+      "location_id": "east:loc-032",
+      "coords": [
+        55.7010782,
+        37.8250104
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 20,
+      "norm_id": "norm-4",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_additional_order",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-032"
+        }
+      },
+      "required_equipment": {
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "east:31260",
+      "original_id": "31260",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 34,
+      "input_order": 32,
+      "type": "Дозаказ",
+      "subtype": "Дозаказ оборудования",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Выхино",
+      "district_raw": "Выхино",
+      "address": "Город Москва, б-р.Самаркандский Квартал 137а, д. к5",
+      "location_id": "east:loc-033",
+      "coords": [
+        55.7000662,
+        37.8193568
+      ],
+      "window_start": "2026-08-17T20:00:00+03:00",
+      "window_end": "2026-08-17T22:00:00+03:00",
+      "duration_min": 20,
+      "norm_id": "norm-4",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_additional_order",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-033"
+        }
+      },
+      "required_equipment": {
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "east:69967",
+      "original_id": "69967",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 35,
+      "input_order": 33,
+      "type": "Дозаказ",
+      "subtype": "Заказ подключения/Дозаказ оборудования",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Лефортово",
+      "district_raw": "Лефортово",
+      "address": "Город Москва, ул.Боровая, д. 14",
+      "location_id": "east:loc-034",
+      "coords": [
+        55.7693914,
+        37.7156999
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 20,
+      "norm_id": "norm-4",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FTTB",
+      "gigabit": true,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_additional_order",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-034"
+        }
+      },
+      "required_equipment": {
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "east:22634",
+      "original_id": "22634",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 36,
+      "input_order": 34,
+      "type": "Дозаказ",
+      "subtype": "Дозаказ оборудования",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Таганский",
+      "district_raw": "Таганский",
+      "address": "Город Москва, ул.Стройковская, д. 8",
+      "location_id": "east:loc-035",
+      "coords": [
+        55.7347571,
+        37.6737801
+      ],
+      "window_start": "2026-08-17T14:00:00+03:00",
+      "window_end": "2026-08-17T16:00:00+03:00",
+      "duration_min": 20,
+      "norm_id": "norm-4",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_additional_order",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-035"
+        }
+      },
+      "required_equipment": {
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "east:98815",
+      "original_id": "98815",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 37,
+      "input_order": 35,
+      "type": "Дозаказ",
+      "subtype": "Дозаказ оборудования",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Лефортово",
+      "district_raw": "Лефортово",
+      "address": "Город Москва, ул.2-я Синичкина, д. 9 к 1",
+      "location_id": "east:loc-036",
+      "coords": [
+        55.762673,
+        37.713106
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 20,
+      "norm_id": "norm-4",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_additional_order",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_building",
+          "location_id": "east:loc-036"
+        }
+      },
+      "required_equipment": {
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "east:33527",
+      "original_id": "33527",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 38,
+      "input_order": 36,
+      "type": "Дозаказ",
+      "subtype": "Дозаказ оборудования",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Нижегородский",
+      "district_raw": "Нижегородский",
+      "address": "Москва, проезд Орехово-Зуевский, д. 18/8",
+      "location_id": "east:loc-037",
+      "coords": [
+        55.7311522,
+        37.7534715
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 20,
+      "norm_id": "norm-4",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": "FMC",
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_additional_order",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-037"
+        }
+      },
+      "required_equipment": {
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "east:21571",
+      "original_id": "21571",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 39,
+      "input_order": 37,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Таганский",
+      "district_raw": "Таганский",
+      "address": "Город Москва, пер.Большой Рогожский, д. 10 к 2",
+      "location_id": "east:loc-038",
+      "coords": [
+        55.7420001,
+        37.6676447
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-038"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:47670",
+      "original_id": "47670",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 40,
+      "input_order": 38,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Басманный",
+      "district_raw": "Басманный",
+      "address": "Город Москва, ул.Машкова, д. 13 стр. 1",
+      "location_id": "east:loc-039",
+      "coords": [
+        55.764253,
+        37.6518889
+      ],
+      "window_start": "2026-08-17T20:00:00+03:00",
+      "window_end": "2026-08-17T22:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-039"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:17892",
+      "original_id": "17892",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 41,
+      "input_order": 39,
+      "type": "Локальная заявка",
+      "subtype": "Переключение на Гбит/с",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Текстильщики",
+      "district_raw": "Текстильщики",
+      "address": "Город Москва, ул.11-я Текстильщиков, д. 10",
+      "location_id": "east:loc-040",
+      "coords": [
+        55.70694,
+        37.743173
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_building",
+          "location_id": "east:loc-040"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:51115",
+      "original_id": "51115",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 42,
+      "input_order": 40,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Рязанский",
+      "district_raw": "Рязанский",
+      "address": "Город Москва, ул.Паперника, д. 18",
+      "location_id": "east:loc-041",
+      "coords": [
+        55.7213231,
+        37.7935117
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-041"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:76643",
+      "original_id": "76643",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 43,
+      "input_order": 41,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Таганский",
+      "district_raw": "Таганский",
+      "address": "Город Москва, ул.Большая Калитниковская, д. 38",
+      "location_id": "east:loc-042",
+      "coords": [
+        55.7361675,
+        37.6862063
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-042"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:43506",
+      "original_id": "43506",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 44,
+      "input_order": 42,
+      "type": "Локальная заявка",
+      "subtype": "Переключение на Гбит/с",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Выхино",
+      "district_raw": "Выхино",
+      "address": "Город Москва, б-р.Самаркандский Квартал 137а, д. к5",
+      "location_id": "east:loc-033",
+      "coords": [
+        55.7000662,
+        37.8193568
+      ],
+      "window_start": "2026-08-17T20:00:00+03:00",
+      "window_end": "2026-08-17T22:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-033"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:48174",
+      "original_id": "48174",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 45,
+      "input_order": 43,
+      "type": "Локальная заявка",
+      "subtype": "Мониторинг",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Кузьминки",
+      "district_raw": "Кузьминки",
+      "address": "Город Москва, ул.Маршала Чуйкова, д. 9 к 2",
+      "location_id": "east:loc-043",
+      "coords": [
+        55.6971444,
+        37.7620114
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-043"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:48227",
+      "original_id": "48227",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 46,
+      "input_order": 44,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Таганский",
+      "district_raw": "Таганский",
+      "address": "Город Москва, ул.Талалихина, д. 16",
+      "location_id": "east:loc-044",
+      "coords": [
+        55.7355002,
+        37.676817
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-044"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:60720",
+      "original_id": "60720",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 47,
+      "input_order": 45,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Текстильщики",
+      "district_raw": "Текстильщики",
+      "address": "Город Москва, б-р.Волжский, д. 50 к 2",
+      "location_id": "east:loc-045",
+      "coords": [
+        55.6965373,
+        37.7522297
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-045"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:48238",
+      "original_id": "48238",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 48,
+      "input_order": 46,
+      "type": "Локальная заявка",
+      "subtype": "Разрывы",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Текстильщики",
+      "district_raw": "Текстильщики",
+      "address": "Город Москва, ул.Артюхиной, д. 3",
+      "location_id": "east:loc-046",
+      "coords": [
+        55.7029289,
+        37.7378149
+      ],
+      "window_start": "2026-08-17T14:00:00+03:00",
+      "window_end": "2026-08-17T16:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-046"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:41912",
+      "original_id": "41912",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 49,
+      "input_order": 47,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Выхино",
+      "district_raw": "Выхино",
+      "address": "Город Москва, проезд.Ферганский, д. 7 к 5",
+      "location_id": "east:loc-047",
+      "coords": [
+        55.6940635,
+        37.8248567
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-047"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:4893",
+      "original_id": "4893",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 50,
+      "input_order": 48,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Басманный",
+      "district_raw": "Басманный",
+      "address": "Город Москва, ул.Земляной Вал, д. 24/30 стр. 1",
+      "location_id": "east:loc-048",
+      "coords": [
+        55.7586892,
+        37.6571501
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-048"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:68476",
+      "original_id": "68476",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 51,
+      "input_order": 49,
+      "type": "Локальная заявка",
+      "subtype": "Разрывы",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Нижегородский",
+      "district_raw": "Нижегородский",
+      "address": "Город Москва, ул.3-я Карачаровская, д. 8 к 2",
+      "location_id": "east:loc-049",
+      "coords": [
+        55.7333702,
+        37.7471726
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-049"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:50219",
+      "original_id": "50219",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 52,
+      "input_order": 50,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Нижегородский",
+      "district_raw": "Нижегородский",
+      "address": "Город Москва, ул.Чистопольская, д. 2 к 2",
+      "location_id": "east:loc-050",
+      "coords": [
+        55.7306095,
+        37.758355
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-050"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:76678",
+      "original_id": "76678",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 53,
+      "input_order": 51,
+      "type": "Локальная заявка",
+      "subtype": "Работа с кабелем",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Лефортово",
+      "district_raw": "Лефортово",
+      "address": "Город Москва, ул.Боровая, д. 12",
+      "location_id": "east:loc-051",
+      "coords": [
+        55.770292,
+        37.7147651
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-051"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:47330",
+      "original_id": "47330",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 54,
+      "input_order": 52,
+      "type": "Локальная заявка",
+      "subtype": "Роутер. Замена техническим специалистом",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Лефортово",
+      "district_raw": "Лефортово",
+      "address": "Город Москва, ул.Красноказарменная, д. 9Б стр. 1",
+      "location_id": "east:loc-052",
+      "coords": [
+        55.758735,
+        37.699531
+      ],
+      "window_start": "2026-08-17T14:00:00+03:00",
+      "window_end": "2026-08-17T16:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "replacement_label_synthetic_quantity",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_building",
+          "location_id": "east:loc-052"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "east:26645",
+      "original_id": "26645",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 55,
+      "input_order": 53,
+      "type": "Локальная заявка",
+      "subtype": "TVE/ENT. Другие ошибки",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Лефортово",
+      "district_raw": "Лефортово",
+      "address": "Город Москва, ул.Сторожевая, д. 31",
+      "location_id": "east:loc-053",
+      "coords": [
+        55.7647986,
+        37.7168314
+      ],
+      "window_start": "2026-08-17T16:00:00+03:00",
+      "window_end": "2026-08-17T18:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-053"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:24076",
+      "original_id": "24076",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 56,
+      "input_order": 54,
+      "type": "Локальная заявка",
+      "subtype": "Роутер. Замена техническим специалистом",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Таганский",
+      "district_raw": "Таганский",
+      "address": "Город Москва, ул.Новорогожская, д. 10",
+      "location_id": "east:loc-054",
+      "coords": [
+        55.740048,
+        37.6832489
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "replacement_label_synthetic_quantity",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-054"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "east:30243",
+      "original_id": "30243",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 57,
+      "input_order": 55,
+      "type": "Локальная заявка",
+      "subtype": "TVE/ENT. Замена приставки техником",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Таганский",
+      "district_raw": "Таганский",
+      "address": "Город Москва, ул.Нижегородская, д. 25",
+      "location_id": "east:loc-055",
+      "coords": [
+        55.7374783,
+        37.6944616
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "replacement_label_synthetic_quantity",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-055"
+        }
+      },
+      "required_equipment": {
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "east:32807",
+      "original_id": "32807",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 58,
+      "input_order": 56,
+      "type": "Локальная заявка",
+      "subtype": "Работа с кабелем",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Кузьминки",
+      "district_raw": "Кузьминки",
+      "address": "Город Москва, ул.Окская, д. 6 к 1",
+      "location_id": "east:loc-056",
+      "coords": [
+        55.710308,
+        37.7514109
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-056"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:73572",
+      "original_id": "73572",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 59,
+      "input_order": 57,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Кузьминки",
+      "district_raw": "Кузьминки",
+      "address": "Город Москва, пр-кт.Волгоградский, д. 97 к 1",
+      "location_id": "east:loc-057",
+      "coords": [
+        55.7078213,
+        37.7518635
+      ],
+      "window_start": "2026-08-17T14:00:00+03:00",
+      "window_end": "2026-08-17T16:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-057"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:41962",
+      "original_id": "41962",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 60,
+      "input_order": 58,
+      "type": "Глобальная проблема",
+      "subtype": "Информация",
+      "skill": "emergency",
+      "priority": "Обычная",
+      "district": "Выхино",
+      "district_raw": "Выхино",
+      "address": "г.Город Москва, б-р.Самаркандский, д. 32к1",
+      "location_id": "east:loc-058",
+      "coords": [
+        55.6977027,
+        37.8126854
+      ],
+      "window_start": "2026-08-17T16:00:00+03:00",
+      "window_end": "2026-08-17T18:00:00+03:00",
+      "duration_min": 80,
+      "norm_id": "norm-3",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-058"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:97886",
+      "original_id": "97886",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 61,
+      "input_order": 59,
+      "type": "Глобальная проблема",
+      "subtype": "Информация",
+      "skill": "emergency",
+      "priority": "Обычная",
+      "district": "Выхино",
+      "district_raw": "Выхино",
+      "address": "г.Город Москва, б-р.Самаркандский, д. 10к2",
+      "location_id": "east:loc-059",
+      "coords": [
+        55.7064866,
+        37.8263129
+      ],
+      "window_start": "2026-08-17T16:00:00+03:00",
+      "window_end": "2026-08-17T18:00:00+03:00",
+      "duration_min": 80,
+      "norm_id": "norm-3",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-059"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:17349",
+      "original_id": "17349",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 62,
+      "input_order": 60,
+      "type": "Глобальная проблема",
+      "subtype": "Информация",
+      "skill": "emergency",
+      "priority": "Обычная",
+      "district": "Таганский",
+      "district_raw": "Таганский",
+      "address": "г.Город Москва, ул.Новорогожская, д. 20",
+      "location_id": "east:loc-060",
+      "coords": [
+        55.73903,
+        37.6880379
+      ],
+      "window_start": "2026-08-17T14:00:00+03:00",
+      "window_end": "2026-08-17T16:00:00+03:00",
+      "duration_min": 80,
+      "norm_id": "norm-3",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_address_multiple_buildings",
+          "location_id": "east:loc-060"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:54964",
+      "original_id": "54964",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 63,
+      "input_order": 61,
+      "type": "Глобальная проблема",
+      "subtype": "Информация",
+      "skill": "emergency",
+      "priority": "Обычная",
+      "district": "Выхино",
+      "district_raw": "Выхино",
+      "address": "г.Город Москва, ул.Ташкентская, д. 16к2",
+      "location_id": "east:loc-061",
+      "coords": [
+        55.703974,
+        37.8130634
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 80,
+      "norm_id": "norm-3",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-061"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:21367",
+      "original_id": "21367",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 64,
+      "input_order": 62,
+      "type": "Глобальная проблема",
+      "subtype": "Авария",
+      "skill": "emergency",
+      "priority": "Обычная",
+      "district": "Текстильщики",
+      "district_raw": "Текстильщики",
+      "address": "г.Город Москва, ул.Саратовская, д. 16",
+      "location_id": "east:loc-062",
+      "coords": [
+        55.7150007,
+        37.7401969
+      ],
+      "window_start": "2026-08-17T20:00:00+03:00",
+      "window_end": "2026-08-17T22:00:00+03:00",
+      "duration_min": 80,
+      "norm_id": "norm-3",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-062"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:24980",
+      "original_id": "24980",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 65,
+      "input_order": 63,
+      "type": "Глобальная проблема",
+      "subtype": "Авария",
+      "skill": "emergency",
+      "priority": "Обычная",
+      "district": "Басманный",
+      "district_raw": "Басманный",
+      "address": "г.Город Москва, наб.Семеновская, д. 3/1к2",
+      "location_id": "east:loc-063",
+      "coords": [
+        55.7785658,
+        37.7082611
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 80,
+      "norm_id": "norm-3",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-063"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:15648",
+      "original_id": "15648",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 66,
+      "input_order": 64,
+      "type": "Глобальная проблема",
+      "subtype": "Информация",
+      "skill": "emergency",
+      "priority": "Обычная",
+      "district": "Басманный",
+      "district_raw": "Басманный",
+      "address": "г.Город Москва, наб.Семеновская, д. 2/1",
+      "location_id": "east:loc-064",
+      "coords": [
+        55.7768615,
+        37.7046831
+      ],
+      "window_start": "2026-08-17T16:00:00+03:00",
+      "window_end": "2026-08-17T18:00:00+03:00",
+      "duration_min": 80,
+      "norm_id": "norm-3",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-064"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "east:57299",
+      "original_id": "57299",
+      "source": "east_synthetic",
+      "source_file": "Восток Синтетические данные.csv",
+      "source_row": 67,
+      "input_order": 65,
+      "type": "Глобальная проблема",
+      "subtype": "Авария",
+      "skill": "emergency",
+      "priority": "Обычная",
+      "district": "Кузьминки",
+      "district_raw": "Кузьминки",
+      "address": "г.Город Москва, пр-кт.Волгоградский, д. 128к1",
+      "location_id": "east:loc-065",
+      "coords": [
+        55.7023381,
+        37.7828754
+      ],
+      "window_start": "2026-08-17T20:00:00+03:00",
+      "window_end": "2026-08-17T22:00:00+03:00",
+      "duration_min": 80,
+      "norm_id": "norm-3",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "east:loc-065"
+        }
+      },
+      "required_equipment": {}
     }
   ]
 }

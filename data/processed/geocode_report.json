@@ -1,0 +1,13 @@
+{
+  "attribution": "© OpenStreetMap contributors, ODbL 1.0; https://www.openstreetmap.org/copyright",
+  "counts": {
+    "matched_external_corrected": 1,
+    "matched_building": 180,
+    "matched_external_building": 11,
+    "matched_address_multiple_buildings": 4,
+    "matched_external_interpreted": 1,
+    "approximate_nearby_building": 1
+  },
+  "total": 198,
+  "unresolved": []
+}

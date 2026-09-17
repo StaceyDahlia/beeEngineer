@@ -1,0 +1,107 @@
+{
+  "scenarios": [
+    {
+      "scenario_id": "east",
+      "engineers_count": 12,
+      "vehicles": {
+        "ОТ": 6,
+        "Пешеход": 2,
+        "Велосипед": 1,
+        "Автомобиль": 3
+      },
+      "skill_counts": {
+        "connect": 9,
+        "local": 9,
+        "emergency": 5
+      },
+      "number_of_skills_distribution": {
+        "2": 5,
+        "3": 3,
+        "1": 4
+      },
+      "shifts": {
+        "early": 6,
+        "late": 6
+      },
+      "jobs_without_eligible_engineer_ignoring_travel": [],
+      "total_service_minutes": 3560,
+      "total_shift_minutes_without_breaks": 6480,
+      "scope": "Necessary per-job skill/vehicle/window checks only; ignores travel and competition between jobs.",
+      "solver_ready": false,
+      "pending": [
+        "office/job coordinates",
+        "travel matrix",
+        "joint feasibility"
+      ]
+    },
+    {
+      "scenario_id": "southeast",
+      "engineers_count": 12,
+      "vehicles": {
+        "Автомобиль": 3,
+        "Пешеход": 2,
+        "ОТ": 6,
+        "Велосипед": 1
+      },
+      "skill_counts": {
+        "connect": 9,
+        "local": 9,
+        "emergency": 5
+      },
+      "number_of_skills_distribution": {
+        "1": 4,
+        "2": 5,
+        "3": 3
+      },
+      "shifts": {
+        "late": 6,
+        "early": 6
+      },
+      "jobs_without_eligible_engineer_ignoring_travel": [],
+      "total_service_minutes": 4490,
+      "total_shift_minutes_without_breaks": 6480,
+      "scope": "Necessary per-job skill/vehicle/window checks only; ignores travel and competition between jobs.",
+      "solver_ready": false,
+      "pending": [
+        "office/job coordinates",
+        "travel matrix",
+        "joint feasibility"
+      ]
+    },
+    {
+      "scenario_id": "southcenter",
+      "engineers_count": 11,
+      "vehicles": {
+        "ОТ": 5,
+        "Пешеход": 2,
+        "Автомобиль": 3,
+        "Велосипед": 1
+      },
+      "skill_counts": {
+        "connect": 8,
+        "local": 8,
+        "emergency": 4
+      },
+      "number_of_skills_distribution": {
+        "1": 4,
+        "2": 5,
+        "3": 2
+      },
+      "shifts": {
+        "late": 5,
+        "early": 6
+      },
+      "jobs_without_eligible_engineer_ignoring_travel": [],
+      "total_service_minutes": 2830,
+      "total_shift_minutes_without_breaks": 5940,
+      "scope": "Necessary per-job skill/vehicle/window checks only; ignores travel and competition between jobs.",
+      "solver_ready": false,
+      "pending": [
+        "office/job coordinates",
+        "travel matrix",
+        "joint feasibility"
+      ]
+    }
+  ],
+  "config_sha256": "9651d3a7b31ba28e357f09c718c684b022cb40f6a657e253e28bfe2e9c1634db"
+}
