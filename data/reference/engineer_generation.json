@@ -1,0 +1,36 @@
+{
+  "version": "1.0",
+  "seed": 42,
+  "timezone": "Europe/Moscow",
+  "utc_offset": "+03:00",
+  "assumptions": [
+    "Skills, vehicles and shifts are synthetic, not reconstructed qualifications.",
+    "Observed roster size is retained; no extra workers are added.",
+    "Shifts are nine-hour availability windows without modelled breaks.",
+    "Vehicles are assigned independently of skills and historical assignments.",
+    "Individual eligibility does not prove joint route feasibility."
+  ],
+  "shifts": {
+    "early": {"start": "10:00", "end": "19:00"},
+    "late": {"start": "13:00", "end": "22:00"}
+  },
+  "profiles": [
+    {"skills": ["connect"], "shift": "early"},
+    {"skills": ["connect"], "shift": "late"},
+    {"skills": ["local"], "shift": "early"},
+    {"skills": ["local"], "shift": "late"},
+    {"skills": ["connect", "local"], "shift": "early"},
+    {"skills": ["connect", "local"], "shift": "late"},
+    {"skills": ["local", "emergency"], "shift": "early"},
+    {"skills": ["connect", "emergency"], "shift": "late"},
+    {"skills": ["connect", "local", "emergency"], "shift": "early"},
+    {"skills": ["connect", "local", "emergency"], "shift": "late"},
+    {"skills": ["connect", "local"], "shift": "early"},
+    {"skills": ["connect", "local", "emergency"], "shift": "late"}
+  ],
+  "scenario_sizes": {"east": 12, "southeast": 12, "southcenter": 11},
+  "vehicles_by_size": {
+    "12": {"ОТ": 6, "Автомобиль": 3, "Пешеход": 2, "Велосипед": 1},
+    "11": {"ОТ": 5, "Автомобиль": 3, "Пешеход": 2, "Велосипед": 1}
+  }
+}

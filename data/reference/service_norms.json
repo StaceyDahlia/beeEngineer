@@ -1,0 +1,68 @@
+{
+  "norms": {
+    "Подключение": {
+      "id": "norm-2",
+      "source_label": "Подключение клиентов Базовая",
+      "skill": "connect",
+      "travel_reference_min": 20,
+      "technical_min": 60,
+      "paperwork_min": 10,
+      "base_total_min": 90,
+      "service_min": 70,
+      "source": {
+        "file": "Нормативы.xlsx",
+        "sheet": "Лист1",
+        "range": "A2:E2"
+      },
+      "mapping_kind": "category_mapping"
+    },
+    "Глобальная проблема": {
+      "id": "norm-3",
+      "source_label": "Аварий на ТКД",
+      "skill": "emergency",
+      "travel_reference_min": 20,
+      "technical_min": 80,
+      "paperwork_min": 0,
+      "base_total_min": 100,
+      "service_min": 80,
+      "source": {
+        "file": "Нормативы.xlsx",
+        "sheet": "Лист1",
+        "range": "A3:E3"
+      },
+      "mapping_kind": "assumption"
+    },
+    "Дозаказ": {
+      "id": "norm-4",
+      "source_label": "Дозаказ оборудования",
+      "skill": "connect",
+      "travel_reference_min": 20,
+      "technical_min": 10,
+      "paperwork_min": 10,
+      "base_total_min": 40,
+      "service_min": 20,
+      "source": {
+        "file": "Нормативы.xlsx",
+        "sheet": "Лист1",
+        "range": "A4:E4"
+      },
+      "mapping_kind": "category_mapping"
+    },
+    "Локальная заявка": {
+      "id": "norm-5",
+      "source_label": "Локальная заявка/ремонт у клиента",
+      "skill": "local",
+      "travel_reference_min": 20,
+      "technical_min": 30,
+      "paperwork_min": 0,
+      "base_total_min": 50,
+      "service_min": 30,
+      "source": {
+        "file": "Нормативы.xlsx",
+        "sheet": "Лист1",
+        "range": "A5:E5"
+      },
+      "mapping_kind": "category_mapping"
+    }
+  }
+}

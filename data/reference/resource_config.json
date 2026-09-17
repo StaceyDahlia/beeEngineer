@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "seed": 42,
+  "kind": "synthetic_assumption",
+  "equipment": {
+    "router": {"name": "Роутер", "consumable": true, "unit": "шт"},
+    "tv_box": {"name": "ТВ-приставка", "consumable": true, "unit": "шт"}
+  },
+  "rules": {
+    "connect_router_probability": 0.7,
+    "connect_tv_box_probability": 0.25,
+    "additional_order_items": ["router", "tv_box"],
+    "recognize_explicit_replacement_subtypes": true
+  },
+  "stock": {"office_reserve_fraction": 0.2, "minimum_office_reserve_per_item": 2},
+  "assumptions": [
+    "Equipment requirements are synthetic; replacement labels only provide a category hint.",
+    "Devices are consumed on completed installation, not merely on planning or arrival.",
+    "Morning issue is fixed before optimization; transfers and office replenishment during routes are disabled.",
+    "Office opening stock equals morning issue plus reserve; reserve cannot be used remotely.",
+    "Inventory allocation is based on skills, not on control assignments or computed routes."
+  ]
+}

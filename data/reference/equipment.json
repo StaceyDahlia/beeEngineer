@@ -1,0 +1,14 @@
+{
+  "equipment": {
+    "router": {
+      "name": "Роутер",
+      "consumable": true,
+      "unit": "шт"
+    },
+    "tv_box": {
+      "name": "ТВ-приставка",
+      "consumable": true,
+      "unit": "шт"
+    }
+  }
+}

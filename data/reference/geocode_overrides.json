@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "description": "Ручная проверка адресов, которые Nominatim не сопоставил с конкретным зданием. Координаты имеют порядок [широта, долгота].",
+  "overrides": {
+    "east:office": {"coords": [55.702293, 37.77392], "status": "matched_external_corrected", "matched_address": "Москва, улица Юных Ленинцев, 83 к4", "source": "2GIS", "note": "В исходнике '83с 4'; по реестрам и карте адрес интерпретирован как корпус 4."},
+    "east:loc-036": {"coords": [55.762673, 37.713106], "status": "matched_external_building", "matched_address": "Москва, 2-я Синичкина улица, 9 к1", "source": "2GIS"},
+    "east:loc-040": {"coords": [55.70694, 37.743173], "status": "matched_external_building", "matched_address": "Москва, 11-я улица Текстильщиков, 10", "source": "2GIS"},
+    "east:loc-052": {"coords": [55.758735, 37.699531], "status": "matched_external_building", "matched_address": "Москва, Красноказарменная улица, вл9Б ст1", "source": "2GIS"},
+    "southcenter:loc-003": {"coords": [55.7193551268, 37.6370701389], "status": "matched_external_building", "matched_address": "Москва, Дубининская улица, 59 к2 ст1", "source": "mos.ru open data", "note": "В исходнике строение не указано; координаты корпуса 2, строения 1."},
+    "southeast:office": {"coords": [55.602278, 37.665589], "status": "matched_external_interpreted", "matched_address": "Москва, Бирюлёвская улица, 1 к1", "source": "2GIS", "note": "В исходнике '1с1'; картографический источник находит '1 к1'. Требуется подтверждение владельцем данных."},
+    "southeast:loc-001": {"coords": [55.440674, 37.770155], "status": "matched_external_building", "matched_address": "Домодедово, 1-й Советский проезд, 1а", "source": "2GIS"},
+    "southeast:loc-025": {"coords": [54.844548, 38.239748], "status": "matched_external_building", "matched_address": "Кашира, улица 8 Марта, 22", "source": "2GIS"},
+    "southeast:loc-037": {"coords": [55.451588, 37.739521], "status": "matched_external_building", "matched_address": "Домодедово, улица Гагарина, 55/2", "source": "2GIS"},
+    "southeast:loc-065": {"coords": [55.41209, 37.839621], "status": "matched_external_building", "matched_address": "Домодедово, мкр. Авиационный, улица Жуковского, 14/18", "source": "2GIS", "note": "В исходнике указан пгт. Востряково-1; актуальные справочники относят дом к микрорайону Авиационный."},
+    "southeast:loc-067": {"coords": [54.840976, 38.239527], "status": "matched_external_building", "matched_address": "Кашира, улица Кржижановского, 5 к1", "source": "2GIS"},
+    "southeast:loc-069": {"coords": [54.840831, 38.242986], "status": "matched_external_building", "matched_address": "Кашира, улица Кржижановского, 5 к3", "source": "2GIS"},
+    "southeast:loc-070": {"coords": [54.840664, 38.242023], "status": "matched_external_building", "matched_address": "Кашира, улица Кржижановского, 5 к2", "source": "2GIS"},
+    "southeast:loc-074": {"coords": [55.58642, 37.664394], "status": "approximate_nearby_building", "matched_address": "Москва, Бирюлёвская улица, 44/6", "source": "2GIS", "note": "Дом 44 без дроби в картографическом источнике не найден; использован ближайший дом 44/6. Требуется подтверждение владельцем данных."}
+  }
+}
