@@ -1,0 +1,25 @@
+{
+  "scenario_id": "east",
+  "equipment_demand": {
+    "router": 21,
+    "tv_box": 12
+  },
+  "jobs_with_equipment": 30,
+  "jobs_without_initial_candidate_ignoring_travel": [],
+  "office_stock_balanced": true,
+  "joint_route_feasibility": "not_checked",
+  "note": "Stock sufficiency in total and per-job candidates do not guarantee a feasible joint plan.",
+  "geocoding": {
+    "scenario_id": "east",
+    "locations": {
+      "matched_external_corrected": 1,
+      "matched_building": 61,
+      "matched_external_building": 3,
+      "matched_address_multiple_buildings": 1
+    },
+    "jobs_with_coords": 66,
+    "jobs_total": 66,
+    "office_resolved": true,
+    "locations_requiring_source_confirmation": 0
+  }
+}

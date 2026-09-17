@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0",
+  "scenario_id": "east",
+  "kind": "synthetic_demo_events",
+  "events": [
+    {
+      "type": "urgent_job",
+      "time": "2026-08-17T14:30:00+03:00",
+      "payload": {
+        "id": "east:urgent-demo-001",
+        "original_id": null,
+        "source": "synthetic_event_demo",
+        "source_file": "Восток Синтетические данные.csv",
+        "source_row": 2,
+        "input_order": 0,
+        "type": "Подключение",
+        "subtype": "Конвергенция абонента",
+        "skill": "connect",
+        "priority": "Срочная",
+        "district": "Кузьминки",
+        "district_raw": "Кузьминки",
+        "address": "Город Москва, пр-кт.Волгоградский, д. 128 к 5",
+        "location_id": "east:loc-001",
+        "coords": [
+          55.700846,
+          37.7822191
+        ],
+        "window_start": "2026-08-17T20:00:00+03:00",
+        "window_end": "2026-08-17T22:00:00+03:00",
+        "duration_min": 70,
+        "norm_id": "norm-2",
+        "required_vehicle": null,
+        "status": "planned",
+        "connection_type": "FMC",
+        "gigabit": false,
+        "provenance": {
+          "duration_min": "norm_technical_plus_paperwork",
+          "priority": "default_no_source_priority",
+          "required_vehicle": "not_provided",
+          "input_order": "csv_order_not_observed_arrival_time",
+          "required_equipment": {
+            "kind": "synthetic",
+            "rule": "synthetic_connection_options",
+            "seed": 42,
+            "version": "1.0"
+          },
+          "coords": {
+            "kind": "external",
+            "provider": "OpenStreetMap / Nominatim",
+            "status": "matched_building",
+            "location_id": "east:loc-001"
+          },
+          "event": {
+            "kind": "synthetic",
+            "purpose": "replanning_demo",
+            "version": "1.0"
+          }
+        },
+        "required_equipment": {
+          "router": 1
+        },
+        "assigned_engineer_id": null,
+        "explanation": "Демонстрационная срочная заявка для сценария перепланирования"
+      }
+    },
+    {
+      "type": "cancel_job",
+      "time": "2026-08-17T15:00:00+03:00",
+      "payload": {
+        "job_id": "east:86160"
+      }
+    },
+    {
+      "type": "engineer_unavailable",
+      "time": "2026-08-17T15:10:00+03:00",
+      "payload": {
+        "engineer_id": "east:eng-001"
+      }
+    }
+  ]
+}

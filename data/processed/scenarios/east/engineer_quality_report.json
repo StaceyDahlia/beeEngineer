@@ -1,0 +1,832 @@
+{
+  "scenario_id": "east",
+  "engineers_count": 12,
+  "vehicles": {
+    "ОТ": 6,
+    "Пешеход": 2,
+    "Велосипед": 1,
+    "Автомобиль": 3
+  },
+  "skill_counts": {
+    "connect": 9,
+    "local": 9,
+    "emergency": 5
+  },
+  "number_of_skills_distribution": {
+    "2": 5,
+    "3": 3,
+    "1": 4
+  },
+  "shifts": {
+    "early": 6,
+    "late": 6
+  },
+  "jobs_without_eligible_engineer_ignoring_travel": [],
+  "total_service_minutes": 3560,
+  "total_shift_minutes_without_breaks": 6480,
+  "eligibility": [
+    {
+      "job_id": "east:74198",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-009",
+        "east:eng-010"
+      ]
+    },
+    {
+      "job_id": "east:86160",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-009",
+        "east:eng-010"
+      ]
+    },
+    {
+      "job_id": "east:50104",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-009",
+        "east:eng-010"
+      ]
+    },
+    {
+      "job_id": "east:46393",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-009",
+        "east:eng-010"
+      ]
+    },
+    {
+      "job_id": "east:10135",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-009",
+        "east:eng-010"
+      ]
+    },
+    {
+      "job_id": "east:18754",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-009",
+        "east:eng-010"
+      ]
+    },
+    {
+      "job_id": "east:84627",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-009",
+        "east:eng-010"
+      ]
+    },
+    {
+      "job_id": "east:61540",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-002",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-008",
+        "east:eng-009",
+        "east:eng-010",
+        "east:eng-011",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:74949",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-002",
+        "east:eng-008",
+        "east:eng-011",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:41077",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-002",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-008",
+        "east:eng-009",
+        "east:eng-010",
+        "east:eng-011",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:87693",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-002",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-008",
+        "east:eng-009",
+        "east:eng-010",
+        "east:eng-011",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:93086",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-002",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-008",
+        "east:eng-009",
+        "east:eng-010",
+        "east:eng-011",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:57866",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-002",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-008",
+        "east:eng-009",
+        "east:eng-010",
+        "east:eng-011",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:35675",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-002",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-008",
+        "east:eng-009",
+        "east:eng-010",
+        "east:eng-011",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:82388",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-002",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-008",
+        "east:eng-009",
+        "east:eng-010",
+        "east:eng-011",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:23380",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-002",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-008",
+        "east:eng-009",
+        "east:eng-010",
+        "east:eng-011",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:37272",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-002",
+        "east:eng-008",
+        "east:eng-011",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:71388",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-002",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-008",
+        "east:eng-009",
+        "east:eng-010",
+        "east:eng-011",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:34366",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-002",
+        "east:eng-008",
+        "east:eng-011",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:67554",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-002",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-008",
+        "east:eng-009",
+        "east:eng-010",
+        "east:eng-011",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:94409",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-002",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-008",
+        "east:eng-009",
+        "east:eng-010",
+        "east:eng-011",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:10245",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-002",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-008",
+        "east:eng-009",
+        "east:eng-010",
+        "east:eng-011",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:52405",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-002",
+        "east:eng-008",
+        "east:eng-011",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:30769",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-002",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-008",
+        "east:eng-009",
+        "east:eng-010",
+        "east:eng-011",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:98182",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-002",
+        "east:eng-008",
+        "east:eng-011",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:76082",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-002",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-008",
+        "east:eng-009",
+        "east:eng-010",
+        "east:eng-011",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:29890",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-002",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-008",
+        "east:eng-009",
+        "east:eng-010",
+        "east:eng-011",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:77563",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-002",
+        "east:eng-008",
+        "east:eng-011",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:53587",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-002",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-008",
+        "east:eng-009",
+        "east:eng-010",
+        "east:eng-011",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:82808",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-002",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-008",
+        "east:eng-009",
+        "east:eng-010",
+        "east:eng-011",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:7939",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-002",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-008",
+        "east:eng-009",
+        "east:eng-010",
+        "east:eng-011",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:92031",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-002",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-008",
+        "east:eng-009",
+        "east:eng-010",
+        "east:eng-011",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:31260",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-009",
+        "east:eng-010"
+      ]
+    },
+    {
+      "job_id": "east:69967",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-002",
+        "east:eng-008",
+        "east:eng-011",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:22634",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-002",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-008",
+        "east:eng-009",
+        "east:eng-010",
+        "east:eng-011",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:98815",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-002",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-008",
+        "east:eng-009",
+        "east:eng-010",
+        "east:eng-011",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:33527",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-002",
+        "east:eng-008",
+        "east:eng-011",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:21571",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-001",
+        "east:eng-002",
+        "east:eng-003",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-006",
+        "east:eng-008",
+        "east:eng-010",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:47670",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-006",
+        "east:eng-010"
+      ]
+    },
+    {
+      "job_id": "east:17892",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-001",
+        "east:eng-002",
+        "east:eng-003",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-006",
+        "east:eng-008",
+        "east:eng-010",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:51115",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-001",
+        "east:eng-002",
+        "east:eng-003",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-006",
+        "east:eng-008",
+        "east:eng-010",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:76643",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-001",
+        "east:eng-002",
+        "east:eng-003",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-006",
+        "east:eng-008",
+        "east:eng-010",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:43506",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-006",
+        "east:eng-010"
+      ]
+    },
+    {
+      "job_id": "east:48174",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-001",
+        "east:eng-002",
+        "east:eng-003",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-006",
+        "east:eng-008",
+        "east:eng-010",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:48227",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-001",
+        "east:eng-002",
+        "east:eng-003",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-006",
+        "east:eng-008",
+        "east:eng-010",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:60720",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-001",
+        "east:eng-002",
+        "east:eng-003",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-006",
+        "east:eng-008",
+        "east:eng-010",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:48238",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-001",
+        "east:eng-002",
+        "east:eng-003",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-006",
+        "east:eng-008",
+        "east:eng-010",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:41912",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-001",
+        "east:eng-002",
+        "east:eng-003",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-006",
+        "east:eng-008",
+        "east:eng-010",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:4893",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-001",
+        "east:eng-002",
+        "east:eng-003",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-006",
+        "east:eng-008",
+        "east:eng-010",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:68476",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-001",
+        "east:eng-002",
+        "east:eng-003",
+        "east:eng-008",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:50219",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-001",
+        "east:eng-002",
+        "east:eng-003",
+        "east:eng-008",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:76678",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-001",
+        "east:eng-002",
+        "east:eng-003",
+        "east:eng-008",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:47330",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-001",
+        "east:eng-002",
+        "east:eng-003",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-006",
+        "east:eng-008",
+        "east:eng-010",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:26645",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-001",
+        "east:eng-002",
+        "east:eng-003",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-006",
+        "east:eng-008",
+        "east:eng-010",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:24076",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-001",
+        "east:eng-002",
+        "east:eng-003",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-006",
+        "east:eng-008",
+        "east:eng-010",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:30243",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-001",
+        "east:eng-002",
+        "east:eng-003",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-006",
+        "east:eng-008",
+        "east:eng-010",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:32807",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-001",
+        "east:eng-002",
+        "east:eng-003",
+        "east:eng-008",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:73572",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-001",
+        "east:eng-002",
+        "east:eng-003",
+        "east:eng-004",
+        "east:eng-005",
+        "east:eng-006",
+        "east:eng-008",
+        "east:eng-010",
+        "east:eng-012"
+      ]
+    },
+    {
+      "job_id": "east:41962",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-001",
+        "east:eng-002",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-010"
+      ]
+    },
+    {
+      "job_id": "east:97886",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-001",
+        "east:eng-002",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-010"
+      ]
+    },
+    {
+      "job_id": "east:17349",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-001",
+        "east:eng-002",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-010"
+      ]
+    },
+    {
+      "job_id": "east:54964",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-001",
+        "east:eng-002"
+      ]
+    },
+    {
+      "job_id": "east:21367",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-010"
+      ]
+    },
+    {
+      "job_id": "east:24980",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-001",
+        "east:eng-002"
+      ]
+    },
+    {
+      "job_id": "east:15648",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-001",
+        "east:eng-002",
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-010"
+      ]
+    },
+    {
+      "job_id": "east:57299",
+      "eligible_engineer_ids_ignoring_travel": [
+        "east:eng-005",
+        "east:eng-007",
+        "east:eng-010"
+      ]
+    }
+  ],
+  "scope": "Necessary per-job skill/vehicle/window checks only; ignores travel and competition between jobs.",
+  "solver_ready": false,
+  "pending": [
+    "travel matrix",
+    "joint feasibility"
+  ],
+  "geocoding": {
+    "scenario_id": "east",
+    "locations": {
+      "matched_external_corrected": 1,
+      "matched_building": 61,
+      "matched_external_building": 3,
+      "matched_address_multiple_buildings": 1
+    },
+    "jobs_with_coords": 66,
+    "jobs_total": 66,
+    "office_resolved": true,
+    "locations_requiring_source_confirmation": 0
+  }
+}

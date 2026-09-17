@@ -1,0 +1,111 @@
+{
+  "scenario_id": "east",
+  "kind": "synthetic_assumption",
+  "office_opening_stock": {
+    "router": 26,
+    "tv_box": 15
+  },
+  "morning_issue_total": {
+    "router": 21,
+    "tv_box": 12
+  },
+  "office_after_issue": {
+    "router": 5,
+    "tv_box": 3
+  },
+  "issues": [
+    {
+      "engineer_id": "east:eng-001",
+      "items": {
+        "router": 1,
+        "tv_box": 1
+      }
+    },
+    {
+      "engineer_id": "east:eng-002",
+      "items": {
+        "router": 2,
+        "tv_box": 1
+      }
+    },
+    {
+      "engineer_id": "east:eng-003",
+      "items": {
+        "router": 2,
+        "tv_box": 1
+      }
+    },
+    {
+      "engineer_id": "east:eng-004",
+      "items": {
+        "router": 2,
+        "tv_box": 1
+      }
+    },
+    {
+      "engineer_id": "east:eng-005",
+      "items": {
+        "router": 2,
+        "tv_box": 1
+      }
+    },
+    {
+      "engineer_id": "east:eng-006",
+      "items": {
+        "router": 1,
+        "tv_box": 1
+      }
+    },
+    {
+      "engineer_id": "east:eng-007",
+      "items": {
+        "router": 2,
+        "tv_box": 1
+      }
+    },
+    {
+      "engineer_id": "east:eng-008",
+      "items": {
+        "router": 2,
+        "tv_box": 1
+      }
+    },
+    {
+      "engineer_id": "east:eng-009",
+      "items": {
+        "router": 2,
+        "tv_box": 1
+      }
+    },
+    {
+      "engineer_id": "east:eng-010",
+      "items": {
+        "router": 1,
+        "tv_box": 1
+      }
+    },
+    {
+      "engineer_id": "east:eng-011",
+      "items": {
+        "router": 2,
+        "tv_box": 1
+      }
+    },
+    {
+      "engineer_id": "east:eng-012",
+      "items": {
+        "router": 2,
+        "tv_box": 1
+      }
+    }
+  ],
+  "replenishment_during_day_enabled": false,
+  "transfers_enabled": false,
+  "assumptions": [
+    "Equipment requirements are synthetic; replacement labels only provide a category hint.",
+    "Devices are consumed on completed installation, not merely on planning or arrival.",
+    "Morning issue is fixed before optimization; transfers and office replenishment during routes are disabled.",
+    "Office opening stock equals morning issue plus reserve; reserve cannot be used remotely.",
+    "Inventory allocation is based on skills, not on control assignments or computed routes."
+  ]
+}
