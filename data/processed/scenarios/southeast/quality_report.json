@@ -1,0 +1,37 @@
+{
+  "scenario_id": "southeast",
+  "jobs_count": 83,
+  "observed_engineers_count": 12,
+  "locations_count_including_office": 76,
+  "paired_rows_verified": 83,
+  "control_duplicate_ids_preserved": {
+    "305898293": 2
+  },
+  "reference_unassigned_count": 0,
+  "warnings": [
+    "Control statuses do not filter input jobs.",
+    "Global problem to emergency norm mapping is an assumption.",
+    "All initial priorities use a documented default; emergency policy is pending."
+  ],
+  "solver_ready": false,
+  "pending": [
+    "geocoding review",
+    "travel matrix",
+    "event scenario"
+  ],
+  "engineer_report": "engineer_quality_report.json",
+  "geocoding": {
+    "scenario_id": "southeast",
+    "locations": {
+      "matched_external_interpreted": 1,
+      "matched_external_building": 7,
+      "matched_building": 66,
+      "matched_address_multiple_buildings": 1,
+      "approximate_nearby_building": 1
+    },
+    "jobs_with_coords": 83,
+    "jobs_total": 83,
+    "office_resolved": true,
+    "locations_requiring_source_confirmation": 2
+  }
+}

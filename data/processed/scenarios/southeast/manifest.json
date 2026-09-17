@@ -1,0 +1,66 @@
+{
+  "schema_version": "0.1",
+  "scenario_id": "southeast",
+  "planning_date": "2026-08-17",
+  "timezone": "Europe/Moscow",
+  "stage": "geocoding_completed_with_review_flags",
+  "sources": [
+    {
+      "file": "Юго-восток Синтетические данные.csv",
+      "sha256": "c767a9e38f6d21568651cc4dbebe6acaf0a25f72303018a096fcf3c81fc8f331"
+    },
+    {
+      "file": "Юго-восток Контрольное распределение.csv",
+      "sha256": "a2272a6d88db5ee53e3bf51670e1101ddfd59a5e8b7560b932b36e3044e32caa"
+    },
+    {
+      "file": "Нормативы.xlsx",
+      "sha256": "b82b3f1062be039835086c0471fd0247e0bf2de42d8c3e5cf9a59f4cf8c8482b"
+    }
+  ],
+  "assumptions": [
+    "input_order substitutes unavailable arrival order",
+    "global problems use emergency service norm",
+    "initial priorities ordinary; urgent events added separately"
+  ],
+  "engineer_generation": {
+    "version": "1.0",
+    "seed": 42,
+    "config_sha256": "9651d3a7b31ba28e357f09c718c684b022cb40f6a657e253e28bfe2e9c1634db",
+    "assumptions": [
+      "Skills, vehicles and shifts are synthetic, not reconstructed qualifications.",
+      "Observed roster size is retained; no extra workers are added.",
+      "Shifts are nine-hour availability windows without modelled breaks.",
+      "Vehicles are assigned independently of skills and historical assignments.",
+      "Individual eligibility does not prove joint route feasibility."
+    ]
+  },
+  "resource_generation": {
+    "version": "1.0",
+    "seed": 42,
+    "config_sha256": "873861e57a488dfed26d7b41482d6705b07f73ab07f916ed700362798bf669cd"
+  },
+  "traffic_profiles": "../../../reference/traffic_profiles.json",
+  "geocoding": {
+    "providers": [
+      "Nominatim/OpenStreetMap",
+      "2GIS",
+      "mos.ru open data"
+    ],
+    "report": "../../geocode_report.json",
+    "coverage": {
+      "scenario_id": "southeast",
+      "locations": {
+        "matched_external_interpreted": 1,
+        "matched_external_building": 7,
+        "matched_building": 66,
+        "matched_address_multiple_buildings": 1,
+        "approximate_nearby_building": 1
+      },
+      "jobs_with_coords": 83,
+      "jobs_total": 83,
+      "office_resolved": true,
+      "locations_requiring_source_confirmation": 2
+    }
+  }
+}

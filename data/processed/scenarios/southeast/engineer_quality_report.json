@@ -1,0 +1,1054 @@
+{
+  "scenario_id": "southeast",
+  "engineers_count": 12,
+  "vehicles": {
+    "Автомобиль": 3,
+    "Пешеход": 2,
+    "ОТ": 6,
+    "Велосипед": 1
+  },
+  "skill_counts": {
+    "connect": 9,
+    "local": 9,
+    "emergency": 5
+  },
+  "number_of_skills_distribution": {
+    "1": 4,
+    "2": 5,
+    "3": 3
+  },
+  "shifts": {
+    "late": 6,
+    "early": 6
+  },
+  "jobs_without_eligible_engineer_ignoring_travel": [],
+  "total_service_minutes": 4490,
+  "total_shift_minutes_without_breaks": 6480,
+  "eligibility": [
+    {
+      "job_id": "southeast:67472",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-001",
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-004",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-010",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:84466",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-001",
+        "southeast:eng-003",
+        "southeast:eng-005",
+        "southeast:eng-007",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:14416",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-001",
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-004",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-010",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:68359",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-001",
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-004",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-010",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:66944",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-004",
+        "southeast:eng-006",
+        "southeast:eng-010"
+      ]
+    },
+    {
+      "job_id": "southeast:52041",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-001",
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-004",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-010",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:23807",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-004",
+        "southeast:eng-006",
+        "southeast:eng-010"
+      ]
+    },
+    {
+      "job_id": "southeast:60484",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-001",
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-004",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-010",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:63591",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-001",
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-004",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-010",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:53552",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-001",
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-004",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-010",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:58066",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-001",
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-004",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-010",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:2915",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-001",
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-004",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-010",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:3566",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-001",
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-004",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-010",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:68946",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-001",
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-004",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-010",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:55454",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-001",
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-004",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-010",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:35057",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-001",
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-004",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-010",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:75745",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-004",
+        "southeast:eng-006",
+        "southeast:eng-010"
+      ]
+    },
+    {
+      "job_id": "southeast:65717",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-004",
+        "southeast:eng-006",
+        "southeast:eng-010"
+      ]
+    },
+    {
+      "job_id": "southeast:44117",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-004",
+        "southeast:eng-006",
+        "southeast:eng-010"
+      ]
+    },
+    {
+      "job_id": "southeast:76173",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-001",
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-004",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-010",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:876",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-004",
+        "southeast:eng-006",
+        "southeast:eng-010"
+      ]
+    },
+    {
+      "job_id": "southeast:62011",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-004",
+        "southeast:eng-006",
+        "southeast:eng-010"
+      ]
+    },
+    {
+      "job_id": "southeast:57353",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-001",
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-004",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-010",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:2245",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-001",
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-004",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-010",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:14494",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-004",
+        "southeast:eng-006",
+        "southeast:eng-010"
+      ]
+    },
+    {
+      "job_id": "southeast:78920",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-001",
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-004",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-010",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:78876",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-004",
+        "southeast:eng-006",
+        "southeast:eng-010"
+      ]
+    },
+    {
+      "job_id": "southeast:23094",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-001",
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-004",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-010",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:79144",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-004",
+        "southeast:eng-006",
+        "southeast:eng-010"
+      ]
+    },
+    {
+      "job_id": "southeast:60141",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-001",
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-004",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-010",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:79450",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-001",
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-004",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-010",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:58129",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-004",
+        "southeast:eng-006",
+        "southeast:eng-010"
+      ]
+    },
+    {
+      "job_id": "southeast:93798",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-004",
+        "southeast:eng-006",
+        "southeast:eng-010"
+      ]
+    },
+    {
+      "job_id": "southeast:89696",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-001",
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-004",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-010",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:20362",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-001",
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-004",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-010",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:40698",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-001",
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-004",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-010",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:2427",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-001",
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-004",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-010",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:51603",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-001",
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-004",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-010",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:13404",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-001",
+        "southeast:eng-003",
+        "southeast:eng-005",
+        "southeast:eng-007",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:72476",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-001",
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-004",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-010",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:90989",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-008",
+        "southeast:eng-009",
+        "southeast:eng-010",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:7660",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-008",
+        "southeast:eng-009",
+        "southeast:eng-010",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:89067",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-008",
+        "southeast:eng-009",
+        "southeast:eng-010",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:65268",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-003",
+        "southeast:eng-005",
+        "southeast:eng-008",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:33880",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-003",
+        "southeast:eng-005",
+        "southeast:eng-008",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:37590",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-003",
+        "southeast:eng-005",
+        "southeast:eng-008",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:33507",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-008",
+        "southeast:eng-009",
+        "southeast:eng-010",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:88209",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-008",
+        "southeast:eng-009",
+        "southeast:eng-010",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:24482",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-003",
+        "southeast:eng-005",
+        "southeast:eng-008",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:40111",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-006",
+        "southeast:eng-009",
+        "southeast:eng-010",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:46199",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-008",
+        "southeast:eng-009",
+        "southeast:eng-010",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:75282",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-008",
+        "southeast:eng-009",
+        "southeast:eng-010",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:63577",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-006",
+        "southeast:eng-009",
+        "southeast:eng-010",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:7610",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-008",
+        "southeast:eng-009",
+        "southeast:eng-010",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:19216",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-008",
+        "southeast:eng-009",
+        "southeast:eng-010",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:11872",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-008",
+        "southeast:eng-009",
+        "southeast:eng-010",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:54422",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-008",
+        "southeast:eng-009",
+        "southeast:eng-010",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:4724",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-008",
+        "southeast:eng-009",
+        "southeast:eng-010",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:11899",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-006",
+        "southeast:eng-009",
+        "southeast:eng-010",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:60886",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-008",
+        "southeast:eng-009",
+        "southeast:eng-010",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:32066",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-008",
+        "southeast:eng-009",
+        "southeast:eng-010",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:63894",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-008",
+        "southeast:eng-009",
+        "southeast:eng-010",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:64168",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-008",
+        "southeast:eng-009",
+        "southeast:eng-010",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:40919",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-006",
+        "southeast:eng-009",
+        "southeast:eng-010",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:36961",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-008",
+        "southeast:eng-009",
+        "southeast:eng-010",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:12329",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-008",
+        "southeast:eng-009",
+        "southeast:eng-010",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:95692",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-006",
+        "southeast:eng-009",
+        "southeast:eng-010",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:13583",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-008",
+        "southeast:eng-009",
+        "southeast:eng-010",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:3151",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-008",
+        "southeast:eng-009",
+        "southeast:eng-010",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:45778",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-008",
+        "southeast:eng-009",
+        "southeast:eng-010",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:20055",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-002",
+        "southeast:eng-003",
+        "southeast:eng-005",
+        "southeast:eng-006",
+        "southeast:eng-008",
+        "southeast:eng-009",
+        "southeast:eng-010",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:7258",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-003",
+        "southeast:eng-007",
+        "southeast:eng-011"
+      ]
+    },
+    {
+      "job_id": "southeast:78673",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-003",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:98998",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-003",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:32589",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-003",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:51774",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-003",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:90915",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-003",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:45243",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-003",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:81698",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-003",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:97168",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-003",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:65034",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-003",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:1287",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-003",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    },
+    {
+      "job_id": "southeast:31495",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southeast:eng-003",
+        "southeast:eng-006",
+        "southeast:eng-007",
+        "southeast:eng-011",
+        "southeast:eng-012"
+      ]
+    }
+  ],
+  "scope": "Necessary per-job skill/vehicle/window checks only; ignores travel and competition between jobs.",
+  "solver_ready": false,
+  "pending": [
+    "geocoding review",
+    "travel matrix",
+    "joint feasibility"
+  ],
+  "geocoding": {
+    "scenario_id": "southeast",
+    "locations": {
+      "matched_external_interpreted": 1,
+      "matched_external_building": 7,
+      "matched_building": 66,
+      "matched_address_multiple_buildings": 1,
+      "approximate_nearby_building": 1
+    },
+    "jobs_with_coords": 83,
+    "jobs_total": 83,
+    "office_resolved": true,
+    "locations_requiring_source_confirmation": 2
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0",
+  "scenario_id": "southeast",
+  "kind": "synthetic_demo_events",
+  "events": [
+    {
+      "type": "urgent_job",
+      "time": "2026-08-17T14:30:00+03:00",
+      "payload": {
+        "id": "southeast:urgent-demo-001",
+        "original_id": null,
+        "source": "synthetic_event_demo",
+        "source_file": "Юго-восток Синтетические данные.csv",
+        "source_row": 2,
+        "input_order": 0,
+        "type": "Подключение",
+        "subtype": "Заказ подключения/Дозаказ оборудования",
+        "skill": "connect",
+        "priority": "Срочная",
+        "district": "Домодедово",
+        "district_raw": "Домодедово",
+        "address": "Домодедово, проезд.Советский 1-й, д. 1А",
+        "location_id": "southeast:loc-001",
+        "coords": [
+          55.440674,
+          37.770155
+        ],
+        "window_start": "2026-08-17T16:00:00+03:00",
+        "window_end": "2026-08-17T18:00:00+03:00",
+        "duration_min": 70,
+        "norm_id": "norm-2",
+        "required_vehicle": null,
+        "status": "planned",
+        "connection_type": null,
+        "gigabit": false,
+        "provenance": {
+          "duration_min": "norm_technical_plus_paperwork",
+          "priority": "default_no_source_priority",
+          "required_vehicle": "not_provided",
+          "input_order": "csv_order_not_observed_arrival_time",
+          "required_equipment": {
+            "kind": "synthetic",
+            "rule": "synthetic_connection_options",
+            "seed": 42,
+            "version": "1.0"
+          },
+          "coords": {
+            "kind": "external",
+            "provider": "OpenStreetMap / Nominatim",
+            "status": "matched_external_building",
+            "location_id": "southeast:loc-001"
+          },
+          "event": {
+            "kind": "synthetic",
+            "purpose": "replanning_demo",
+            "version": "1.0"
+          }
+        },
+        "required_equipment": {
+          "router": 1
+        },
+        "assigned_engineer_id": null,
+        "explanation": "Демонстрационная срочная заявка для сценария перепланирования"
+      }
+    },
+    {
+      "type": "cancel_job",
+      "time": "2026-08-17T15:00:00+03:00",
+      "payload": {
+        "job_id": "southeast:84466"
+      }
+    },
+    {
+      "type": "engineer_unavailable",
+      "time": "2026-08-17T15:10:00+03:00",
+      "payload": {
+        "engineer_id": "southeast:eng-001"
+      }
+    }
+  ]
+}

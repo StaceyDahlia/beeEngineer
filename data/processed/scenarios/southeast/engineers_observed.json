@@ -1,0 +1,392 @@
+{
+  "engineers": [
+    {
+      "id": "southeast:eng-001",
+      "name": "Бригада Паршин",
+      "scenario_id": "southeast",
+      "observed_job_types": [
+        "Глобальная проблема",
+        "Локальная заявка",
+        "Подключение"
+      ],
+      "skills": null,
+      "vehicle": null,
+      "shift_start": null,
+      "shift_end": null,
+      "start_location_id": "southeast:office",
+      "start_address": "г. Москва, ул Бирюлёвская, д 1с1",
+      "start_point": [
+        55.602278,
+        37.665589
+      ],
+      "record_stage": "observed_roster_not_solver_input",
+      "provenance": {
+        "name": "control_csv",
+        "skills": "missing",
+        "vehicle": "missing",
+        "shift": "missing",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_interpreted",
+          "location_id": "southeast:office"
+        }
+      }
+    },
+    {
+      "id": "southeast:eng-002",
+      "name": "Бригада Андреев",
+      "scenario_id": "southeast",
+      "observed_job_types": [
+        "Локальная заявка",
+        "Подключение"
+      ],
+      "skills": null,
+      "vehicle": null,
+      "shift_start": null,
+      "shift_end": null,
+      "start_location_id": "southeast:office",
+      "start_address": "г. Москва, ул Бирюлёвская, д 1с1",
+      "start_point": [
+        55.602278,
+        37.665589
+      ],
+      "record_stage": "observed_roster_not_solver_input",
+      "provenance": {
+        "name": "control_csv",
+        "skills": "missing",
+        "vehicle": "missing",
+        "shift": "missing",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_interpreted",
+          "location_id": "southeast:office"
+        }
+      }
+    },
+    {
+      "id": "southeast:eng-003",
+      "name": "Бригада Белоновский",
+      "scenario_id": "southeast",
+      "observed_job_types": [
+        "Локальная заявка",
+        "Подключение"
+      ],
+      "skills": null,
+      "vehicle": null,
+      "shift_start": null,
+      "shift_end": null,
+      "start_location_id": "southeast:office",
+      "start_address": "г. Москва, ул Бирюлёвская, д 1с1",
+      "start_point": [
+        55.602278,
+        37.665589
+      ],
+      "record_stage": "observed_roster_not_solver_input",
+      "provenance": {
+        "name": "control_csv",
+        "skills": "missing",
+        "vehicle": "missing",
+        "shift": "missing",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_interpreted",
+          "location_id": "southeast:office"
+        }
+      }
+    },
+    {
+      "id": "southeast:eng-004",
+      "name": "Бригада Рыбин",
+      "scenario_id": "southeast",
+      "observed_job_types": [
+        "Локальная заявка",
+        "Подключение"
+      ],
+      "skills": null,
+      "vehicle": null,
+      "shift_start": null,
+      "shift_end": null,
+      "start_location_id": "southeast:office",
+      "start_address": "г. Москва, ул Бирюлёвская, д 1с1",
+      "start_point": [
+        55.602278,
+        37.665589
+      ],
+      "record_stage": "observed_roster_not_solver_input",
+      "provenance": {
+        "name": "control_csv",
+        "skills": "missing",
+        "vehicle": "missing",
+        "shift": "missing",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_interpreted",
+          "location_id": "southeast:office"
+        }
+      }
+    },
+    {
+      "id": "southeast:eng-005",
+      "name": "Бригада Горбанев",
+      "scenario_id": "southeast",
+      "observed_job_types": [
+        "Глобальная проблема",
+        "Дозаказ",
+        "Локальная заявка",
+        "Подключение"
+      ],
+      "skills": null,
+      "vehicle": null,
+      "shift_start": null,
+      "shift_end": null,
+      "start_location_id": "southeast:office",
+      "start_address": "г. Москва, ул Бирюлёвская, д 1с1",
+      "start_point": [
+        55.602278,
+        37.665589
+      ],
+      "record_stage": "observed_roster_not_solver_input",
+      "provenance": {
+        "name": "control_csv",
+        "skills": "missing",
+        "vehicle": "missing",
+        "shift": "missing",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_interpreted",
+          "location_id": "southeast:office"
+        }
+      }
+    },
+    {
+      "id": "southeast:eng-006",
+      "name": "Бригада Бузань",
+      "scenario_id": "southeast",
+      "observed_job_types": [
+        "Локальная заявка",
+        "Подключение"
+      ],
+      "skills": null,
+      "vehicle": null,
+      "shift_start": null,
+      "shift_end": null,
+      "start_location_id": "southeast:office",
+      "start_address": "г. Москва, ул Бирюлёвская, д 1с1",
+      "start_point": [
+        55.602278,
+        37.665589
+      ],
+      "record_stage": "observed_roster_not_solver_input",
+      "provenance": {
+        "name": "control_csv",
+        "skills": "missing",
+        "vehicle": "missing",
+        "shift": "missing",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_interpreted",
+          "location_id": "southeast:office"
+        }
+      }
+    },
+    {
+      "id": "southeast:eng-007",
+      "name": "Бригада Козырь",
+      "scenario_id": "southeast",
+      "observed_job_types": [
+        "Глобальная проблема",
+        "Дозаказ",
+        "Локальная заявка",
+        "Подключение"
+      ],
+      "skills": null,
+      "vehicle": null,
+      "shift_start": null,
+      "shift_end": null,
+      "start_location_id": "southeast:office",
+      "start_address": "г. Москва, ул Бирюлёвская, д 1с1",
+      "start_point": [
+        55.602278,
+        37.665589
+      ],
+      "record_stage": "observed_roster_not_solver_input",
+      "provenance": {
+        "name": "control_csv",
+        "skills": "missing",
+        "vehicle": "missing",
+        "shift": "missing",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_interpreted",
+          "location_id": "southeast:office"
+        }
+      }
+    },
+    {
+      "id": "southeast:eng-008",
+      "name": "Бригада Царьков",
+      "scenario_id": "southeast",
+      "observed_job_types": [
+        "Подключение"
+      ],
+      "skills": null,
+      "vehicle": null,
+      "shift_start": null,
+      "shift_end": null,
+      "start_location_id": "southeast:office",
+      "start_address": "г. Москва, ул Бирюлёвская, д 1с1",
+      "start_point": [
+        55.602278,
+        37.665589
+      ],
+      "record_stage": "observed_roster_not_solver_input",
+      "provenance": {
+        "name": "control_csv",
+        "skills": "missing",
+        "vehicle": "missing",
+        "shift": "missing",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_interpreted",
+          "location_id": "southeast:office"
+        }
+      }
+    },
+    {
+      "id": "southeast:eng-009",
+      "name": "Бригада Саламатин",
+      "scenario_id": "southeast",
+      "observed_job_types": [
+        "Глобальная проблема",
+        "Локальная заявка",
+        "Подключение"
+      ],
+      "skills": null,
+      "vehicle": null,
+      "shift_start": null,
+      "shift_end": null,
+      "start_location_id": "southeast:office",
+      "start_address": "г. Москва, ул Бирюлёвская, д 1с1",
+      "start_point": [
+        55.602278,
+        37.665589
+      ],
+      "record_stage": "observed_roster_not_solver_input",
+      "provenance": {
+        "name": "control_csv",
+        "skills": "missing",
+        "vehicle": "missing",
+        "shift": "missing",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_interpreted",
+          "location_id": "southeast:office"
+        }
+      }
+    },
+    {
+      "id": "southeast:eng-010",
+      "name": "Бригада Макаров",
+      "scenario_id": "southeast",
+      "observed_job_types": [
+        "Дозаказ",
+        "Локальная заявка",
+        "Подключение"
+      ],
+      "skills": null,
+      "vehicle": null,
+      "shift_start": null,
+      "shift_end": null,
+      "start_location_id": "southeast:office",
+      "start_address": "г. Москва, ул Бирюлёвская, д 1с1",
+      "start_point": [
+        55.602278,
+        37.665589
+      ],
+      "record_stage": "observed_roster_not_solver_input",
+      "provenance": {
+        "name": "control_csv",
+        "skills": "missing",
+        "vehicle": "missing",
+        "shift": "missing",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_interpreted",
+          "location_id": "southeast:office"
+        }
+      }
+    },
+    {
+      "id": "southeast:eng-011",
+      "name": "Бригада Каушнян",
+      "scenario_id": "southeast",
+      "observed_job_types": [
+        "Подключение"
+      ],
+      "skills": null,
+      "vehicle": null,
+      "shift_start": null,
+      "shift_end": null,
+      "start_location_id": "southeast:office",
+      "start_address": "г. Москва, ул Бирюлёвская, д 1с1",
+      "start_point": [
+        55.602278,
+        37.665589
+      ],
+      "record_stage": "observed_roster_not_solver_input",
+      "provenance": {
+        "name": "control_csv",
+        "skills": "missing",
+        "vehicle": "missing",
+        "shift": "missing",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_interpreted",
+          "location_id": "southeast:office"
+        }
+      }
+    },
+    {
+      "id": "southeast:eng-012",
+      "name": "Бригада Демин",
+      "scenario_id": "southeast",
+      "observed_job_types": [
+        "Локальная заявка"
+      ],
+      "skills": null,
+      "vehicle": null,
+      "shift_start": null,
+      "shift_end": null,
+      "start_location_id": "southeast:office",
+      "start_address": "г. Москва, ул Бирюлёвская, д 1с1",
+      "start_point": [
+        55.602278,
+        37.665589
+      ],
+      "record_stage": "observed_roster_not_solver_input",
+      "provenance": {
+        "name": "control_csv",
+        "skills": "missing",
+        "vehicle": "missing",
+        "shift": "missing",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_interpreted",
+          "location_id": "southeast:office"
+        }
+      }
+    }
+  ]
+}
