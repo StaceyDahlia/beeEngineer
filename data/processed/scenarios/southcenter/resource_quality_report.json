@@ -1,0 +1,24 @@
+{
+  "scenario_id": "southcenter",
+  "equipment_demand": {
+    "router": 19,
+    "tv_box": 11
+  },
+  "jobs_with_equipment": 25,
+  "jobs_without_initial_candidate_ignoring_travel": [],
+  "office_stock_balanced": true,
+  "joint_route_feasibility": "not_checked",
+  "note": "Stock sufficiency in total and per-job candidates do not guarantee a feasible joint plan.",
+  "geocoding": {
+    "scenario_id": "southcenter",
+    "locations": {
+      "matched_building": 53,
+      "matched_external_building": 1,
+      "matched_address_multiple_buildings": 2
+    },
+    "jobs_with_coords": 56,
+    "jobs_total": 56,
+    "office_resolved": true,
+    "locations_requiring_source_confirmation": 0
+  }
+}

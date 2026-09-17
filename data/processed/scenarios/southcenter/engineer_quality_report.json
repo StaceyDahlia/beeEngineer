@@ -1,0 +1,677 @@
+{
+  "scenario_id": "southcenter",
+  "engineers_count": 11,
+  "vehicles": {
+    "ОТ": 5,
+    "Пешеход": 2,
+    "Автомобиль": 3,
+    "Велосипед": 1
+  },
+  "skill_counts": {
+    "connect": 8,
+    "local": 8,
+    "emergency": 4
+  },
+  "number_of_skills_distribution": {
+    "1": 4,
+    "2": 5,
+    "3": 2
+  },
+  "shifts": {
+    "late": 5,
+    "early": 6
+  },
+  "jobs_without_eligible_engineer_ignoring_travel": [],
+  "total_service_minutes": 2830,
+  "total_shift_minutes_without_breaks": 5940,
+  "eligibility": [
+    {
+      "job_id": "southcenter:32840",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-002",
+        "southcenter:eng-004",
+        "southcenter:eng-006",
+        "southcenter:eng-007"
+      ]
+    },
+    {
+      "job_id": "southcenter:78540",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-002",
+        "southcenter:eng-004",
+        "southcenter:eng-006",
+        "southcenter:eng-007"
+      ]
+    },
+    {
+      "job_id": "southcenter:66376",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-002",
+        "southcenter:eng-004",
+        "southcenter:eng-006",
+        "southcenter:eng-007"
+      ]
+    },
+    {
+      "job_id": "southcenter:23637",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-002",
+        "southcenter:eng-004",
+        "southcenter:eng-006",
+        "southcenter:eng-007"
+      ]
+    },
+    {
+      "job_id": "southcenter:97770",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-002",
+        "southcenter:eng-004",
+        "southcenter:eng-006",
+        "southcenter:eng-007"
+      ]
+    },
+    {
+      "job_id": "southcenter:55711",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-002",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-006",
+        "southcenter:eng-007",
+        "southcenter:eng-008",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:76944",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-002",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-006",
+        "southcenter:eng-007",
+        "southcenter:eng-008",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:75881",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-002",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-006",
+        "southcenter:eng-007",
+        "southcenter:eng-008",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:85188",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-002",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-006",
+        "southcenter:eng-007",
+        "southcenter:eng-008",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:19376",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-002",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-006",
+        "southcenter:eng-007",
+        "southcenter:eng-008",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:6185",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-002",
+        "southcenter:eng-004",
+        "southcenter:eng-006",
+        "southcenter:eng-007"
+      ]
+    },
+    {
+      "job_id": "southcenter:80548",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-002",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-006",
+        "southcenter:eng-007",
+        "southcenter:eng-008",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:76452",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-002",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-006",
+        "southcenter:eng-007",
+        "southcenter:eng-008",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:47560",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-002",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-006",
+        "southcenter:eng-007",
+        "southcenter:eng-008",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:79707",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-003",
+        "southcenter:eng-008",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:23142",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-003",
+        "southcenter:eng-008",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:10776",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-002",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-006",
+        "southcenter:eng-007",
+        "southcenter:eng-008",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:94447",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-003",
+        "southcenter:eng-008",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:94575",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-002",
+        "southcenter:eng-004",
+        "southcenter:eng-006",
+        "southcenter:eng-007"
+      ]
+    },
+    {
+      "job_id": "southcenter:94431",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-003",
+        "southcenter:eng-008",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:52576",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-002",
+        "southcenter:eng-004",
+        "southcenter:eng-006",
+        "southcenter:eng-007"
+      ]
+    },
+    {
+      "job_id": "southcenter:66315",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-002",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-006",
+        "southcenter:eng-007",
+        "southcenter:eng-008",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:93544",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-002",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-006",
+        "southcenter:eng-007",
+        "southcenter:eng-008",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:19203",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-002",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-006",
+        "southcenter:eng-007",
+        "southcenter:eng-008",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:16024",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-003",
+        "southcenter:eng-008",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:90373",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-002",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-006",
+        "southcenter:eng-007",
+        "southcenter:eng-008",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:79719",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-002",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-006",
+        "southcenter:eng-007",
+        "southcenter:eng-008",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:6957",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-003",
+        "southcenter:eng-008",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:78036",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-002",
+        "southcenter:eng-004",
+        "southcenter:eng-006",
+        "southcenter:eng-007"
+      ]
+    },
+    {
+      "job_id": "southcenter:49105",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-002",
+        "southcenter:eng-004",
+        "southcenter:eng-006",
+        "southcenter:eng-007"
+      ]
+    },
+    {
+      "job_id": "southcenter:27023",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-001",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-005",
+        "southcenter:eng-007",
+        "southcenter:eng-009",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:26177",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-001",
+        "southcenter:eng-004",
+        "southcenter:eng-007"
+      ]
+    },
+    {
+      "job_id": "southcenter:77795",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-001",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-005",
+        "southcenter:eng-007",
+        "southcenter:eng-009",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:24132",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-001",
+        "southcenter:eng-004",
+        "southcenter:eng-007"
+      ]
+    },
+    {
+      "job_id": "southcenter:99841",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-001",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-005",
+        "southcenter:eng-007",
+        "southcenter:eng-009",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:20263",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-003",
+        "southcenter:eng-005",
+        "southcenter:eng-009",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:51133",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-001",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-005",
+        "southcenter:eng-007",
+        "southcenter:eng-009",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:90709",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-001",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-005",
+        "southcenter:eng-007",
+        "southcenter:eng-009",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:84074",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-001",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-005",
+        "southcenter:eng-007",
+        "southcenter:eng-009",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:12263",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-003",
+        "southcenter:eng-005",
+        "southcenter:eng-009",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:95501",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-001",
+        "southcenter:eng-004",
+        "southcenter:eng-007"
+      ]
+    },
+    {
+      "job_id": "southcenter:86002",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-001",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-005",
+        "southcenter:eng-007",
+        "southcenter:eng-009",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:92618",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-001",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-005",
+        "southcenter:eng-007",
+        "southcenter:eng-009",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:26845",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-001",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-005",
+        "southcenter:eng-007",
+        "southcenter:eng-009",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:80308",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-003",
+        "southcenter:eng-005",
+        "southcenter:eng-009",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:93276",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-001",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-005",
+        "southcenter:eng-007",
+        "southcenter:eng-009",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:61311",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-001",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-005",
+        "southcenter:eng-007",
+        "southcenter:eng-009",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:46513",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-003",
+        "southcenter:eng-005",
+        "southcenter:eng-009",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:35265",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-001",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-005",
+        "southcenter:eng-007",
+        "southcenter:eng-009",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:13203",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-001",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-005",
+        "southcenter:eng-007",
+        "southcenter:eng-009",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:26896",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-001",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-005",
+        "southcenter:eng-007",
+        "southcenter:eng-009",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:87819",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-001",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-005",
+        "southcenter:eng-007",
+        "southcenter:eng-009",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:5406",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-003",
+        "southcenter:eng-005",
+        "southcenter:eng-009",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:86864",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-001",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-005",
+        "southcenter:eng-007",
+        "southcenter:eng-009",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:17896",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-001",
+        "southcenter:eng-003",
+        "southcenter:eng-004",
+        "southcenter:eng-005",
+        "southcenter:eng-007",
+        "southcenter:eng-009",
+        "southcenter:eng-010",
+        "southcenter:eng-011"
+      ]
+    },
+    {
+      "job_id": "southcenter:18023",
+      "eligible_engineer_ids_ignoring_travel": [
+        "southcenter:eng-004",
+        "southcenter:eng-005",
+        "southcenter:eng-006",
+        "southcenter:eng-010"
+      ]
+    }
+  ],
+  "scope": "Necessary per-job skill/vehicle/window checks only; ignores travel and competition between jobs.",
+  "solver_ready": false,
+  "pending": [
+    "travel matrix",
+    "joint feasibility"
+  ],
+  "geocoding": {
+    "scenario_id": "southcenter",
+    "locations": {
+      "matched_building": 53,
+      "matched_external_building": 1,
+      "matched_address_multiple_buildings": 2
+    },
+    "jobs_with_coords": 56,
+    "jobs_total": 56,
+    "office_resolved": true,
+    "locations_requiring_source_confirmation": 0
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "scenario_id": "southcenter",
+  "jobs_count": 56,
+  "observed_engineers_count": 11,
+  "locations_count_including_office": 56,
+  "paired_rows_verified": 56,
+  "control_duplicate_ids_preserved": {},
+  "reference_unassigned_count": 0,
+  "warnings": [
+    "Control statuses do not filter input jobs.",
+    "Global problem to emergency norm mapping is an assumption.",
+    "All initial priorities use a documented default; emergency policy is pending."
+  ],
+  "solver_ready": false,
+  "pending": [
+    "travel matrix",
+    "event scenario"
+  ],
+  "engineer_report": "engineer_quality_report.json",
+  "geocoding": {
+    "scenario_id": "southcenter",
+    "locations": {
+      "matched_building": 53,
+      "matched_external_building": 1,
+      "matched_address_multiple_buildings": 2
+    },
+    "jobs_with_coords": 56,
+    "jobs_total": 56,
+    "office_resolved": true,
+    "locations_requiring_source_confirmation": 0
+  }
+}
