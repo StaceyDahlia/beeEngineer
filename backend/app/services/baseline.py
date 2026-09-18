@@ -43,53 +43,17 @@ from . import constraints as cons
 from . import distance as dist_mod
 from . import metrics as metrics_mod
 from . import explainer as expl
+from .optimizer import RouteState, min_of_day, fmt_hhmm, hhmm_to_min
+
 
 
 # ---------------------------------------------------------------------------
 # Внутреннее состояние маршрута
 # ---------------------------------------------------------------------------
 
-class _RouteState:
-    """
-    Мутируемое состояние маршрута одного инженера.
-    Живёт только во время построения плана.
-    """
-
-    __slots__ = (
-        "engineer", "ready_min", "point", "location_id",
-        "stops", "distance_km", "inventory",
-    )
-
-    def __init__(self, engineer: Engineer) -> None:
-        self.engineer = engineer
-        self.ready_min: int = _min_of_day(engineer.shift_start)
-        self.point = list(engineer.start_point)
-        self.location_id: str = engineer.start_location_id or f"{engineer.id}:start"
-        self.stops: List[RouteStop] = []
-        self.distance_km: float = 0.0
-        self.inventory: Dict[str, int] = dict(engineer.inventory_start)
-
-    def to_route(self) -> EngineerRoute:
-        return EngineerRoute(
-            engineer_id=self.engineer.id,
-            stops=self.stops,
-            distance_km=round(self.distance_km, 3),
-            jobs_count=len(self.stops),
-        )
-
-
 # ---------------------------------------------------------------------------
 # Утилиты
 # ---------------------------------------------------------------------------
-
-def _min_of_day(dt) -> int:
-    return dt.hour * 60 + dt.minute
-
-
-def _fmt_hhmm(day_min: int) -> str:
-    day_min = day_min % (24 * 60)
-    return f"{day_min // 60:02d}:{day_min % 60:02d}"
-
 
 def _is_assignable(job: Job) -> bool:
     """Участвует ли заявка в назначении (не отменена, не выполнена)."""
@@ -118,7 +82,7 @@ def build_baseline_plan(
     jobs_sorted = sorted(jobs, key=lambda j: j.input_order)
 
     # 2. Инициализируем состояние по каждому инженеру в порядке данных.
-    states: List[_RouteState] = [_RouteState(e) for e in engineers]
+    states: List[_RouteState] = [RouteState(e) for e in engineers]
 
     # 3. Основной цикл.
     result_jobs: List[Job] = []
@@ -143,10 +107,10 @@ def build_baseline_plan(
                 engineer=st.engineer,
                 prev_point=st.point,
                 ready_min=st.ready_min,
-                window_start_min=_min_of_day(job.window_start),
-                window_end_min=_min_of_day(job.window_end),
-                shift_start_min=_min_of_day(st.engineer.shift_start),
-                shift_end_min=_min_of_day(st.engineer.shift_end),
+                window_start_min=min_of_day(job.window_start),
+                window_end_min=min_of_day(job.window_end),
+                shift_start_min=min_of_day(st.engineer.shift_start),
+                shift_end_min=min_of_day(st.engineer.shift_end),
                 inventory_remaining=st.inventory,
                 check_equipment=check_equipment,
             )
@@ -155,8 +119,8 @@ def build_baseline_plan(
                 # --- назначаем ---
                 stop = RouteStop(
                     job_id=job.id,
-                    arrival=_fmt_hhmm(result.arrive_min),
-                    departure=_fmt_hhmm(result.depart_min),
+                    arrival=fmt_hhmm(result.arrive_min),
+                    departure=fmt_hhmm(result.depart_min),
                     travel_min_from_prev=result.travel_min,
                     distance_km_from_prev=round(result.distance_km, 3),
                 )
@@ -174,8 +138,8 @@ def build_baseline_plan(
                 updated = job.model_copy(update={
                     "assigned_engineer_id": st.engineer.id,
                     "status": "assigned",
-                    "arrive_planned": _fmt_hhmm(result.arrive_min),
-                    "depart_planned": _fmt_hhmm(result.depart_min),
+                    "arrive_planned": fmt_hhmm(result.arrive_min),
+                    "depart_planned": fmt_hhmm(result.depart_min),
                 })
                 # Объяснение назначения — с контекстом «первый подходящий».
                 updated = updated.model_copy(update={
@@ -215,8 +179,8 @@ def build_baseline_plan(
                     reason_code=last_reason,
                     engineers=engineers,
                     arrive_min=last_arrive_min,
-                    window_end_min=_min_of_day(job.window_end),
-                    shift_end_min=(_min_of_day(engineers[0].shift_end)
+                    window_end_min=min_of_day(job.window_end),
+                    shift_end_min=(min_of_day(engineers[0].shift_end)
                                    if engineers else None),
                 ),
             })
@@ -260,7 +224,7 @@ def _finalize_empty(jobs: List[Job], engineers: List[Engineer]) -> Plan:
             "explanation": expl.explain_unassigned(
                 job=job, reason_code=cons.NO_ENGINEER,
                 engineers=[], arrive_min=None,
-                window_end_min=_min_of_day(job.window_end),
+                window_end_min=min_of_day(job.window_end),
                 shift_end_min=None,
             ),
         }))
