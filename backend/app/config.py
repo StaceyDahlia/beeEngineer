@@ -17,7 +17,7 @@ class Settings(BaseSettings):
     geocoder_cache_path: str = "data/processed/geocode_cache.json"
     distance_provider: str = "haversine"   # haversine | osrm
     osrm_base_url: str = "http://router.project-osrm.org"
-    optimizer_engine: str = "ortools"      # greedy | ortools
+    optimizer_engine: str = "greedy"      # greedy | ortools
     optimizer_time_limit_sec: int = 10
 
     class Config:
