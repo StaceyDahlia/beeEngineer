@@ -42,3 +42,9 @@ class Plan(BaseModel):
     diff_summary: Optional[Dict[str, List[str]]] = None
     needs_review: Optional[List[str]] = None
     warnings: Optional[List[str]] = None
+
+class PlanWarning(BaseModel):
+    code: str                     # "IN_PROGRESS_ENGINEER_UNAVAILABLE" | ...
+    job_id: Optional[str] = None
+    engineer_id: Optional[str] = None
+    message: str                  # короткий технический текст
