@@ -1,26 +1,31 @@
 # НАЗНАЧЕНИЕ: HTTP-эндпоинт полного планирования.
 #
-# ВХОД (POST /api/v1/optimize):
-#   { "jobs": [...], "engineers": [...], "metrics": {...} }  (как в frontend2)
-#   или пустое тело — тогда берём из data/processed/.
-#
-# ВЫХОД:
-#   { jobs, engineers, routes, metrics, baseline_metrics }
-#
-# СВЯЗИ:
-#   - main.py регистрирует роутер
-#   - вызывает services.loader, services.optimizer, services.baseline
-#   - frontend2.txt: fetchOptimizationData()
+# ВХОД:  POST /optimize {scenario?, engine?}
+# ВЫХОД: Plan (со заполненным baseline_metrics).
+# СВЯЗИ: services/loader, services/optimizer.
 
-from fastapi import APIRouter
-from ..services import loader, optimizer, baseline, metrics
+from typing import Optional
+from fastapi import APIRouter, HTTPException
+
+from ..schemas.api import OptimizeRequest
+from ..services import loader, optimizer
+
 
 router = APIRouter()
 
+
 @router.post("/optimize")
-def optimize_endpoint(payload: dict | None = None):
-    jobs = loader.load_jobs()
-    engineers = loader.load_engineers()
-    plan = optimizer.optimize(jobs, engineers)
-    plan.baseline_metrics = baseline.build_baseline_plan(jobs, engineers).metrics
+def optimize_endpoint(payload: Optional[OptimizeRequest] = None):
+    req = payload or OptimizeRequest()
+
+    try:
+        jobs = loader.load_jobs(req.scenario)
+        engineers = loader.load_engineers(req.scenario)
+    except FileNotFoundError as e:
+        raise HTTPException(status_code=404, detail=str(e))
+
+    # engine="ortools" — заглушка: пока маршрутизация одна (greedy).
+    # Поле валидируется Literal-ом в OptimizeRequest, здесь просто
+    # не переключаем движок.
+    plan = optimizer.optimize(jobs, engineers, compare_baseline=True)
     return plan
