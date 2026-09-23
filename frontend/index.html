@@ -20,5 +20,1547 @@
 -->
 <!doctype html>
 <html lang="ru">
-  ...
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Билайн Бизнес · Планирование маршрутов</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=IuD8SwAnN_2sDiZTW1EO86TN-LDjNxLN43Sj28JE3pvMN3itRykYp8tdzJ6VI-T517i6xJGDYiObXKLQbB5iwR27u2NDasRCMGF4qyYSLBmINWONhOrT92nR_Em3tS0fmHstwmmx1IhBcElIPvx1v1gqSF3QVpl48h0PWYROsUMYuxixguT9-7sjwFgyuHJEIuha7i7-HRaox4uLA8QY6rhUcVm6Guh_ctfF6OMrJtUO93UpWB_Oyaq6XgXs4JhOwFWq0FgtFXEbiFFL6ugU0w" charset="UTF-8"></script><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js"></script>
+  <style>
+    :root{--bg:#121212;--surface:#1e2026;--surface2:#252832;--line:#2c2e36;--text:#fff;--muted:#9e9ea4;--yellow:#ffc800;--green:#67d68a;--blue:#78aefc;--orange:#ff9d3f;--red:#ff6868}
+    *{box-sizing:border-box} html,body{margin:0;width:100%;min-height:100%;background:var(--bg);color:var(--text);font-family:Inter,Montserrat,Arial,sans-serif}
+    body{overflow:auto} button,input,select{font:inherit} button{cursor:pointer} button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--yellow);outline-offset:2px}
+    .shell{min-height:100vh;background:radial-gradient(circle at 85% 0%,rgba(255,200,0,.08),transparent 30rem),linear-gradient(145deg,#17181c 0%,#121212 68%)}
+    .topbar{height:68px;border-bottom:1px solid #262830;background:rgba(18,18,18,.96);backdrop-filter:blur(18px)}
+    .brand{width:48px;height:40px;display:flex;align-items:center;justify-content:center;flex:0 0 auto}.brand img{display:block;max-width:100%;max-height:40px;width:auto;object-fit:contain;border-radius:6px}.brand-fallback{width:34px;height:34px;border-radius:50%;background:var(--yellow);position:relative;overflow:hidden;box-shadow:0 0 0 1px rgba(255,214,0,.4),0 5px 16px rgba(255,200,0,.18)}
+    .brand-fallback:before,.brand-fallback:after{content:"";position:absolute;left:-4px;width:42px;height:5px;border-radius:99px;background:#17181c;transform:rotate(-22deg)} .brand-fallback:before{top:9px}.brand-fallback:after{top:18px}
+    .panel{border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:0 14px 34px rgba(0,0,0,.18)}
+    .workspace{display:grid;grid-template-columns:minmax(330px,380px) minmax(0,1fr);gap:14px;padding:14px;min-height:calc(100vh - 68px)}
+    .sidebar{display:flex;flex-direction:column;overflow:hidden;min-height:0}.scroll{overflow:auto;min-height:0}.seg{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px;border:1px solid #343741;border-radius:12px;background:#15161a}.seg button{border:0;border-radius:9px;padding:10px 8px;color:var(--muted);background:transparent;font-weight:800}.seg button.active{color:#000;background:var(--yellow)}
+    .search{width:100%;border:1px solid #383b45;background:#17181c;color:#fff;border-radius:11px;padding:10px 12px 10px 38px}.filter{border:1px solid #3a3d47;border-radius:999px;color:#c1c1c7;background:#25272f;padding:7px 12px;font-size:11px;font-weight:800}.filter.active{border-color:var(--yellow);color:#000;background:var(--yellow)}
+    .job{border:1px solid #31343e;background:#20222a;border-radius:12px;padding:12px;transition:.18s}.job:hover,.job.selected{border-color:rgba(255,200,0,.85);box-shadow:0 8px 18px rgba(0,0,0,.25)}
+    .status{border-radius:7px;padding:4px 8px;font-size:9px;font-weight:900;display:inline-flex;align-items:center;gap:5px}.status.assigned{color:var(--blue);background:rgba(120,174,252,.13)}.status.progress{color:var(--green);background:rgba(103,214,138,.13)}.status.unassigned{color:var(--orange);background:rgba(255,157,63,.13)}.priority.urgent{color:#161616;background:var(--yellow)}.priority.normal{color:#bfc0c5;background:#2a2c33}
+    .main{display:grid;grid-template-rows:minmax(430px,1fr) auto auto;gap:14px;min-width:0}.map-panel{display:flex;flex-direction:column;overflow:hidden;min-height:0}.map-wrap{flex:1;min-height:360px}.map{width:100%;height:100%;min-height:360px;background:#282a30}.leaflet-container{font-family:Inter,Montserrat,Arial,sans-serif;background:#282a30}.leaflet-popup-content-wrapper,.leaflet-popup-tip{color:#fff;background:#1e2026}
+    .summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.metric{padding:14px;border:1px solid var(--line);border-radius:12px;background:#1a1c21}.metric .v{font-size:22px;font-weight:900;line-height:1.1}.metric .l{font-size:10px;color:var(--muted);margin-top:5px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+    .compare{display:block}.compare-card{border:1px solid var(--line);border-radius:12px;background:#1a1c21;padding:14px}.compare-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:stretch}.compare-state{border:1px solid #343640;border-radius:13px;background:#17191e;padding:14px}.compare-state.before{box-shadow:inset 0 2px 0 rgba(120,174,252,.55)}.compare-state.after{box-shadow:inset 0 2px 0 rgba(103,214,138,.55)}.compare-state .label{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}.compare-state .big{font-size:24px;font-weight:900;line-height:1.05;margin-top:7px}.compare-state .sub{font-size:10px;color:#bfc0c5;margin-top:5px;line-height:1.45}.compare-arrow{display:flex;align-items:center;justify-content:center;color:var(--yellow);font-size:24px;font-weight:900;padding:0 2px}.compare-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:10px}.compare-metric{padding:10px 11px;border:1px solid #2f323b;border-radius:10px;background:#181a1f}.compare-metric .k{font-size:9px;color:var(--muted);font-weight:900;text-transform:uppercase;letter-spacing:.06em}.compare-metric .v{font-size:18px;font-weight:900;margin-top:4px}.compare-metric .d{font-size:9px;font-weight:900;margin-top:3px}.compare-metric .d.good{color:var(--green)}.compare-metric .d.warn{color:var(--orange)}.compare-table{margin-top:12px}.compare-row{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:8px;padding:8px 0;border-bottom:1px solid #2a2c33;font-size:11px}.compare-row:last-child{border-bottom:0}.compare-head{font-size:10px;color:var(--muted);text-transform:uppercase;font-weight:900;letter-spacing:.06em}.delta{font-weight:900}.delta.good{color:var(--green)}.delta.warn{color:var(--orange)}.change-item{padding:9px 10px;border:1px solid #30333c;border-radius:9px;background:#181a1f;font-size:11px;line-height:1.45}.change-item+.change-item{margin-top:7px}.change-item .tag{display:inline-flex;align-items:center;border-radius:999px;padding:3px 7px;margin-right:6px;font-size:9px;font-weight:900;background:#2a2c33;color:#d5d5da}.scenario-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.scenario-btn{display:flex;align-items:center;gap:10px;border:1px solid #383b45;border-radius:12px;background:#1a1c21;color:#fff;padding:12px;text-align:left;transition:.18s}.scenario-btn:hover{border-color:var(--yellow);transform:translateY(-1px)}.scenario-btn .icon{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:#25272f;color:var(--yellow)}.scenario-event{border:1px solid #4a4220;border-radius:12px;background:linear-gradient(120deg,#2a2619,#1a1c21);padding:12px}.scenario-event .title{font-weight:900;font-size:12px}.scenario-event .meta{margin-top:4px;font-size:10px;color:#c5c5ca}.scenario-event .actions{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}.scenario-empty{border:1px dashed #3a3d45;border-radius:12px;padding:14px;color:#9e9ea4;font-size:11px}.cancelled{color:#a7a8ae;background:#272930}.job-cancelled{opacity:.62}.scenario-warning{color:#ffcf7d} .preview-card{margin-top:12px;border:1px solid #5a562a;border-radius:14px;background:linear-gradient(120deg,#292617,#1a1c21);padding:14px}.preview-badge{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:5px 9px;background:#4a421d;color:#ffe98a;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.06em}.preview-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:stretch}.preview-state{border:1px solid #343640;border-radius:12px;background:#17191e;padding:12px}.preview-state.before{box-shadow:inset 0 2px 0 rgba(120,174,252,.55)}.preview-state.after{box-shadow:inset 0 2px 0 rgba(103,214,138,.55)}.preview-state .big{font-size:21px;font-weight:900;margin-top:5px}.preview-state .sub{font-size:10px;color:#bfc0c5;margin-top:4px;line-height:1.45}.preview-arrow{display:flex;align-items:center;justify-content:center;color:var(--yellow);font-size:22px;font-weight:900}.preview-actions{display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-top:12px}.history-strip{display:flex;gap:8px;overflow:auto;padding-bottom:2px}.history-item{min-width:150px;text-align:left;border:1px solid #343640;border-radius:11px;background:#181a1f;padding:10px}.history-item.current{border-color:var(--yellow);box-shadow:inset 0 2px 0 var(--yellow)}.history-item .v{font-size:13px;font-weight:900}.history-item .meta{font-size:9px;color:#9e9ea4;margin-top:3px}.history-item .sub{font-size:10px;color:#c5c5ca;margin-top:6px;line-height:1.4}.highlight-change{border-color:#4d5f50;background:#18221b}.highlight-warn{border-color:#5e4b2b;background:#241f18}.preview-change-counts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.change-count{border:1px solid #343640;border-radius:10px;background:#17191e;padding:9px 10px}.change-count .num{font-size:19px;font-weight:900;line-height:1}.change-count .lbl{font-size:9px;color:var(--muted);font-weight:900;text-transform:uppercase;letter-spacing:.05em;margin-top:4px}.history-item.viewing{border-color:#78aefc;box-shadow:inset 0 2px 0 #78aefc;background:#1b2029}.history-view-note{margin-top:8px;font-size:10px;color:#9e9ea4}.history-view-note button{margin-left:6px}
+    .explain{background:linear-gradient(120deg,#292817,#1e2026 54%,#1b1c20);border-color:#3a392a}.dispatcher-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:10px;margin-top:12px}.candidate-card{border:1px solid #30333c;border-radius:10px;background:#181a1f;padding:10px}.candidate-card.good{border-color:#2d5139;background:#18231c}.candidate-card.current{box-shadow:inset 3px 0 0 var(--yellow)}.candidate-name{font-size:11px;font-weight:900}.candidate-reason{font-size:10px;color:#bfc0c5;margin-top:4px;line-height:1.4}.candidate-badges{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}.candidate-badge{font-size:9px;font-weight:900;border-radius:999px;padding:3px 6px;background:#272a31;color:#c9c9ce}.candidate-badge.ok{color:#9de8b7;background:#1b3325}.candidate-badge.bad{color:#ffbe85;background:#32261c}.action-list{display:grid;gap:7px}.action-item{display:flex;align-items:flex-start;gap:8px;padding:9px;border:1px solid #30333c;border-radius:9px;background:#181a1f}.action-item .action-icon{width:26px;height:26px;display:grid;place-items:center;border-radius:8px;background:#25272f;color:var(--yellow);flex:0 0 auto}.action-item b{font-size:10px}.action-item span{display:block;font-size:9px;color:#9e9ea4;line-height:1.35;margin-top:2px}.map-toolbar{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.map-select{border:1px solid #3a3d45;background:#17181c;color:#fff;border-radius:999px;padding:6px 9px;font-size:10px;font-weight:800}.layer-toggle{display:inline-flex;align-items:center;gap:5px;border:1px solid #3a3d45;background:#17181c;color:#c8c8cd;border-radius:999px;padding:6px 8px;font-size:9px;font-weight:900}.layer-toggle input{accent-color:var(--yellow)}.start-marker{width:28px;height:28px;border-radius:9px;border:2px solid #17181c;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:11px;box-shadow:0 4px 10px rgba(0,0,0,.35)}.timeline{border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}.timeline-scroll{overflow:auto;padding:14px}.timeline-grid{position:relative;height:58px;background:#191a1f;background-image:repeating-linear-gradient(90deg,transparent 0,transparent calc(14.285714% - 1px),#343640 calc(14.285714% - 1px),#343640 14.285714%);border-radius:8px}.timeline-block{position:absolute;top:10px;height:36px;border-radius:8px;padding:0 6px;border:0;display:flex;align-items:center;justify-content:center;color:#101010;font-size:10px;font-weight:900;white-space:nowrap;overflow:visible;background-clip:padding-box}.timeline-block::before{content:'';position:absolute;inset:-6px -4px;border-radius:10px;z-index:-1}.timeline-block .timeline-order{position:relative;z-index:2}.timeline-time-label{position:absolute;top:1px;transform:translate(-2px,-1px);font-size:9px;line-height:1;font-weight:900;color:#aeb0b8;white-space:nowrap;pointer-events:none;z-index:2}.timeline-block.travel{color:#ddd;background:#464954}.timeline-block.jobblock{background:#78aefc}.timeline-block.urgent{background:var(--yellow)}.routing-status{display:inline-flex;align-items:center;gap:5px;border:1px solid #383b45;border-radius:999px;padding:5px 8px;font-size:9px;font-weight:900}.routing-status.local{color:#bfc0c5;background:#1a1c21}.routing-status.loading{color:#fff0a8;border-color:#5a562a;background:#272617}.routing-status.live{color:#9de8b7;border-color:#2b5138;background:#18251c}.routing-status.error{color:#ffbe85;border-color:#5b4327;background:#2a2017}
+    .toast{position:fixed;right:16px;top:84px;z-index:100;opacity:0;transform:translateY(-8px);pointer-events:none;transition:.2s;background:#272617;border:1px solid #5a562a;color:#fff1ad;border-radius:11px;padding:12px 14px;font-size:13px;font-weight:800}.toast.show{opacity:1;transform:translateY(0)}
+    .modal{position:fixed;inset:0;background:rgba(0,0,0,.74);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);z-index:3000;display:none;align-items:center;justify-content:center;padding:16px}.modal.open{display:flex}.modal-card{position:relative;z-index:3001;width:min(640px,100%);max-height:calc(100vh - 32px);overflow:auto;background:#1e2026;border:1px solid #3a3d45;border-radius:16px;padding:22px;box-shadow:0 24px 80px rgba(0,0,0,.55)}body.modal-open{overflow:hidden}.field{width:100%;border:1px solid #3a3d45;background:#17181c;color:#fff;border-radius:10px;padding:10px 12px}.btn{border:1px solid #3a3d45;background:#1e2026;color:#fff;border-radius:10px;padding:9px 12px;font-size:12px;font-weight:900}.btn.primary{background:var(--yellow);border-color:var(--yellow);color:#000}.btn.ghost:hover{border-color:var(--yellow);color:var(--yellow)}
+    .timeline-block{z-index:3;cursor:pointer;overflow:visible}.timeline-block.travel{background:#4a4d57;color:transparent}.timeline-block.wait{background:#76651f;color:transparent;opacity:.92}.timeline-block.jobblock{background:#78aefc;color:#101010}.timeline-block.urgent{background:var(--yellow);color:#101010}.timeline-block:hover,.timeline-block.is-highlighted{z-index:8;filter:brightness(1.08);box-shadow:0 7px 18px rgba(0,0,0,.35)}
+    .timeline-block::after{content:'';display:block;position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+    .timeline-tooltip{position:fixed;z-index:3200;display:none;min-width:240px;max-width:320px;padding:10px 12px;border:1px solid #4a4d57;border-radius:11px;background:#111318;color:#fff;box-shadow:0 16px 42px rgba(0,0,0,.48);pointer-events:none;font-size:11px;line-height:1.45}.timeline-tooltip.show{display:block}.timeline-tooltip .tt-title{font-weight:900;color:#fff}.timeline-tooltip .tt-row{display:flex;justify-content:space-between;gap:12px;margin-top:4px;color:#c5c5ca}.timeline-tooltip .tt-row span:last-child{font-weight:800;color:#fff}.timeline-legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;font-size:9px;color:#9e9ea4;font-weight:800}.timeline-legend span{display:inline-flex;align-items:center;gap:5px}.timeline-legend i{width:9px;height:9px;border-radius:3px;display:inline-block}.timeline-order{font-size:10px;font-weight:900}
+    .explain-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px}.explain-item{padding:10px;border:1px solid #30333c;border-radius:10px;background:#181a1f}.explain-item .k{font-size:9px;text-transform:uppercase;letter-spacing:.06em;color:#8f9097;font-weight:900}.explain-item .v{margin-top:4px;font-size:11px;color:#fff;font-weight:800;line-height:1.4}.explain-item.ok{border-color:#2d4b37;background:#18221b}.explain-item.warn{border-color:#5a4329;background:#241d15}.explain-item.neutral{border-color:#343640}.explain-reasons{margin-top:10px;display:grid;gap:6px}.explain-reason{padding:9px 10px;border-radius:9px;border:1px solid #343640;background:#181a1f;color:#cfd0d5;font-size:11px;line-height:1.45}.explain-reason b{color:#fff}.explain-kicker{font-size:10px;color:#d5c95c;font-weight:900;text-transform:uppercase;letter-spacing:.14em}
+    .legend-dot{width:9px;height:9px;border-radius:50%;display:inline-block}.map-marker{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:3px solid #17181c;color:#17181c;font-size:10px;font-weight:900;box-shadow:0 5px 14px rgba(0,0,0,.42)}
+    @media(max-width:1100px){.workspace{grid-template-columns:1fr}.sidebar{min-height:560px}.main{min-height:1000px}.summary{grid-template-columns:repeat(2,1fr)}.dispatcher-grid{grid-template-columns:1fr}}
+    @media(max-width:680px){.summary,.compare,.explain-grid{grid-template-columns:1fr}.workspace{padding:10px}.main{grid-template-rows:430px auto auto}.header-actions{width:100%;justify-content:flex-end}.topbar{height:auto;min-height:68px}}
+    /* Dispatch dashboard redesign */
+    .text-\[10px\]{font-size:11px!important}.text-\[11px\]{font-size:12px!important}.font-extrabold{font-weight:700!important}.filter,.status,.routing-status,.layer-toggle,.map-select{font-weight:600}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    html,body{font-size:14px}body{font-family:Inter,Montserrat,Arial,sans-serif;color:#f7f7f8}.shell{background:linear-gradient(145deg,#16171b 0%,#111214 78%)}
+    .topbar{height:80px;background:rgba(17,18,20,.97)}.topbar-left{display:flex;align-items:center;gap:14px;min-width:0;padding:8px 0}.brand-copy{min-width:0}.brand-kicker,.section-kicker{font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#90929a}.brand-copy h1{margin:2px 0 0;font-family:Montserrat,Inter,sans-serif;font-size:19px;line-height:1.15;font-weight:700;white-space:nowrap}.context-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:6px}.context-chip,.state-chip{display:inline-flex;align-items:center;gap:5px;border:1px solid #30333a;border-radius:999px;padding:4px 8px;font-size:12px;font-weight:600;color:#cfd0d4;background:#1a1c21}.state-chip{border-color:#303c32}.state-chip.loading{color:#fff0a8;border-color:#5a562a;background:#252317}.state-chip.live{color:#a8e8ba;border-color:#2f513a;background:#19251d}.state-chip.error{color:#ffc193;border-color:#5b4327;background:#2a2018}.state-dot{width:7px;height:7px;border-radius:50%;background:#8f939a}.state-chip.live .state-dot{background:var(--green)}.state-chip.loading .state-dot{background:var(--yellow)}.state-chip.error .state-dot{background:var(--orange)}.header-actions{display:flex;align-items:center;gap:8px}.btn{font-size:13px;font-weight:600;padding:9px 12px;box-shadow:none}.btn.primary{font-weight:700;box-shadow:0 7px 18px rgba(255,200,0,.12)}
+    .workspace{grid-template-columns:300px minmax(520px,1fr) 350px;gap:12px;padding:12px;min-height:calc(100vh - 80px);align-items:stretch}.sidebar,.detail-dock{height:calc(100vh - 104px);position:sticky;top:92px}.sidebar{border-radius:12px}.detail-dock{display:flex;flex-direction:column;overflow:auto;min-width:0;background:#1a1c21}.main{display:grid;grid-template-rows:auto minmax(430px,1fr) auto;gap:12px;min-width:0;min-height:0}.panel{border-color:#2a2d34;background:#1b1d22;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.14)}.summary{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.metric{padding:12px;background:#191b20;border-color:#2a2d35}.metric .v{font-size:21px;font-weight:700}.metric .l{font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:none}
+    .view-panel{display:flex;flex-direction:column;overflow:hidden;min-height:0}.view-panel-head,.schedule-head,.panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border-bottom:1px solid #292c33}.section-kicker.accent{color:#d8ca63}.section-title{margin:3px 0 0;font-family:Montserrat,Inter,sans-serif;font-size:16px;line-height:1.2;font-weight:700;color:#fff}.view-tabs{display:flex;gap:3px;padding:3px;border:1px solid #30333b;border-radius:9px;background:#15161a}.view-tab{border:0;border-radius:7px;padding:7px 12px;background:transparent;color:#aeb0b7;font-size:13px;font-weight:600}.view-tab.active{background:#2a2d35;color:#fff;box-shadow:inset 0 0 0 1px #454852}.view-tab:focus-visible{outline:2px solid var(--yellow);outline-offset:2px}
+    .view-tabpanel{display:flex;flex-direction:column;min-height:0;flex:1}.workspace-toolbar{display:flex;align-items:center;gap:7px;flex-wrap:wrap;padding:9px 12px;border-bottom:1px solid #262930;background:#181a1f}.source-strip{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:7px 12px;font-size:12px;color:#9fa1a8;background:#17191e;border-bottom:1px solid #262930}.source-strip details{position:relative;flex:0 0 auto}.source-strip summary{cursor:pointer;color:#c5c6cb;font-weight:600}.source-strip details div{position:absolute;z-index:30;right:0;top:24px;width:330px;padding:10px;border:1px solid #3a3d45;border-radius:9px;background:#111318;color:#bfc0c5;box-shadow:0 12px 28px rgba(0,0,0,.38);line-height:1.45}.map-wrap{min-height:0;flex:1}.map{min-height:0;height:100%}.timeline-axis{height:20px;color:#8d9097;font-size:11px;font-weight:600}.timeline-grid{height:62px;background-image:repeating-linear-gradient(90deg,transparent 0,transparent calc(14.285714% - 1px),#32353d calc(14.285714% - 1px),#32353d 14.285714%)}.timeline-time-label{font-size:10px;color:#b9bbc2}.timeline-block{font-size:11px}.timeline-legend{font-size:11px;font-weight:500}
+    .scenario-panel{padding:0;overflow:hidden}.secondary-copy{font-size:12px;color:#9699a1;line-height:1.35}.scenario-panel .scenario-grid{padding:12px;grid-template-columns:repeat(3,minmax(0,1fr))}.scenario-btn{min-height:72px;padding:10px;border-color:#30333a;background:#191b20}.scenario-btn:hover{transform:none;border-color:#454952}.scenario-btn .icon{width:30px;height:30px;border-radius:8px;background:#24272e}.detail-section{padding:14px}.detail-section+.detail-section{border-top:1px solid #2a2d34}.detail-icon{width:34px;height:34px;display:grid;place-items:center;border-radius:9px;background:var(--yellow);color:#111}.detail-title-row{display:flex;align-items:center;gap:10px}.detail-lead{margin-top:10px;font-size:14px;line-height:1.5;color:#d6d7db}.dispatcher-grid{grid-template-columns:1fr;margin-top:12px}.candidate-card{padding:10px;border-color:#30333a;background:#181a1f}.candidate-name{font-size:13px;font-weight:700}.candidate-reason{font-size:12px;line-height:1.45}.candidate-badge{font-size:11px;padding:4px 7px}.action-item b{font-size:12px}.action-item span{font-size:11px}.plans-section{padding:14px}.plans-section .panel-head{padding:0 0 10px;border-bottom:1px solid #2a2d34}.plans-section .compare-head,.plans-section .compare-row{font-size:12px}.plans-section .compare-metric .k,.plans-section .change-count .lbl{font-size:10px}.history-details{margin-top:12px}.history-details>summary{cursor:pointer;list-style:none;font-size:13px;font-weight:600;color:#d6d7db}.history-details>summary::-webkit-details-marker{display:none}.history-details>summary:after{content:'›';float:right;color:#8f929a;font-size:17px;transform:rotate(90deg)}.history-details[open]>summary:after{transform:rotate(-90deg)}
+    .status{font-size:11px;font-weight:600;padding:4px 7px}.priority{font-size:11px}.job{padding:11px;border-color:#2f323a;background:#1b1d22}.job button{font-size:13px}.job:hover,.job.selected{box-shadow:none}.map-marker{position:relative;width:38px;height:38px;border:3px solid var(--engineer-color,#6f727c);background:#252832!important;box-shadow:0 4px 12px rgba(0,0,0,.34)}.map-marker.urgent-marker{box-shadow:0 0 0 2px rgba(255,200,0,.55),0 4px 12px rgba(0,0,0,.34)}.map-marker.selected{box-shadow:0 0 0 3px var(--yellow),0 4px 14px rgba(0,0,0,.38)}.marker-order{font-size:11px;font-weight:700}.marker-status{position:absolute;right:-5px;top:-5px;width:14px;height:14px;border-radius:50%;display:grid;place-items:center;border:2px solid #17181c;font-size:8px;font-weight:800;background:#2c2f37;color:#fff}.marker-status.status-assigned,.marker-status.status-progress{background:#67d68a;color:#101810}.marker-status.status-unassigned{background:#ff9d3f;color:#17110a}.marker-status.status-cancelled{background:#666a73;color:#fff}
+    @media(max-width:1040px){.workspace{grid-template-columns:280px minmax(0,1fr)}.detail-dock{grid-column:1/-1;position:static;height:auto;max-height:none}.main{min-height:0}}@media(max-width:900px){.workspace{grid-template-columns:1fr}.sidebar,.detail-dock{position:static;height:auto}.main{grid-template-rows:auto 620px auto}.summary{grid-template-columns:repeat(2,1fr)}.scenario-panel .scenario-grid{grid-template-columns:1fr}.brand-copy h1{font-size:17px}.header-actions{flex-wrap:wrap}}@media(max-width:680px){.summary{grid-template-columns:repeat(2,1fr)}.topbar{height:auto}.workspace{padding:8px}.view-panel-head,.panel-head{align-items:flex-start;flex-direction:column}.source-strip{align-items:flex-start;flex-direction:column}.header-actions{width:auto}.context-row{max-width:100%}}
+
+    /* Theme switcher */
+    .theme-toggle{min-width:42px;justify-content:center;gap:7px}.theme-toggle-label{display:inline}
+    :root{color-scheme:dark;--focus:#ffc800}
+    html[data-theme="light"]{color-scheme:light;--bg:#f5f5f2;--surface:#ffffff;--surface2:#f0f1ed;--line:#dedfd9;--text:#181818;--muted:#666a70;--yellow:#ffc800;--green:#21863a;--blue:#2468c7;--orange:#b96716;--red:#c83b3b}
+    html[data-theme="light"] body{background:var(--bg);color:var(--text)}
+    html[data-theme="light"] .shell{background:radial-gradient(circle at 85% 0%,rgba(255,200,0,.14),transparent 30rem),linear-gradient(145deg,#ffffff 0%,#f5f5f2 78%)}
+    html[data-theme="light"] .topbar{background:rgba(255,255,255,.94);border-bottom-color:#e1e2dc}
+    html[data-theme="light"] .brand-fallback:before,html[data-theme="light"] .brand-fallback:after{background:#202020}
+    html[data-theme="light"] .panel{background:#fff;border-color:#dedfd9;box-shadow:0 6px 20px rgba(33,38,32,.08)}
+    html[data-theme="light"] .sidebar,html[data-theme="light"] .detail-dock{background:#fff}
+    html[data-theme="light"] .seg{background:#f0f1ed;border-color:#dfe0da}
+    html[data-theme="light"] .seg button{color:#666a70}.seg button.active{box-shadow:0 2px 5px rgba(0,0,0,.08)}
+    html[data-theme="light"] .search,html[data-theme="light"] .field{background:#fff;color:#1c1c1c;border-color:#d5d7d1}
+    html[data-theme="light"] .search::placeholder,html[data-theme="light"] .field::placeholder{color:#8b8f94}
+    html[data-theme="light"] .filter{background:#f4f5f1;border-color:#d5d7d1;color:#62666b}
+    html[data-theme="light"] .filter.active{color:#171717;background:var(--yellow);border-color:var(--yellow)}
+    html[data-theme="light"] .job{background:#fff;border-color:#e0e1dc;box-shadow:0 2px 8px rgba(20,25,22,.04)}
+    html[data-theme="light"] .job:hover,html[data-theme="light"] .job.selected{box-shadow:0 7px 18px rgba(20,25,22,.09);border-color:rgba(255,200,0,.95)}
+    html[data-theme="light"] .priority.normal{color:#666a70;background:#f0f1ed}
+    html[data-theme="light"] .main .panel,html[data-theme="light"] .detail-dock{background:#fff}
+    html[data-theme="light"] .metric{background:#f8f9f6;border-color:#dedfd9}
+    html[data-theme="light"] .metric .l{color:#70747a}
+    html[data-theme="light"] .view-panel-head,html[data-theme="light"] .schedule-head,html[data-theme="light"] .panel-head{border-bottom-color:#e1e2dc}
+    html[data-theme="light"] .view-tabs{background:#f0f1ed;border-color:#dfe0da}
+    html[data-theme="light"] .view-tab{color:#686c72}.view-tab.active{box-shadow:inset 0 0 0 1px #d0d2cc}
+    html[data-theme="light"] .section-title{color:#1b1b1b}
+    html[data-theme="light"] .section-kicker,html[data-theme="light"] .brand-kicker{color:#74787d}
+    html[data-theme="light"] .section-kicker.accent{color:#9b7900}
+    html[data-theme="light"] .context-chip,html[data-theme="light"] .state-chip{background:#f4f5f1;border-color:#d9dbd5;color:#5e6368}
+    html[data-theme="light"] .state-chip.loading{background:#fff8d5;border-color:#ead36d;color:#806600}
+    html[data-theme="light"] .state-chip.live{background:#edf8ef;border-color:#bfe2c7;color:#26763a}
+    html[data-theme="light"] .state-chip.error{background:#fff1e9;border-color:#ecc6ac;color:#9a501c}
+    html[data-theme="light"] .workspace-toolbar{color:#5f6469}
+    html[data-theme="light"] .map-select,html[data-theme="light"] .layer-toggle{background:#fff;color:#5e6368;border-color:#d6d8d2}
+    html[data-theme="light"] .routing-status{background:#f4f5f1;border-color:#d6d8d2;color:#5f6469}
+    html[data-theme="light"] .routing-status.loading{background:#fff8d5;border-color:#ead36d;color:#806600}
+    html[data-theme="light"] .routing-status.live{background:#edf8ef;border-color:#bfe2c7;color:#26763a}
+    html[data-theme="light"] .routing-status.error{background:#fff1e9;border-color:#ecc6ac;color:#9a501c}
+    html[data-theme="light"] .map{background:#e9ece7}.leaflet-container{background:#e9ece7}
+    html[data-theme="light"] .leaflet-popup-content-wrapper,html[data-theme="light"] .leaflet-popup-tip{background:#fff;color:#181818}
+    html[data-theme="light"] .start-marker{border-color:#fff;color:#181818;box-shadow:0 4px 12px rgba(20,25,22,.18)}
+    html[data-theme="light"] .map-marker{border-color:#fff;color:#181818;box-shadow:0 5px 14px rgba(20,25,22,.18)}
+    html[data-theme="light"] .timeline{background:#fff;border-color:#dedfd9}
+    html[data-theme="light"] .timeline-grid{background:#f2f3ef;background-image:repeating-linear-gradient(90deg,transparent 0,transparent calc(14.285714% - 1px),#d9dbd5 calc(14.285714% - 1px),#d9dbd5 14.285714%)}
+    html[data-theme="light"] .timeline-time-label{color:#6e7378}
+    html[data-theme="light"] .timeline-block.travel{background:#c3c7c0;color:transparent}.timeline-block.wait{background:#e0c95c}
+    html[data-theme="light"] .timeline-tooltip{background:#202122;color:#fff;border-color:#3f4145;box-shadow:0 16px 42px rgba(0,0,0,.25)}
+    html[data-theme="light"] .timeline-tooltip .tt-title,html[data-theme="light"] .timeline-tooltip .tt-row span:last-child{color:#fff}
+    html[data-theme="light"] .timeline-tooltip .tt-row{color:#d5d7da}
+    html[data-theme="light"] .timeline-legend{color:#73777c}
+    html[data-theme="light"] .compare-card,html[data-theme="light"] .compare-metric,html[data-theme="light"] .change-count,html[data-theme="light"] .history-item{background:#f8f9f6;border-color:#dedfd9}
+    html[data-theme="light"] .compare-state{background:#fff;border-color:#dedfd9}.compare-state .sub{color:#666a70}
+    html[data-theme="light"] .compare-row{border-bottom-color:#e2e3de}.compare-head{color:#74787d}
+    html[data-theme="light"] .change-item,html[data-theme="light"] .preview-state,html[data-theme="light"] .candidate-card,html[data-theme="light"] .action-item,html[data-theme="light"] .explain-item,html[data-theme="light"] .explain-reason{background:#f8f9f6;border-color:#dedfd9;color:#4e5358}
+    html[data-theme="light"] .candidate-card.good,html[data-theme="light"] .explain-item.ok{background:#eef8f0;border-color:#bfe2c7}
+    html[data-theme="light"] .candidate-card.current{box-shadow:inset 3px 0 0 var(--yellow)}
+    html[data-theme="light"] .candidate-reason,html[data-theme="light"] .action-item span{color:#656a70}
+    html[data-theme="light"] .candidate-badge{background:#eceee9;color:#62676c}.candidate-badge.ok{background:#e6f5e9;color:#26763a}.candidate-badge.bad{background:#fff0e6;color:#9a501c}
+    html[data-theme="light"] .action-item .action-icon{background:#eef0eb}
+
+    /* Refined light theme: engineer cards + restrained Beeline yellow accents */
+    html[data-theme="light"] .engineer-card{background:linear-gradient(135deg,#fff 0%,#fffdf1 100%) !important;border-color:#e4e0c8 !important;box-shadow:0 2px 10px rgba(45,48,40,.05),inset 3px 0 0 rgba(255,200,0,.34)}
+    html[data-theme="light"] .engineer-card:hover{border-color:rgba(255,200,0,.8) !important;box-shadow:0 0 0 1px rgba(255,200,0,.18),0 9px 24px rgba(45,48,40,.09)}
+    html[data-theme="light"] .engineer-card .text\[\#9e9ea4\]{color:#666b70 !important}
+    html[data-theme="light"] .engineer-card .text\[\#bfc0c5\]{color:#565b60 !important}
+    html[data-theme="light"] .engineer-card .engineer-skills{display:block;padding:7px 9px;border:1px solid #f0df8a;border-radius:9px;background:#fff8cf;color:#755f00 !important;font-weight:700}
+    html[data-theme="light"] .engineer-card .engineer-routing{padding:5px 8px;border-radius:8px;background:#fff7c2;color:#745c00 !important}
+    html[data-theme="light"] .engineer-card .field{background:#fff !important}
+    html[data-theme="light"] .summary .metric:first-child{box-shadow:inset 0 2px 0 rgba(255,200,0,.65)}
+    html[data-theme="light"] .summary .metric:nth-child(4){background:linear-gradient(135deg,#fff 0%,#fffdf1 100%)}
+    html[data-theme="light"] .view-panel{box-shadow:0 6px 20px rgba(33,38,32,.08),0 0 0 1px rgba(255,200,0,.08)}
+    html[data-theme="light"] .view-tab.active{color:#171717 !important;background:#fff8c9 !important;border-color:#efd66e !important;box-shadow:0 0 0 1px rgba(255,200,0,.18),0 0 16px rgba(255,200,0,.16) !important}
+    html[data-theme="light"] .job.selected{box-shadow:0 0 0 1px rgba(255,200,0,.22),0 0 18px rgba(255,200,0,.12) !important}
+    html[data-theme="light"] .detail-dock .explain{box-shadow:0 0 0 1px rgba(255,200,0,.16),0 8px 24px rgba(33,38,32,.06)}
+    html[data-theme="light"] .scenario-btn:hover{box-shadow:0 0 0 1px rgba(255,200,0,.14),0 0 14px rgba(255,200,0,.10)}
+    html[data-theme="light"] .explain{background:linear-gradient(120deg,#fffbe4,#fff 58%,#f7f8f4);border-color:#e3d58d}
+    html[data-theme="light"] .explain-item .k{color:#777b80}.explain-item .v{color:#242628}
+    html[data-theme="light"] .explain-reason b{color:#1f2326}.explain-kicker{color:#9c7b00}
+    html[data-theme="light"] .scenario-btn{background:#fff;border-color:#d9dbd5;color:#202326}.scenario-btn .icon{background:#f2f3ef}
+    html[data-theme="light"] .scenario-event{background:linear-gradient(120deg,#fffbe4,#fff);border-color:#e1d37e}.scenario-event .meta{color:#6d7176}
+    html[data-theme="light"] .scenario-empty{border-color:#d2d4ce;color:#767b80}
+    html[data-theme="light"] .preview-card{background:linear-gradient(120deg,#fffbe6,#fff);border-color:#e0d17a}.preview-state .sub{color:#666a70}
+    html[data-theme="light"] .preview-badge{background:#fff2b7;color:#715800}
+    html[data-theme="light"] .history-item .meta,html[data-theme="light"] .history-item .sub{color:#6f7378}.history-item.viewing{background:#f1f5fb}
+    html[data-theme="light"] .source-strip{color:#6c7176}
+    html[data-theme="light"] .btn{background:#fff;color:#202326;border-color:#d7d9d3}.btn.ghost:hover{border-color:var(--yellow);color:#8c7000}
+    html[data-theme="light"] .btn.primary{background:var(--yellow);border-color:var(--yellow);color:#111;box-shadow:0 7px 18px rgba(255,200,0,.2)}
+    html[data-theme="light"] .toast{background:#fffbe4;border-color:#e0d17a;color:#4a3b00;box-shadow:0 12px 35px rgba(20,25,22,.12)}
+    html[data-theme="light"] .modal{background:rgba(18,20,18,.45)}html[data-theme="light"] .modal-card{background:#fff;color:#1d1f21;border-color:#dfe0da;box-shadow:0 24px 80px rgba(20,25,22,.22)}
+    html[data-theme="light"] .modal-card h2,html[data-theme="light"] .modal-card h3{color:#1b1d1f}
+    html[data-theme="light"] .source-link{color:#8b7000}
+    html[data-theme="light"] .muted{color:#6d7277!important}
+    html[data-theme="light"] .theme-toggle{background:#fff}
+    html[data-theme="light"] .brand-copy h1{color:#191919}
+    /* Light theme contrast refinement */
+    html[data-theme="light"] .workspace-toolbar{background:#ffffff;border-bottom-color:#e1e2dc;color:#22262a}
+    html[data-theme="light"] .routing-status{background:#f7f8f5;border-color:#d5d8d1;color:#3e4449}
+    html[data-theme="light"] .map-select{background:#f7f8f5;border-color:#d5d8d1;color:#22262a}
+    html[data-theme="light"] .map-select select{color:#22262a;background:transparent}
+    html[data-theme="light"] .layer-toggle{background:#f7f8f5;border-color:#d5d8d1;color:#3e4449}
+    html[data-theme="light"] .layer-toggle input{accent-color:var(--yellow)}
+    html[data-theme="light"] .view-tabs{background:#f0f1ed;border-color:#d5d8d1}
+    html[data-theme="light"] .view-tab{color:#4e555b}
+    html[data-theme="light"] .view-tab:hover{color:#181b1e;background:#e7e9e4}
+    html[data-theme="light"] .view-tab.active{color:#171717;background:#fff8c9;border:1px solid #efd66e;box-shadow:0 0 0 1px rgba(255,200,0,.14),0 0 14px rgba(255,200,0,.12)}
+    html[data-theme="light"] .source-strip{background:#f7f8f5;border-bottom-color:#e1e2dc;color:#4e555b}
+    html[data-theme="light"] .source-strip summary{color:#33393e}
+    html[data-theme="light"] .source-strip details div{background:#ffffff;border-color:#d5d8d1;color:#444a50;box-shadow:0 12px 28px rgba(20,25,22,.12)}
+    html[data-theme="light"] .secondary-copy{color:#5f666c}
+    html[data-theme="light"] .history-details>summary{color:#33393e}
+    html[data-theme="light"] .history-view-note{color:#62686e}
+    html[data-theme="light"] .timeline-axis{color:#5e656b}
+    html[data-theme="light"] .timeline-legend{color:#5e656b}
+    html[data-theme="light"] .text-gray-400,html[data-theme="light"] .text-gray-500,html[data-theme="light"] .text-gray-600{color:#5f666c!important}
+    html[data-theme="light"] .text-gray-300,html[data-theme="light"] .text-gray-200{color:#3f464c!important}
+    html[data-theme="light"] .text-white{color:#181b1e!important}
+    html[data-theme="light"] .workspace-toolbar .btn{background:#ffffff;color:#33393e;border-color:#d5d8d1}
+    html[data-theme="light"] .workspace-toolbar .btn.ghost:hover{background:#fff9d7;color:#735e00;border-color:var(--yellow)}
+    html[data-theme="light"] .workspace-toolbar .btn.primary{background:var(--yellow);color:#111;border-color:var(--yellow)}
+    html[data-theme="light"] .map-toolbar{color:#3e4449}
+    html[data-theme="light"] .view-panel-head{background:#ffffff}
+    @media(max-width:900px){.theme-toggle-label{display:none}.theme-toggle{padding:9px 10px}}
+  </style>
+</head>
+<body>
+<div class="shell">
+  <header class="topbar">
+    <div class="max-w-[1800px] mx-auto px-4 h-full flex items-center justify-between gap-4 flex-wrap">
+      <div class="topbar-left"><div class="brand" aria-label="Билайн"><img id="brand-logo" src="logoBeeline.jpg" alt="билайн" onerror="this.classList.add('hidden');document.getElementById('brand-fallback').classList.remove('hidden')"><span id="brand-fallback" class="brand-fallback hidden" aria-hidden="true"></span></div><div class="brand-copy"><div class="brand-kicker">Билайн Бизнес</div><h1>Планирование маршрутов инженеров</h1></div></div>
+      <div class="header-actions"><button class="btn ghost theme-toggle" id="theme-toggle" type="button" aria-label="Переключить тему" aria-pressed="false" title="Переключить тему"><i data-lucide="sun-moon" class="w-4 h-4"></i><span class="theme-toggle-label"></span></button><button class="btn ghost" id="import-button"><i data-lucide="upload" class="w-4 h-4 inline mr-1"></i>Импорт</button><button class="btn ghost" id="baseline-button"><i data-lucide="git-compare" class="w-4 h-4 inline mr-1"></i>Базовый план</button><button class="btn primary" id="optimize-button"><i data-lucide="sparkles" class="w-4 h-4 inline mr-1"></i>Построить план</button></div>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <aside class="panel sidebar">
+      <div class="p-3 border-b border-[#2c2e36]">
+        <div class="seg" role="tablist" aria-label="Ресурсы">
+          <button id="jobs-tab" class="active" role="tab" aria-selected="true" aria-controls="jobs-panel">Заявки</button>
+          <button id="engineers-tab" role="tab" aria-selected="false" aria-controls="engineers-panel">Инженеры</button>
+        </div>
+      </div>
+
+      <section id="jobs-panel" class="scroll p-4">
+        <div class="flex items-end justify-between mb-4">
+          <div><div class="text-[10px] font-extrabold uppercase tracking-[.14em] text-[#9e9ea4]">Рабочая смена</div><h2 class="m-0 mt-1 text-[17px] font-extrabold">Заявки</h2></div>
+          <span id="jobs-count" class="rounded-full bg-[#ffc800] px-2.5 py-1 text-xs font-extrabold text-black">0</span>
+        </div>
+        <div class="relative mb-3"><i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#9e9ea4]"></i><input id="job-search" class="search" placeholder="ID, адрес, работа, навык" /></div>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <button class="filter active" data-filter="all">Все</button><button class="filter" data-filter="urgent">Срочные</button><button class="filter" data-filter="assigned">Назначенные</button><button class="filter" data-filter="problem">Проблемные</button>
+        </div>
+        <div id="jobs-list" class="space-y-2.5"></div>
+        <button id="express-button" class="btn primary w-full mt-4"><i data-lucide="plus" class="w-4 h-4 inline mr-1"></i>Добавить срочную заявку</button>
+      </section>
+
+      <section id="engineers-panel" class="scroll p-4 hidden">
+        <div class="mb-4"><div class="text-[10px] font-extrabold uppercase tracking-[.14em] text-[#9e9ea4]">Ресурсы</div><h2 class="m-0 mt-1 text-[17px] font-extrabold">Инженеры</h2></div>
+        <div id="engineers-list" class="space-y-3"></div>
+      </section>
+    </aside>
+
+    <section class="main">
+      <section class="summary" id="summary"></section>
+      <section class="panel view-panel">
+        <div class="view-panel-head">
+          <div><div class="section-kicker">Рабочая область</div><h2 class="section-title">Маршруты и плановый день</h2></div>
+          <div class="view-tabs" role="tablist" aria-label="Режим рабочей области">
+            <button id="view-map-tab" class="view-tab active" type="button" role="tab" aria-selected="true" aria-controls="map-view-panel">Карта</button>
+            <button id="view-schedule-tab" class="view-tab" type="button" role="tab" aria-selected="false" aria-controls="schedule-view-panel">Расписание</button>
+          </div>
+        </div>
+        <div id="map-view-panel" class="view-tabpanel" role="tabpanel" aria-labelledby="view-map-tab">
+          <div class="workspace-toolbar">
+            <span id="routing-status" class="routing-status local"><i data-lucide="route" class="w-3 h-3"></i><span>Маршрутизация: локальная оценка</span></span>
+            <label class="map-select">Инженер <select id="map-engineer-select" class="bg-transparent outline-none"><option value="all">Все инженеры</option></select></label>
+            <button id="map-fit-button" class="btn ghost" type="button" title="Показать все видимые точки текущего плана"><i data-lucide="scan" class="w-4 h-4 inline mr-1"></i>Весь план</button>
+            <label class="layer-toggle"><input id="layer-jobs" type="checkbox" checked> Заявки</label><label class="layer-toggle"><input id="layer-routes" type="checkbox" checked> Маршруты</label><label class="layer-toggle"><input id="layer-starts" type="checkbox" checked> Старты</label>
+          </div>
+          <div class="source-strip"><span>В рабочем режиме: <b>дорожный расчёт</b> · общественный транспорт — <b>приблизительная оценка</b>.</span><details><summary>Источник данных</summary><div>Авто: OSRM · пешком/велосипед: Valhalla · общественный транспорт: мультимодальная матрица не используется · адреса: Photon / OpenStreetMap · пробки не учитываются.</div></details></div>
+          <div class="map-wrap"><div id="map" class="map" aria-label="Карта маршрутов"></div></div>
+        </div>
+        <div id="schedule-view-panel" class="view-tabpanel hidden" role="tabpanel" aria-labelledby="view-schedule-tab">
+          <div class="schedule-head"><div><div class="section-kicker">Расписание</div><h3 class="section-title">Плановый день</h3></div><div id="timeline-hint" class="text-xs text-[#9e9ea4]">Время рассчитано от маршрута и длительности работ</div></div>
+          <div class="timeline-scroll"><div class="min-w-[820px]"><div class="timeline-axis mb-2 flex"><div class="w-[150px]"></div><div class="flex flex-1 justify-between px-2"><span>08:00</span><span>10:00</span><span>12:00</span><span>14:00</span><span>16:00</span><span>18:00</span><span>20:00</span><span>22:00</span></div></div><div id="timeline-list" class="space-y-3"></div></div></div>
+        </div>
+      </section>
+      <section class="panel scenario-panel">
+        <div class="panel-head"><div><div class="section-kicker">События рабочего дня</div><h2 class="section-title">Что будет, если…</h2></div><div class="secondary-copy">Сначала предпросмотр — потом применение.</div></div>
+        <div id="scenario-event" class="mb-3"></div><div id="scenario-preview" class="preview-card hidden"></div>
+        <div class="scenario-grid">
+          <button id="cancel-scenario-button" class="scenario-btn" type="button"><span class="icon"><i data-lucide="ban" class="w-4 h-4"></i></span><span><b class="block text-sm">Отмена заявки</b><span class="block mt-1 text-xs text-[#9e9ea4]">Показать последствия без изменения текущего плана.</span></span></button>
+          <button id="unavailable-scenario-button" class="scenario-btn" type="button"><span class="icon"><i data-lucide="user-round-x" class="w-4 h-4"></i></span><span><b class="block text-sm">Недоступность инженера</b><span class="block mt-1 text-xs text-[#9e9ea4]">Проверить перераспределение до применения.</span></span></button>
+          <button id="urgent-scenario-button" class="scenario-btn" type="button"><span class="icon"><i data-lucide="siren" class="w-4 h-4"></i></span><span><b class="block text-sm">Срочная заявка</b><span class="block mt-1 text-xs text-[#9e9ea4]">Добавить новую заявку только в предпросмотр.</span></span></button>
+        </div>
+      </section>
+    </section>
+    <aside class="detail-dock panel" aria-label="Детали и контроль плана">
+      <section class="detail-section explain"><div class="detail-title-row"><div class="detail-icon"><i data-lucide="brain-circuit" class="w-5 h-5"></i></div><div class="min-w-0"><div class="section-kicker accent">Решение</div><h2 class="section-title">Почему заявка попала сюда</h2></div></div><div id="explanation-text" class="detail-lead">Выберите заявку, чтобы увидеть ограничения, кандидатов и причину назначения.</div><div id="dispatcher-detail" class="dispatcher-grid"></div></section>
+      <section class="detail-section plans-section"><div class="panel-head"><div><div class="section-kicker">Планы</div><h2 class="section-title">Сравнение и история</h2></div><span id="compare-note" class="secondary-copy">Базовый план: порядок поступления + первый подходящий инженер</span></div><div id="compare" class="compare"></div><div id="change-log" class="mt-3"></div><details class="history-details"><summary>История версий</summary><div id="plan-history" class="history-strip mt-3"></div></details></section>
+    </aside>
+  </main>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<div id="timeline-tooltip" class="timeline-tooltip" role="tooltip" aria-hidden="true"></div>
+
+<div id="import-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="import-title">
+  <form id="import-form" class="modal-card">
+    <div class="flex items-start justify-between gap-4"><div><div class="text-[10px] font-extrabold uppercase tracking-[.14em] text-[#9e9ea4]">Данные</div><h2 id="import-title" class="m-0 mt-1 text-[18px] font-extrabold">Импорт CSV / JSON</h2></div><button type="button" class="btn ghost" data-close="import-modal" aria-label="Закрыть"><i data-lucide="x" class="w-4 h-4"></i></button></div>
+    <p class="text-xs text-[#bfc0c5] mt-3">JSON: <code>{jobs: [...], engineers: [...]}</code> или массив строк. CSV организаторов: поддерживаются «Заявка», «Тип заявки HD», «Начало», «Окончание», «Адрес» + ID/длительность/навык/транспорт. UTF-8/Windows-1251 и разделитель <code>;</code> определяются автоматически. Адреса без координат геокодируются до применения импорта.</p>
+    <input id="import-file" type="file" accept=".csv,.json,application/json,text/csv" class="field mt-3" required />
+    <div id="import-message" class="text-xs mt-3 hidden"></div>
+    <div class="flex justify-end gap-2 mt-5"><button type="button" class="btn ghost" data-close="import-modal">Отмена</button><button class="btn primary" type="submit">Загрузить</button></div>
+  </form>
+</div>
+
+<div id="cancel-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="cancel-title">
+  <form id="cancel-form" class="modal-card">
+    <div class="flex items-start justify-between gap-4"><div><div class="text-[10px] font-extrabold uppercase tracking-[.14em] text-[#9e9ea4]">Сценарий дня</div><h2 id="cancel-title" class="m-0 mt-1 text-[18px] font-extrabold">Отмена заявки</h2></div><button type="button" class="btn ghost" data-close="cancel-modal" aria-label="Закрыть"><i data-lucide="x" class="w-4 h-4"></i></button></div>
+    <div class="mt-4"><label class="text-xs font-extrabold" for="cancel-job">Выберите активную заявку</label><select id="cancel-job" class="field mt-1" required></select></div>
+    <div class="mt-3 p-3 rounded-xl border border-[#3a3d45] bg-[#181a1f] text-[11px] text-[#c9c9ce] leading-5">Состояние заявки сохранится как <b>«Отменена»</b>, чтобы в интерфейсе был виден сам факт события. В новый маршрут она не попадёт.</div>
+    <div class="flex justify-end gap-2 mt-5"><button type="button" class="btn ghost" data-close="cancel-modal">Отмена</button><button class="btn primary" type="submit"><i data-lucide="ban" class="w-4 h-4 inline mr-1"></i>Отменить и перепланировать</button></div>
+  </form>
+</div>
+
+<div id="unavailable-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="unavailable-title">
+  <form id="unavailable-form" class="modal-card">
+    <div class="flex items-start justify-between gap-4"><div><div class="text-[10px] font-extrabold uppercase tracking-[.14em] text-[#9e9ea4]">Сценарий дня</div><h2 id="unavailable-title" class="m-0 mt-1 text-[18px] font-extrabold">Инженер стал недоступен</h2></div><button type="button" class="btn ghost" data-close="unavailable-modal" aria-label="Закрыть"><i data-lucide="x" class="w-4 h-4"></i></button></div>
+    <div class="mt-4"><label class="text-xs font-extrabold" for="unavailable-engineer">Выберите инженера</label><select id="unavailable-engineer" class="field mt-1" required></select></div>
+    <div class="grid grid-cols-2 gap-3 mt-3"><div><label class="text-xs font-extrabold" for="event-time">Время события</label><input id="event-time" type="time" value="13:30" class="field mt-1"></div><div><label class="text-xs font-extrabold" for="event-status">Статус</label><select id="event-status" class="field mt-1"><option>Недоступен</option><option>Больничный</option></select></div></div>
+    <div class="mt-3 p-3 rounded-xl border border-[#3a3d45] bg-[#181a1f] text-[11px] text-[#c9c9ce] leading-5">Работы, завершённые до указанного времени, фиксируются. Остальные заявки возвращаются в планирование с учётом новой доступности инженера; время события сохраняется в журнале.</div>
+    <div class="flex justify-end gap-2 mt-5"><button type="button" class="btn ghost" data-close="unavailable-modal">Отмена</button><button class="btn primary" type="submit"><i data-lucide="refresh-cw" class="w-4 h-4 inline mr-1"></i>Сделать недоступным и пересчитать</button></div>
+  </form>
+</div>
+
+<div id="express-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="express-title">
+  <form id="express-form" class="modal-card">
+    <div class="flex items-start justify-between gap-4"><div><div class="text-[10px] font-extrabold uppercase tracking-[.14em] text-[#9e9ea4]">Событие дня</div><h2 id="express-title" class="m-0 mt-1 text-[18px] font-extrabold">Новая срочная заявка</h2></div><button type="button" class="btn ghost" data-close="express-modal" aria-label="Закрыть"><i data-lucide="x" class="w-4 h-4"></i></button></div>
+    <div class="grid gap-3 mt-4">
+      <div><label class="text-xs font-extrabold" for="express-name">Наименование</label><input id="express-name" class="field mt-1" required placeholder="Аварийное восстановление"></div>
+      <div>
+        <label class="text-xs font-extrabold" for="express-address">Адрес</label>
+        <div class="mt-1 flex gap-2">
+          <input id="express-address" class="field flex-1" required placeholder="Москва, улица и номер дома">
+          <button id="geocode-button" type="button" class="btn ghost whitespace-nowrap"><i data-lucide="map-pin" class="w-4 h-4 inline mr-1"></i>Найти на карте</button>
+        </div>
+        <div id="geocode-message" class="mt-2 hidden text-[10px] leading-4" aria-live="polite"></div>
+        <div id="geocode-result" class="mt-2 hidden rounded-xl border border-[#343640] bg-[#181a1f] p-3 text-[10px] text-[#c9c9ce]"></div>
+      </div>
+      <div class="grid grid-cols-2 gap-3"><div><label class="text-xs font-extrabold">Окно начала</label><select id="express-window" class="field mt-1"><option value="10:00–12:00">10:00–12:00</option><option value="12:00–14:00">12:00–14:00</option><option value="14:00–16:00">14:00–16:00</option><option value="16:00–18:00">16:00–18:00</option></select></div><div><label class="text-xs font-extrabold">Навык</label><select id="express-skill" class="field mt-1"><option>Локальные работы</option><option>Работы на подключение и дозаказы</option><option>Аварийные работы</option></select></div></div>
+      <div class="grid grid-cols-2 gap-3"><div><label class="text-xs font-extrabold">Длительность, мин</label><input id="express-duration" type="number" min="1" value="45" class="field mt-1"></div><div><label class="text-xs font-extrabold">Транспорт</label><select id="express-vehicle" class="field mt-1"><option value="">Без ограничения</option><option>Автомобиль</option><option>Пешеход</option><option>Велосипед</option><option>Общественный транспорт</option></select></div></div>
+    </div>
+    <div class="flex justify-end gap-2 mt-5"><button type="button" class="btn ghost" data-close="express-modal">Отмена</button><button class="btn primary" type="submit">Добавить и перепланировать</button></div>
+  </form>
+</div>
+
+<script>
+(() => {
+  'use strict';
+  const THEME_KEY = 'beeline_route_theme_v1';
+  function applyTheme(theme){
+    const next = theme==='light' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    const btn=document.getElementById('theme-toggle');
+    if(btn){
+      btn.setAttribute('aria-pressed', next==='light' ? 'true' : 'false');
+      btn.setAttribute('aria-label', next==='light' ? 'Переключить на тёмную тему' : 'Переключить на светлую тему');
+      btn.setAttribute('title', next==='light' ? 'Тёмная тема' : 'Светлая тема');
+      const icon=btn.querySelector('[data-lucide]'); if(icon) icon.setAttribute('data-lucide', next==='light' ? 'moon' : 'sun');
+    }
+    try{localStorage.setItem(THEME_KEY,next)}catch(e){}
+    if(typeof lucide!=='undefined') lucide.createIcons();
+  }
+  let initialTheme='dark';
+  try{initialTheme=localStorage.getItem(THEME_KEY)||'dark'}catch(e){}
+  applyTheme(initialTheme);
+  const SKILLS = ['Локальные работы','Работы на подключение и дозаказы','Аварийные работы'];
+  const VEHICLES = ['Автомобиль','Пешеход','Велосипед','Общественный транспорт'];
+  const SPEED = { 'Автомобиль':35, 'Пешеход':5, 'Велосипед':14, 'Общественный транспорт':22 };
+  const VEHICLE_CODE = {1:'Автомобиль',2:'Пешеход',3:'Велосипед',4:'Общественный транспорт'};
+  const ROUTE_PROVIDER = { 'Автомобиль':'OSRM', 'Пешеход':'Valhalla', 'Велосипед':'Valhalla', 'Общественный транспорт':'Valhalla / multimodal' };
+  const VEHICLE_ICON = { 'Автомобиль':'car', 'Пешеход':'footprints', 'Велосипед':'bike', 'Общественный транспорт':'bus-front' };
+  const VALHALLA = { baseUrl:'https://valhalla.openstreetmap.de', timeoutMs:10000 };
+  const vehicleName = value => VEHICLE_CODE[Number(value)] || String(value ?? '').trim();
+  const STORAGE_KEY = 'beeline_route_mvp_v6';
+  const ROUTING = {
+    baseUrl: 'https://router.project-osrm.org',
+    profile: 'driving',
+    timeoutMs: 9000,
+    maxTablePoints: 80
+  };
+  const GEOCODER = {
+    baseUrl: 'https://photon.komoot.io',
+    timeoutMs: 9000,
+    defaultCenter: [55.751244, 37.618423]
+  };
+  let map, markerLayers=[], routeLayers=[];
+  let routingFetchToken=0;
+  let planningToken=0;
+  let mapView={initialized:false,center:null,zoom:null};
+  let geocodeMarker=null;
+  let geocodeSession={token:0,address:'',candidates:[],selected:null};
+  const routingCache = new Map();
+  const geocodeCache = new Map();
+  let lastGeocodeAt = 0;
+  let state = {
+    version:0, lastPlan:null, baseline:null, planHistory:[], changes:[], selectedJobId:null, filter:'all', query:'',
+    scenarioBefore:null, scenarioAfter:null, scenarioEvent:null, scenarioSnapshots:null, scenarioPreview:null, scenarioBeforeVersion:null, scenarioAfterVersion:null,
+    selectedEngineerId:'all', mapLayers:{jobs:true,routes:true,starts:true}, historyViewVersion:null,
+    dataRevision:0, date:'2026-08-17', branch:'Югоцентр', routingContext:null,
+    routing:{status:'local',message:'Маршрутизация: локальная оценка',updatedAt:null},
+    geocoding:{status:'idle',message:'Адрес ещё не проверен',updatedAt:null},
+    jobs:[
+      {id:'104',title:'Диагностика линии',address:'ул. Тверская, 10',coords:[55.7642,37.6054],duration:55,windowStart:'11:00',windowEnd:'12:00',priority:'normal',requiredSkill:'Аварийные работы',requiredVehicle:'',status:'unassigned',engineerId:null},
+      {id:'105',title:'Настройка клиентского подключения',address:'ул. Большая Дмитровка, 7',coords:[55.7629,37.6109],duration:60,windowStart:'12:00',windowEnd:'14:00',priority:'normal',requiredSkill:'Работы на подключение и дозаказы',requiredVehicle:'Автомобиль',status:'unassigned',engineerId:null},
+      {id:'106',title:'Монтаж оборудования у клиента',address:'ул. Покровка, 42',coords:[55.7595,37.6486],duration:70,windowStart:'14:00',windowEnd:'16:00',priority:'normal',requiredSkill:'Локальные работы',requiredVehicle:'',status:'unassigned',engineerId:null},
+      {id:'107',title:'Аварийный выезд',address:'Земляной Вал, 29',coords:[55.7527,37.6598],duration:45,windowStart:'16:00',windowEnd:'18:00',priority:'urgent',requiredSkill:'Аварийные работы',requiredVehicle:'Автомобиль',status:'unassigned',engineerId:null},
+      {id:'108',title:'Проверка подключенного объекта',address:'Новинский бульвар, 18',coords:[55.7548,37.5810],duration:60,windowStart:'14:00',windowEnd:'16:00',priority:'normal',requiredSkill:'Работы на подключение и дозаказы',requiredVehicle:'Пешеход',status:'unassigned',engineerId:null}
+    ],
+    engineers:[
+      {id:'eng-1',name:'Иванов И.',skills:['Аварийные работы','Работы на подключение и дозаказы'],vehicle:'Автомобиль',shiftStart:'08:00',shiftEnd:'18:00',startPoint:[55.7558,37.6176],status:'Доступен',color:'#78AEFC'},
+      {id:'eng-2',name:'Петров С.',skills:['Локальные работы','Работы на подключение и дозаказы'],vehicle:'Автомобиль',shiftStart:'09:00',shiftEnd:'19:00',startPoint:[55.7558,37.6176],status:'Доступен',color:'#67D68A'},
+      {id:'eng-3',name:'Смирнова А.',skills:['Локальные работы','Работы на подключение и дозаказы','Аварийные работы'],vehicle:'Общественный транспорт',shiftStart:'10:00',shiftEnd:'20:00',startPoint:[55.7446,37.6126],status:'На перерыве',color:'#FFC800'}
+    ]
+  };
+
+  const $ = id => document.getElementById(id);
+  const escapeHtml = s => String(s ?? '').replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
+  const toMin = hhmm => { const [h,m]=String(hhmm).split(':').map(Number); return h*60+m; };
+  const fmtMin = n => { const x=Math.max(0,Math.round(n)); return String(Math.floor(x/60)).padStart(2,'0')+':'+String(x%60).padStart(2,'0'); };
+  const nowHHMM = () => { const d=new Date(); return `${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`; };
+  const splitWindow = w => String(w).replace('—','-').replace('–','-').split('-').map(x=>x.trim());
+  const haversine = (a,b) => { const R=6371, r=Math.PI/180; const dLat=(b[0]-a[0])*r, dLon=(b[1]-a[1])*r; const x=Math.sin(dLat/2)**2+Math.cos(a[0]*r)*Math.cos(b[0]*r)*Math.sin(dLon/2)**2; return 2*R*Math.asin(Math.sqrt(x)); };
+  const localTravelMetric = (a,b,vehicle) => ({distance:haversine(a,b),minutes:Math.max(2, Math.round(haversine(a,b)/(SPEED[vehicle]||25)*60)),source:'local'});
+  const coordKey = p => `${Number(p?.[0]).toFixed(6)},${Number(p?.[1]).toFixed(6)}`;
+  const sortJobs = jobs => [...jobs].sort((a,b)=> (a.priority==='urgent'?0:1)-(b.priority==='urgent'?0:1) || toMin(a.windowStart)-toMin(b.windowStart) || toMin(a.windowEnd)-toMin(b.windowEnd) || String(a.id).localeCompare(String(b.id),undefined,{numeric:true}));
+
+  function setRoutingStatus(status,message){
+    state.routing={status,message,updatedAt:Date.now()};
+    const top=$('topbar-state');if(top){const label=status==='live'?'Расчёт актуален':status==='loading'?'Идёт расчёт':status==='error'?'Есть ограничения':'Готов к расчёту';top.className=`state-chip ${status==='live'?'live':status==='loading'?'loading':status==='error'?'error':'ready'}`;top.innerHTML=`<span class="state-dot"></span>${escapeHtml(label)}`;}
+    const ver=$('topbar-version');if(ver)ver.textContent=`v${Number(state.version||0)}`;
+    const el=$('routing-status'); if(!el)return;
+    el.className=`routing-status ${status==='live'?'live':status==='loading'?'loading':status==='error'?'error':'local'}`;
+    el.innerHTML=`<i data-lucide="${status==='live'?'route':status==='loading'?'loader-circle':status==='error'?'triangle-alert':'route'}" class="w-3 h-3 ${status==='loading'?'animate-spin':''}"></i><span>${escapeHtml(message)}</span>`;
+    lucide.createIcons();
+  }
+
+  async function fetchJson(url, timeoutMs=ROUTING.timeoutMs){
+    const controller=new AbortController();
+    const timer=setTimeout(()=>controller.abort(),timeoutMs);
+    try{
+      const response=await fetch(url,{signal:controller.signal,headers:{Accept:'application/json'}});
+      if(!response.ok) throw new Error(`HTTP ${response.status}`);
+      return await response.json();
+    }finally{clearTimeout(timer);}
+  }
+
+  async function fetchJsonPost(url, body, timeoutMs=ROUTING.timeoutMs){
+    const controller=new AbortController();
+    const timer=setTimeout(()=>controller.abort(),timeoutMs);
+    try{
+      const response=await fetch(url,{method:'POST',signal:controller.signal,headers:{Accept:'application/json','Content-Type':'application/json'},body:JSON.stringify(body)});
+      if(!response.ok) throw new Error(`HTTP ${response.status}`);
+      return await response.json();
+    }finally{clearTimeout(timer);}
+  }
+
+  function setGeocodingMessage(status, message, detail=''){
+    state.geocoding={status,message,updatedAt:Date.now()};
+    const msg=$('geocode-message'); const result=$('geocode-result');
+    if(msg){
+      msg.className=`mt-2 text-[10px] leading-4 ${status==='success'?'text-[#8ce6a8]':status==='loading'?'text-[#fff0a8]':'text-[#ffbe85]'}`;
+      msg.innerHTML=`<i data-lucide="${status==='success'?'check-circle-2':status==='loading'?'loader-circle':'triangle-alert'}" class="w-3 h-3 inline ${status==='loading'?'animate-spin':''}"></i> ${escapeHtml(message)}`;
+    }
+    if(result){
+      if(detail){result.classList.remove('hidden');result.innerHTML=detail;}
+      else {result.classList.add('hidden');result.textContent='';}
+    }
+    lucide.createIcons();
+  }
+
+  function normalizeAddressKey(address){return String(address||'').trim().toLowerCase().replace(/\s+/g,' ');}
+  function formatGeocodeCandidate(feature, fallback){
+    const props=feature?.properties||{};
+    const parts=[props.street&&`${props.street}${props.housenumber?`, ${props.housenumber}`:''}`,props.district,props.city,props.state,props.country].filter(Boolean);
+    const display=parts.join(', ')||String(props.name||fallback);
+    const coords=feature?.geometry?.coordinates;
+    if(!Array.isArray(coords)||coords.length<2)return null;
+    const lon=Number(coords[0]),lat=Number(coords[1]);
+    if(!Number.isFinite(lat)||!Number.isFinite(lon)||lat<-90||lat>90||lon<-180||lon>180)return null;
+    return {coords:[lat,lon],display,confidenceName:props.name||'',raw:feature};
+  }
+  async function geocodeAddress(address){
+    const query=String(address||'').trim();
+    if(!query) throw new Error('Введите адрес.');
+    const key=normalizeAddressKey(query);
+    if(geocodeCache.has(key)) return cloneData(geocodeCache.get(key));
+    const wait=Math.max(0,1000-(Date.now()-lastGeocodeAt));
+    if(wait) await new Promise(resolve=>setTimeout(resolve,wait));
+    lastGeocodeAt=Date.now();
+    const params=new URLSearchParams({q:query,limit:'5',lang:'ru',lat:String(GEOCODER.defaultCenter[0]),lon:String(GEOCODER.defaultCenter[1]),zoom:'11',location_bias_scale:'0.25'});
+    const url=`${GEOCODER.baseUrl}/api/?${params.toString()}`;
+    const data=await fetchJson(url,GEOCODER.timeoutMs);
+    const features=Array.isArray(data?.features)?data.features:[];
+    const candidates=features.map(f=>formatGeocodeCandidate(f,query)).filter(Boolean);
+    if(!candidates.length) throw new Error('Адрес не найден. Проверьте улицу и номер дома.');
+    const result={address:query,candidates};
+    geocodeCache.set(key,result);
+    return cloneData(result);
+  }
+
+  async function fetchOsrmTable(points){
+    if(!points.length||points.length>ROUTING.maxTablePoints) return null;
+    const coordinates=points.map(p=>`${encodeURIComponent(p[1])},${encodeURIComponent(p[0])}`).join(';');
+    const url=`${ROUTING.baseUrl}/table/v1/${ROUTING.profile}/${coordinates}?annotations=duration,distance`;
+    const data=await fetchJson(url,ROUTING.timeoutMs);
+    if(data.code!=='Ok'||!Array.isArray(data.durations)||!Array.isArray(data.distances)) throw new Error(data.code||'Не удалось получить матрицу OSRM');
+    return {durations:data.durations,distances:data.distances,points,provider:'OSRM',distanceUnit:'meters'};
+  }
+
+  async function fetchValhallaMatrix(points,costing){
+    if(!points.length||points.length>ROUTING.maxTablePoints) return null;
+    if(costing==='multimodal') return null; // matrix API не поддерживает multimodal.
+    const locations=points.map(p=>({lat:Number(p[0]),lon:Number(p[1])}));
+    const payload={sources:locations,targets:locations,costing,units:'km',verbose:false};
+    const url=`${VALHALLA.baseUrl}/sources_to_targets`;
+    const data=await fetchJsonPost(url,payload,VALHALLA.timeoutMs);
+    const matrix=data?.sources_to_targets || {};
+    const durations=matrix.durations,distances=matrix.distances;
+    if(!Array.isArray(durations)||!Array.isArray(distances)) throw new Error('Valhalla не вернул матрицу времени и расстояний');
+    const distanceUnit=String(data?.units||'kilometers').toLowerCase();
+    return {durations,distances,points,provider:'Valhalla',costing,distanceUnit};
+  }
+
+  async function buildRoutingContext(jobs,engineers){
+    const points=[]; const seen=new Set();
+    const add=p=>{if(!Array.isArray(p)||p.length<2||p.some(v=>Number.isNaN(Number(v))))return; const key=coordKey(p);if(seen.has(key))return;seen.add(key);points.push([Number(p[0]),Number(p[1])]);};
+    engineers.forEach(e=>add(e.startPoint));
+    jobs.filter(j=>j.status!=='cancelled').forEach(j=>add(j.coords));
+    if(!points.length) return {contexts:{},summary:'Нет координат для маршрутизации'};
+
+    const vehicles=[...new Set(engineers.map(e=>vehicleName(e.vehicle)).filter(Boolean))];
+    const contexts={};
+    const errors=[];
+    for(const vehicle of vehicles){
+      try{
+        const costing=vehicle==='Автомобиль'?'auto':vehicle==='Пешеход'?'pedestrian':vehicle==='Велосипед'?'bicycle':'multimodal';
+        let table=null;
+        if(vehicle==='Автомобиль') table=await fetchOsrmTable(points);
+        else if(vehicle==='Пешеход'||vehicle==='Велосипед') table=await fetchValhallaMatrix(points,costing);
+        if(table){
+          contexts[vehicle]={enabled:true,index:new Map(points.map((p,i)=>[coordKey(p),i])),table,provider:table.provider,costing};
+        }else{
+          contexts[vehicle]={enabled:false,index:new Map(points.map((p,i)=>[coordKey(p),i])),reason:'для этого режима матрица не поддерживается'};
+          errors.push(`${vehicle}: матрица недоступна`);
+        }
+      }catch(error){
+        contexts[vehicle]={enabled:false,index:new Map(points.map((p,i)=>[coordKey(p),i])),reason:error?.name==='AbortError'?'таймаут API':(error?.message||'routing API недоступен')};
+        errors.push(`${vehicle}: ${contexts[vehicle].reason}`);
+      }
+    }
+    const live=Object.entries(contexts).filter(([,c])=>c.enabled).length;
+    return {contexts,points,live,total:vehicles.length,summary:errors.length?errors.join(' · '):`${live} из ${vehicles.length} режимов используют дорожную маршрутизацию`};
+  }
+
+  function getTravelMetric(a,b,vehicle,routingContext){
+    const v=vehicleName(vehicle),ctx=routingContext?.contexts?.[v];
+    if(ctx?.enabled){
+      const i=ctx.index.get(coordKey(a)),j=ctx.index.get(coordKey(b));
+      const rawDuration=ctx.table?.durations?.[i]?.[j],rawDistance=ctx.table?.distances?.[i]?.[j];
+      if(rawDuration==null || rawDistance==null) return {distance:Infinity,minutes:Infinity,source:ctx.provider,reachable:false};
+      const duration=Number(rawDuration),distanceValue=Number(rawDistance);
+      if(Number.isFinite(duration)&&Number.isFinite(distanceValue)){
+        const distanceKm=(ctx.table.distanceUnit==='miles'||ctx.table.distanceUnit==='mi')?distanceValue*1.609344:ctx.table.distanceUnit==='m'||ctx.table.distanceUnit==='meters'?distanceValue/1000:distanceValue;
+        return {distance:distanceKm,minutes:Math.max(1,Math.ceil(duration/60)),source:ctx.provider,reachable:true};
+      }
+      return {distance:Infinity,minutes:Infinity,source:ctx.provider,reachable:false};
+    }
+    return {...localTravelMetric(a,b,v),reachable:true};
+  }
+  const HEADER_ALIASES={
+    id:['id','ID','ID заявки','Идентификатор','Идентификатор заявки','Код заявки','Номер заявки','№ заявки'],
+    title:['title','name','Название','Наименование','Заявка'],
+    type:['entity','type','Тип','Тип заявки','Тип заявки HD','Категория заявки','Вид работ'],
+    priority:['priority','Приоритет'],
+    address:['address','Адрес','Адрес заявки','Адрес выполнения'],
+    start:['windowStart','start','Начало','Время начала','Начало окна'],
+    end:['windowEnd','end','Окончание','Конец','Время окончания','Окончание окна'],
+    duration:['duration','durationMin','Длительность','Длительность, мин','Время работы','Время работы, мин','Продолжительность'],
+    skill:['requiredSkill','skill','requirement','Навык','Требуемый навык','Тип работ'],
+    vehicle:['requiredVehicle','vehicle','transport','Транспорт','Требуемый транспорт'],
+    lat:['lat','latitude','Широта','Координата Y','Y'],
+    lon:['lon','lng','longitude','Долгота','Координата X','X'],
+    engineerId:['engineerId','ID инженера','Идентификатор инженера'],
+    fullName:['fullName','ФИО','Инженер','ФИО инженера'],
+    skills:['skills','qualification','skill','Навыки','Квалификация'],
+    shiftStart:['shiftStart','workStart','Начало смены','Смена с'],
+    shiftEnd:['shiftEnd','workEnd','Окончание смены','Смена до'],
+    startLat:['startLat','Широта старта','Начальная широта'],
+    startLon:['startLon','Долгота старта','Начальная долгота'],
+    status:['status','Статус']
+  };
+  const canonHeader=h=>String(h??'').trim().toLowerCase().replace(/ё/g,'е').replace(/[^a-zа-я0-9]+/gi,'');
+  function field(raw,key){
+    const aliases=(HEADER_ALIASES[key]||[]).map(canonHeader);
+    const hit=Object.keys(raw||{}).find(h=>aliases.includes(canonHeader(h)));
+    return hit==null?'':String(raw[hit]??'').trim();
+  }
+  function normalizeSkill(value){
+    const v=String(value??'').trim(); if(!v)return '';
+    const compact=canonHeader(v);
+    const map={'1':SKILLS[0],'2':SKILLS[1],'3':SKILLS[2],
+      'локальныеработы':SKILLS[0],'работанаподключениеидозаказы':SKILLS[1],'аварийныеработы':SKILLS[2],
+      [canonHeader(SKILLS[0])]:SKILLS[0],[canonHeader(SKILLS[1])]:SKILLS[1],[canonHeader(SKILLS[2])]:SKILLS[2]};
+    return map[compact]||'';
+  }
+  function normalizeVehicle(value){
+    const v=String(value??'').trim(); if(!v)return '';
+    const compact=canonHeader(v);
+    const map={'1':'Автомобиль','2':'Пешеход','3':'Велосипед','4':'Общественный транспорт',
+      'автомобиль':'Автомобиль','машина':'Автомобиль','пешеход':'Пешеход','пешком':'Пешеход','велосипед':'Велосипед',
+      'общественныйтранспорт':'Общественный транспорт','publictransport':'Общественный транспорт'};
+    return map[compact]||'';
+  }
+  function normalizeStatus(value, fallback='Доступен'){return String(value??'').trim()||fallback;}
+  function numOrNull(value){const text=String(value??'').trim();return text===''?null:Number(text);}
+  const normalizeJob=(raw,i)=>{
+    const ws=field(raw,'start')||(raw.window?splitWindow(raw.window)[0]:'');
+    const we=field(raw,'end')||(raw.window?splitWindow(raw.window)[1]:'');
+    const skill=normalizeSkill(field(raw,'skill')||field(raw,'type'));
+    const latRaw=field(raw,'lat')!==''?field(raw,'lat'):raw.coords?.[0]; const lonRaw=field(raw,'lon')!==''?field(raw,'lon'):(raw.lng??raw.coords?.[1]);
+    return {
+      id:field(raw,'id')||String(i+1),title:field(raw,'title')||`Заявка ${i+1}`,address:field(raw,'address'),
+      coords:[numOrNull(latRaw),numOrNull(lonRaw)],duration:Number(field(raw,'duration')||raw.duration||''),windowStart:ws,windowEnd:we,
+      priority:/сроч|авари|urgent/i.test(field(raw,'type')||field(raw,'priority')||'')?'urgent':'normal',
+      requiredSkill:skill,requiredVehicle:normalizeVehicle(field(raw,'vehicle')),status:'unassigned',engineerId:null
+    };
+  };
+  const normalizeEngineer=(raw,i)=>{
+    const skillsRaw=field(raw,'skills');
+    const skills=(Array.isArray(raw.skills)?raw.skills:String(skillsRaw||'').split(/[;,|]/).map(x=>x.trim()).filter(Boolean)).map(normalizeSkill).filter(Boolean);
+    return {
+      id:field(raw,'engineerId')||field(raw,'id')||`eng-${i+1}`,name:field(raw,'fullName')||`Инженер ${i+1}`,skills,
+      vehicle:normalizeVehicle(field(raw,'vehicle'))||'Автомобиль',shiftStart:field(raw,'shiftStart')||'08:00',shiftEnd:field(raw,'shiftEnd')||'18:00',
+      startPoint:[numOrNull(field(raw,'startLat')!==''?field(raw,'startLat'):raw.startPoint?.[0]),numOrNull(field(raw,'startLon')!==''?field(raw,'startLon'):raw.startPoint?.[1])],
+      status:normalizeStatus(field(raw,'status'),'Доступен'),color:raw.color??['#78AEFC','#67D68A','#FFC800','#FF8B8B','#9D8CFF'][i%5]
+    };
+  };
+  function validTime(v){return /^([01]\d|2[0-3]):[0-5]\d$/.test(String(v||''));}
+  function validCoordPair(coords){if(!Array.isArray(coords)||coords.length<2)return false;const lat=Number(coords[0]),lon=Number(coords[1]);return coords[0]!==null&&coords[0]!==undefined&&coords[1]!==null&&coords[1]!==undefined&&coords[0]!==''&&coords[1]!==''&&Number.isFinite(lat)&&Number.isFinite(lon)&&lat>=-90&&lat<=90&&lon>=-180&&lon<=180;}
+  function validateUniqueIds(rows,label){const seen=new Set(),dup=[];rows.forEach((x,i)=>{const id=String(x.id??'').trim();if(!id)throw new Error(`${label}: строка ${i+1} без ID.`);if(seen.has(id))dup.push(id);seen.add(id);});if(dup.length)throw new Error(`${label}: дублируются ID: ${[...new Set(dup)].join(', ')}.`);}
+  function validateTimeWindow(start,end,label){if(!validTime(start)||!validTime(end))throw new Error(`${label}: некорректное время «${start}–${end}». Нужен формат HH:MM.`);if(toMin(start)>=toMin(end))throw new Error(`${label}: начало интервала должно быть раньше окончания.`);}
+  function validateImportedJobs(jobs){
+    validateUniqueIds(jobs,'Заявки'); jobs.forEach((j,i)=>{const label=`Заявка #${j.id||i+1}`;
+      if(!j.title)throw new Error(`${label}: не указано название.`);
+      if(!j.address&&!validCoordPair(j.coords))throw new Error(`${label}: нужен адрес или корректные координаты.`);
+      if(!Number.isFinite(j.duration)||j.duration<=0)throw new Error(`${label}: длительность должна быть больше 0 минут.`);
+      validateTimeWindow(j.windowStart,j.windowEnd,label);
+      if(!SKILLS.includes(j.requiredSkill))throw new Error(`${label}: навык «${j.requiredSkill||'не указан'}» отсутствует в справочнике.`);
+      if(j.requiredVehicle&&!VEHICLES.includes(j.requiredVehicle))throw new Error(`${label}: транспорт «${j.requiredVehicle}» отсутствует в справочнике.`);
+      const hasLat=j.coords?.[0]!==null&&j.coords?.[0]!==undefined&&j.coords?.[0]!==''; const hasLon=j.coords?.[1]!==null&&j.coords?.[1]!==undefined&&j.coords?.[1]!=='';
+      if((hasLat||hasLon)&&!validCoordPair(j.coords))throw new Error(`${label}: некорректные координаты.`);
+    });
+  }
+  function validateImportedEngineers(engineers){
+    validateUniqueIds(engineers,'Инженеры'); engineers.forEach((e,i)=>{const label=`Инженер «${e.name||i+1}»`;
+      if(!e.name)throw new Error(`Строка инженера ${i+1}: не указано имя.`);
+      if(!e.skills.length)throw new Error(`${label}: не указан ни один навык из справочника.`);
+      if(e.skills.some(x=>!SKILLS.includes(x)))throw new Error(`${label}: найден неизвестный навык.`);
+      if(!VEHICLES.includes(e.vehicle))throw new Error(`${label}: транспорт «${e.vehicle}» отсутствует в справочнике.`);
+      validateTimeWindow(e.shiftStart,e.shiftEnd,`${label}, смена`);
+      if(!validCoordPair(e.startPoint))throw new Error(`${label}: нужны корректные координаты точки старта.`);
+    });
+  };
+
+  function notify(msg){ $('toast').textContent=msg; $('toast').classList.add('show'); clearTimeout(notify.t); notify.t=setTimeout(()=> $('toast').classList.remove('show'),3500); }
+
+  let modalReturnFocus=null;
+  function modalFocusable(modal){return Array.from(modal.querySelectorAll('button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])')).filter(el=>!el.disabled&&el.getAttribute('aria-hidden')!=='true');}
+  function syncModalLock(){ document.body.classList.toggle('modal-open', !!document.querySelector('.modal.open')); }
+  function openModal(id){ const modal=$(id);if(!modal)return;modalReturnFocus=document.activeElement;modal.classList.add('open');syncModalLock();const items=modalFocusable(modal);if(items[0])setTimeout(()=>items[0].focus(),0); }
+  function clearGeocodeSession(){ geocodeSession={token:geocodeSession.token+1,address:'',candidates:[],selected:null}; if(geocodeMarker&&map){map.removeLayer(geocodeMarker);} geocodeMarker=null; const form=$('express-form'); if(form){delete form.dataset.geocodedLat;delete form.dataset.geocodedLon;delete form.dataset.geocodedAddress;} }
+  function closeModal(id){ const modal=$(id);if(!modal)return;modal.classList.remove('open');if(id==='express-modal')clearGeocodeSession();syncModalLock();const next=document.querySelector('.modal.open');if(!next&&modalReturnFocus&&document.contains(modalReturnFocus)){setTimeout(()=>modalReturnFocus.focus(),0);modalReturnFocus=null;} }
+  document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>closeModal(b.dataset.close)));
+  document.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)closeModal(m.id)}));
+  document.addEventListener('keydown',e=>{ const modal=document.querySelector('.modal.open');if(!modal)return;if(e.key==='Escape'){e.preventDefault();closeModal(modal.id);return;}if(e.key!=='Tab')return;const items=modalFocusable(modal);if(!items.length)return;const first=items[0],last=items[items.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();} });
+
+  function eligible(engineer,job){
+    const reasons=[];
+    if(engineer.status!=='Доступен') reasons.push(`инженер недоступен: ${engineer.status}`);
+    if(!engineer.skills.includes(job.requiredSkill)) reasons.push('нет требуемого навыка');
+    if(job.requiredVehicle && engineer.vehicle!==job.requiredVehicle) reasons.push(`требуется транспорт «${job.requiredVehicle}»`);
+    return reasons;
+  }
+
+  function scheduleForEngineer(engineer, jobs, routingContext=null, options={}){
+    const prefixItems=cloneData(options.prefixItems||[]);
+    let cursor=Number.isFinite(options.startCursor)?options.startCursor:toMin(engineer.shiftStart);
+    let pos=options.startPos||engineer.startPoint;
+    let distance=Number(options.startDistance||0);
+    const items=prefixItems.map((item,idx)=>({...item,order:idx+1}));
+    const unscheduled=[];
+    for(const job of jobs){
+      const metric=getTravelMetric(pos,job.coords,engineer.vehicle,routingContext);
+      if(metric.reachable===false || !Number.isFinite(metric.minutes)){
+        unscheduled.push({job,reasons:['маршрут до адреса недоступен для выбранного транспорта']});
+        continue;
+      }
+      const tm=metric.minutes; const arrival=cursor+tm; const start=Math.max(arrival,toMin(job.windowStart));
+      const waiting=Math.max(0,start-arrival); const finish=start+job.duration;
+      const feasible=start<=toMin(job.windowEnd) && finish<=toMin(engineer.shiftEnd);
+      if(feasible){
+        items.push({...job,order:items.length+1,travelMin:tm,arrivalMin:arrival,startMin:start,finishMin:finish,waitingMin:waiting});
+        distance += metric.distance; cursor=finish; pos=job.coords;
+      }else{
+        unscheduled.push({job,reasons:[start>toMin(job.windowEnd)?'начало работы не попадает во временное окно':'работа не помещается в смену']});
+      }
+    }
+    return {items,distance,unscheduled,newItems:items.slice(prefixItems.length)};
+  }
+
+  function insertionCandidate(engineer, job, existingJobs, routingContext, options={}){
+    const existing=[...(existingJobs||[])];
+    const base=scheduleForEngineer(engineer,existing,routingContext,options);
+    let best=null;
+    for(let pos=0;pos<=existing.length;pos++){
+      const ordered=[...existing.slice(0,pos),job,...existing.slice(pos)];
+      const sim=scheduleForEngineer(engineer,ordered,routingContext,options);
+      const placed=sim.newItems.some(x=>String(x.id)===String(job.id));
+      const allExistingKept=sim.newItems.length===ordered.length;
+      if(!placed || !allExistingKept) continue;
+      const deltaDistance=Number(sim.distance)-Number(base.distance);
+      const totalWaiting=sim.newItems.reduce((sum,x)=>sum+(Number(x.waitingMin)||0),0);
+      const finish=sim.newItems.find(x=>String(x.id)===String(job.id))?.finishMin||9999;
+      const score=(deltaDistance*1000)+(finish*0.02)+(totalWaiting*0.1);
+      if(!best || score<best.score) best={engineer,order:ordered,sim,score,deltaDistance};
+    }
+    return best;
+  }
+
+  function buildInDayContext(beforePlan,jobs,engineers,event,routingContext){
+    const eventMin=toMin(event?.time||'13:30');
+    const active=new Map(jobs.filter(j=>j.status!=='cancelled').map(j=>[String(j.id),j]));
+    const fixedIds=new Set();
+    const fixedByEngineer=new Map();
+    const initialByEngineer={};
+    for(const eng of engineers){
+      const row=beforePlan?.engineers?.find(x=>x.engineer.id===eng.id);
+      const fixed=(row?.items||[]).filter(item=>Number(item.finishMin)<=eventMin && active.has(String(item.id))).sort((a,b)=>(a.order||0)-(b.order||0));
+      fixed.forEach(item=>fixedIds.add(String(item.id)));
+      let cursor=Math.max(toMin(eng.shiftStart),eventMin);
+      let pos=eng.startPoint;
+      let prefixDistance=0;
+      fixed.forEach(item=>{
+        const metric=getTravelMetric(pos,item.coords,eng.vehicle,routingContext);
+        if(metric.reachable!==false && Number.isFinite(metric.distance)) prefixDistance+=metric.distance;
+        pos=item.coords;
+        cursor=Math.max(cursor,Number(item.finishMin)||cursor);
+      });
+      fixedByEngineer.set(eng.id,cloneData(fixed));
+      initialByEngineer[eng.id]={startCursor:cursor,startPos:pos,startDistance:prefixDistance,prefixItems:fixed};
+    }
+    return {eventMin,fixedIds,fixedByEngineer,initialByEngineer};
+  }
+
+  function buildPlan(jobs, engineers, {baseline=false,routingContext=null,inDayContext=null}={}){
+    const activeJobs=jobs.filter(j=>j.status!=='cancelled');
+    const plan={engineers:[],jobs:[],assigned:0,unassigned:0,usedEngineers:0,totalDistance:0,reasons:{},engineerDistances:{}};
+    const available=engineers.filter(e=>e.status==='Доступен');
+    const fixedIds=inDayContext?.fixedIds||new Set();
+    const ordered=(baseline && !inDayContext) ? [...activeJobs] : sortJobs(activeJobs.filter(j=>!fixedIds.has(String(j.id))));
+    const buckets=new Map(engineers.map(e=>[e.id,[]]));
+    const initialByEngineer=inDayContext?.initialByEngineer||{};
+
+    if(inDayContext){
+      for(const eng of engineers) buckets.set(eng.id,[]);
+    }
+
+    for(const job of ordered){
+      if(baseline){
+        let placed=false;
+        for(const eng of available){
+          if(eligible(eng,job).length) continue;
+          const candidateJobs=[...(buckets.get(eng.id)||[]),job];
+          const sim=scheduleForEngineer(eng,candidateJobs,routingContext,initialByEngineer[eng.id]||{});
+          if(sim.newItems.some(x=>String(x.id)===String(job.id))){buckets.set(eng.id,candidateJobs);placed=true;break;}
+        }
+        if(!placed) plan.reasons[job.id]=collectFailureReasons(job,engineers,buckets,routingContext,initialByEngineer);
+        continue;
+      }
+
+      let best=null;
+      for(const eng of available){
+        const baseReasons=eligible(eng,job); if(baseReasons.length) continue;
+        const candidate=insertionCandidate(eng,job,buckets.get(eng.id)||[],routingContext,initialByEngineer[eng.id]||{});
+        if(!candidate) continue;
+        const usedBefore=(buckets.get(eng.id)||[]).length>0 || (inDayContext?.fixedByEngineer?.get(eng.id)?.length||0)>0 ? 0 : 1;
+        const score=(usedBefore*100000)+(candidate.deltaDistance*100)+(candidate.sim.newItems.reduce((sum,x)=>sum+(x.waitingMin||0),0)*0.1)+(candidate.sim.newItems.at(-1)?.finishMin||0)*0.01;
+        if(!best || score<best.score) best={...candidate,score};
+      }
+      if(best) buckets.set(best.engineer.id,best.order);
+      else plan.reasons[job.id]=collectFailureReasons(job,engineers,buckets,routingContext,initialByEngineer);
+    }
+
+    for(const eng of engineers){
+      const options=initialByEngineer[eng.id]||{};
+      const result=scheduleForEngineer(eng,buckets.get(eng.id)||[],routingContext,options);
+      const items=result.items;
+      if(items.length) plan.usedEngineers++;
+      plan.assigned+=items.length;
+      plan.totalDistance+=result.distance;
+      plan.engineerDistances[eng.id]=Number(result.distance.toFixed(2));
+      const route=[eng.startPoint,...items.map(x=>x.coords)];
+      plan.engineers.push({engineer:eng,items,distance:Number(result.distance.toFixed(2)),route});
+      items.forEach(it=>plan.jobs.push({jobId:it.id,engineerId:eng.id,arrivalMin:it.arrivalMin,startMin:it.startMin,finishMin:it.finishMin,travelMin:it.travelMin,waitingMin:it.waitingMin,order:it.order}));
+    }
+    plan.unassigned=activeJobs.length-plan.assigned;
+    plan.totalDistance=Number(plan.totalDistance.toFixed(2));
+    return plan;
+  }
+
+  function collectFailureReasons(job,engineers,buckets,routingContext,initialByEngineer={}){
+    const texts=[];
+    for(const eng of engineers){
+      const a=eligible(eng,job);
+      if(a.length){texts.push(`${eng.name}: ${a.join(', ')}`);continue;}
+      const candidate=insertionCandidate(eng,job,buckets.get(eng.id)||[],routingContext,initialByEngineer[eng.id]||{});
+      if(!candidate) texts.push(`${eng.name}: не удалось встроить заявку с учётом окна/смены/маршрута`);
+    }
+    return texts.length?texts:['подходящего исполнителя не найдено'];
+  }
+
+  function recordPlanVersion(plan,label,event=null){
+    const snapshot={version:state.version,label,timestamp:Date.now(),event:event?cloneData(event):null,jobIds:(plan?.jobs||[]).map(x=>String(x.jobId)),plan:cloneData(plan)};
+    const existing=state.planHistory.findIndex(x=>x.version===snapshot.version);
+    if(existing>=0) state.planHistory[existing]=snapshot; else state.planHistory.push(snapshot);
+    if(state.planHistory.length>8) state.planHistory=state.planHistory.slice(-8);
+  }
+
+  function applyPlan(plan,label,event=null){
+    const beforeVersion=state.version;
+    const assignedById=new Map((plan.jobs||[]).map(x=>[String(x.jobId),x]));
+    state.jobs.forEach(j=>{
+      if(j.status==='cancelled'){j.engineerId=null;delete j.planned;return;}
+      const p=assignedById.get(String(j.id));
+      if(p){j.engineerId=p.engineerId;j.status=j.status==='in_progress'?'in_progress':'assigned';j.planned=p;}
+      else {j.engineerId=null;if(j.status!=='in_progress')j.status='unassigned';delete j.planned;}
+    });
+    state.lastPlan=cloneData(plan); state.version++;
+    if(event){
+      if(state.scenarioBeforeVersion==null) state.scenarioBeforeVersion=beforeVersion;
+      state.scenarioAfterVersion=state.version;
+    }
+    $('plan-status').textContent=`Версия плана: ${state.version} · ${label}`;
+    recordPlanVersion(state.lastPlan,label,event);
+    state.historyViewVersion=null;
+    renderAll();
+  }
+
+  function touchDataRevision(clearPreview=true){
+    state.dataRevision=(Number(state.dataRevision)||0)+1;
+    if(clearPreview) state.scenarioPreview=null;
+    state.historyViewVersion=null;
+  }
+
+  function displayPlan(){
+    if(state.historyViewVersion!=null){
+      const h=state.planHistory.find(x=>x.version===Number(state.historyViewVersion));
+      if(h?.plan)return h.plan;
+    }
+    return state.lastPlan;
+  }
+
+  function changeSummary(details){
+    const list=details||[];
+    return {
+      total:list.length,
+      assigned:list.filter(x=>x.type==='assigned').length,
+      removed:list.filter(x=>x.type==='removed').length,
+      reassigned:list.filter(x=>x.type==='changed' && /исполнитель/.test(x.text)).length,
+      reordered:list.filter(x=>x.type==='changed' && !/исполнитель/.test(x.text)).length
+    };
+  }
+
+  function scenarioCoverageText(beforePlan,afterPlan){
+    const du=Number(afterPlan?.unassigned||0)-Number(beforePlan?.unassigned||0);
+    if(du<0)return `Неназначенных стало на ${Math.abs(du)} меньше.`;
+    if(du>0)return `Неназначенных стало на ${du} больше.`;
+    return 'Количество неназначенных заявок не изменилось.';
+  }
+
+  function scenarioDistanceText(beforePlan,afterPlan){
+    const dd=Number(afterPlan?.totalDistance||0)-Number(beforePlan?.totalDistance||0);
+    if(Math.abs(dd)<0.005)return 'Суммарный пробег не изменился.';
+    return `Суммарный пробег ${dd>0?'увеличился':'сократился'} на ${Math.abs(dd).toFixed(2)} км.`;
+  }
+
+
+  function cloneData(value){return value==null?value:JSON.parse(JSON.stringify(value));}
+  function snapshot(plan){return new Map((plan?.jobs||[]).map(x=>[x.jobId,x]));}
+  function computeChangeDetails(oldPlan,newPlan,jobSource=state.jobs){
+    if(!oldPlan||!newPlan)return [];
+    const a=snapshot(oldPlan), b=snapshot(newPlan);
+    const lookup=new Map([...(state.jobs||[]),...(jobSource||[])].map(j=>[String(j.id),j]));
+    const ids=new Set([...a.keys(),...b.keys()]); const changes=[];
+    ids.forEach(id=>{
+      const old=a.get(id), neo=b.get(id), j=lookup.get(String(id)); if(!j)return;
+      if(!old&&neo){changes.push({id,title:j.title,type:'assigned',text:`#${id}: назначена ${state.engineers.find(e=>e.id===neo.engineerId)?.name||'инженеру'}`});return;}
+      if(old&&!neo){changes.push({id,title:j.title,type:'removed',text:`#${id}: снята с маршрута`});return;}
+      if(old&&neo){
+        const parts=[];
+        if(old.engineerId!==neo.engineerId){parts.push(`исполнитель ${state.engineers.find(e=>e.id===old.engineerId)?.name||'—'} → ${state.engineers.find(e=>e.id===neo.engineerId)?.name||'—'}`)}
+        if(old.order!==neo.order)parts.push(`порядок ${old.order} → ${neo.order}`);
+        if(old.startMin!==neo.startMin)parts.push(`начало ${fmtMin(old.startMin)} → ${fmtMin(neo.startMin)}`);
+        if(parts.length)changes.push({id,title:j.title,type:'changed',text:`#${id}: ${parts.join(', ')}`});
+      }
+    });
+    return changes;
+  }
+  function computeChanges(oldPlan,newPlan,jobSource=state.jobs){return computeChangeDetails(oldPlan,newPlan,jobSource).map(x=>x.text);}
+
+  function decodePolyline6(encoded){
+    let index=0,lat=0,lon=0,coords=[];
+    while(index<encoded.length){
+      let result=0,shift=0,byte;
+      do{byte=encoded.charCodeAt(index++)-63;result|=(byte&31)<<shift;shift+=5;}while(byte>=32);
+      lat += (result&1)?~(result>>1):(result>>1);
+      result=0;shift=0;
+      do{byte=encoded.charCodeAt(index++)-63;result|=(byte&31)<<shift;shift+=5;}while(byte>=32);
+      lon += (result&1)?~(result>>1):(result>>1);
+      coords.push([lat/1e6,lon/1e6]);
+    }
+    return coords;
+  }
+
+  async function fetchRouteGeometry(points,vehicle){
+    if(!Array.isArray(points)||points.length<2)return null;
+    const v=vehicleName(vehicle), key=`${v}|${points.map(coordKey).join('|')}`;
+    if(routingCache.has(key))return routingCache.get(key);
+    let result;
+    if(v==='Автомобиль'){
+      const coordinates=points.map(p=>`${encodeURIComponent(p[1])},${encodeURIComponent(p[0])}`).join(';');
+      const url=`${ROUTING.baseUrl}/route/v1/driving/${coordinates}?overview=full&geometries=geojson&steps=false`;
+      const data=await fetchJson(url,ROUTING.timeoutMs);
+      if(data.code!=='Ok'||!data.routes?.[0])throw new Error(data.code||'OSRM: маршрут не найден');
+      const route=data.routes[0];
+      result={geometry:route.geometry,distance:Number((route.distance/1000).toFixed(2)),durationMin:Math.ceil(route.duration/60),provider:'OSRM'};
+    }else{
+      const costing=v==='Пешеход'?'pedestrian':v==='Велосипед'?'bicycle':'multimodal';
+      const locations=points.map(p=>({lat:Number(p[0]),lon:Number(p[1]),type:'break'}));
+      const payload={locations,costing,units:'kilometers',directions_options:{units:'kilometers'}};
+      const qs=encodeURIComponent(JSON.stringify(payload));
+      const url=`${VALHALLA.baseUrl}/route?json=${qs}`;
+      const data=await fetchJson(url,VALHALLA.timeoutMs);
+      const trip=data.trip||{};
+      const shape=trip.legs?.flatMap(l=>l.shape?[l.shape]:[]).filter(Boolean);
+      const encoded=trip.legs?.map(l=>l.shape).filter(Boolean).join('');
+      let coords=[];
+      if(trip.shape) coords=decodePolyline6(trip.shape);
+      else if(trip.legs?.length) {
+        trip.legs.forEach((leg,idx)=>{
+          const decoded=decodePolyline6(leg.shape||'');
+          coords.push(...(idx?decoded.slice(1):decoded));
+        });
+      }
+      if(coords.length<2)throw new Error('Valhalla не вернул геометрию маршрута');
+      result={geometry:{type:'LineString',coordinates:coords.map(p=>[p[1],p[0]])},distance:Number((Number(trip.summary?.length||0)).toFixed(2)),durationMin:Math.ceil(Number(trip.summary?.time||0)/60),provider:'Valhalla',costing};
+    }
+    routingCache.set(key,result); return result;
+  }
+
+  async function enrichPlanRoutes(plan, routingInfo,{preview=false}={}){
+    const token=++routingFetchToken;
+    const entries=plan.engineers.filter(x=>x.items.length>0);
+    if(!entries.length){setRoutingStatus('local','Маршрутизация: нет назначенных маршрутов');return;}
+    let success=0,fail=0;
+    await Promise.all(entries.map(async entry=>{
+      try{
+        const route=await fetchRouteGeometry(entry.route,entry.engineer.vehicle);
+        if(token!==routingFetchToken)return;
+        entry.routeGeo=route.geometry; entry.routeSource=`${route.provider}${route.costing?' · '+route.costing:''}`; entry.routeDurationMin=route.durationMin; entry.distance=route.distance; entry.routeMetricSource=route.provider; success++;
+      }catch(error){entry.routeSource='Локальная геометрия';fail++;entry.routeMetricSource='local';}
+    }));
+    if(token!==routingFetchToken)return;
+    plan.totalDistance=Number(plan.engineers.reduce((sum,x)=>sum+(Number(x.distance)||0),0).toFixed(2));
+    plan.engineers.forEach(x=>{plan.engineerDistances[x.engineer.id]=x.distance;});
+    const allLive=entries.length>0&&entries.every(x=>x.routeMetricSource&&x.routeMetricSource!=='local');
+    if(preview){
+      if(success&&allLive)setRoutingStatus('live','Предпросмотр: OSRM + Valhalla');
+      else if(success)setRoutingStatus('live',`Предпросмотр: ${success} маршрут(а), ${fail} локально`);
+      else setRoutingStatus('error','Предпросмотр: дорожная геометрия недоступна');
+      return;
+    }
+    if(success&&allLive)setRoutingStatus('live','Дорожная маршрутизация: OSRM + Valhalla');
+    else if(success)setRoutingStatus('live',`Дорожная маршрутизация: ${success} маршрут(а), ${fail} локально`);
+    else setRoutingStatus('error','Дорожная геометрия недоступна · оставлена локальная линия');
+    return true;
+  }
+
+  async function runPlanning({showNotify=true,scenarioEvent=null,resetScenario=false}={}){
+    if(state.scenarioPreview && !scenarioEvent) state.scenarioPreview=null;
+    const token=++planningToken;
+    const previous=state.lastPlan;
+    const optimizeButton=$('optimize-button');
+    if(optimizeButton)optimizeButton.disabled=true;
+    setRoutingStatus('loading','Маршрутизация: запрашиваем дорожные данные…');
+    if(scenarioEvent && previous){
+      state.scenarioBefore=cloneData(previous);
+      state.scenarioSnapshots={jobs:cloneData(state.jobs),engineers:cloneData(state.engineers)};
+      state.scenarioEvent=cloneData(scenarioEvent);
+    }
+    const routingContext=await buildRoutingContext(state.jobs,state.engineers);
+    if(token!==planningToken)return;
+    state.routingContext=routingContext;
+    if(routingContext.live>0)setRoutingStatus('loading',`Маршрутизация: ${routingContext.live}/${routingContext.total} режимов доступны`);
+    else setRoutingStatus('error',`Routing API: ${routingContext.summary}. Используется локальная оценка.`);
+
+    const inDayContext=(scenarioEvent?.type==='engineer_unavailable' && previous)
+      ? buildInDayContext(previous,state.jobs,state.engineers,scenarioEvent,routingContext)
+      : null;
+    const plan=buildPlan(state.jobs.map(j=>({...j})),state.engineers,{baseline:false,routingContext,inDayContext});
+    if(!state.baseline) state.baseline=buildPlan(state.jobs.map(j=>({...j})),state.engineers,{baseline:true,routingContext,inDayContext});
+    const details=computeChangeDetails(previous,plan,state.jobs);
+    state.changes=details.map(x=>x.text);
+    if(scenarioEvent){
+      state.scenarioBefore=previous?cloneData(previous):state.scenarioBefore;
+      state.scenarioAfter=cloneData(plan);
+      state.scenarioEvent=cloneData(scenarioEvent);
+      state.scenarioBeforeVersion=state.version;
+      state.scenarioAfterVersion=state.version+1;
+    }
+    await enrichPlanRoutes(plan, routingContext);
+    if(token!==planningToken)return;
+    applyPlan(plan,scenarioEvent?'перепланирование после события':'расчёт с дорожной маршрутизацией',scenarioEvent);
+    if(resetScenario){state.scenarioBefore=null;state.scenarioAfter=null;state.scenarioEvent=null;state.scenarioSnapshots=null;state.changes=[];}
+    persist();
+    if(optimizeButton)optimizeButton.disabled=false;
+    if(showNotify) notify(scenarioEvent ? `План пересчитан после события. Изменений: ${details.length}.` : previous ? `План перепостроен. Изменений: ${details.length}.` : `План рассчитан: ${plan.assigned}/${state.jobs.filter(j=>j.status!=='cancelled').length} заявок назначено.`);
+  }
+
+  async function previewScenario({event,jobsAfter,engineersAfter,label}){
+    if(!state.lastPlan){notify('Сначала нажмите «Построить план».');return;}
+    const token=++planningToken;
+    const revision=state.dataRevision;
+    const beforePlan=cloneData(state.lastPlan);
+    const beforeVersion=state.version;
+    state.scenarioPreview={status:'loading',revision,baseVersion:beforeVersion,event:cloneData(event),label,jobsAfter:cloneData(jobsAfter),engineersAfter:cloneData(engineersAfter),beforePlan,afterPlan:null,routingContext:null,changes:[],beforeVersion,afterVersion:beforeVersion+1};
+    renderAll();
+    setRoutingStatus('loading','Предпросмотр: запрашиваем дорожные данные…');
+    try{
+      const ctx=await buildRoutingContext(jobsAfter,engineersAfter);
+      if(token!==planningToken || revision!==state.dataRevision)return;
+      state.scenarioPreview.routingContext=ctx;
+      const inDayContext=(event.type==='engineer_unavailable')
+        ? buildInDayContext(beforePlan,jobsAfter,engineersAfter,event,ctx)
+        : null;
+      const afterPlan=buildPlan(jobsAfter.map(j=>({...j})),engineersAfter,{baseline:false,routingContext:ctx,inDayContext});
+      await enrichPlanRoutes(afterPlan,ctx,{preview:true});
+      if(token!==planningToken || revision!==state.dataRevision)return;
+      const details=computeChangeDetails(beforePlan,afterPlan,jobsAfter);
+      state.scenarioPreview.afterPlan=cloneData(afterPlan);
+      state.scenarioPreview.changes=details.map(x=>x.text);
+      state.scenarioPreview.details=details;
+      state.scenarioPreview.changeSummary=changeSummary(details);
+      state.scenarioPreview.coverageText=scenarioCoverageText(beforePlan,afterPlan);
+      state.scenarioPreview.distanceText=scenarioDistanceText(beforePlan,afterPlan);
+      state.scenarioPreview.status='ready';
+      if(ctx.live>0)setRoutingStatus('live',`Предпросмотр: ${ctx.live}/${ctx.total} режимов с дорожными данными`);
+      else setRoutingStatus('error','Предпросмотр: routing API недоступен · используется локальная оценка');
+      renderAll();
+    }catch(error){
+      if(token!==planningToken || revision!==state.dataRevision)return;
+      state.scenarioPreview.status='error';
+      state.scenarioPreview.error=error?.message||'Не удалось построить сценарий';
+      setRoutingStatus('error','Предпросмотр не рассчитан');
+      renderAll();
+    }
+  }
+
+  function cancelScenarioPreview(){state.scenarioPreview=null;renderAll();setRoutingStatus(state.routing?.status||'local',state.routing?.message||'Маршрутизация: готово');notify('Предпросмотр отменён. Текущий план не изменён.');}
+
+  async function applyScenarioPreview(){
+    const preview=state.scenarioPreview;
+    if(!preview||preview.status!=='ready'||!preview.afterPlan)return;
+    if(preview.revision!==state.dataRevision || preview.baseVersion!==state.version || !state.lastPlan){
+      state.scenarioPreview=null;renderAll();notify('Предпросмотр устарел: текущие данные или план уже изменились. Рассчитайте сценарий ещё раз.');return;
+    }
+    const beforeJobs=cloneData(state.jobs), beforeEngineers=cloneData(state.engineers);
+    state.jobs=cloneData(preview.jobsAfter);
+    state.engineers=cloneData(preview.engineersAfter);
+    state.routingContext=preview.routingContext;
+    state.scenarioBefore=cloneData(preview.beforePlan);
+    state.scenarioAfter=cloneData(preview.afterPlan);
+    state.scenarioEvent=cloneData(preview.event);
+    state.scenarioBeforeVersion=preview.beforeVersion;
+    state.scenarioAfterVersion=preview.afterVersion;
+    state.changes=[...(preview.changes||[])];
+    state.scenarioSnapshots={jobs:beforeJobs,engineers:beforeEngineers};
+    state.baseline=buildPlan(state.jobs.map(j=>({...j})),state.engineers,{baseline:true,routingContext:state.routingContext});
+    state.scenarioPreview=null;
+    touchDataRevision(false);
+    applyPlan(preview.afterPlan,'применено после предпросмотра',preview.event);
+    persist();
+    notify(`Сценарий применён. Создана версия v${state.version}.`);
+  }
+
+  async function resetScenario(){
+    if(!state.scenarioSnapshots){notify('Нет сохранённого состояния до события.');return;}
+    touchDataRevision(true);
+    state.jobs=cloneData(state.scenarioSnapshots.jobs);state.engineers=cloneData(state.scenarioSnapshots.engineers);
+    state.scenarioBefore=null;state.scenarioAfter=null;state.scenarioEvent=null;state.scenarioSnapshots=null;state.scenarioPreview=null;state.changes=[];state.scenarioBeforeVersion=null;state.scenarioAfterVersion=null;state.lastPlan=null;state.baseline=null;
+    await runPlanning({showNotify:false});
+    $('plan-status').textContent=`Версия плана: ${state.version} · состояние до события восстановлено`;
+    persist();renderAll();notify('Состояние до события восстановлено.');
+  }
+
+  function jobMatchesFilters(j,hp=null,problemPlan=state.lastPlan){
+    const assigned=!!(hp?.engineerId||j.engineerId);
+    const hasProblem=j.status==='unassigned'||!!(problemPlan?.reasons?.[j.id]?.length);
+    const f=state.filter==='all'||(state.filter==='urgent'&&j.priority==='urgent')||(state.filter==='assigned'&&assigned)||(state.filter==='problem'&&hasProblem);
+    const q=state.query.toLowerCase().trim(); const hay=[j.id,j.title,j.address,j.requiredSkill,j.requiredVehicle].join(' ').toLowerCase();
+    return f&&(!q||hay.includes(q));
+  }
+  function getVisibleMapJob(j,planByJob,problemPlan=state.lastPlan){
+    const hp=planByJob.get(String(j.id)); const assigned=hp?.engineerId||j.engineerId||null;
+    if(state.selectedEngineerId!=='all'&&assigned!==state.selectedEngineerId)return null;
+    if(!jobMatchesFilters(j,hp,problemPlan))return null;
+    if(state.historyViewVersion!=null&&!hp)return null;
+    return {...j,status:hp?'assigned':j.status,engineerId:assigned,planned:hp||j.planned||null};
+  }
+
+  function renderSidebar(){
+    const visible=state.jobs.filter(j=>jobMatchesFilters(j));
+    $('jobs-count').textContent=visible.length;
+    $('jobs-list').innerHTML=visible.length?visible.map(j=>{
+      const eng=state.engineers.find(e=>e.id===j.engineerId); const p=j.planned;
+      const start=p?fmtMin(p.startMin):'—';
+      const statusLabel=j.status==='assigned'?'Назначена':j.status==='in_progress'?'В работе':j.status==='cancelled'?'Отменена':'Не назначена';
+      const statusClass=j.status==='assigned'?'assigned':j.status==='in_progress'?'progress':j.status==='cancelled'?'cancelled':'unassigned';
+      return `<article class="job ${state.selectedJobId===j.id?'selected':''} ${j.status==='cancelled'?'job-cancelled':''}"><button data-select-job="${escapeHtml(j.id)}" class="w-full text-left"><div class="flex items-start justify-between gap-2"><div><div class="text-[10px] font-extrabold text-[#9e9ea4]">#${escapeHtml(j.id)}</div><div class="mt-1 text-xs font-extrabold">${escapeHtml(j.title)}</div><div class="mt-1 text-[11px] text-[#9e9ea4]">${escapeHtml(j.address)}</div></div><div class="flex flex-col items-end gap-1"><span class="status ${statusClass}">${statusLabel}</span><span class="status priority ${j.priority==='urgent'?'urgent':'normal'}">${j.priority==='urgent'?'Срочная':'Обычная'}</span></div></div><div class="mt-3 pt-2 border-t border-[#343640] flex items-center justify-between text-[10px] text-[#bfc0c5]"><span><i data-lucide="clock-3" class="w-3 h-3 inline text-[#ffc800]"></i> ${escapeHtml(j.windowStart)}–${escapeHtml(j.windowEnd)} · ${j.status==='cancelled'?'—':start}</span><span>${escapeHtml(j.duration)} мин</span></div><div class="mt-1 text-[10px] text-[#9e9ea4]">${escapeHtml(j.requiredSkill)}${j.requiredVehicle?` · ${escapeHtml(j.requiredVehicle)}`:''}${eng?` · ${escapeHtml(eng.name)}`:''}</div></button></article>`;
+    }).join(''):`<div class="rounded-xl border border-dashed border-[#3a3d45] px-4 py-8 text-center text-xs text-[#9e9ea4]">Заявки не найдены.</div>`;
+    document.querySelectorAll('[data-select-job]').forEach(b=>b.addEventListener('click',()=>selectJob(b.dataset.selectJob)));
+  }
+
+  function renderEngineers(){
+    $('engineers-list').innerHTML=state.engineers.map(e=>{
+      const d=state.lastPlan?.engineerDistances?.[e.id] ?? 0; const jobs=state.lastPlan?.engineers.find(x=>x.engineer.id===e.id)?.items?.length ?? 0;
+      const vehicleOptions=VEHICLES.map(v=>`<option value="${escapeHtml(v)}" ${e.vehicle===v?'selected':''}>${escapeHtml(v)}</option>`).join(''); return `<article class="engineer-card rounded-xl border border-[#343640] bg-[#20222a] p-3"><div class="flex justify-between gap-3"><div><div class="text-sm font-extrabold">${escapeHtml(e.name)}</div><div class="mt-1 text-[11px] text-[#9e9ea4]">смена ${escapeHtml(e.shiftStart)}–${escapeHtml(e.shiftEnd)}</div></div><span class="status ${e.status==='Доступен'?'progress':'unassigned'}">${escapeHtml(e.status)}</span></div><div class="mt-3 grid grid-cols-[1fr_1fr] gap-2"><label class="text-[10px] font-extrabold text-[#9e9ea4]">Транспорт<select class="field mt-1 text-xs w-full" data-engineer-vehicle="${escapeHtml(e.id)}">${vehicleOptions}</select></label><div class="text-[10px] text-[#bfc0c5]"><div class="font-extrabold text-[#9e9ea4]">Маршрутизация</div><div class="mt-2 inline-flex items-center gap-1.5 text-[#ffc800] engineer-routing"><i data-lucide="${VEHICLE_ICON[e.vehicle]||'route'}" class="w-3 h-3"></i>${escapeHtml(e.vehicle==='Общественный транспорт'?'Приблизительная оценка':'Дорожный расчёт')}</div></div></div><div class="mt-3 text-[11px] text-[#ffc800] engineer-skills">${escapeHtml(e.skills.join(' · '))}</div><div class="mt-3 text-[10px] text-[#bfc0c5]">Заявок: <b>${jobs}</b> · Пробег: <b>${d} км</b></div><select class="field mt-2 text-xs" data-engineer-status="${escapeHtml(e.id)}"><option ${e.status==='Доступен'?'selected':''}>Доступен</option><option ${e.status==='Заболел'?'selected':''}>Заболел</option><option ${e.status==='На перерыве'?'selected':''}>На перерыве</option></select></article>`;
+    }).join('');
+    document.querySelectorAll('[data-engineer-status]').forEach(s=>s.addEventListener('change',async()=>{const e=state.engineers.find(x=>x.id===s.dataset.engineerStatus);if(!e)return;const before=state.lastPlan;if(before&&s.value!=='Доступен'){const event={type:'engineer_unavailable',engineerId:e.id,engineerName:e.name,status:s.value,time:nowHHMM()};const engineersAfter=cloneData(state.engineers);const target=engineersAfter.find(x=>x.id===e.id);if(target)target.status=s.value;await previewScenario({event,jobsAfter:cloneData(state.jobs),engineersAfter,label:'недоступность инженера'});}else{e.status=s.value;touchDataRevision(true);state.baseline=null;await runPlanning();}}));
+    document.querySelectorAll('[data-engineer-vehicle]').forEach(s=>s.addEventListener('change',async()=>{const e=state.engineers.find(x=>x.id===s.dataset.engineerVehicle);if(!e)return;e.vehicle=s.value;touchDataRevision(true);state.baseline=null;await runPlanning();notify(`${e.name}: транспорт изменён на «${e.vehicle}», маршруты пересчитаны.`);}));
+  }
+
+  function renderSummary(){
+    const p=state.lastPlan; if(!p){$('summary').innerHTML='';return;}
+    const activeCount=state.jobs.filter(j=>j.status!=='cancelled').length; const cancelled=state.jobs.length-activeCount;
+    const vals=[['Назначено',`${p.assigned}/${activeCount}`],['Не назначено',String(p.unassigned)],['Занято инженеров',String(p.usedEngineers)],['Суммарный пробег',`${p.totalDistance} км`]];
+    $('summary').innerHTML=vals.map(x=>`<div class="metric"><div class="v">${escapeHtml(x[1])}</div><div class="l">${escapeHtml(x[0])}</div></div>`).join('')+(cancelled?`<div class="col-span-full text-[10px] text-[#9e9ea4] px-1">Отменено заявок: ${cancelled}. Они исключены из нового плана.</div>`:'');
+  }
+
+  function renderScenarioEvent(){
+    if(!state.scenarioEvent){$('scenario-event').innerHTML='<div class="scenario-empty">Сценарий ещё не запускался. Постройте план, затем выберите одно событие для демонстрации перепланирования.</div>';return;}
+    const ev=state.scenarioEvent;
+    let title='',meta='';
+    if(ev.type==='cancel'){title=`Отменена заявка #${ev.jobId}`; meta=`${ev.time||'в течение смены'} · ${ev.jobTitle||''}`;}
+    else if(ev.type==='urgent'){title=`Новая срочная заявка #${ev.jobId}`; meta=`${ev.time||'в течение смены'} · ${ev.jobTitle||''}`;}
+    else {title=`Недоступен ${ev.engineerName}`; meta=`${ev.time||'в течение смены'} · статус: ${ev.status||'Недоступен'}`;}
+    const eventClass=ev.type==='cancel'?'cancelled':ev.type==='urgent'?'urgent':'unassigned';
+    $('scenario-event').innerHTML=`<div class="scenario-event"><div class="flex items-start justify-between gap-3"><div><div class="title"><i data-lucide="history" class="w-4 h-4 inline mr-1 text-[#ffc800]"></i>${escapeHtml(title)}</div><div class="meta">${escapeHtml(meta)}</div></div><span class="status ${eventClass}">Событие применено</span></div><div class="actions"><button id="reset-scenario-button" class="btn ghost" type="button"><i data-lucide="undo-2" class="w-4 h-4 inline mr-1"></i>Вернуть состояние «До»</button></div></div>`;
+    $('reset-scenario-button').addEventListener('click',resetScenario);lucide.createIcons();
+  }
+
+  function renderCompare(){
+    const box=$('compare');
+    if(!box)return;
+    if(state.scenarioBefore&&state.scenarioAfter){
+      const scenarioBefore=state.scenarioBefore,scenarioAfter=state.scenarioAfter;
+      const rows=[['Назначено заявок',scenarioBefore.assigned,scenarioAfter.assigned],['Занято инженеров',scenarioBefore.usedEngineers,scenarioAfter.usedEngineers],['Суммарный пробег, км',scenarioBefore.totalDistance,scenarioAfter.totalDistance],['Неназначено',scenarioBefore.unassigned,scenarioAfter.unassigned]];
+      const metricCards=rows.map(r=>{const d=Number(r[2])-Number(r[1]);const sign=d>0?'+':'';return `<div class="compare-metric highlight-change"><div class="k">${escapeHtml(r[0])}</div><div class="v">${escapeHtml(r[2])}</div><div class="d">До: ${escapeHtml(r[1])} · Δ ${sign}${escapeHtml(d)}</div></div>`}).join('');
+      const details=computeChangeDetails(scenarioBefore,scenarioAfter,state.jobs);
+      const counts=changeSummary(details);
+      const changed=details.length?details.slice(0,8).map(x=>`<div class="change-item"><span class="tag">Изменение</span>${escapeHtml(x.text)}</div>`).join(''):'<div class="scenario-empty">Назначения и порядок не изменились.</div>';
+      const beforeVersion=state.scenarioBeforeVersion??Math.max(0,state.version-1),afterVersion=state.scenarioAfterVersion??state.version;
+      box.innerHTML=`<div class="compare-card"><div class="compare-grid"><div class="compare-state before"><div class="label">До события</div><div class="big">v${escapeHtml(beforeVersion)}</div><div class="sub">${scenarioBefore.assigned} назначено · ${scenarioBefore.unassigned} не назначено · ${scenarioBefore.usedEngineers} инженер(а) · ${scenarioBefore.totalDistance} км</div></div><div class="compare-arrow">→</div><div class="compare-state after"><div class="label">После события</div><div class="big">v${escapeHtml(afterVersion)}</div><div class="sub">${scenarioAfter.assigned} назначено · ${scenarioAfter.unassigned} не назначено · ${scenarioAfter.usedEngineers} инженер(а) · ${scenarioAfter.totalDistance} км</div></div></div><div class="compare-metrics">${metricCards}</div><div class="preview-change-counts mt-3"><div class="change-count"><div class="num">${counts.total}</div><div class="lbl">Изменений</div></div><div class="change-count"><div class="num">${counts.assigned}</div><div class="lbl">Новых назначений</div></div><div class="change-count"><div class="num">${counts.reassigned}</div><div class="lbl">Переназначений</div></div><div class="change-count"><div class="num">${counts.reordered}</div><div class="lbl">Перестановок</div></div></div><div class="history-view-note">${escapeHtml(scenarioCoverageText(scenarioBefore,scenarioAfter))} ${escapeHtml(scenarioDistanceText(scenarioBefore,scenarioAfter))}</div><div class="mt-4"><div class="compare-head">Что изменилось</div><div class="mt-2">${changed}</div></div></div>`;
+      return;
+    }
+    const p=state.lastPlan,b=state.baseline;
+    if(!p||!b){box.innerHTML='';return;}
+    const rows=[['Назначено заявок',b.assigned,p.assigned],['Занято инженеров',b.usedEngineers,p.usedEngineers],['Суммарный пробег, км',b.totalDistance,p.totalDistance],['Неназначено',b.unassigned,p.unassigned]];
+    const table=rows.map(r=>{const d=Number(r[2])-Number(r[1]);const sign=d>0?'+':'';return `<div class="compare-row"><div>${escapeHtml(r[0])}</div><div>${escapeHtml(r[1])}</div><div>${escapeHtml(r[2])}</div><div class="delta">Δ ${sign}${escapeHtml(d)}</div></div>`}).join('');
+    const details=state.engineers.map(e=>`<div class="text-[11px] py-1 flex justify-between"><span>${escapeHtml(e.name)}</span><span>${b.engineerDistances?.[e.id]??0} → ${p.engineerDistances?.[e.id]??0} км</span></div>`).join('');
+    const dAssigned=p.assigned-b.assigned,dUnassigned=p.unassigned-b.unassigned,dDistance=p.totalDistance-b.totalDistance;
+    const baselineSummary=`Baseline vs план: назначено ${dAssigned>=0?`+${dAssigned}`:dAssigned}; неназначено ${dUnassigned>=0?`+${dUnassigned}`:dUnassigned}; пробег ${dDistance>=0?`+${dDistance}`:dDistance} км.`;
+    $('compare').innerHTML=`<div class="compare-card"><div class="compare-head grid grid-cols-4 gap-2"><span></span><span>Baseline</span><span>План</span><span>Δ</span></div><div class="compare-table">${table}</div><div class="history-view-note">${escapeHtml(baselineSummary)}</div></div><div class="compare-card mt-3"><div class="compare-head mb-2">Пробег по инженерам</div>${details}</div>`;
+  }
+
+  function renderScenarioPreview(){
+    const box=$('scenario-preview'); if(!box)return; const pr=state.scenarioPreview;
+    if(!pr){box.classList.add('hidden');box.innerHTML='';return;}
+    box.classList.remove('hidden');
+    if(pr.status==='loading'){box.innerHTML='<div class="flex items-center gap-2"><span class="preview-badge"><i data-lucide="loader-circle" class="w-3 h-3 animate-spin"></i> Предпросмотр</span><span class="text-xs text-[#c8c8cd]">Рассчитываю последствия, текущий план не изменяется…</span></div>';lucide.createIcons();return;}
+    if(pr.status==='error'){box.innerHTML=`<div class="flex items-start justify-between gap-3"><div><span class="preview-badge">Ошибка расчёта</span><div class="mt-2 text-xs text-[#ffbe85]">${escapeHtml(pr.error||'Не удалось построить сценарий')}</div></div><button id="cancel-preview" class="btn ghost" type="button">Закрыть</button></div>`;box.querySelector('#cancel-preview')?.addEventListener('click',cancelScenarioPreview);return;}
+    const stale=pr.revision!==state.dataRevision || pr.baseVersion!==state.version;
+    if(stale){box.innerHTML=`<div class="flex items-start justify-between gap-3"><div><span class="preview-badge">Предпросмотр устарел</span><div class="mt-2 text-xs text-[#ffbe85]">Текущие данные или план уже изменились. Этот расчёт больше нельзя применять.</div></div><button id="cancel-preview" class="btn ghost" type="button">Закрыть</button></div>`;box.querySelector('#cancel-preview')?.addEventListener('click',cancelScenarioPreview);return;}
+    const b=pr.beforePlan,a=pr.afterPlan,cs=pr.changeSummary||changeSummary(pr.details||[]);
+    const rows=[['Назначено',b.assigned,a.assigned],['Не назначено',b.unassigned,a.unassigned],['Инженеров',b.usedEngineers,a.usedEngineers],['Пробег',b.totalDistance,a.totalDistance]];
+    const metrics=rows.map(r=>{const d=Number(r[2])-Number(r[1]);const sign=d>0?'+':'';return `<div class="compare-metric highlight-change"><div class="k">${escapeHtml(r[0])}</div><div class="v">${escapeHtml(r[2])}${r[0]==='Пробег'?' км':''}</div><div class="d">До: ${escapeHtml(r[1])} · Δ ${sign}${escapeHtml(d)}</div></div>`}).join('');
+    const changes=(pr.changes||[]).length?(pr.changes||[]).slice(0,6).map(x=>`<div class="change-item"><span class="tag">Изменение</span>${escapeHtml(x)}</div>`).join(''):'<div class="scenario-empty">В сценарии назначения не изменяются.</div>';
+    const eventTitle=pr.event.type==='cancel'?`Отмена заявки #${pr.event.jobId}`:pr.event.type==='engineer_unavailable'?`Недоступность ${pr.event.engineerName}`:`Новая срочная заявка #${pr.event.jobId}`;
+    const inDayNote=pr.event.type==='engineer_unavailable'?`Завершённые до ${escapeHtml(pr.event.time||'указанного времени')} работы фиксируются; остальные заявки пересчитываются с учётом новой доступности.`:'';
+    box.innerHTML=`<div class="flex items-start justify-between gap-3"><div><span class="preview-badge"><i data-lucide="scan-search" class="w-3 h-3"></i> Что будет, если…</span><div class="mt-2 text-sm font-extrabold">${escapeHtml(eventTitle)}</div><div class="mt-1 text-[10px] text-[#aeadb4]">Сценарий рассчитан, но ещё не применён. Текущий план остаётся без изменений.</div>${inDayNote?`<div class="mt-2 text-[10px] text-[#d8c98a]">${inDayNote}</div>`:''}</div><span class="status assigned">Предпросмотр</span></div><div class="preview-grid mt-3"><div class="preview-state before"><div class="text-[10px] font-extrabold text-[#9e9ea4] uppercase">Текущий план</div><div class="big">v${escapeHtml(pr.beforeVersion)}</div><div class="sub">${b.assigned} назначено · ${b.unassigned} не назначено · ${b.usedEngineers} инженеров · ${b.totalDistance} км</div></div><div class="preview-arrow">→</div><div class="preview-state after"><div class="text-[10px] font-extrabold text-[#9e9ea4] uppercase">После события</div><div class="big">v${escapeHtml(pr.afterVersion)}</div><div class="sub">${a.assigned} назначено · ${a.unassigned} не назначено · ${a.usedEngineers} инженеров · ${a.totalDistance} км</div></div></div><div class="compare-metrics mt-3">${metrics}</div><div class="preview-change-counts mt-3"><div class="change-count"><div class="num">${cs.total}</div><div class="lbl">Изменений</div></div><div class="change-count"><div class="num">${cs.assigned}</div><div class="lbl">Новых назначений</div></div><div class="change-count"><div class="num">${cs.removed}</div><div class="lbl">Снято с маршрута</div></div><div class="change-count"><div class="num">${cs.reassigned}</div><div class="lbl">Переназначений</div></div></div><div class="history-view-note">${escapeHtml(pr.coverageText||'')} ${escapeHtml(pr.distanceText||'')}</div><div class="mt-4"><div class="compare-head">Изменения</div><div class="mt-2">${changes}</div></div><div class="preview-actions"><button id="discard-preview" class="btn ghost" type="button">Отменить сценарий</button><button id="apply-preview" class="btn primary" type="button"><i data-lucide="check" class="w-4 h-4 inline mr-1"></i>Применить и создать v${escapeHtml(String(pr.afterVersion))}</button></div>`;
+    $('apply-preview').addEventListener('click',applyScenarioPreview);$('discard-preview').addEventListener('click',cancelScenarioPreview);lucide.createIcons();
+  }
+
+  function renderPlanHistory(){
+    const box=$('plan-history'); if(!box)return;
+    if(!state.planHistory.length){box.innerHTML='<div class="scenario-empty w-full">После первого расчёта здесь появится история версий плана.</div>';return;}
+    const viewing=state.historyViewVersion!=null;
+    const note=viewing?`<div class="history-view-note">Сейчас отображается историческая версия v${escapeHtml(state.historyViewVersion)} на карте и таймлайне. Текущий план не изменён. <button type="button" class="btn ghost text-[10px]" id="history-current-button">Вернуться к текущему плану</button></div>`:'';
+    box.innerHTML=`<div class="history-strip">${state.planHistory.map(h=>{const isCurrent=h.version===state.version,isViewing=h.version===Number(state.historyViewVersion);return `<button type="button" class="history-item ${isCurrent?'current':''} ${isViewing?'viewing':''}" data-history-version="${h.version}"><div class="v">v${h.version} ${isCurrent?'· текущая':''}</div><div class="meta">${escapeHtml(h.label)}</div><div class="sub">${h.plan.assigned} назначено · ${h.plan.unassigned} не назначено · ${h.plan.usedEngineers} инженеров · ${h.plan.totalDistance} км</div>${isViewing?'<div class="meta">Показывается на карте</div>':''}</button>`}).join('')}</div>${note}`;
+    document.querySelectorAll('[data-history-version]').forEach(btn=>btn.addEventListener('click',()=>{
+      const v=Number(btn.dataset.historyVersion);
+      if(v===state.version){state.historyViewVersion=null;notify('Возврат к текущему плану.');}
+      else {const h=state.planHistory.find(x=>x.version===v);if(!h)return;state.historyViewVersion=v;notify(`На карте и таймлайне показана версия v${v}. Текущий план не изменён.`);}
+      renderAll();
+    }));
+    $('history-current-button')?.addEventListener('click',()=>{state.historyViewVersion=null;renderAll();});
+  }
+
+  function engineerCandidateForJob(engineer,job){
+    const skillOk=!job.requiredSkill || engineer.skills.includes(job.requiredSkill);
+    const vehicleOk=!job.requiredVehicle || engineer.vehicle===job.requiredVehicle;
+    const availabilityOk=engineer.status==='Доступен';
+    const currentPlan=state.lastPlan?.engineers?.find(x=>x.engineer.id===engineer.id);
+    const existingJobs=(currentPlan?.items||[]).filter(item=>String(item.id)!==String(job.id));
+    const currentItem=(currentPlan?.items||[]).find(item=>String(item.id)===String(job.id))||null;
+    let candidate=null;
+    let timeOk=false;
+    if(skillOk && vehicleOk && availabilityOk && validCoordPair(job.coords)){
+      candidate=insertionCandidate(engineer,job,existingJobs,state.routingContext,{});
+      timeOk=!!candidate;
+    }
+    const routeJobs=existingJobs.length>0;
+    const usedBefore=routeJobs?0:1;
+    const wait=(candidate?.sim?.newItems||[]).reduce((sum,x)=>sum+(Number(x.waitingMin)||0),0);
+    const finish=candidate?.sim?.newItems?.find(x=>String(x.id)===String(job.id))?.finishMin||9999;
+    const selectionScore=candidate?(usedBefore*100000)+(candidate.deltaDistance*100)+(wait*0.1)+(finish*0.01):Infinity;
+    const reasons=[];
+    if(!availabilityOk) reasons.push(`инженер недоступен: ${engineer.status}`);
+    if(!skillOk) reasons.push('нет требуемого навыка');
+    if(!vehicleOk) reasons.push(`требуется транспорт «${job.requiredVehicle}»`);
+    if(availabilityOk && skillOk && vehicleOk && !timeOk) reasons.push('не удаётся встроить заявку в текущий маршрут с учётом окна/смены/маршрута');
+    if(!validCoordPair(job.coords)) reasons.push('нет корректных координат заявки');
+    const ok=availabilityOk&&skillOk&&vehicleOk&&timeOk;
+    return {
+      engineer,ok,current:!!currentItem,reasons,
+      skillOk,vehicleOk,availabilityOk,timeOk,
+      preview:candidate?.sim||null,deltaDistance:candidate?.deltaDistance??null,
+      selectionScore,usedBefore
+    };
+  }
+
+  function renderExplanation(){
+    const j=state.jobs.find(x=>x.id===state.selectedJobId); const box=$('dispatcher-detail');
+    if(!j){$('explanation-text').textContent='Выберите заявку, чтобы увидеть проверяемые ограничения, кандидатов и возможные действия.';if(box)box.innerHTML='';return;}
+    if(j.status==='cancelled'){ $('explanation-text').textContent=`#${j.id} отменена. Заявка сохранена в журнале событий и исключена из текущего плана.`; if(box)box.innerHTML=''; return; }
+    const candidates=state.engineers.map(e=>engineerCandidateForJob(e,j));
+    const suitable=candidates.filter(c=>c.ok).sort((a,b)=>a.selectionScore-b.selectionScore);
+    const current=candidates.find(c=>c.current);
+    const selectedCandidate=current||null;
+    const selectedAmongSuitable=selectedCandidate?.ok ? suitable.findIndex(c=>c.engineer.id===selectedCandidate.engineer.id) : -1;
+
+    if(j.engineerId&&current){
+      const p=j.planned;
+      const startText=p?`начало ${fmtMin(p.startMin)} попадает в окно ${j.windowStart}–${j.windowEnd}`:'время ещё не рассчитано';
+      const reasonParts=[];
+      if(selectedCandidate.ok){
+        if(selectedCandidate.usedBefore===0) reasonParts.push('не требуется подключать ещё одного инженера');
+        if(Number.isFinite(selectedCandidate.deltaDistance)) reasonParts.push(`добавочный путь ${selectedCandidate.deltaDistance.toFixed(2)} км`);
+        if(selectedAmongSuitable===0) reasonParts.push('это лучший по расчётному критерию среди подходящих кандидатов');
+        else if(selectedAmongSuitable>0) reasonParts.push('назначение сохранено в текущем согласованном плане');
+        reasonParts.push('существующие заявки маршрута остаются выполнимыми');
+      }
+      $('explanation-text').textContent=`#${j.id} назначена ${current.engineer.name}: ${startText}.${reasonParts.length?` Почему выбран: ${reasonParts.join('; ')}.`:''}`;
+    } else {
+      const reasons=state.lastPlan?.reasons?.[j.id]||['подходящего исполнителя пока не найдено'];
+      $('explanation-text').textContent=`#${j.id} сейчас не назначена. По плану: ${reasons.slice(0,2).join('; ')}.`;
+    }
+    if(!box)return;
+    const candidateHtml=candidates.map(c=>{
+      const reason=c.ok
+        ? `Подходит. ${Number.isFinite(c.deltaDistance)?`Добавочный путь: ${c.deltaDistance.toFixed(2)} км.`:''}`
+        : c.reasons.join('; ');
+      const badge=(ok,label)=>`<span class="candidate-badge ${ok?'ok':'bad'}">${ok?'✓':'✕'} ${label}</span>`;
+      const badges=[
+        badge(c.skillOk,'навык'),
+        badge(c.vehicleOk,'транспорт'),
+        badge(c.timeOk,'время'),
+        badge(c.availabilityOk,'доступность')
+      ];
+      const selectedNote=c.current&&c.ok?' · выбран в текущем плане':'';
+      return `<div class="candidate-card ${c.ok?'good':''} ${c.current?'current':''}"><div class="flex items-start justify-between gap-2"><div><div class="candidate-name">${escapeHtml(c.engineer.name)}${escapeHtml(selectedNote)}</div><div class="candidate-reason">${escapeHtml(reason)}</div></div><button class="btn ghost text-[10px]" type="button" data-focus-engineer="${escapeHtml(c.engineer.id)}">На карте</button></div><div class="candidate-badges">${badges.join('')}</div></div>`;
+    }).join('');
+    const actions=[];
+    if(j.engineerId) actions.push(`<button class="action-item text-left w-full" type="button" data-focus-engineer="${escapeHtml(j.engineerId)}"><span class="action-icon"><i data-lucide="route" class="w-4 h-4"></i></span><div><b>Показать маршрут ${escapeHtml(current?.engineer?.name||'исполнителя')}</b><span>Сузить карту до выбранного инженера.</span></div></button>`);
+    if(suitable.length && !j.engineerId) actions.push(`<button class="action-item text-left w-full" type="button" data-focus-engineer="${escapeHtml(suitable[0].engineer.id)}"><span class="action-icon"><i data-lucide="users-round" class="w-4 h-4"></i></span><div><b>Показать подходящего на карте</b><span>По текущему критерию сначала — ${escapeHtml(suitable[0].engineer.name)}.</span></div></button>`);
+    if(!suitable.length){
+      actions.push(`<button class="action-item text-left w-full" type="button" data-open-engineers><span class="action-icon"><i data-lucide="users" class="w-4 h-4"></i></span><div><b>Открыть список инженеров</b><span>Проверить доступность и транспорт исполнителей.</span></div></button>`);
+      actions.push(`<div class="action-item"><span class="action-icon"><i data-lucide="calendar-clock" class="w-4 h-4"></i></span><div><b>Проверить временное окно</b><span>Перенос окна может сделать заявку выполнимой, если это согласовано с клиентом.</span></div></div>`);
+      if(j.requiredVehicle) actions.push(`<div class="action-item"><span class="action-icon"><i data-lucide="car-front" class="w-4 h-4"></i></span><div><b>Проверить ресурс</b><span>Нужен исполнитель с транспортом «${escapeHtml(j.requiredVehicle)}».</span></div></div>`);
+    }
+    box.innerHTML=`<div><div class="text-[10px] font-extrabold uppercase tracking-[.12em] text-[#9e9ea4] mb-2">Кандидаты инженеров</div><div class="text-[10px] text-[#9e9ea4] mb-2">Ограничения проверяются независимо: навык · транспорт · время · доступность.</div><div class="grid gap-2">${candidateHtml}</div></div><div><div class="text-[10px] font-extrabold uppercase tracking-[.12em] text-[#9e9ea4] mb-2">Почему выбран / что можно сделать</div><div class="action-list">${actions.length?actions.join(''):'<div class="scenario-empty">Текущий кандидат соответствует ограничениям; дополнительных действий не требуется.</div>'}</div></div>`;
+    document.querySelectorAll('[data-focus-engineer]').forEach(b=>b.addEventListener('click',()=>{state.selectedEngineerId=b.dataset.focusEngineer;renderMapToolbar();renderMap();const e=state.engineers.find(x=>x.id===state.selectedEngineerId);if(e?.startPoint)map?.flyTo(e.startPoint,12,{duration:.5});}));
+    document.querySelectorAll('[data-open-engineers]').forEach(b=>b.addEventListener('click',()=>setSidebarTab('engineers')));
+    lucide.createIcons();
+  }
+
+  function showTimelineTooltip(button,item,engineer){
+    const tip=$('timeline-tooltip');
+    if(!tip)return;
+    const start=fmtMin(item.startMin), finish=fmtMin(item.finishMin), arrival=fmtMin(item.arrivalMin);
+    const window=`${item.windowStart}–${item.windowEnd}`;
+    tip.innerHTML=`<div class="tt-title">№${escapeHtml(String(item.order||'—'))} · #${escapeHtml(item.id)} · ${escapeHtml(item.title||'Работа')}</div>
+      <div class="tt-row"><span>Прибытие</span><span>${arrival}</span></div>
+      <div class="tt-row"><span>Работа</span><span>${start}–${finish}</span></div>
+      <div class="tt-row"><span>Окно клиента</span><span>${escapeHtml(window)}</span></div>
+      <div class="tt-row"><span>В пути</span><span>${escapeHtml(String(item.travelMin))} мин</span></div>
+      <div class="tt-row"><span>Ожидание</span><span>${escapeHtml(String(item.waitingMin||0))} мин</span></div>
+      <div class="tt-row"><span>Инженер</span><span>${escapeHtml(engineer.name)}</span></div>`;
+    tip.setAttribute('aria-hidden','false');
+    tip.classList.add('show');
+    positionTimelineTooltip(button);
+  }
+
+  function positionTimelineTooltip(button){
+    const tip=$('timeline-tooltip');
+    if(!tip||!tip.classList.contains('show'))return;
+    const r=button.getBoundingClientRect();
+    const margin=10, tw=tip.offsetWidth||260, th=tip.offsetHeight||130;
+    let left=r.left+(r.width/2)-(tw/2), top=r.top-th-margin;
+    left=Math.max(margin,Math.min(left,window.innerWidth-tw-margin));
+    if(top<margin) top=Math.min(window.innerHeight-th-margin,r.bottom+margin);
+    tip.style.left=`${Math.round(left)}px`;
+    tip.style.top=`${Math.round(top)}px`;
+  }
+
+  function hideTimelineTooltip(){
+    const tip=$('timeline-tooltip');
+    if(!tip)return;
+    tip.classList.remove('show');
+    tip.setAttribute('aria-hidden','true');
+  }
+
+  function routeSourceLabel(source){const v=String(source||'').toLowerCase();if(v.includes('osrm')||v.includes('valhalla'))return 'Дорожный расчёт';if(v.includes('local')||v.includes('fallback'))return 'Приблизительная оценка';return 'Расчёт маршрута';}
+
+  function renderTimeline(){
+    const p=displayPlan();
+    if(!p){$('timeline-list').innerHTML='';hideTimelineTooltip();return;}
+    const dayStart=toMin('08:00'), dayEnd=toMin('22:00'), span=dayEnd-dayStart;
+    const pct=(min)=>Math.max(0,Math.min(100,((min-dayStart)/span)*100));
+    $('timeline-list').innerHTML=p.engineers.filter(x=>x.items.length).map(x=>{
+      const e=x.engineer; let cursor=toMin(e.shiftStart);
+      const blocks=[];
+      x.items.forEach(item=>{
+        const travelStart=cursor, travelEnd=item.arrivalMin;
+        if(travelEnd>travelStart) blocks.push(`<span class="timeline-block travel" style="left:${pct(travelStart)}%;width:${Math.max(.6,pct(travelEnd)-pct(travelStart))}%" aria-hidden="true"></span>`);
+        if(item.startMin>item.arrivalMin) blocks.push(`<span class="timeline-block wait" style="left:${pct(item.arrivalMin)}%;width:${Math.max(.5,pct(item.startMin)-pct(item.arrivalMin))}%" aria-hidden="true"></span>`);
+        const l=pct(item.startMin), w=Math.max(0.15,pct(item.finishMin)-pct(item.startMin));
+        const order=item.order??p.jobs.find(j=>String(j.jobId)===String(item.id))?.order??'—';
+        blocks.push(`<span class="timeline-time-label" style="left:${l}%">${escapeHtml(fmtMin(item.startMin))}</span><button type="button" data-timeline-job="${escapeHtml(item.id)}" data-timeline-order="${escapeHtml(String(order))}" class="timeline-block ${item.priority==='urgent'?'urgent':'jobblock'}" style="left:${l}%;width:${w}%" aria-label="Посещение ${escapeHtml(String(order))}, заявка #${escapeHtml(item.id)}, начало ${escapeHtml(fmtMin(item.startMin))}"><span class="timeline-order">${escapeHtml(String(order))}</span></button>`);
+        cursor=item.finishMin;
+      });
+      return `<div class="flex items-stretch"><div class="w-[150px] shrink-0 pr-3 border-r border-[#343640] flex items-center gap-2"><span class="w-3 h-3 rounded-full" style="background:${e.color}"></span><div><div class="text-xs font-extrabold">${escapeHtml(e.name)}</div><div class="text-[10px] text-[#9e9ea4]">${escapeHtml(e.vehicle)} · ${x.distance} км · ${routeSourceLabel(x.routeSource)}</div></div></div><div class="timeline-grid flex-1">${blocks.join('')}</div></div>`;
+    }).join('') || '<div class="text-xs text-[#9e9ea4] px-2 py-4">Нет назначенных заявок.</div>';
+    $('timeline-hint').innerHTML='<span>Время начала показано над работой · номер — порядок посещения</span><span class="timeline-legend"><span><i style="background:#4a4d57"></i>дорога</span><span><i style="background:#76651f"></i>ожидание</span><span><i style="background:#78aefc"></i>работа</span></span>';
+    document.querySelectorAll('[data-timeline-job]').forEach(b=>{
+      const itemId=b.dataset.timelineJob;
+      const engRow=p.engineers.find(x=>x.items.some(i=>String(i.id)===String(itemId)));
+      const item=engRow?.items.find(i=>String(i.id)===String(itemId));
+      if(!item||!engRow)return;
+      item.order=item.order??p.jobs.find(x=>String(x.jobId)===String(itemId))?.order;
+      b.addEventListener('click',()=>selectJob(itemId));
+      b.addEventListener('mouseenter',()=>showTimelineTooltip(b,item,engRow.engineer));
+      b.addEventListener('mousemove',()=>positionTimelineTooltip(b));
+      b.addEventListener('mouseleave',hideTimelineTooltip);
+      b.addEventListener('focus',()=>showTimelineTooltip(b,item,engRow.engineer));
+      b.addEventListener('blur',hideTimelineTooltip);
+    });
+  }
+
+  function markerIcon(j){
+    const eng=j.engineerId?state.engineers.find(e=>e.id===j.engineerId):null;
+    const bg=j.status==='cancelled'?'#666a73':j.status==='unassigned'?'#3b3e47':j.status==='in_progress'?'#334d3a':'#252832';
+    const order=j.planned?.order;const label=j.status==='cancelled'?'×':j.status==='unassigned'?'?':(order?String(order):'•');
+    const statusSymbol=j.status==='cancelled'?'×':j.status==='in_progress'?'●':j.status==='unassigned'?'!':'✓';
+    const statusClass=j.status==='cancelled'?'status-cancelled':j.status==='in_progress'?'status-progress':j.status==='unassigned'?'status-unassigned':'status-assigned';
+    return L.divIcon({className:'',html:`<div class="map-marker ${state.selectedJobId===String(j.id)?'selected':''} ${j.priority==='urgent'?'urgent-marker':''}" style="--engineer-color:${eng?.color||'#6f727c'};background:${bg};color:#fff"><span class="marker-order">${escapeHtml(label)}</span><span class="marker-status ${statusClass}" aria-label="${escapeHtml(j.status||'')}">${statusSymbol}</span></div>`,iconSize:[38,38],iconAnchor:[19,19]});
+  }
+  function captureMapView(){if(!map)return;const c=map.getCenter();mapView={initialized:true,center:[c.lat,c.lng],zoom:map.getZoom()};}
+  function restoreMapView(){if(!map||!mapView.initialized||!mapView.center)return false;map.setView(mapView.center,mapView.zoom,{animate:false});return true;}
+  function collectMapBounds(){
+    const bounds=[],selected=state.selectedEngineerId||'all',p=displayPlan();
+    const planByJob=new Map((p?.jobs||[]).map(x=>[String(x.jobId),x]));
+    const planByEngineer=new Map((p?.engineers||[]).map(x=>[x.engineer.id,x]));
+    const historyRecord=state.historyViewVersion!=null?state.planHistory.find(x=>x.version===Number(state.historyViewVersion)):null;
+    const historyIds=historyRecord?.jobIds?.length?new Set(historyRecord.jobIds.map(String)):null;
+    const visibleIds=new Set(state.jobs.filter(j=>{if(historyIds&&!historyIds.has(String(j.id)))return false;return !!getVisibleMapJob(j,planByJob,p);}).map(j=>String(j.id)));
+    state.engineers.forEach(e=>{
+      if(Array.isArray(e.startPoint)&&validCoordPair(e.startPoint)&&(selected==='all'||selected===e.id)&&state.mapLayers.starts)bounds.push(e.startPoint);
+      const r=planByEngineer.get(e.id);
+      const routeHasVisible=(r?.items||[]).some(item=>visibleIds.has(String(item.id)));
+      if(!r||r.route.length<2||!state.mapLayers.routes||(selected!=='all'&&selected!==e.id)||((state.filter!=='all'||state.query)&&!routeHasVisible))return;
+      r.route.forEach(pnt=>bounds.push(pnt));
+    });
+    if(state.mapLayers.jobs)state.jobs.forEach(j=>{if(historyIds&&!historyIds.has(String(j.id)))return;const visible=getVisibleMapJob(j,planByJob);if(visible&&validCoordPair(j.coords))bounds.push(j.coords);});
+    return bounds;
+  }
+  function fitMapToVisible(){if(!map)return;const bounds=collectMapBounds();if(!bounds.length)return;try{map.fitBounds(bounds,{padding:[30,30],maxZoom:(state.selectedEngineerId||'all')==='all'?14:15});captureMapView();}catch(e){}}
+  function renderMap(){
+    if(!map)return;
+    if(mapView.initialized)captureMapView();
+    markerLayers.forEach(m=>map.removeLayer(m));routeLayers.forEach(l=>map.removeLayer(l));markerLayers=[];routeLayers=[];
+    const bounds=[],selected=state.selectedEngineerId||'all',p=displayPlan();
+    const planByJob=new Map((p?.jobs||[]).map(x=>[String(x.jobId),x])); const planByEngineer=new Map((p?.engineers||[]).map(x=>[x.engineer.id,x]));
+    const historyRecord=state.historyViewVersion!=null?state.planHistory.find(x=>x.version===Number(state.historyViewVersion)):null;
+    const historyIds=historyRecord?.jobIds?.length?new Set(historyRecord.jobIds.map(String)):null;
+    const visibleIds=new Set(state.jobs.filter(j=>{if(historyIds&&!historyIds.has(String(j.id)))return false;return !!getVisibleMapJob(j,planByJob);}).map(j=>String(j.id)));
+    const addStart=e=>{if(!state.mapLayers.starts||!validCoordPair(e.startPoint))return;const icon=L.divIcon({className:'',html:`<div class="start-marker" style="background:${e.color};color:#17181c">S</div>`,iconSize:[28,28],iconAnchor:[14,14]});const m=L.marker(e.startPoint,{icon}).addTo(map).bindPopup(`<b>${escapeHtml(e.name)}</b><br><span style="font-size:11px">Старт: ${escapeHtml(e.shiftStart)} · ${escapeHtml(e.vehicle)}</span>`);markerLayers.push(m);bounds.push(e.startPoint);};
+    state.engineers.forEach(e=>{
+      if(selected==='all'||selected===e.id)addStart(e);
+      const r=planByEngineer.get(e.id); const routeHasVisible=(r?.items||[]).some(item=>visibleIds.has(String(item.id)));
+      if(!r||r.route.length<2||!state.mapLayers.routes||(selected!=='all'&&selected!==e.id)||((state.filter!=='all'||state.query)&&!routeHasVisible))return;
+      const containsSelected=(r.items||[]).some(x=>String(x.id)===String(state.selectedJobId));
+      let layer;
+      if(r.routeGeo)layer=L.geoJSON(r.routeGeo,{style:{color:e.color,weight:containsSelected?8:selected===e.id?7:5,opacity:containsSelected?1:selected==='all'?.82:.95,lineJoin:'round',lineCap:'round'}}).addTo(map);
+      else layer=L.polyline(r.route,{color:e.color,weight:containsSelected?8:selected===e.id?7:5,opacity:containsSelected?.95:.55,dashArray:'7 7',lineJoin:'round'}).addTo(map);
+      routeLayers.push(layer);r.route.forEach(pnt=>bounds.push(pnt));
+    });
+    if(state.mapLayers.jobs)state.jobs.forEach(j=>{
+      if(historyIds&&!historyIds.has(String(j.id)))return; if(!validCoordPair(j.coords))return; const displayJob=getVisibleMapJob(j,planByJob,p);if(!displayJob)return;
+      const m=L.marker(j.coords,{icon:markerIcon(displayJob)}).addTo(map); const eng=displayJob.engineerId?state.engineers.find(e=>e.id===displayJob.engineerId):null;const item=displayJob.planned;const order=item?.order;
+      const routeInfo=displayJob.engineerId?`<br>Инженер: ${escapeHtml(eng?.name||'—')}${order?`<br>Посещение: №${order}`:''}${item?`<br>Прибытие: ${fmtMin(item.arrivalMin)} · начало: ${fmtMin(item.startMin)}<br>В пути: ${item.travelMin} мин`:''}`:''; const viewLabel=state.historyViewVersion!=null?`<br><span style="color:#9ebfff">Историческая версия v${escapeHtml(state.historyViewVersion)}</span>`:'';
+      m.bindPopup(`<div style="min-width:240px;font-family:Inter,Arial,sans-serif"><b>#${escapeHtml(j.id)} · ${escapeHtml(j.title)}</b><div style="font-size:11px;line-height:1.5;margin-top:7px;color:#c5c5ca">${escapeHtml(j.address)}<br>Окно: ${escapeHtml(j.windowStart)}–${escapeHtml(j.windowEnd)}<br>Навык: ${escapeHtml(j.requiredSkill)}${routeInfo}${viewLabel}</div><button data-popup-job="${escapeHtml(j.id)}" style="margin-top:10px;width:100%;border:0;border-radius:8px;background:#ffc800;padding:8px;font-weight:900;cursor:pointer">Выбрать заявку</button></div>`);
+      m.on('click',()=>selectJob(j.id));markerLayers.push(m);bounds.push(j.coords);
+    });
+    if(!mapView.initialized){if(bounds.length){try{map.fitBounds(bounds,{padding:[30,30],maxZoom:selected==='all'?14:15});}catch(e){}}captureMapView();}else restoreMapView();
+  }
+
+  function renderMapToolbar(){
+    const sel=$('map-engineer-select');
+    if(sel){
+      const prev=state.selectedEngineerId||'all';
+      sel.innerHTML=`<option value="all">Все инженеры</option>`+state.engineers.map(e=>`<option value="${escapeHtml(e.id)}">${escapeHtml(e.name)}</option>`).join('');
+      sel.value=state.engineers.some(e=>e.id===prev)?prev:'all';
+      state.selectedEngineerId=sel.value;
+    }
+  }
+
+  function syncUiContext(){const d=$('plan-date'),b=$('plan-branch');if(d){const raw=state.date||'2026-08-17';d.textContent=/^\d{4}-\d{2}-\d{2}$/.test(raw)?new Date(`${raw}T00:00:00`).toLocaleDateString('ru-RU',{day:'2-digit',month:'2-digit',year:'numeric'}):raw;}if(b)b.textContent=state.branch||'Югоцентр';const v=$('topbar-version');if(v)v.textContent=`v${Number(state.version||0)}`;const ids=[['jobs','jobs'],['routes','routes'],['starts','starts']];ids.forEach(([a,k])=>{const el=$(`layer-${a}`);if(el)el.checked=state.mapLayers?.[k]!==false;});}
+
+  function renderAll(){ renderSidebar();renderEngineers();renderSummary();renderCompare();renderScenarioPreview();renderExplanation();renderTimeline();renderPlanHistory();renderMapToolbar();syncUiContext();renderMap();lucide.createIcons(); }
+  function selectJob(id){state.selectedJobId=String(id);renderAll();const j=state.jobs.find(x=>x.id===state.selectedJobId);if(j&&map){map.flyTo(j.coords,13,{duration:.5});}}
+
+  function setSidebarTab(tab){const jobs=tab==='jobs';$('jobs-tab').classList.toggle('active',jobs);$('engineers-tab').classList.toggle('active',!jobs);$('jobs-tab').setAttribute('aria-selected',jobs?'true':'false');$('engineers-tab').setAttribute('aria-selected',jobs?'false':'true');$('jobs-panel').classList.toggle('hidden',!jobs);$('engineers-panel').classList.toggle('hidden',jobs);}
+  $('jobs-tab').addEventListener('click',()=>setSidebarTab('jobs'));
+  $('engineers-tab').addEventListener('click',()=>setSidebarTab('engineers'));
+  let viewMode='map';
+  function setViewMode(mode){viewMode=mode==='schedule'?'schedule':'map';const mapMode=viewMode==='map';$('view-map-tab').classList.toggle('active',mapMode);$('view-schedule-tab').classList.toggle('active',!mapMode);$('view-map-tab').setAttribute('aria-selected',mapMode?'true':'false');$('view-schedule-tab').setAttribute('aria-selected',mapMode?'false':'true');$('map-view-panel').classList.toggle('hidden',!mapMode);$('schedule-view-panel').classList.toggle('hidden',mapMode);if(mapMode&&map)setTimeout(()=>map.invalidateSize(),0);}
+  $('view-map-tab').addEventListener('click',()=>setViewMode('map'));
+  $('view-schedule-tab').addEventListener('click',()=>setViewMode('schedule'));
+  document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{state.filter=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>x.classList.toggle('active',x===b));renderSidebar();renderMap();lucide.createIcons();}));
+  $('job-search').addEventListener('input',e=>{state.query=e.target.value;renderSidebar();renderMap();lucide.createIcons();});
+  $('map-engineer-select').addEventListener('change',e=>{state.selectedEngineerId=e.target.value;renderMap();if(state.selectedEngineerId!=='all'){const eng=state.engineers.find(x=>x.id===state.selectedEngineerId);if(eng?.startPoint){map?.flyTo(eng.startPoint,12,{duration:.5});captureMapView();}}else fitMapToVisible();persist();});
+  $('map-fit-button').addEventListener('click',()=>fitMapToVisible());
+  [['layer-jobs','jobs'],['layer-routes','routes'],['layer-starts','starts']].forEach(([id,key])=>$(id).addEventListener('change',e=>{state.mapLayers[key]=e.target.checked;renderMap();persist();}));
+  $('optimize-button').addEventListener('click',()=>runPlanning());
+  $('baseline-button').addEventListener('click',async()=>{setRoutingStatus('loading','Маршрутизация: пересчёт baseline…');const ctx=await buildRoutingContext(state.jobs,state.engineers);state.baseline=buildPlan(state.jobs.map(j=>({...j})),state.engineers,{baseline:true,routingContext:ctx});if(ctx.live>0)setRoutingStatus('live',`Baseline: ${ctx.live}/${ctx.total} режимов с дорожными матрицами`);else setRoutingStatus('error',`Baseline: ${ctx.summary}`);renderCompare();notify('Baseline пересчитан по правилам ТЗ.');});
+  $('express-button').addEventListener('click',()=>{
+    setGeocodingMessage('idle','Адрес будет проверен через Photon / OpenStreetMap.');
+    openModal('express-modal');$('express-name').focus();
+  });
+  $('express-address').addEventListener('input',()=>{
+    geocodeSession.token++;geocodeSession.selected=null;geocodeSession.candidates=[];const form=$('express-form');delete form.dataset.geocodedLat;delete form.dataset.geocodedLon;delete form.dataset.geocodedAddress;
+    if(geocodeMarker&&map){map.removeLayer(geocodeMarker);geocodeMarker=null;} $('geocode-result').classList.add('hidden');$('geocode-result').textContent='';$('geocode-message').classList.add('hidden');
+  });
+  $('geocode-button').addEventListener('click',async()=>{
+    const address=$('express-address').value.trim(),button=$('geocode-button'),token=++geocodeSession.token; if(!address){setGeocodingMessage('error','Введите адрес.');return;}
+    button.disabled=true;button.innerHTML='<i data-lucide="loader-circle" class="w-4 h-4 inline mr-1 animate-spin"></i>Ищу…';lucide.createIcons();
+    try{
+      const result=await geocodeAddress(address);
+      if(token!==geocodeSession.token||normalizeAddressKey($('express-address').value)!==normalizeAddressKey(address))return;
+      geocodeSession={token,address,candidates:result.candidates,selected:null};
+      const detail=result.candidates.map((c,i)=>`<button type="button" data-geocode-index="${i}" style="display:block;width:100%;text-align:left;margin-top:6px;padding:9px;border-radius:8px;border:1px solid #343640;background:#20222a;color:#fff;cursor:pointer"><b>Вариант ${i+1}</b><br><span style="color:#bfc0c5">${escapeHtml(c.display)}</span><br><span style="color:#8f9097">${c.coords[0].toFixed(6)}, ${c.coords[1].toFixed(6)}</span></button>`).join('');
+      setGeocodingMessage('loading',`Найдено вариантов: ${result.candidates.length}. Выберите подтверждённый адрес.`,detail);
+      document.querySelectorAll('[data-geocode-index]').forEach(b=>b.addEventListener('click',()=>{
+        const idx=Number(b.dataset.geocodeIndex),candidate=geocodeSession.candidates[idx];if(!candidate)return;geocodeSession.selected=idx;const form=$('express-form');form.dataset.geocodedLat=String(candidate.coords[0]);form.dataset.geocodedLon=String(candidate.coords[1]);form.dataset.geocodedAddress=address;
+        document.querySelectorAll('[data-geocode-index]').forEach(x=>x.style.borderColor='#343640');b.style.borderColor='#ffc800';
+        setGeocodingMessage('success','Адрес подтверждён.',`<div class="font-extrabold text-white">${escapeHtml(candidate.display)}</div><div class="mt-1 text-[#9e9ea4]">Координаты: ${candidate.coords[0].toFixed(6)}, ${candidate.coords[1].toFixed(6)}</div>`);
+        if(geocodeMarker&&map)map.removeLayer(geocodeMarker);geocodeMarker=L.circleMarker(candidate.coords,{radius:7,color:'#ffc800',fillColor:'#ffc800',fillOpacity:.9,weight:2}).addTo(map).bindPopup(`<b>Новая заявка</b><br>${escapeHtml(candidate.display)}`).openPopup();if(map){map.setView(candidate.coords,14,{animate:true});captureMapView();}
+      }));
+    }catch(error){if(token!==geocodeSession.token)return;setGeocodingMessage('error',error?.name==='AbortError'?'Сервис геокодирования не ответил вовремя.':(error?.message||'Не удалось определить адрес.'));}
+    finally{button.disabled=false;button.innerHTML='<i data-lucide="map-pin" class="w-4 h-4 inline mr-1"></i>Найти на карте';lucide.createIcons();}
+  });
+  $('theme-toggle').addEventListener('click',()=>{const current=document.documentElement.getAttribute('data-theme')||'dark';applyTheme(current==='light'?'dark':'light');});
+  $('import-button').addEventListener('click',()=>openModal('import-modal'));
+
+  function prepareCancelModal(){
+    const opts=state.jobs.filter(j=>j.status!=='cancelled').map(j=>`<option value="${escapeHtml(j.id)}">#${escapeHtml(j.id)} · ${escapeHtml(j.title)} · ${escapeHtml(j.windowStart)}–${escapeHtml(j.windowEnd)}</option>`).join('');
+    $('cancel-job').innerHTML=opts||'<option value="">Нет активных заявок</option>';
+  }
+  function prepareUnavailableModal(){
+    const opts=state.engineers.filter(e=>e.status==='Доступен').map(e=>`<option value="${escapeHtml(e.id)}">${escapeHtml(e.name)} · ${escapeHtml(e.vehicle)} · ${escapeHtml(e.shiftStart)}–${escapeHtml(e.shiftEnd)}</option>`).join('');
+    $('unavailable-engineer').innerHTML=opts||'<option value="">Нет доступных инженеров</option>';
+  }
+  $('cancel-scenario-button').addEventListener('click',()=>{if(!state.lastPlan){notify('Сначала нажмите «Построить план».');return;}prepareCancelModal();openModal('cancel-modal');});
+  $('unavailable-scenario-button').addEventListener('click',()=>{if(!state.lastPlan){notify('Сначала нажмите «Построить план».');return;}prepareUnavailableModal();openModal('unavailable-modal');});
+   $('urgent-scenario-button').addEventListener('click',()=>{if(!state.lastPlan){notify('Сначала нажмите «Построить план».');return;}setGeocodingMessage('idle','Введите данные — они попадут только в предпросмотр до применения сценария.');openModal('express-modal');$('express-name').focus();});
+  $('cancel-form').addEventListener('submit',async e=>{e.preventDefault();const id=$('cancel-job').value;const j=state.jobs.find(x=>x.id===id);if(!j)return;const event={type:'cancel',jobId:j.id,jobTitle:j.title,time:'Сейчас'};const jobsAfter=cloneData(state.jobs);const target=jobsAfter.find(x=>x.id===id);if(target){target.status='cancelled';target.engineerId=null;delete target.planned;}closeModal('cancel-modal');await previewScenario({event,jobsAfter,engineersAfter:cloneData(state.engineers),label:'отмена заявки'});});
+  $('unavailable-form').addEventListener('submit',async e=>{e.preventDefault();const id=$('unavailable-engineer').value;const eng=state.engineers.find(x=>x.id===id);if(!eng)return;const event={type:'engineer_unavailable',engineerId:eng.id,engineerName:eng.name,status:$('event-status').value,time:$('event-time').value};const engineersAfter=cloneData(state.engineers);const target=engineersAfter.find(x=>x.id===id);if(target)target.status=event.status;closeModal('unavailable-modal');await previewScenario({event,jobsAfter:cloneData(state.jobs),engineersAfter,label:'недоступность инженера'});});
+
+  $('express-form').addEventListener('submit',async e=>{
+    e.preventDefault();
+    const address=$('express-address').value.trim();
+    let lat=Number($('express-form').dataset.geocodedLat);
+    let lon=Number($('express-form').dataset.geocodedLon);
+    try{
+      if(normalizeAddressKey($('express-form').dataset.geocodedAddress)!==normalizeAddressKey(address)){setGeocodingMessage('error','Адрес изменён или ещё не подтверждён. Нажмите «Найти на карте» и выберите вариант.');notify('Заявка не добавлена: подтвердите координаты именно для текущего адреса.');return;}
+    if(!Number.isFinite(lat)||!Number.isFinite(lon)){
+        setGeocodingMessage('loading','Адрес ещё не подтверждён — определяю координаты…');
+        const result=await geocodeAddress(address);
+        lat=result.coords[0]; lon=result.coords[1];
+        $('express-form').dataset.geocodedLat=String(lat); $('express-form').dataset.geocodedLon=String(lon);
+        setGeocodingMessage('success','Адрес подтверждён.',`<div class="font-extrabold text-white">${escapeHtml(result.display)}</div><div class="mt-1 text-[#9e9ea4]">${lat.toFixed(6)}, ${lon.toFixed(6)}</div>`);
+      }
+    }catch(error){
+      setGeocodingMessage('error',error?.message||'Не удалось определить координаты адреса.');
+      notify('Заявка не добавлена: сначала нужно успешно определить адрес.');
+      return;
+    }
+    const job={id:String(Math.max(0,...state.jobs.map(j=>Number(j.id)||0))+1),title:$('express-name').value.trim(),address,coords:[lat,lon],duration:Number($('express-duration').value||45),...(()=>{const [a,b]=splitWindow($('express-window').value);return {windowStart:a,windowEnd:b}})(),priority:'urgent',requiredSkill:$('express-skill').value,requiredVehicle:$('express-vehicle').value,status:'unassigned',engineerId:null,geocoded:true};
+    if(!job.title||!Number.isFinite(lat)||!Number.isFinite(lon)){notify('Проверьте название и адрес заявки.');return;}
+    const before=state.lastPlan;
+    const jobsAfter=[job,...cloneData(state.jobs)];
+    closeModal('express-modal');$('express-form').reset();
+    if(before){ state.selectedJobId=job.id; await previewScenario({event:{type:'urgent',jobId:job.id,jobTitle:job.title,time:'Сейчас'},jobsAfter,engineersAfter:cloneData(state.engineers),label:'новая срочная заявка'}); }
+    else { state.jobs=jobsAfter; state.selectedJobId=job.id; await runPlanning({showNotify:true}); selectJob(job.id); }
+  });
+
+  function decodeText(buf){ try{return new TextDecoder('utf-8',{fatal:true}).decode(buf);}catch(e){try{return new TextDecoder('windows-1251').decode(buf)}catch(e2){return new TextDecoder().decode(buf)}} }
+  function parseCsv(text){const delimiter=(text.split(/\r?\n/)[0].includes(';')?';':',');const rows=[];let row=[],cell='',quoted=false;for(let i=0;i<text.length;i++){const c=text[i],n=text[i+1];if(c==='"'&&quoted&&n==='"'){cell+='"';i++;continue}if(c==='"'){quoted=!quoted;continue}if(c===delimiter&&!quoted){row.push(cell);cell='';continue}if((c==='\n'||c==='\r')&&!quoted){if(c==='\r'&&n==='\n')i++;row.push(cell);rows.push(row);row=[];cell='';continue}cell+=c;}if(cell.length||row.length){row.push(cell);rows.push(row)}const headers=(rows.shift()||[]).map(x=>x.trim());return rows.filter(r=>r.some(v=>String(v).trim())).map(r=>Object.fromEntries(headers.map((h,i)=>[h,String(r[i]??'').trim()])));}
+  function adaptImportedRows(data){
+    if(!Array.isArray(data))throw new Error('Ожидался массив строк CSV/JSON.');
+    const hasEngineerHeader=data.some(r=>field(r,'fullName')||field(r,'shiftStart')||field(r,'startLat')||field(r,'startLon'));
+    const hasRequestHeader=data.some(r=>field(r,'address')||field(r,'duration')||field(r,'start')||field(r,'end')||field(r,'skill')||field(r,'type'));
+    const isEngineerRow=r=>!!field(r,'fullName')||((!!field(r,'shiftStart')||!!field(r,'startLat')||!!field(r,'startLon'))&&!field(r,'address'));
+    const jobs=data.filter(r=>!isEngineerRow(r)&&hasRequestHeader).map(normalizeJob);
+    const engineers=hasEngineerHeader?data.filter(isEngineerRow).map(normalizeEngineer):[];
+    if(!jobs.length)throw new Error('Не удалось распознать заявки. Поддерживаются колонки «Заявка», «Тип заявки HD», «Начало», «Окончание», «Адрес» + ID/длительность/навык/транспорт.');
+    return {jobs,engineers};
+  }
+  async function prepareImportedData(file){
+    const raw=decodeText(await file.arrayBuffer());const parsed=(raw.trim().startsWith('{')||raw.trim().startsWith('['))?JSON.parse(raw):parseCsv(raw);let jobs=[],engineers=[];
+    if(Array.isArray(parsed)){({jobs,engineers}=adaptImportedRows(parsed));}
+    else{if(!Array.isArray(parsed.jobs))throw new Error('JSON должен содержать массив jobs или быть массивом строк.');jobs=parsed.jobs.map(normalizeJob);engineers=Array.isArray(parsed.engineers)?parsed.engineers.map(normalizeEngineer):[];}
+    validateImportedJobs(jobs);if(engineers.length)validateImportedEngineers(engineers);
+    for(let i=0;i<jobs.length;i++){const j=jobs[i];if(!validCoordPair(j.coords)){if(!j.address)throw new Error(`Заявка #${j.id}: нет ни адреса, ни координат.`);const result=await geocodeAddress(j.address);j.coords=cloneData(result.candidates[0].coords);j.geocoded=true;j.geocodedAddress=j.address;}}
+    validateImportedJobs(jobs);return {jobs,engineers,source:file.name};
+  }
+  function clearPlanStateAfterImport(){
+    state.baseline=null;state.lastPlan=null;state.planHistory=[];state.version=0;state.scenarioBefore=null;state.scenarioAfter=null;state.scenarioEvent=null;state.scenarioSnapshots=null;state.scenarioPreview=null;state.changes=[];state.scenarioBeforeVersion=null;state.scenarioAfterVersion=null;state.historyViewVersion=null;state.selectedJobId=null;state.routingContext=null;state.selectedEngineerId='all';state.dataRevision=(Number(state.dataRevision)||0)+1;planningToken++;routingFetchToken++;routingCache.clear();mapView={initialized:false,center:null,zoom:null};
+  }
+  $('import-form').addEventListener('submit',async e=>{
+    e.preventDefault();const file=$('import-file').files[0],msg=$('import-message');if(!file)return;const button=e.submitter;if(button)button.disabled=true;msg.classList.remove('hidden');msg.className='text-xs mt-3 text-[#fff0a8]';msg.textContent='Читаю и проверяю файл…';
+    try{const prepared=await prepareImportedData(file);state.jobs=cloneData(prepared.jobs);if(prepared.engineers.length)state.engineers=cloneData(prepared.engineers);clearPlanStateAfterImport();persist();renderAll();closeModal('import-modal');notify('Данные загружены. Старые назначения и предпросмотр сброшены — нажмите «Построить план».');}
+    catch(err){msg.textContent=`Ошибка импорта: ${err?.message||'неизвестная ошибка'}`;msg.className='text-xs mt-3 text-[#ff9d3f]';}
+    finally{if(button)button.disabled=false;}
+  });
+
+  function persist(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify({schemaVersion:2,jobs:state.jobs,engineers:state.engineers,version:state.version,date:state.date,branch:state.branch,mapLayers:state.mapLayers,selectedEngineerId:state.selectedEngineerId,mapView:mapView,planHistory:state.planHistory,lastPlan:state.lastPlan,baseline:state.baseline}))}catch(e){}}
+  function restore(){
+    try{const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return;const d=JSON.parse(raw);if(!Array.isArray(d.jobs)||!Array.isArray(d.engineers))return;
+      const jobs=d.jobs.map((j,i)=>({...j,id:String(j.id??i+1),coords:Array.isArray(j.coords)?[Number(j.coords[0]),Number(j.coords[1])]:[NaN,NaN]}));
+      const engineers=d.engineers.map((e,i)=>({...e,id:String(e.id??`eng-${i+1}`),startPoint:Array.isArray(e.startPoint)?[Number(e.startPoint[0]),Number(e.startPoint[1])]:[NaN,NaN]}));
+      validateImportedJobs(jobs);validateImportedEngineers(engineers);state.jobs=jobs;state.engineers=engineers;state.version=Number(d.version||0);state.date=d.date||state.date;state.branch=d.branch||state.branch;state.mapLayers={...state.mapLayers,...(d.mapLayers||{})};state.selectedEngineerId=d.selectedEngineerId||'all';state.planHistory=Array.isArray(d.planHistory)?d.planHistory:[]; state.lastPlan=d.lastPlan||state.planHistory[state.planHistory.length-1]?.plan||null;state.lastPlan=d.lastPlan||state.planHistory[state.planHistory.length-1]?.plan||null;state.baseline=d.baseline||null;mapView=d.mapView&&Array.isArray(d.mapView.center)?{initialized:true,center:[Number(d.mapView.center[0]),Number(d.mapView.center[1])],zoom:Number(d.mapView.zoom)}:{initialized:false,center:null,zoom:null}; if(!mapView.initialized||!Number.isFinite(mapView.zoom)||!validCoordPair(mapView.center))mapView={initialized:false,center:null,zoom:null};state.scenarioPreview=null;state.scenarioBefore=null;state.scenarioAfter=null;state.scenarioEvent=null;state.scenarioSnapshots=null;state.changes=[];state.historyViewVersion=null;state.routingContext=null;
+      if(!state.lastPlan){state.jobs.forEach(j=>{j.engineerId=null;j.status=j.status==='cancelled'?'cancelled':'unassigned';delete j.planned;});state.version=0;state.planHistory=[];state.baseline=null;}mapView={initialized:false,center:null,zoom:null};
+    }catch(e){}
+  }
+
+  restore(); map=L.map('map',{zoomControl:false}).setView([55.751244,37.618423],12);
+  map.on('popupopen',event=>{const btn=event.popup.getElement()?.querySelector('[data-popup-job]');if(btn&&!btn.dataset.bound){btn.dataset.bound='1';btn.addEventListener('click',()=>{const id=btn.dataset.popupJob;map.closePopup();selectJob(id);});}});
+  map.on('moveend',()=>captureMapView());L.control.zoom({position:'bottomright'}).addTo(map);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap'}).addTo(map);renderAll();setTimeout(()=>map.invalidateSize(),100);
+})();
+</script>
+</body>
 </html>
