@@ -6,6 +6,8 @@ import uuid
 from dataclasses import dataclass
 from typing import Any
 
+from .history_repository import PlanHistoryRepository
+
 
 class PlanStoreError(RuntimeError):
     status_code = 400
@@ -35,7 +37,7 @@ class _Preview:
     applied: bool = False
 
 
-class PlanStore:
+class PlanStore(PlanHistoryRepository):
     """Минимальное локальное хранилище версий и одноразовых preview.
 
     ASSUMPTION MVP: состояние живёт только в памяти одного процесса FastAPI и

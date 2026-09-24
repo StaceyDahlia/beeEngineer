@@ -9,6 +9,7 @@ from typing import Any
 
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
 SCENARIOS_ROOT = PROJECT_ROOT / "data" / "scenarios"
+DEMO_EQUIPMENT_PATH = PROJECT_ROOT / "data" / "demo_equipment.json"
 SUPPORTED_SCENARIOS = ("east", "southeast", "southcenter")
 SCENARIO_LABELS = {
     "east": "Восток",
@@ -64,7 +65,16 @@ def load_scenario(scenario: str = "east") -> tuple[list[dict[str, Any]], list[di
     _scenario_dir(scenario)
     jobs, engineers = _load_cached(scenario)
     # Планировщик изменяет только свои копии. Исходный сценарий остаётся неизменным.
-    return copy.deepcopy(jobs), copy.deepcopy(engineers)
+    jobs_copy, engineers_copy = copy.deepcopy(jobs), copy.deepcopy(engineers)
+    # ASSUMPTION: исходные CSV не содержат комплекта бригад. Для демонстрации
+    # используется явно описанный базовый набор, выдаваемый до начала смены.
+    demo_equipment = _read_json(DEMO_EQUIPMENT_PATH)
+    base_equipment = demo_equipment.get("base_equipment") or {}
+    for engineer in engineers_copy:
+        if not engineer.get("equipment"):
+            engineer["equipment"] = copy.deepcopy(base_equipment)
+            engineer["equipment_source"] = "demo_assumption"
+    return jobs_copy, engineers_copy
 
 
 def load_jobs(scenario: str = "east") -> list[dict[str, Any]]:

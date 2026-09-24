@@ -211,8 +211,17 @@
     @media(max-width:900px){.theme-toggle-label{display:none}.theme-toggle{padding:9px 10px}}
     .emergency-location-actions{display:flex;gap:8px;flex-wrap:wrap}.emergency-location-actions .btn{white-space:nowrap}.btn:disabled{opacity:.48;cursor:not-allowed}.location-choice{display:block;width:100%;text-align:left;margin-top:7px;padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--surface-2);color:var(--text);cursor:pointer}.location-choice:hover,.location-choice:focus-visible{border-color:var(--yellow)}.location-choice .coords,.confirmed-point .coords{display:block;margin-top:4px;color:var(--muted);font-variant-numeric:tabular-nums}.confirmed-point{border:1px solid var(--yellow);border-radius:10px;background:var(--surface-2);padding:11px;color:var(--text)}.map-pick-hint{position:fixed;z-index:3100;top:76px;left:50%;transform:translateX(-50%);padding:10px 14px;border-radius:999px;background:var(--yellow);color:#111;font-size:12px;font-weight:900;box-shadow:0 8px 30px rgba(0,0,0,.35);pointer-events:none}.map-pick-hint.hidden{display:none}body.map-pick-mode .map{cursor:crosshair}.modal.map-pick-active{pointer-events:none;background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;align-items:flex-start;justify-content:flex-end;padding-top:82px}.modal.map-pick-active .modal-card{pointer-events:auto;width:min(430px,calc(100vw - 32px));max-height:calc(100vh - 100px)}
     .event-compare{grid-template-columns:1fr 1fr}.comparison-table-scroll{margin-top:12px;overflow-x:auto;border:1px solid var(--line);border-radius:11px}.comparison-table{width:100%;min-width:440px;border-collapse:collapse;font-size:11px;font-variant-numeric:tabular-nums}.comparison-table th,.comparison-table td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap;word-break:normal}.comparison-table th:first-child,.comparison-table td:first-child{text-align:left}.comparison-table thead th{color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.05em}.comparison-table tbody tr:last-child td{border-bottom:0}.comparison-change-strip{display:grid;grid-template-columns:repeat(4,minmax(100px,1fr));gap:7px;margin-top:10px;overflow-x:auto}.comparison-change-stat{border:1px solid var(--line);border-radius:9px;background:var(--surface-2);padding:9px 10px;min-width:100px}.comparison-change-stat .num{font-size:17px;font-weight:900}.comparison-change-stat .lbl{margin-top:3px;color:var(--muted);font-size:9px;font-weight:800;white-space:nowrap;word-break:normal}.compare-state .sub{overflow-wrap:normal;word-break:normal}
+    .plans-section .event-compare{grid-template-columns:1fr}.plans-section .compare-state .big{font-size:18px;overflow-wrap:normal;word-break:normal;hyphens:none}.plans-section .compare-state .sub{font-size:10px}
     html[data-theme="light"] .location-choice,html[data-theme="light"] .confirmed-point,html[data-theme="light"] .comparison-change-stat{background:var(--surface-2);color:var(--text);border-color:var(--line)}
     @media(max-width:680px){.event-compare{grid-template-columns:1fr}.comparison-change-strip{grid-template-columns:repeat(4,minmax(112px,1fr))}.modal.map-pick-active{padding-top:72px;align-items:flex-end}.modal.map-pick-active .modal-card{width:100%;max-height:52vh}.map-pick-hint{top:66px}.emergency-location-actions{display:grid;grid-template-columns:1fr 1fr}}
+    /* Dispatcher P0: карта, контраст и рабочие статусы */
+    :root{--control-bg:#17191e;--control-hover:#242730;--control-text:#f7f7f8;--subtle-text:#b9bbc2;--route-work:#78aefc;--route-travel:#50545f;--route-wait:#ffc800;--route-break:#737780;--marker-accent:#ffc800}
+    html[data-theme="light"]{--control-bg:#fff;--control-hover:#f1f2ed;--control-text:#202328;--subtle-text:#5e6269;--route-work:#347bc1;--route-travel:#6c7480;--route-wait:#c99500;--route-break:#8a8e94;--marker-accent:#e3ad00}
+    .workspace{grid-template-columns:288px minmax(620px,1fr) 330px}.main{grid-template-rows:auto minmax(590px,1fr) auto}.map-select,.field,.search{background:var(--control-bg);color:var(--control-text);border-color:var(--border)}.map-select select,.map-select select option,.field option{background:var(--control-bg);color:var(--control-text)}.map-select:hover,.map-select:focus-within{background:var(--control-hover);border-color:var(--yellow)}.secondary-copy,.job-address,.job-assignee,.history-view-note,.candidate-reason{color:var(--subtle-text)}
+    .map-filter-hint{padding:7px 12px;border-bottom:1px solid var(--border);background:var(--surface-2);color:var(--subtle-text);font-size:11px;line-height:1.4}.map-filter-hint strong{color:var(--text-primary)}.map-wrap{position:relative}.map-legend{position:absolute;z-index:600;left:10px;bottom:10px;display:flex;gap:8px;flex-wrap:wrap;max-width:calc(100% - 90px);padding:6px 8px;border:1px solid var(--border);border-radius:9px;background:color-mix(in srgb,var(--surface) 92%,transparent);color:var(--text-primary);font-size:9px;box-shadow:0 4px 14px rgba(0,0,0,.2)}.map-legend span{display:inline-flex;align-items:center;gap:4px;white-space:nowrap}.map-legend i{width:9px;height:9px;border-radius:50%;display:inline-block}.assigned-dot{background:var(--green)}.attention-dot{background:var(--orange)}.urgent-dot{background:var(--marker-accent);box-shadow:0 0 0 1px #222}.route-dot{background:var(--blue)}.leaflet-control-attribution{font-size:9px!important;line-height:1.2!important;padding:2px 4px!important;background:rgba(255,255,255,.82)!important}.leaflet-control-attribution a{color:#46505b!important}
+    .timeline-scroll>.min-w-\[820px\]{position:relative}.timeline-axis>div:first-child,.timeline-engineer{position:sticky;left:0;z-index:12;background:var(--surface)}.timeline-engineer{padding-left:8px}.timeline-block.travel{background:var(--route-travel)}.timeline-block.wait{background:var(--route-wait)}.timeline-block.jobblock{background:var(--route-work)}.timeline-order{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 5px;border-radius:999px;background:#2d3037;color:#fff;box-shadow:0 0 0 1px rgba(255,255,255,.24)}.timeline-block.urgent .timeline-order{background:#2d3037;color:#fff}.timeline-legend i.break{background:var(--route-break)}
+    .import-mode{display:grid;gap:8px;border:1px solid var(--border);border-radius:10px;padding:10px 12px}.import-mode legend{padding:0 5px;font-size:11px;font-weight:800}.import-mode label{display:flex;gap:7px;align-items:flex-start;font-size:12px}.import-mode small{display:block;color:var(--muted)}.disabled-option{opacity:.58}.route-sheet{display:grid;gap:8px}.route-sheet-stop{border:1px solid var(--border);border-radius:10px;padding:10px;background:var(--surface-2);font-size:11px}.route-sheet-stop b{display:block;color:var(--text-primary)}
+    @media(max-width:1280px){.workspace{grid-template-columns:270px minmax(0,1fr)}.detail-dock{grid-column:1/-1;position:static;height:auto}.main{grid-template-rows:auto minmax(620px,1fr) auto}}@media(max-width:900px){.workspace{grid-template-columns:1fr}.main{grid-template-rows:auto 650px auto}}
   </style>
 </head>
 <body>
@@ -240,7 +249,7 @@
         </div>
         <div class="relative mb-3"><i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#9e9ea4]"></i><input id="job-search" class="search" placeholder="ID, адрес, работа, навык" /></div>
         <div class="flex flex-wrap gap-2 mb-4">
-          <button class="filter active" data-filter="all">Все</button><button class="filter" data-filter="urgent">Срочные</button><button class="filter" data-filter="unassigned">Неназначенные</button><button class="filter" data-filter="changed">Изменённые</button>
+          <button class="filter active" data-filter="all">Все</button><button class="filter" data-filter="urgent">Срочные</button><button class="filter" data-filter="unassigned">Неназначенные</button><button class="filter" data-filter="attention">Требуют внимания</button><button class="filter" data-filter="changed">Изменённые</button>
         </div>
         <div id="jobs-list" class="space-y-2.5"></div>
         <button id="express-button" class="btn primary w-full mt-4"><i data-lucide="plus" class="w-4 h-4 inline mr-1"></i>Добавить срочную заявку</button>
@@ -267,10 +276,11 @@
             <span id="routing-status" class="routing-status local"><i data-lucide="route" class="w-3 h-3"></i><span>Маршрутизация: локальная оценка</span></span>
             <label class="map-select">Инженер <select id="map-engineer-select" class="bg-transparent outline-none"><option value="all">Все инженеры</option></select></label>
             <button id="map-fit-button" class="btn ghost" type="button" title="Показать все видимые точки текущего плана"><i data-lucide="scan" class="w-4 h-4 inline mr-1"></i>Весь план</button>
-            <label class="map-select map-layer-select">Слой <select id="map-layer-mode" class="bg-transparent outline-none"><option value="all">Все заявки</option><option value="selected_route">Только выбранный маршрут</option><option value="problems">Проблемные</option><option value="unassigned">Неназначенные</option></select></label>
+            <label class="map-select map-layer-select">Слой <select id="map-layer-mode" class="bg-transparent outline-none"><option value="all">Все заявки</option><option value="selected_route">Маршрут выбранной бригады</option><option value="unassigned">Неназначенные</option><option value="problems">Требуют внимания</option></select></label>
           </div>
-          <div class="source-strip"><span id="source-mode">В рабочем режиме: <b>OR-Tools VRPTW из backend</b> · единая <b>статическая матрица</b>.</span><details><summary>Источник данных</summary><div>Haversine с коэффициентом дороги и фиксированной скоростью транспорта · пробки не учитываются · нормативные 20 минут дороги повторно не добавляются.</div></details></div>
-          <div class="map-wrap"><div id="map" class="map" aria-label="Карта маршрутов"></div></div>
+          <div id="map-filter-hint" class="map-filter-hint"></div>
+          <div class="source-strip"><span id="source-mode">Активный набор данных загружается…</span><details><summary>Модель времени в пути</summary><div>Расчётная модель: Haversine × дорожный коэффициент / фиксированная скорость транспорта. Это не реальные навигационные маршруты; пробки не учитываются, нормативные 20 минут повторно не добавляются.</div></details></div>
+          <div class="map-wrap"><div id="map" class="map" aria-label="Карта маршрутов"></div><div class="map-legend" aria-label="Легенда карты"><span><i class="assigned-dot"></i>назначена</span><span><i class="attention-dot"></i>требует внимания</span><span><i class="urgent-dot"></i>срочная</span><span><i class="route-dot"></i>цвет линии — бригада</span></div></div>
         </div>
         <div id="schedule-view-panel" class="view-tabpanel hidden" role="tabpanel" aria-labelledby="view-schedule-tab">
           <div class="schedule-head"><div><div class="section-kicker">Расписание</div><h3 class="section-title">Плановый день</h3></div><div id="timeline-hint" class="text-xs text-[#9e9ea4]">Время рассчитано от маршрута и длительности работ</div></div>
@@ -290,7 +300,7 @@
     </section>
     <aside class="detail-dock panel" aria-label="Детали и контроль плана">
       <section class="detail-section explain"><span class="sr-only">Backend explanation</span><div class="detail-title-row"><div class="detail-icon"><i data-lucide="brain-circuit" class="w-5 h-5"></i></div><div class="min-w-0"><div class="section-kicker accent">Решение</div><h2 class="section-title">Почему заявка попала сюда</h2></div></div><div id="explanation-text" class="detail-lead">Выберите заявку, чтобы увидеть ограничения, кандидатов и причину назначения.</div><div id="dispatcher-detail" class="dispatcher-grid"></div></section>
-      <section class="detail-section plans-section"><span class="sr-only">Backend diff</span><div class="panel-head"><div><div class="section-kicker">Планы</div><h2 class="section-title">Сравнение и история</h2></div><span id="compare-note" class="secondary-copy">Базовый план: порядок поступления + первый подходящий инженер</span></div><div id="compare" class="compare"></div><div id="change-log" class="mt-3"></div><details class="history-details"><summary>История версий</summary><div id="plan-history" class="history-strip mt-3"></div></details></section>
+      <section class="detail-section plans-section"><span class="sr-only">Backend diff</span><div class="panel-head"><div><div class="section-kicker">Планы</div><h2 class="section-title">Сравнение и история</h2></div><span id="compare-note" class="secondary-copy">Базовый сценарий: порядок поступления и первый подходящий инженер</span></div><div id="compare" class="compare"></div><div id="change-log" class="mt-3"></div><button id="handoff-button" class="btn primary w-full mt-3" type="button" disabled><i data-lucide="send" class="w-4 h-4 inline mr-1"></i>Передать задания бригадам</button><details class="history-details"><summary>История версий текущей сессии</summary><div class="history-view-note">История хранится до перезапуска сервиса.</div><div id="plan-history" class="history-strip mt-3"></div></details></section>
     </aside>
   </main>
 </div>
@@ -302,6 +312,7 @@
   <form id="import-form" class="modal-card">
     <div class="flex items-start justify-between gap-4"><div><div class="text-[10px] font-extrabold uppercase tracking-[.14em] text-[#9e9ea4]">Данные</div><h2 id="import-title" class="m-0 mt-1 text-[18px] font-extrabold">Импорт CSV / JSON</h2></div><button type="button" class="btn ghost" data-close="import-modal" aria-label="Закрыть"><i data-lucide="x" class="w-4 h-4"></i></button></div>
     <p class="text-xs text-[#bfc0c5] mt-3">JSON: <code>{jobs: [...], engineers: [...]}</code> или массив строк. CSV организаторов: поддерживаются «Заявка», «Тип заявки HD», «Начало», «Окончание», «Адрес» + ID/длительность/навык/транспорт. UTF-8/Windows-1251 и разделитель <code>;</code> определяются автоматически. Адреса без координат геокодируются до применения импорта.</p>
+    <fieldset class="import-mode mt-3"><legend>Как загрузить данные</legend><label><input type="radio" name="import-mode" value="replace" checked> Заменить текущий сценарий</label><label class="disabled-option"><input type="radio" name="import-mode" value="create" disabled> Создать новый сценарий <small>Доступно после подключения постоянного хранилища</small></label></fieldset>
     <input id="import-file" type="file" accept=".csv,.json,application/json,text/csv" class="field mt-3" required />
     <div id="import-message" class="text-xs mt-3 hidden"></div>
     <div class="flex justify-end gap-2 mt-5"><button type="button" class="btn ghost" data-close="import-modal">Отмена</button><button class="btn primary" type="submit">Загрузить</button></div>
@@ -349,6 +360,10 @@
     <div class="flex justify-end gap-2 mt-5"><button type="button" class="btn ghost" data-close="express-modal">Отмена</button><button id="express-submit" class="btn primary" type="submit" disabled>Добавить и перепланировать</button></div>
   </form>
 </div>
+
+<div id="route-sheets-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="route-sheets-title">
+  <div class="modal-card"><div class="flex items-start justify-between gap-4"><div><div class="text-[10px] font-extrabold uppercase tracking-[.14em] text-[#9e9ea4]">Демо-передача</div><h2 id="route-sheets-title" class="m-0 mt-1 text-[18px] font-extrabold">Маршрутные листы бригад</h2></div><button type="button" class="btn ghost" data-close="route-sheets-modal" aria-label="Закрыть"><i data-lucide="x" class="w-4 h-4"></i></button></div><p id="route-sheets-summary" class="secondary-copy mt-3"></p><label class="text-xs font-extrabold" for="route-sheet-engineer">Бригада</label><select id="route-sheet-engineer" class="field mt-1"></select><div id="route-sheet-content" class="route-sheet mt-3"></div><div class="history-view-note">Маршрутные листы сформированы локально. Уведомления инженерам не отправлялись.</div></div>
+</div>
 <div id="map-pick-hint" class="map-pick-hint hidden" aria-live="polite">Нажмите на нужную точку карты</div>
 
 <script src="/static/src/scenario_state.js"></script>
@@ -356,6 +371,7 @@
 <script src="/static/src/ux.js"></script>
 <script src="/static/src/plan_adapter.js"></script>
 <script src="/static/src/geocoding.js"></script>
+<script src="/static/src/dispatcher_ux.js"></script>
 <script>
 (() => {
   'use strict';
@@ -410,7 +426,7 @@
     version:0, planId:null, parentPlanId:null, lastPlan:null, baseline:null, planHistory:[], changes:[], lastDiff:null, selectedJobId:null, filter:'all', query:'',
     scenarioBefore:null, scenarioAfter:null, scenarioEvent:null, scenarioSnapshots:null, scenarioPreview:null, scenarioBeforeVersion:null, scenarioAfterVersion:null,
     selectedEngineerId:'all', mapLayerMode:'all', mapLayers:{jobs:true,routes:true,starts:true}, historyViewVersion:null,
-    dataRevision:0, date:'2026-08-17', branch:'Югоцентр', routingContext:null,
+    dataRevision:0, date:'2026-08-17', branch:'Югоцентр', routingContext:null,datasetMeta:{name:'Встроенный сценарий east',scenario:'east',regionLabel:'Восток',loadedAt:new Date().toISOString()},
     routing:{status:'local',message:'Маршрутизация: локальная оценка',updatedAt:null},
     geocoding:{status:'idle',message:'Адрес ещё не проверен',updatedAt:null},
     jobs:[
@@ -429,6 +445,7 @@
 
   const $ = id => document.getElementById(id);
   const UX = window.BeelineUx;
+  const DUX = window.BeelineDispatcherUx;
   const escapeHtml = s => String(s ?? '').replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
   const hhmm = value => String(value||'').match(/T(\d{2}:\d{2})/)?.[1]||String(value||'').slice(0,5);
   const toMin = hhmm => { const [h,m]=String(hhmm).split(':').map(Number); return h*60+m; };
@@ -457,7 +474,7 @@
     const timer=setTimeout(()=>controller.abort(),timeoutMs);
     try{
       const response=await fetch(url,{signal:controller.signal,headers:{Accept:'application/json'}});
-      if(!response.ok) throw new Error(`HTTP ${response.status}`);
+      if(!response.ok) throw new Error('Сервис маршрутизации временно недоступен.');
       return await response.json();
     }finally{clearTimeout(timer);}
   }
@@ -467,7 +484,7 @@
     const timer=setTimeout(()=>controller.abort(),timeoutMs);
     try{
       const response=await fetch(url,{method:'POST',signal:controller.signal,headers:{Accept:'application/json','Content-Type':'application/json'},body:JSON.stringify(body)});
-      if(!response.ok) throw new Error(`HTTP ${response.status}`);
+      if(!response.ok) throw new Error('Сервис маршрутизации временно недоступен.');
       return await response.json();
     }finally{clearTimeout(timer);}
   }
@@ -843,7 +860,7 @@
   }
 
   function recordPlanVersion(plan,label,event=null){
-    const snapshot={version:state.version,label,timestamp:Date.now(),event:event?cloneData(event):null,jobIds:(plan?.jobs||[]).map(x=>String(x.jobId)),plan:cloneData(plan)};
+    const snapshot={version:state.version,label,timestamp:Date.now(),event:event?cloneData(event):null,scenario:state.scenario,source:state.datasetMeta?.name||'Встроенный набор',jobIds:(plan?.jobs||[]).map(x=>String(x.jobId)),plan:cloneData(plan)};
     const existing=state.planHistory.findIndex(x=>x.version===snapshot.version);
     if(existing>=0) state.planHistory[existing]=snapshot; else state.planHistory.push(snapshot);
     if(state.planHistory.length>8) state.planHistory=state.planHistory.slice(-8);
@@ -993,21 +1010,19 @@
       try{
         const route=await fetchRouteGeometry(entry.route,entry.engineer.vehicle);
         if(token!==routingFetchToken)return;
-        entry.routeGeo=route.geometry; entry.routeSource=`${route.provider}${route.costing?' · '+route.costing:''}`; entry.routeDurationMin=route.durationMin; entry.distance=route.distance; entry.routeMetricSource=route.provider; success++;
+        entry.routeGeo=route.geometry; entry.routeSource=`Геометрия карты: ${route.provider}${route.costing?' · '+route.costing:''}`; entry.routeDisplayDurationMin=route.durationMin;entry.routeDisplayDistance=route.distance; entry.routeMetricSource='backend_static'; success++;
       }catch(error){entry.routeSource='Локальная геометрия';fail++;entry.routeMetricSource='local';}
     }));
     if(token!==routingFetchToken)return;
-    plan.totalDistance=Number(plan.engineers.reduce((sum,x)=>sum+(Number(x.distance)||0),0).toFixed(2));
-    plan.engineers.forEach(x=>{plan.engineerDistances[x.engineer.id]=x.distance;});
     const allLive=entries.length>0&&entries.every(x=>x.routeMetricSource&&x.routeMetricSource!=='local');
     if(preview){
-      if(success&&allLive)setRoutingStatus('live','Предпросмотр: OSRM + Valhalla');
-      else if(success)setRoutingStatus('live',`Предпросмотр: ${success} маршрут(а), ${fail} локально`);
+      if(success&&allLive)setRoutingStatus('live','Геометрия предпросмотра загружена');
+      else if(success)setRoutingStatus('live',`Геометрия предпросмотра: ${success} маршрут(а), ${fail} прямыми линиями`);
       else setRoutingStatus('error','Предпросмотр: дорожная геометрия недоступна');
       return;
     }
-    if(success&&allLive)setRoutingStatus('live','Дорожная маршрутизация: OSRM + Valhalla');
-    else if(success)setRoutingStatus('live',`Дорожная маршрутизация: ${success} маршрут(а), ${fail} локально`);
+    if(success&&allLive)setRoutingStatus('live','Геометрия карты загружена; метрики — из backend');
+    else if(success)setRoutingStatus('live',`Геометрия карты: ${success} маршрут(а), ${fail} прямыми линиями`);
     else setRoutingStatus('error','Дорожная геометрия недоступна · оставлена локальная линия');
     return true;
   }
@@ -1018,8 +1033,8 @@
     const previous=state.lastPlan;
     const optimizeButton=$('optimize-button'),baselineButton=$('baseline-button');
     if(optimizeButton)optimizeButton.disabled=true;if(baselineButton)baselineButton.disabled=true;
-    const engineLabel=engine==='ortools_vrptw'?'OR-Tools VRPTW':'baseline_greedy';
-    setRoutingStatus('loading',`Backend: рассчитывается ${engineLabel}…`);
+    const engineLabel=engine==='ortools_vrptw'?'OR-Tools VRPTW':'Базовый сценарий';
+    setRoutingStatus('loading',`Рассчитывается: ${engineLabel}…`);
     try{
       const response=await window.BeelineApi.createPlan(state.scenario,engine,solveTimeLimitMs);
       if(token!==planningToken)return false;
@@ -1030,17 +1045,17 @@
       state.planHistory=[];state.scenarioBefore=null;state.scenarioAfter=null;state.scenarioEvent=null;state.scenarioSnapshots=null;state.scenarioBeforeVersion=null;state.scenarioAfterVersion=null;
       state.date=adapted.date||state.date;
       state.branch=adapted.branch||state.branch;
+      state.datasetMeta={name:`Встроенный сценарий ${state.scenario}`,scenario:state.scenario,regionLabel:state.branch,loadedAt:new Date().toISOString()};
       state.routingContext=null;
       state.changes=[];state.lastDiff=null;
-      applyPlan(adapted.plan,`${response.engine} · backend API`);
+      applyPlan(adapted.plan,response.engine==='baseline_greedy'?'базовый сценарий':'расчёт OR-Tools VRPTW');
       const warning=response.warnings?.[0];
       const timeLimited=response.solver_status==='time_limit_feasible';
       const solveSeconds=(Number(response.solve_time_ms||0)/1000).toFixed(1).replace('.',',');
       const planStatus=timeLimited
-        ? `Найден допустимый план за ${solveSeconds} с; оптимум не доказан`
-        : `Backend: ${response.engine} · ${response.solve_time_ms||0} мс`;
+        ? `Найден допустимый план за ${solveSeconds} сек. Глобальный оптимум не подтверждён`
+        : `${engineLabel}: план найден за ${UX.formatSeconds(response.solve_time_ms||0)}`;
       setRoutingStatus(timeLimited?'live':(warning?'error':'live'),planStatus);
-      const sourceMode=$('source-mode');if(sourceMode)sourceMode.innerHTML=`В рабочем режиме: <b>${escapeHtml(response.engine)}</b> · единая <b>статическая матрица</b>.`;
       persist();
       if(showNotify)notify(timeLimited?`${engineLabel}: ${adapted.plan.assigned}/${adapted.plan.assigned+adapted.plan.unassigned} заявок. ${planStatus}.`:`${engineLabel}: ${adapted.plan.assigned}/${adapted.plan.assigned+adapted.plan.unassigned} заявок · ${response.solve_time_ms||0} мс.${warning?' '+warning:''}`);
       return true;
@@ -1090,7 +1105,7 @@
       state.scenarioPreview.distanceText=scenarioDistanceText(beforePlan,adapted.plan);
       state.scenarioPreview.afterVersion=Number(response.proposed_version||beforeVersion+1);
       state.scenarioPreview.status='ready';
-      setRoutingStatus('live',`Предпросмотр backend готов · v${beforeVersion} → v${state.scenarioPreview.afterVersion}`);
+      setRoutingStatus('live',`Черновик перепланирования готов`);
       renderAll();
     }catch(error){
       if(token!==planningToken || revision!==state.dataRevision)return;
@@ -1109,7 +1124,7 @@
     if(preview.revision!==state.dataRevision || preview.baseVersion!==state.version || preview.basePlanId!==state.planId || !state.lastPlan){
       state.scenarioPreview=null;renderAll();notify('Предпросмотр устарел: текущие данные или план уже изменились. Рассчитайте сценарий ещё раз.');return;
     }
-    preview.status='applying';renderAll();setRoutingStatus('loading','Применяю подтверждённый preview…');
+    preview.status='applying';renderAll();setRoutingStatus('loading','Применяю подтверждённый черновик…');
     try{
       const response=await window.BeelineApi.applyEvent(state.planId,preview.previewId);
       const adapted=window.BeelinePlanAdapter.adapt(response);
@@ -1127,10 +1142,10 @@
       state.baseline=cloneData(adapted.baseline);
       state.scenarioPreview=null;
       touchDataRevision(false);
-      applyPlan(adapted.plan,'применено после backend preview',state.scenarioEvent);
-      setRoutingStatus('live',`Backend: применена версия v${state.version}`);
+      applyPlan(adapted.plan,'применено после подтверждения',state.scenarioEvent);
+      setRoutingStatus('live',`Применённый план готов`);
       persist();
-      notify(`Сценарий применён. Создана версия v${state.version}.`);
+      notify(`Сценарий применён. Создан новый применённый план.`);
     }catch(error){
       if(state.scenarioPreview){state.scenarioPreview.status='error';state.scenarioPreview.error=error?.message||'Не удалось применить preview';}
       setRoutingStatus('error',`Событие не применено: ${error?.message||'ошибка backend'}`);
@@ -1150,9 +1165,9 @@
 
   function jobMatchesFilters(j,hp=null,problemPlan=state.lastPlan){
     const assigned=!!(hp?.engineerId||j.engineerId);
-    const hasProblem=j.status==='unassigned'||!!(problemPlan?.reasons?.[j.id]?.length);
+    const hasProblem=!!DUX.attentionReason(j)||!!(problemPlan?.reasons?.[j.id]?.length);
     const changedIds=new Set([...(state.lastDiff?.items||[]),...(state.scenarioPreview?.diff?.items||[])].map(item=>String(item.job_id)));
-    const f=state.filter==='all'||(state.filter==='urgent'&&j.priority==='urgent')||(state.filter==='unassigned'&&!assigned)||(state.filter==='changed'&&changedIds.has(String(j.id)));
+    const f=state.filter==='all'||(state.filter==='urgent'&&j.priority==='urgent')||(state.filter==='unassigned'&&DUX.isOpenUnassigned(j)&&!assigned)||(state.filter==='attention'&&hasProblem)||(state.filter==='changed'&&changedIds.has(String(j.id)));
     const q=state.query.toLowerCase().trim(); const hay=[j.id,j.title,j.address,j.requiredSkill,j.requiredVehicle].join(' ').toLowerCase();
     return f&&(!q||hay.includes(q));
   }
@@ -1161,30 +1176,30 @@
     if(!jobMatchesFilters(j,hp,problemPlan))return null;
     if(state.historyViewVersion!=null&&!hp)return null;
     const mode=state.mapLayerMode||'all';
-    const hasProblem=j.status==='unassigned'||!!(problemPlan?.reasons?.[j.id]?.length);
-    if(mode==='selected_route'&&(state.selectedEngineerId==='all'||assigned!==state.selectedEngineerId))return null;
-    if(mode==='problems'&&!hasProblem)return null;
-    if(mode==='unassigned'&&assigned)return null;
-    return {...j,status:hp?'assigned':j.status,engineerId:assigned,planned:hp||j.planned||null};
+    const display={...j,status:hp?'assigned':j.status,engineerId:assigned,planned:hp||j.planned||null};
+    if(!DUX.visibleInMapMode(display,mode,state.selectedEngineerId))return null;
+    return display;
   }
 
   function renderSidebar(){
     const visible=state.jobs.filter(j=>jobMatchesFilters(j));
     $('jobs-count').textContent=visible.length;
+    const emptyText=state.filter==='attention'?'Проблемных заявок нет':state.filter==='unassigned'?'Неназначенных активных заявок нет':'Заявки не найдены';
     $('jobs-list').innerHTML=visible.length?visible.map(j=>{
       const eng=state.engineers.find(e=>e.id===j.engineerId); const p=j.planned;
       const start=p?fmtMin(p.startMin):'—';
       const statusLabel=j.status==='assigned'?'Назначена':j.status==='in_progress'?'В работе':j.status==='en_route'?'В пути':j.status==='completed'?'Завершена':j.status==='cancelled'?'Отменена':'Не назначена';
       const statusClass=['assigned','completed'].includes(j.status)?'assigned':['in_progress','en_route'].includes(j.status)?'progress':j.status==='cancelled'?'cancelled':'unassigned';
-      return `<article class="job ${state.selectedJobId===j.id?'selected':''} ${j.status==='cancelled'?'job-cancelled':''}"><button data-select-job="${escapeHtml(j.id)}" class="w-full text-left" aria-pressed="${state.selectedJobId===j.id?'true':'false'}"><div class="flex items-start justify-between gap-2"><div class="min-w-0"><div class="job-title text-xs font-extrabold">${escapeHtml(j.title)}</div><div class="job-address mt-1 text-[11px]">${escapeHtml(j.address)}</div></div><div class="flex flex-col items-end gap-1 shrink-0"><span class="status ${statusClass}">${statusLabel}</span><span class="status priority ${j.priority==='urgent'?'urgent':'normal'}">${j.priority==='urgent'?'Срочная':'Обычная'}</span></div></div><div class="mt-3 pt-2 border-t border-[#343640] flex items-center justify-between gap-2 text-[10px] text-[#bfc0c5]"><span><i data-lucide="clock-3" class="w-3 h-3 inline text-[#ffc800]"></i> ${escapeHtml(j.windowStart)}–${escapeHtml(j.windowEnd)} · ${j.status==='cancelled'?'—':start}</span><span>${escapeHtml(UX.formatMinutes(j.duration))}</span></div><div class="job-assignee">${eng?`Исполнитель: <strong>${escapeHtml(eng.name)}</strong>`:'Исполнитель: <strong>не назначен</strong>'}</div></button></article>`;
-    }).join(''):`<div class="rounded-xl border border-dashed border-[#3a3d45] px-4 py-8 text-center text-xs text-[#9e9ea4]">Заявки не найдены.</div>`;
+      const attention=DUX.attentionReason(j);return `<article class="job ${state.selectedJobId===j.id?'selected':''} ${j.status==='cancelled'?'job-cancelled':''}"><button data-select-job="${escapeHtml(j.id)}" class="w-full text-left" aria-pressed="${state.selectedJobId===j.id?'true':'false'}"><div class="flex items-start justify-between gap-2"><div class="min-w-0"><div class="job-title text-xs font-extrabold">${escapeHtml(j.title)}</div><div class="job-address mt-1 text-[11px]">${escapeHtml(j.address)}</div></div><div class="flex flex-col items-end gap-1 shrink-0"><span class="status ${statusClass}">${statusLabel}</span><span class="status priority ${j.priority==='urgent'?'urgent':'normal'}">${j.priority==='urgent'?'Срочная':'Обычная'}</span></div></div><div class="mt-3 pt-2 border-t border-[#343640] text-[10px] text-[#bfc0c5]"><div><i data-lucide="clock-3" class="w-3 h-3 inline text-[#ffc800]"></i> Окно: ${escapeHtml(j.windowStart)}–${escapeHtml(j.windowEnd)} · план: ${j.status==='cancelled'?'—':start}</div><div class="mt-1">Работы: ${escapeHtml(UX.formatMinutes(j.duration))}${p?` · Расчётное время в пути: ${escapeHtml(UX.formatMinutes(p.travelMin||0))}`:''}</div></div><div class="job-assignee">${eng?`Исполнитель: <strong>${escapeHtml(eng.name)}</strong>`:'Исполнитель: <strong>не назначен</strong>'}</div>${attention?`<div class="mt-2 text-[10px] text-[#ffbe85]">${escapeHtml(attention)}${j.status==='unassigned'?' · проверьте ограничения или перенесите визит':''}</div>`:''}</button></article>`;
+    }).join(''):`<div class="rounded-xl border border-dashed border-[#3a3d45] px-4 py-8 text-center text-xs text-[#9e9ea4]">${escapeHtml(emptyText)}.</div>`;
     document.querySelectorAll('[data-select-job]').forEach(b=>b.addEventListener('click',()=>selectJob(b.dataset.selectJob)));
   }
 
   function renderEngineers(){
     $('engineers-list').innerHTML=state.engineers.map(e=>{
       const d=state.lastPlan?.engineerDistances?.[e.id] ?? 0; const jobs=state.lastPlan?.engineers.find(x=>x.engineer.id===e.id)?.items?.length ?? 0;
-      return `<button type="button" data-focus-engineer-card="${escapeHtml(e.id)}" class="engineer-card ${state.selectedEngineerId===e.id?'selected':''} rounded-xl border border-[#343640] bg-[#20222a] p-3"><div class="flex justify-between gap-3"><div class="min-w-0"><div class="text-sm font-extrabold">${escapeHtml(e.name)}</div><div class="mt-1 text-[11px] text-[#9e9ea4]">Смена ${escapeHtml(e.shiftStart)}–${escapeHtml(e.shiftEnd)}</div></div><span class="status ${e.status==='Доступен'?'progress':'unassigned'}">${escapeHtml(e.status)}</span></div><div class="engineer-badges"><span class="resource-badge"><i data-lucide="${VEHICLE_ICON[e.vehicle]||'route'}" class="w-3 h-3"></i>${escapeHtml(e.vehicle||'Без транспорта')}</span><span class="resource-badge status-ok">${jobs} ${escapeHtml(UX.plural(jobs,['заявка','заявки','заявок']))}</span><span class="resource-badge">${escapeHtml(UX.formatKm(d))}</span></div><div class="mt-3 text-[11px] text-[#ffc800] engineer-skills">${escapeHtml(e.skills.join(' · '))}</div><div class="mt-2 text-[10px] text-[#bfc0c5]">Нажмите, чтобы показать маршрут на карте.</div></button>`;
+      const workStatus=DUX.engineerWorkStatus(e,state.jobs);const statusClass=workStatus==='Недоступна'?'unassigned':workStatus==='Выполняет работу'?'assigned':'progress';
+      return `<button type="button" data-focus-engineer-card="${escapeHtml(e.id)}" class="engineer-card ${state.selectedEngineerId===e.id?'selected':''} rounded-xl border border-[#343640] bg-[#20222a] p-3"><div class="flex justify-between gap-3"><div class="min-w-0"><div class="text-sm font-extrabold">${escapeHtml(e.name)}</div><div class="mt-1 text-[11px] text-[#9e9ea4]">Смена ${escapeHtml(e.shiftStart)}–${escapeHtml(e.shiftEnd)}</div></div><span class="status ${statusClass}">${escapeHtml(workStatus)}</span></div><div class="engineer-badges"><span class="resource-badge"><i data-lucide="${VEHICLE_ICON[e.vehicle]||'route'}" class="w-3 h-3"></i>${escapeHtml(e.vehicle||'Без транспорта')}</span><span class="resource-badge status-ok">${jobs} ${escapeHtml(UX.plural(jobs,['заявка','заявки','заявок']))}</span><span class="resource-badge">${escapeHtml(UX.formatKm(d))}</span></div><div class="mt-3 text-[11px] text-[#ffc800] engineer-skills">${escapeHtml(e.skills.join(' · '))}</div><div class="mt-2 text-[10px] text-[#bfc0c5]">Нажмите, чтобы показать маршрут на карте.</div></button>`;
     }).join('');
     document.querySelectorAll('[data-focus-engineer-card]').forEach(button=>button.addEventListener('click',()=>focusEngineerRoute(button.dataset.focusEngineerCard)));
   }
@@ -1204,7 +1219,7 @@
     const eventTime=String(ev.event_time||ev.time||'в течение смены').match(/T(\d{2}:\d{2})/)?.[1]||ev.time||'в течение смены';
     if(ev.type==='cancel_job'){title=`Отменена заявка #${ev.job_id}`; meta=`${eventTime}`;}
     else if(ev.type==='emergency_job'){title=`Новая срочная заявка #emergency:${ev.event_id}`; meta=`${eventTime} · ${ev.title||'Аварийное восстановление'}`;}
-    else {title=`Недоступен ${ev.engineer_id}`; meta=`${eventTime} · статус: ${ev.status||'Недоступен'}`;}
+    else {title=`Недоступна ${state.engineers.find(e=>String(e.id)===String(ev.engineer_id))?.name||'выбранная бригада'}`; meta=`${eventTime} · статус: ${ev.status||'Недоступна'}`;}
     const eventClass=ev.type==='cancel_job'?'cancelled':ev.type==='emergency_job'?'urgent':'unassigned';
     $('scenario-event').innerHTML=`<div class="scenario-event"><div class="flex items-start justify-between gap-3"><div><div class="title"><i data-lucide="history" class="w-4 h-4 inline mr-1 text-[#ffc800]"></i>${escapeHtml(title)}</div><div class="meta">${escapeHtml(meta)}</div></div><span class="status ${eventClass}">Событие применено</span></div><div class="actions"><button id="reset-scenario-button" class="btn ghost" type="button"><i data-lucide="undo-2" class="w-4 h-4 inline mr-1"></i>Вернуть состояние «До»</button></div></div>`;
     $('reset-scenario-button').addEventListener('click',resetScenario);lucide.createIcons();
@@ -1216,23 +1231,23 @@
     if(state.scenarioBefore&&state.scenarioAfter){
       const scenarioBefore=state.scenarioBefore,scenarioAfter=state.scenarioAfter;
       const rows=[['Назначено',scenarioBefore.assigned,scenarioAfter.assigned,'jobs'],['Не назначено',scenarioBefore.unassigned,scenarioAfter.unassigned,'jobs'],['Бригад',scenarioBefore.usedEngineers,scenarioAfter.usedEngineers,'crews'],['Пробег',scenarioBefore.totalDistance,scenarioAfter.totalDistance,'km']];
-      const comparisonRows=rows.map(r=>`<tr><td>${escapeHtml(r[0])}</td><td>${escapeHtml(r[3]==='km'?UX.formatKm(r[1]):UX.number(r[1],0))}</td><td>${escapeHtml(r[3]==='km'?UX.formatKm(r[2]):UX.number(r[2],0))}</td><td class="delta">${escapeHtml(UX.delta(Number(r[2])-Number(r[1]),r[3]))}</td></tr>`).join('');
+      const comparisonRows=rows.map(r=>`<tr><td>${escapeHtml(r[0])}</td><td>${escapeHtml(r[3]==='km'?UX.formatKm(r[1]):UX.number(r[1],0))}</td><td>${escapeHtml(r[3]==='km'?UX.formatKm(r[2]):UX.number(r[2],0))}</td><td class="delta">${escapeHtml(DUX.humanDelta(r[1],r[2],r[3]==='km'?'distance':r[0]==='Не назначено'?'unassigned':r[3]==='crews'?'crews':'assigned'))}</td></tr>`).join('');
       const summary=state.lastDiff?.summary||{};
       const counts={total:(state.lastDiff?.items||[]).length,assigned:Number(summary.assigned||0),removed:Number(summary.unassigned||0)+Number(summary.cancelled||0),reassigned:Number(summary.reassigned||0),reordered:Number(summary.reordered||0)};
       const emergencyId=state.scenarioEvent?.type==='emergency_job'?`emergency:${state.scenarioEvent.event_id}`:null;
       const changed=(state.lastDiff?.items||[]).length?(state.lastDiff.items||[]).slice(0,8).map(item=>`<div class="change-item"><span class="tag">${escapeHtml(UX.diffCategoryLabel(item.category))}</span><div class="change-copy">${escapeHtml(UX.humanDiff(item,state.jobs,state.engineers,{emergency:!!emergencyId,emergencyId}))}</div></div>`).join(''):'<div class="scenario-empty">Backend не зафиксировал изменений назначений или порядка.</div>';
       const beforeVersion=state.scenarioBeforeVersion??Math.max(0,state.version-1),afterVersion=state.scenarioAfterVersion??state.version;
-      box.innerHTML=`<div class="compare-card"><div class="compare-grid event-compare"><div class="compare-state before"><div class="label">До события</div><div class="big">v${escapeHtml(beforeVersion)}</div><div class="sub">${scenarioBefore.assigned} назначено · ${scenarioBefore.unassigned} не назначено · ${scenarioBefore.usedEngineers} бригад · ${escapeHtml(UX.formatKm(scenarioBefore.totalDistance))}</div></div><div class="compare-state after"><div class="label">После события</div><div class="big">v${escapeHtml(afterVersion)}</div><div class="sub">${scenarioAfter.assigned} назначено · ${scenarioAfter.unassigned} не назначено · ${scenarioAfter.usedEngineers} бригад · ${escapeHtml(UX.formatKm(scenarioAfter.totalDistance))}</div></div></div><div class="comparison-table-scroll"><table class="comparison-table"><thead><tr><th>Показатель</th><th>Было</th><th>Стало</th><th>Изменение</th></tr></thead><tbody>${comparisonRows}</tbody></table></div><div class="comparison-change-strip"><div class="comparison-change-stat"><div class="num">${counts.total}</div><div class="lbl">Изменено</div></div><div class="comparison-change-stat"><div class="num">${counts.assigned}</div><div class="lbl">Новых назначений</div></div><div class="comparison-change-stat"><div class="num">${counts.reassigned}</div><div class="lbl">Переназначено</div></div><div class="comparison-change-stat"><div class="num">${counts.reordered}</div><div class="lbl">Перестановок</div></div></div><div class="history-view-note">${escapeHtml(scenarioCoverageText(scenarioBefore,scenarioAfter))} ${escapeHtml(scenarioDistanceText(scenarioBefore,scenarioAfter))}</div><div class="mt-4"><div class="compare-head">Что изменилось</div><div class="mt-2">${changed}</div></div></div>`;
+      box.innerHTML=`<div class="compare-card"><div class="compare-grid event-compare"><div class="compare-state before"><div class="label">До события</div><div class="big">Исходный план</div><div class="sub">${scenarioBefore.assigned} назначено · ${scenarioBefore.unassigned} не назначено · ${scenarioBefore.usedEngineers} бригад · ${escapeHtml(UX.formatKm(scenarioBefore.totalDistance))}</div></div><div class="compare-state after"><div class="label">После события</div><div class="big">Применённый план</div><div class="sub">${scenarioAfter.assigned} назначено · ${scenarioAfter.unassigned} не назначено · ${scenarioAfter.usedEngineers} бригад · ${escapeHtml(UX.formatKm(scenarioAfter.totalDistance))}</div></div></div><div class="comparison-table-scroll"><table class="comparison-table"><thead><tr><th>Показатель</th><th>Было</th><th>Стало</th><th>Изменение</th></tr></thead><tbody>${comparisonRows}</tbody></table></div><div class="comparison-change-strip"><div class="comparison-change-stat"><div class="num">${counts.total}</div><div class="lbl">Изменено</div></div><div class="comparison-change-stat"><div class="num">${counts.assigned}</div><div class="lbl">Новых назначений</div></div><div class="comparison-change-stat"><div class="num">${counts.reassigned}</div><div class="lbl">Переназначено</div></div><div class="comparison-change-stat"><div class="num">${counts.reordered}</div><div class="lbl">Перестановок</div></div></div><div class="history-view-note">${escapeHtml(scenarioCoverageText(scenarioBefore,scenarioAfter))} ${escapeHtml(scenarioDistanceText(scenarioBefore,scenarioAfter))}</div><div class="mt-4"><div class="compare-head">Что изменилось</div><div class="mt-2">${changed}</div></div></div>`;
       return;
     }
     const p=state.lastPlan,b=state.baseline;
     if(!p||!b){box.innerHTML='';return;}
     const rows=[['Назначено заявок',b.assigned,p.assigned,'jobs'],['Занято бригад',b.usedEngineers,p.usedEngineers,'crews'],['Суммарный пробег',b.totalDistance,p.totalDistance,'km'],['Неназначено',b.unassigned,p.unassigned,'jobs']];
-    const table=rows.map(r=>`<div class="compare-row"><div>${escapeHtml(r[0])}</div><div>${escapeHtml(r[3]==='km'?UX.formatKm(r[1]):UX.number(r[1],0))}</div><div>${escapeHtml(r[3]==='km'?UX.formatKm(r[2]):UX.number(r[2],0))}</div><div class="delta">${escapeHtml(UX.delta(Number(r[2])-Number(r[1]),r[3]))}</div></div>`).join('');
+    const table=rows.map(r=>`<tr><td>${escapeHtml(r[0])}</td><td>${escapeHtml(r[3]==='km'?UX.formatKm(r[1]):UX.number(r[1],0))}</td><td>${escapeHtml(r[3]==='km'?UX.formatKm(r[2]):UX.number(r[2],0))}</td><td class="delta">${escapeHtml(DUX.humanDelta(r[1],r[2],r[3]==='km'?'distance':r[0].includes('Неназначено')?'unassigned':r[3]==='crews'?'crews':'assigned'))}</td></tr>`).join('');
     const details=state.engineers.map(e=>`<div class="text-[11px] py-1 flex justify-between gap-2"><span>${escapeHtml(e.name)}</span><span>${escapeHtml(UX.formatKm(b.engineerDistances?.[e.id]??0))} → ${escapeHtml(UX.formatKm(p.engineerDistances?.[e.id]??0))}</span></div>`).join('');
     const dAssigned=p.assigned-b.assigned,dUnassigned=p.unassigned-b.unassigned,dDistance=p.totalDistance-b.totalDistance;
-    const baselineSummary=`Baseline vs план: назначено ${UX.delta(dAssigned,'jobs')}; неназначено ${UX.delta(dUnassigned,'jobs')}; пробег ${UX.delta(dDistance,'km')}.`;
-    $('compare').innerHTML=`<div class="compare-card"><div class="compare-head grid grid-cols-4 gap-2"><span></span><span>Baseline</span><span>План</span><span>Δ</span></div><div class="compare-table">${table}</div><div class="history-view-note">${escapeHtml(baselineSummary)}</div></div><div class="compare-card mt-3"><div class="compare-head mb-2">Пробег по инженерам</div>${details}</div>`;
+    const baselineSummary=`${DUX.humanDelta(b.assigned,p.assigned,'assigned')}; ${DUX.humanDelta(b.unassigned,p.unassigned,'unassigned')}; ${DUX.humanDelta(b.totalDistance,p.totalDistance,'distance')}.`;
+    $('compare').innerHTML=`<div class="compare-card"><div class="comparison-table-scroll"><table class="comparison-table"><thead><tr><th>Показатель</th><th>Базовый</th><th>План</th><th>Изменение</th></tr></thead><tbody>${table}</tbody></table></div><div class="history-view-note">${escapeHtml(baselineSummary)}</div></div><details class="compare-card mt-3"><summary class="compare-head">Пробег по бригадам</summary><div class="mt-2">${details}</div></details>`;
   }
 
   function renderScenarioPreview(){
@@ -1240,7 +1255,7 @@
     if(!pr){box.classList.add('hidden');box.innerHTML='';return;}
     box.classList.remove('hidden');
     if(pr.status==='loading'){box.innerHTML='<div class="flex items-center gap-2"><span class="preview-badge"><i data-lucide="loader-circle" class="w-3 h-3 animate-spin"></i> Предпросмотр</span><span class="text-xs text-[#c8c8cd]">Рассчитываю последствия, текущий план не изменяется…</span></div>';lucide.createIcons();return;}
-    if(pr.status==='applying'){box.innerHTML='<div class="flex items-center gap-2"><span class="preview-badge"><i data-lucide="loader-circle" class="w-3 h-3 animate-spin"></i> Применение</span><span class="text-xs text-[#c8c8cd]">Backend атомарно применяет preview…</span></div>';lucide.createIcons();return;}
+    if(pr.status==='applying'){box.innerHTML='<div class="flex items-center gap-2"><span class="preview-badge"><i data-lucide="loader-circle" class="w-3 h-3 animate-spin"></i> Применение</span><span class="text-xs text-[#c8c8cd]">Сервис применяет подтверждённый черновик…</span></div>';lucide.createIcons();return;}
     if(pr.status==='error'){box.innerHTML=`<div class="flex items-start justify-between gap-3"><div><span class="preview-badge">Ошибка расчёта</span><div class="mt-2 text-xs text-[#ffbe85]">${escapeHtml(pr.error||'Не удалось построить сценарий')}</div></div><button id="cancel-preview" class="btn ghost" type="button">Закрыть</button></div>`;box.querySelector('#cancel-preview')?.addEventListener('click',cancelScenarioPreview);return;}
     const stale=pr.revision!==state.dataRevision || pr.baseVersion!==state.version || pr.basePlanId!==state.planId;
     if(stale){box.innerHTML=`<div class="flex items-start justify-between gap-3"><div><span class="preview-badge">Предпросмотр устарел</span><div class="mt-2 text-xs text-[#ffbe85]">Текущие данные или план уже изменились. Этот расчёт больше нельзя применять.</div></div><button id="cancel-preview" class="btn ghost" type="button">Закрыть</button></div>`;box.querySelector('#cancel-preview')?.addEventListener('click',cancelScenarioPreview);return;}
@@ -1260,8 +1275,8 @@
     const unavailableEngineer=(pr.engineersAfter||state.engineers).find(engineer=>String(engineer.id)===String(pr.event.engineer_id));
     const eventTitle=pr.event.type==='cancel_job'?`Отмена: ${cancelledJob?.address||cancelledJob?.title||'выбранная заявка'}`:pr.event.type==='engineer_unavailable'?`Недоступность: ${unavailableEngineer?.name||'выбранная бригада'}`:'Новая срочная аварийная заявка';
     const eventClock=String(pr.event.event_time||'').match(/T(\d{2}:\d{2})/)?.[1]||'указанного времени';
-    const inDayNote=`Завершённые до ${escapeHtml(eventClock)} работы исключены из расчёта; текущие этапы in_progress/en_route зафиксированы, пересчитан только остаток дня.`;
-    box.innerHTML=`<div class="flex items-start justify-between gap-3"><div><span class="preview-badge"><i data-lucide="scan-search" class="w-3 h-3"></i> Предлагаемые изменения</span><div class="preview-heading mt-2">${escapeHtml(eventTitle)}</div><div class="mt-1 text-[11px] text-[#aeadb4]">Предпросмотр рассчитан. Текущий план не изменится до подтверждения.</div></div><span class="status assigned">Preview</span></div>${emergencyCard}<div class="preview-reason">${inDayNote}${emergencyId?' Изменения обычных заявок ниже выполнены ради аварийной заявки.':''}</div><div class="preview-grid mt-3"><div class="preview-state before"><div class="text-[10px] font-extrabold text-[#9e9ea4] uppercase">Текущий план</div><div class="big">v${escapeHtml(pr.beforeVersion)}</div><div class="sub">${b.assigned} назначено · ${b.unassigned} не назначено · ${b.usedEngineers} бригад · ${escapeHtml(UX.formatKm(b.totalDistance))}</div></div><div class="preview-arrow">→</div><div class="preview-state after"><div class="text-[10px] font-extrabold text-[#9e9ea4] uppercase">После события</div><div class="big">v${escapeHtml(pr.afterVersion)}</div><div class="sub">${a.assigned} назначено · ${a.unassigned} не назначено · ${a.usedEngineers} бригад · ${escapeHtml(UX.formatKm(a.totalDistance))}</div></div></div><div class="compare-metrics mt-3">${metrics}</div><div class="preview-change-counts mt-3"><div class="change-count"><div class="num">${cs.total}</div><div class="lbl">Изменено заявок</div></div><div class="change-count"><div class="num">${cs.assigned}</div><div class="lbl">Новых назначений</div></div><div class="change-count"><div class="num">${cs.removed}</div><div class="lbl">Снято с маршрута</div></div><div class="change-count"><div class="num">${cs.reassigned}</div><div class="lbl">Переназначений</div></div></div><div class="history-view-note">${escapeHtml(pr.coverageText||'')} ${escapeHtml(pr.distanceText||'')}</div><div class="mt-4"><div class="compare-head">Какие заявки изменились и почему</div><div class="mt-2">${changes}</div></div><div class="preview-actions"><button id="discard-preview" class="btn ghost" type="button">Отклонить изменения</button><button id="apply-preview" class="btn primary" type="button"><i data-lucide="check" class="w-4 h-4 inline mr-1"></i>Применить план v${escapeHtml(String(pr.afterVersion))}</button></div>`;
+    const inDayNote=`Завершённые до ${escapeHtml(eventClock)} работы исключены из расчёта; работы «В процессе» и «В пути» зафиксированы, пересчитан только остаток дня.`;
+    box.innerHTML=`<div class="flex items-start justify-between gap-3"><div><span class="preview-badge"><i data-lucide="scan-search" class="w-3 h-3"></i> Предлагаемые изменения</span><div class="preview-heading mt-2">${escapeHtml(eventTitle)}</div><div class="mt-1 text-[11px] text-[#aeadb4]">Предпросмотр рассчитан. Текущий план не изменится до подтверждения.</div></div><span class="status assigned">Черновик</span></div>${emergencyCard}<div class="preview-reason">${inDayNote}${emergencyId?' Изменения обычных заявок ниже выполнены ради аварийной заявки.':''}</div><div class="preview-grid mt-3"><div class="preview-state before"><div class="text-[10px] font-extrabold text-[#9e9ea4] uppercase">Текущий план</div><div class="big">Исходный план</div><div class="sub">${b.assigned} назначено · ${b.unassigned} не назначено · ${b.usedEngineers} бригад · ${escapeHtml(UX.formatKm(b.totalDistance))}</div></div><div class="preview-arrow">→</div><div class="preview-state after"><div class="text-[10px] font-extrabold text-[#9e9ea4] uppercase">После события</div><div class="big">Черновик перепланирования</div><div class="sub">${a.assigned} назначено · ${a.unassigned} не назначено · ${a.usedEngineers} бригад · ${escapeHtml(UX.formatKm(a.totalDistance))}</div></div></div><div class="compare-metrics mt-3">${metrics}</div><div class="preview-change-counts mt-3"><div class="change-count"><div class="num">${cs.total}</div><div class="lbl">Изменено заявок</div></div><div class="change-count"><div class="num">${cs.assigned}</div><div class="lbl">Новых назначений</div></div><div class="change-count"><div class="num">${cs.removed}</div><div class="lbl">Снято с маршрута</div></div><div class="change-count"><div class="num">${cs.reassigned}</div><div class="lbl">Переназначений</div></div></div><div class="history-view-note">${escapeHtml(pr.coverageText||'')} ${escapeHtml(pr.distanceText||'')}</div><div class="mt-4"><div class="compare-head">Какие заявки изменились и почему</div><div class="mt-2">${changes}</div></div><div class="preview-actions"><button id="discard-preview" class="btn ghost" type="button">Отклонить изменения</button><button id="apply-preview" class="btn primary" type="button"><i data-lucide="check" class="w-4 h-4 inline mr-1"></i>Применить перепланирование</button></div>`;
     $('apply-preview').addEventListener('click',applyScenarioPreview);$('discard-preview').addEventListener('click',cancelScenarioPreview);lucide.createIcons();
   }
 
@@ -1269,12 +1284,12 @@
     const box=$('plan-history'); if(!box)return;
     if(!state.planHistory.length){box.innerHTML='<div class="scenario-empty w-full">После первого расчёта здесь появится история версий плана.</div>';return;}
     const viewing=state.historyViewVersion!=null;
-    const note=viewing?`<div class="history-view-note">Сейчас отображается историческая версия v${escapeHtml(state.historyViewVersion)} на карте и таймлайне. Текущий план не изменён. <button type="button" class="btn ghost text-[10px]" id="history-current-button">Вернуться к текущему плану</button></div>`:'';
-    box.innerHTML=`<div class="history-strip">${state.planHistory.map(h=>{const isCurrent=h.version===state.version,isViewing=h.version===Number(state.historyViewVersion);return `<button type="button" class="history-item ${isCurrent?'current':''} ${isViewing?'viewing':''}" data-history-version="${h.version}"><div class="v">v${h.version} ${isCurrent?'· текущая':''}</div><div class="meta">${escapeHtml(h.label)}</div><div class="sub">${h.plan.assigned} назначено · ${h.plan.unassigned} не назначено · ${h.plan.usedEngineers} бригад · ${escapeHtml(UX.formatKm(h.plan.totalDistance))}</div>${isViewing?'<div class="meta">Показывается на карте</div>':''}</button>`}).join('')}</div>${note}`;
+    const note=viewing?`<div class="history-view-note">На карте и в расписании открыта сохранённая версия. Текущий план не изменён. <button type="button" class="btn ghost text-[10px]" id="history-current-button">Вернуться к текущему плану</button></div>`:'';
+    box.innerHTML=`<div class="history-strip">${state.planHistory.map(h=>{const isCurrent=h.version===state.version,isViewing=h.version===Number(state.historyViewVersion),title=DUX.versionTitle(h,state.version),time=new Date(h.timestamp).toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit'});return `<button type="button" class="history-item ${isCurrent?'current':''} ${isViewing?'viewing':''}" data-history-version="${h.version}"><div class="v">${escapeHtml(title)}</div><div class="meta">${escapeHtml(time)} · ${escapeHtml(h.scenario||state.scenario)} · ${escapeHtml(h.source||'')}</div><div class="meta">Причина: ${escapeHtml(h.event?.type==='emergency_job'?'срочная аварийная заявка':h.event?.type==='cancel_job'?'отмена заявки':h.event?.type==='engineer_unavailable'?'недоступность инженера':h.label)}</div><div class="sub">${h.plan.assigned} назначено · ${h.plan.unassigned} не назначено · ${h.plan.usedEngineers} бригад · ${escapeHtml(UX.formatKm(h.plan.totalDistance))}</div>${isViewing?'<div class="meta">Показывается на карте</div>':''}</button>`}).join('')}</div>${note}`;
     document.querySelectorAll('[data-history-version]').forEach(btn=>btn.addEventListener('click',()=>{
       const v=Number(btn.dataset.historyVersion);
       if(v===state.version){state.historyViewVersion=null;notify('Возврат к текущему плану.');}
-      else {const h=state.planHistory.find(x=>x.version===v);if(!h)return;state.historyViewVersion=v;notify(`На карте и таймлайне показана версия v${v}. Текущий план не изменён.`);}
+      else {const h=state.planHistory.find(x=>x.version===v);if(!h)return;state.historyViewVersion=v;notify('На карте и в расписании показана сохранённая версия. Текущий план не изменён.');}
       renderAll();
     }));
     $('history-current-button')?.addEventListener('click',()=>{state.historyViewVersion=null;renderAll();});
@@ -1323,14 +1338,15 @@
         if(assignment){
           const checks=assignment.checks||{};
           const route=assignment.route_impact||{};
-          const skill=checks.skill||{},transport=checks.transport||{},windowCheck=checks.time_window||{},shift=checks.shift||{};
+          const skill=checks.skill||{},transport=checks.transport||{},equipment=checks.equipment||{},windowCheck=checks.time_window||{},shift=checks.shift||{};
           const engineer=state.engineers.find(e=>String(e.id)===String(j.engineerId));
           const start=hhmm(windowCheck.service_start)||j.windowStart;
           const finish=hhmm(shift.service_end)||'—';
           const shiftEnd=hhmm(shift.shift_end)||engineer?.shiftEnd||'—';
           const transportPhrase=j.requiredVehicle?`транспорт «${j.requiredVehicle}» соответствует требованию`:`ограничения по транспорту нет`;
-          $('explanation-text').textContent=`Назначена ${engineer?.name||'исполнителю'}: есть навык «${j.requiredSkill}», начало в ${start} попадает в окно ${j.windowStart}–${j.windowEnd}, работа завершится в ${finish} до конца смены ${shiftEnd}; ${transportPhrase}.`;
-          box.innerHTML=`<div><div class="text-[10px] font-extrabold uppercase tracking-[.12em] text-[#9e9ea4] mb-2">Проверенные условия</div><div class="explain-grid"><div class="explain-item ok"><div class="k">Навык</div><div class="v">${escapeHtml(j.requiredSkill||skill.required||'—')} · есть у бригады</div></div><div class="explain-item ok"><div class="k">Окно клиента</div><div class="v">Начало ${escapeHtml(start)} внутри ${escapeHtml(j.windowStart)}–${escapeHtml(j.windowEnd)}</div></div><div class="explain-item ok"><div class="k">Смена</div><div class="v">Работа до ${escapeHtml(finish)} · смена до ${escapeHtml(shiftEnd)}</div></div><div class="explain-item ok"><div class="k">Транспорт</div><div class="v">${escapeHtml(j.requiredVehicle?`${engineer?.vehicle||transport.actual||'—'} · требование соблюдено`:'Без ограничения')}</div></div></div></div><div><div class="text-[10px] font-extrabold uppercase tracking-[.12em] text-[#9e9ea4] mb-2">Влияние на маршрут</div><div class="action-list"><button class="action-item text-left w-full" type="button" data-focus-engineer="${escapeHtml(j.engineerId)}"><span class="action-icon"><i data-lucide="route" class="w-4 h-4"></i></span><div><b>Показать маршрут ${escapeHtml(engineer?.name||'бригады')}</b><span>От предыдущей точки: ${escapeHtml(UX.formatKm(route.incoming_distance_km??0))} · ${escapeHtml(UX.formatMinutes(route.incoming_travel_min??0))} в пути · ${escapeHtml(UX.formatMinutes(route.waiting_min??0))} ожидания.</span></div></button></div><details class="technical-details"><summary>Технические детали</summary><div class="technical-details-body">job_id: ${escapeHtml(j.id)}<br>engineer_id: ${escapeHtml(j.engineerId)}<br>engine: ${escapeHtml(state.lastPlan?.backend?.engine||'—')}<br>solver_status: ${escapeHtml(state.lastPlan?.backend?.solverStatus||'—')}<br>selection_basis: ${escapeHtml(assignment.selection_basis||'—')}</div></details></div>`;
+          const equipmentPhrase=j.requiredEquipment?.length?`оборудование ${j.requiredEquipment.join(', ')} есть у бригады`:'используется базовый комплект бригады';
+          $('explanation-text').textContent=`Назначена ${engineer?.name||'исполнителю'}: есть навык «${j.requiredSkill}», начало в ${start} попадает в окно ${j.windowStart}–${j.windowEnd}, работа завершится в ${finish} до конца смены ${shiftEnd}; ${transportPhrase}; ${equipmentPhrase}.`;
+          box.innerHTML=`<div><div class="text-[10px] font-extrabold uppercase tracking-[.12em] text-[#9e9ea4] mb-2">Проверенные условия</div><div class="explain-grid"><div class="explain-item ok"><div class="k">Навык</div><div class="v">${escapeHtml(j.requiredSkill||skill.required||'—')} · есть у бригады</div></div><div class="explain-item ok"><div class="k">Окно клиента</div><div class="v">Начало ${escapeHtml(start)} внутри ${escapeHtml(j.windowStart)}–${escapeHtml(j.windowEnd)}</div></div><div class="explain-item ok"><div class="k">Смена</div><div class="v">Работа до ${escapeHtml(finish)} · смена до ${escapeHtml(shiftEnd)}</div></div><div class="explain-item ok"><div class="k">Транспорт</div><div class="v">${escapeHtml(j.requiredVehicle?`${engineer?.vehicle||transport.actual||'—'} · требование соблюдено`:'Без ограничения')}</div></div><div class="explain-item ok"><div class="k">Оборудование</div><div class="v">${escapeHtml(j.requiredEquipment?.length?`${j.requiredEquipment.join(', ')} · есть у бригады`:'Базовый комплект')}</div></div></div></div><div><div class="text-[10px] font-extrabold uppercase tracking-[.12em] text-[#9e9ea4] mb-2">Маршрут бригады</div><div class="action-list"><button class="action-item text-left w-full" type="button" data-focus-engineer="${escapeHtml(j.engineerId)}"><span class="action-icon"><i data-lucide="route" class="w-4 h-4"></i></span><div><b>Показать маршрут ${escapeHtml(engineer?.name||'бригады')}</b><span>От предыдущей точки: ${escapeHtml(UX.formatKm(route.incoming_distance_km??0))} · расчётное время в пути ${escapeHtml(UX.formatMinutes(route.incoming_travel_min??0))} · ожидание ${escapeHtml(UX.formatMinutes(route.waiting_min??0))}.</span></div></button></div><details class="technical-details"><summary>Технические детали</summary><div class="technical-details-body">job_id: ${escapeHtml(j.id)}<br>engineer_id: ${escapeHtml(j.engineerId)}<br>engine: ${escapeHtml(state.lastPlan?.backend?.engine||'—')}<br>solver_status: ${escapeHtml(state.lastPlan?.backend?.solverStatus||'—')}<br>selection_basis: ${escapeHtml(assignment.selection_basis||'—')}</div></details></div>`;
         }else{
           const reason=j.unassignedReason||{};
           $('explanation-text').textContent=`Не назначена: ${reason.message||j.apiExplanation}`;
@@ -1428,7 +1444,7 @@
     tip.setAttribute('aria-hidden','true');
   }
 
-  function routeSourceLabel(source){const v=String(source||'').toLowerCase();if(v.includes('osrm')||v.includes('valhalla'))return 'Дорожный расчёт';if(v.includes('local')||v.includes('fallback'))return 'Приблизительная оценка';return 'Расчёт маршрута';}
+  function routeSourceLabel(source){const v=String(source||'').toLowerCase();if(v.includes('local')||v.includes('fallback'))return 'Метрики статической матрицы';return 'Метрики статической матрицы';}
 
   function renderTimeline(){
     const p=displayPlan();
@@ -1449,7 +1465,7 @@
       });
       return `<div class="flex items-stretch"><button type="button" data-focus-timeline-engineer="${escapeHtml(e.id)}" class="timeline-engineer ${state.selectedEngineerId===e.id?'selected':''}"><span class="w-3 h-3 rounded-full shrink-0" style="background:${e.color}"></span><div class="min-w-0"><div class="text-xs font-extrabold">${escapeHtml(e.name)}</div><div class="text-[10px] text-[#9e9ea4]">${escapeHtml(e.vehicle)} · ${escapeHtml(UX.formatKm(x.distance))} · ${routeSourceLabel(x.routeSource)}</div></div></button><div class="timeline-grid flex-1">${blocks.join('')}</div></div>`;
     }).join('') || '<div class="text-xs text-[#9e9ea4] px-2 py-4">Нет назначенных заявок.</div>';
-    $('timeline-hint').innerHTML='<span>Время начала показано над работой · номер — порядок посещения</span><span class="timeline-legend"><span><i style="background:#4a4d57"></i>дорога</span><span><i style="background:#76651f"></i>ожидание</span><span><i style="background:#78aefc"></i>работа</span></span>';
+    $('timeline-hint').innerHTML='<span>Время начала показано над работой · номер — порядок посещения</span><span class="timeline-legend"><span><i style="background:var(--route-travel)"></i>в пути</span><span><i style="background:var(--route-wait)"></i>ожидание окна</span><span><i style="background:var(--route-work)"></i>выполнение работ</span><span><i class="break"></i>перерыв / недоступность</span></span>';
     document.querySelectorAll('[data-timeline-job]').forEach(b=>{
       const itemId=b.dataset.timelineJob;
       const engRow=p.engineers.find(x=>x.items.some(i=>String(i.id)===String(itemId)));
@@ -1527,7 +1543,7 @@
       if(historyIds&&!historyIds.has(String(j.id)))return; if(!validCoordPair(j.coords))return; const displayJob=getVisibleMapJob(j,planByJob,p);if(!displayJob)return;
       const markerOpacity=selected==='all'||displayJob.engineerId===selected?1:.3;
       const m=L.marker(j.coords,{icon:markerIcon(displayJob),opacity:markerOpacity}); const eng=displayJob.engineerId?state.engineers.find(e=>e.id===displayJob.engineerId):null;const item=displayJob.planned;const order=item?.order;
-      const routeInfo=displayJob.engineerId?`<br>Бригада: ${escapeHtml(eng?.name||'—')}${order?`<br>Посещение: №${order}`:''}${item?`<br>Прибытие: ${fmtMin(item.arrivalMin)} · начало: ${fmtMin(item.startMin)}<br>В пути: ${escapeHtml(UX.formatMinutes(item.travelMin))}`:''}`:''; const viewLabel=state.historyViewVersion!=null?`<br><span style="color:#9ebfff">Историческая версия v${escapeHtml(state.historyViewVersion)}</span>`:'';
+      const routeInfo=displayJob.engineerId?`<br>Бригада: ${escapeHtml(eng?.name||'—')}${order?`<br>Посещение: №${order}`:''}${item?`<br>Прибытие: ${fmtMin(item.arrivalMin)} · начало: ${fmtMin(item.startMin)}<br>В пути: ${escapeHtml(UX.formatMinutes(item.travelMin))}`:''}`:''; const viewLabel=state.historyViewVersion!=null?`<br><span style="color:#9ebfff">Сохранённая версия плана</span>`:'';
       m.bindPopup(`<div style="min-width:240px;font-family:Inter,Arial,sans-serif"><b>${escapeHtml(j.title)}</b><div style="font-size:11px;line-height:1.5;margin-top:7px;color:#c5c5ca">${escapeHtml(j.address)}<br>Окно: ${escapeHtml(j.windowStart)}–${escapeHtml(j.windowEnd)}<br>Навык: ${escapeHtml(j.requiredSkill)}${routeInfo}${viewLabel}</div><button data-popup-job="${escapeHtml(j.id)}" style="margin-top:10px;width:100%;border:0;border-radius:8px;background:#ffc800;padding:8px;font-weight:900;cursor:pointer">Выбрать заявку</button></div>`);
       m.on('click',()=>selectJob(j.id));
       if(jobClusterLayer)jobClusterLayer.addLayer(m);else{m.addTo(map);markerLayers.push(m);}
@@ -1546,6 +1562,9 @@
       state.selectedEngineerId=sel.value;
     }
     const layerMode=$('map-layer-mode');if(layerMode)layerMode.value=state.mapLayerMode||'all';
+    const hint=$('map-filter-hint');if(hint){const selected=state.engineers.find(e=>String(e.id)===String(state.selectedEngineerId));hint.innerHTML=state.mapLayerMode==='selected_route'?`Показаны только заявки и маршрут: <strong>${escapeHtml(selected?.name||'выберите бригаду')}</strong>.`:(selected?`Показан весь план; маршрут <strong>${escapeHtml(selected.name)}</strong> выделен, остальные приглушены.`:'Показаны все заявки и маршруты. Выберите бригаду, чтобы выделить её маршрут.');}
+    const source=$('source-mode');if(source)source.textContent=DUX.datasetSummary(state.datasetMeta,state.jobs,state.engineers);
+    const handoff=$('handoff-button');if(handoff)handoff.disabled=!state.lastPlan;
   }
 
   function syncUiContext(){const d=$('plan-date'),b=$('plan-branch'),r=$('region-select');if(d){const raw=state.date||'2026-08-17';d.textContent=/^\d{4}-\d{2}-\d{2}$/.test(raw)?new Date(`${raw}T00:00:00`).toLocaleDateString('ru-RU',{day:'2-digit',month:'2-digit',year:'numeric'}):raw;}if(b)b.textContent=state.branch||'Югоцентр';if(r)r.value=state.scenario;const v=$('topbar-version');if(v)v.textContent=`v${Number(state.version||0)}`;const layerMode=$('map-layer-mode');if(layerMode)layerMode.value=state.mapLayerMode||'all';}
@@ -1590,6 +1609,11 @@
     }
     state.mapLayerMode=mode;renderAll();fitMapToVisible();persist();
   });
+  function routeSheetStatus(status){return ({assigned:'назначена',in_progress:'в работе',en_route:'бригада в пути',completed:'завершена',cancelled:'отменена',unassigned:'не назначена'})[status]||'запланирована';}
+  function equipmentLabel(value){return ({router:'роутер',tv_box:'ТВ-приставка'})[value]||String(value).replaceAll('_',' ');}
+  function renderRouteSheet(engineerId){const sheets=DUX.buildRouteSheets(state.lastPlan),sheet=sheets.find(item=>item.engineerId===String(engineerId)),box=$('route-sheet-content');if(!box)return;if(!sheet){box.innerHTML='<div class="scenario-empty">У выбранной бригады нет назначенных заявок.</div>';return;}box.innerHTML=sheet.stops.map(stop=>`<div class="route-sheet-stop"><b>${stop.order}. ${escapeHtml(stop.address||'Адрес не указан')}</b><div class="mt-1">Прибытие: ${escapeHtml(fmtMin(stop.arrival))} · работы: ${escapeHtml(UX.formatMinutes(stop.duration))}</div><div class="mt-1">Оборудование: ${escapeHtml(stop.equipment?.length?stop.equipment.map(equipmentLabel).join(', '):'базовый набор')} · статус: ${escapeHtml(routeSheetStatus(stop.status))}</div></div>`).join('');}
+  $('handoff-button').addEventListener('click',()=>{const sheets=DUX.buildRouteSheets(state.lastPlan),select=$('route-sheet-engineer');select.innerHTML=sheets.map(sheet=>`<option value="${escapeHtml(sheet.engineerId)}">${escapeHtml(sheet.engineerName)}</option>`).join('');$('route-sheets-summary').textContent=`Маршрутные листы сформированы для ${sheets.length} ${UX.plural(sheets.length,['бригады','бригад','бригад'])}.`;if(sheets.length)renderRouteSheet(sheets[0].engineerId);openModal('route-sheets-modal');notify(`Маршрутные листы сформированы для ${sheets.length} бригад.`);});
+  $('route-sheet-engineer').addEventListener('change',event=>renderRouteSheet(event.target.value));
   $('optimize-button').addEventListener('click',()=>runPlanning({engine:'ortools_vrptw'}));
   $('baseline-button').addEventListener('click',()=>runPlanning({engine:'baseline_greedy'}));
   $('demo-emergency-button').addEventListener('click',async()=>{
@@ -1602,12 +1626,12 @@
         routingCache.clear();mapView={initialized:false,center:null,zoom:null};
         persist();renderAll();
       }
-      notify('Демо: создаю воспроизводимый план east и preview аварии в 19:30.');
+      notify('Демо: создаю воспроизводимый план региона «Восток» и предпросмотр аварии в 19:30.');
       const ready=await runPlanning({showNotify:false,engine:config.base_engine,solveTimeLimitMs:config.base_solve_time_limit_ms});
       if(!ready)return;
       const event=cloneData(config.event);
       state.selectedJobId=`emergency:${event.event_id}`;
-      await previewScenario({event,label:'demo-emergency east'});
+      await previewScenario({event,label:'демо аварии в регионе «Восток»'});
     }catch(error){
       setRoutingStatus('error',`Демо не запущено: ${error?.message||'неизвестная ошибка'}`);
       notify(`Демо не запущено: ${error?.message||'неизвестная ошибка'}`);
@@ -1693,21 +1717,21 @@
     validateImportedJobs(jobs);return {jobs,engineers,source:file.name};
   }
   function clearPlanStateAfterImport(){
-    state.baseline=null;state.lastPlan=null;state.planHistory=[];state.version=0;state.planId=null;state.parentPlanId=null;state.scenarioBefore=null;state.scenarioAfter=null;state.scenarioEvent=null;state.scenarioSnapshots=null;state.scenarioPreview=null;state.changes=[];state.lastDiff=null;state.scenarioBeforeVersion=null;state.scenarioAfterVersion=null;state.historyViewVersion=null;state.selectedJobId=null;state.routingContext=null;state.selectedEngineerId='all';state.mapLayerMode='all';state.dataRevision=(Number(state.dataRevision)||0)+1;planningToken++;routingFetchToken++;routingCache.clear();mapView={initialized:false,center:null,zoom:null};
+    state.baseline=null;state.lastPlan=null;state.planHistory=[];state.version=0;state.planId=null;state.parentPlanId=null;state.scenarioBefore=null;state.scenarioAfter=null;state.scenarioEvent=null;state.scenarioSnapshots=null;state.scenarioPreview=null;state.changes=[];state.lastDiff=null;state.scenarioBeforeVersion=null;state.scenarioAfterVersion=null;state.historyViewVersion=null;state.selectedJobId=null;state.routingContext=null;state.selectedEngineerId='all';state.mapLayerMode='all';state.filter='all';state.query='';state.dataRevision=(Number(state.dataRevision)||0)+1;planningToken++;routingFetchToken++;routingCache.clear();mapView={initialized:false,center:null,zoom:null};
   }
   $('import-form').addEventListener('submit',async e=>{
     e.preventDefault();const file=$('import-file').files[0],msg=$('import-message');if(!file)return;const button=e.submitter;if(button)button.disabled=true;msg.classList.remove('hidden');msg.className='text-xs mt-3 text-[#fff0a8]';msg.textContent='Читаю и проверяю файл…';
-    try{const prepared=await prepareImportedData(file);state.jobs=cloneData(prepared.jobs);if(prepared.engineers.length)state.engineers=cloneData(prepared.engineers);clearPlanStateAfterImport();persist();renderAll();closeModal('import-modal');notify('Данные загружены. Старые назначения и предпросмотр сброшены — нажмите «Построить план».');}
+    try{const mode=document.querySelector('input[name="import-mode"]:checked')?.value;if(mode!=='replace')throw new Error('Создание нового сценария пока недоступно. Выберите замену текущего сценария.');const prepared=await prepareImportedData(file);const metadata={name:prepared.source,scenario:state.scenario,regionLabel:state.branch,loadedAt:new Date().toISOString()};DUX.replaceDataset(state,prepared,metadata);clearPlanStateAfterImport();persist();renderAll();closeModal('import-modal');notify('Текущий сценарий заменён. Старые план, фильтры и история очищены — нажмите «Построить план».');}
     catch(err){msg.textContent=`Ошибка импорта: ${err?.message||'неизвестная ошибка'}`;msg.className='text-xs mt-3 text-[#ff9d3f]';}
     finally{if(button)button.disabled=false;}
   });
 
-  function persist(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify({schemaVersion:5,scenario:state.scenario,jobs:state.jobs,engineers:state.engineers,version:state.version,planId:state.planId,parentPlanId:state.parentPlanId,date:state.date,branch:state.branch,mapLayers:state.mapLayers,mapLayerMode:state.mapLayerMode,selectedEngineerId:state.selectedEngineerId,mapView:mapView,planHistory:state.planHistory,lastPlan:state.lastPlan,baseline:state.baseline,lastDiff:state.lastDiff}))}catch(e){}}
+  function persist(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify({schemaVersion:6,scenario:state.scenario,jobs:state.jobs,engineers:state.engineers,version:state.version,planId:state.planId,parentPlanId:state.parentPlanId,date:state.date,branch:state.branch,datasetMeta:state.datasetMeta,mapLayers:state.mapLayers,mapLayerMode:state.mapLayerMode,selectedEngineerId:state.selectedEngineerId,mapView:mapView,planHistory:state.planHistory,lastPlan:state.lastPlan,baseline:state.baseline,lastDiff:state.lastDiff}))}catch(e){}}
   function restore(){
     try{const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return;const d=JSON.parse(raw);if(!Array.isArray(d.jobs)||!Array.isArray(d.engineers))return;
       const jobs=d.jobs.map((j,i)=>({...j,id:String(j.id??i+1),coords:Array.isArray(j.coords)?[Number(j.coords[0]),Number(j.coords[1])]:[NaN,NaN]}));
       const engineers=d.engineers.map((e,i)=>({...e,id:String(e.id??`eng-${i+1}`),startPoint:Array.isArray(e.startPoint)?[Number(e.startPoint[0]),Number(e.startPoint[1])]:[NaN,NaN]}));
-      validateImportedJobs(jobs);validateImportedEngineers(engineers);state.scenario=window.BeelineScenarioState.ALLOWED_SCENARIOS.includes(d.scenario)?d.scenario:'east';state.jobs=jobs;state.engineers=engineers;state.version=Number(d.version||0);state.planId=d.planId||null;state.parentPlanId=d.parentPlanId||null;state.date=d.date||state.date;state.branch=d.branch||state.branch;state.mapLayers={...state.mapLayers,...(d.mapLayers||{})};state.mapLayerMode=['all','selected_route','problems','unassigned'].includes(d.mapLayerMode)?d.mapLayerMode:'all';state.selectedEngineerId=d.selectedEngineerId||'all';state.planHistory=Array.isArray(d.planHistory)?d.planHistory:[]; state.lastPlan=d.lastPlan||state.planHistory[state.planHistory.length-1]?.plan||null;state.lastPlan=d.lastPlan||state.planHistory[state.planHistory.length-1]?.plan||null;state.baseline=d.baseline||null;state.lastDiff=d.lastDiff||null;mapView=d.mapView&&Array.isArray(d.mapView.center)?{initialized:true,center:[Number(d.mapView.center[0]),Number(d.mapView.center[1])],zoom:Number(d.mapView.zoom)}:{initialized:false,center:null,zoom:null}; if(!mapView.initialized||!Number.isFinite(mapView.zoom)||!validCoordPair(mapView.center))mapView={initialized:false,center:null,zoom:null};state.scenarioPreview=null;state.scenarioBefore=null;state.scenarioAfter=null;state.scenarioEvent=null;state.scenarioSnapshots=null;state.changes=[];state.historyViewVersion=null;state.routingContext=null;
+      validateImportedJobs(jobs);validateImportedEngineers(engineers);state.scenario=window.BeelineScenarioState.ALLOWED_SCENARIOS.includes(d.scenario)?d.scenario:'east';state.jobs=jobs;state.engineers=engineers;state.version=Number(d.version||0);state.planId=d.planId||null;state.parentPlanId=d.parentPlanId||null;state.date=d.date||state.date;state.branch=d.branch||state.branch;state.datasetMeta=d.datasetMeta||{name:`Встроенный сценарий ${state.scenario}`,scenario:state.scenario,regionLabel:state.branch,loadedAt:new Date().toISOString()};state.mapLayers={...state.mapLayers,...(d.mapLayers||{})};state.mapLayerMode=['all','selected_route','problems','unassigned'].includes(d.mapLayerMode)?d.mapLayerMode:'all';state.selectedEngineerId=d.selectedEngineerId||'all';state.planHistory=Array.isArray(d.planHistory)?d.planHistory:[]; state.lastPlan=d.lastPlan||state.planHistory[state.planHistory.length-1]?.plan||null;state.lastPlan=d.lastPlan||state.planHistory[state.planHistory.length-1]?.plan||null;state.baseline=d.baseline||null;state.lastDiff=d.lastDiff||null;mapView=d.mapView&&Array.isArray(d.mapView.center)?{initialized:true,center:[Number(d.mapView.center[0]),Number(d.mapView.center[1])],zoom:Number(d.mapView.zoom)}:{initialized:false,center:null,zoom:null}; if(!mapView.initialized||!Number.isFinite(mapView.zoom)||!validCoordPair(mapView.center))mapView={initialized:false,center:null,zoom:null};state.scenarioPreview=null;state.scenarioBefore=null;state.scenarioAfter=null;state.scenarioEvent=null;state.scenarioSnapshots=null;state.changes=[];state.historyViewVersion=null;state.routingContext=null;
       if(!state.lastPlan){state.jobs.forEach(j=>{j.engineerId=null;j.status=j.status==='cancelled'?'cancelled':'unassigned';delete j.planned;});state.version=0;state.planId=null;state.parentPlanId=null;state.planHistory=[];state.baseline=null;}mapView={initialized:false,center:null,zoom:null};
     }catch(e){}
   }

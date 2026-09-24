@@ -29,6 +29,7 @@
       scenarioAfterVersion: null,
       historyViewVersion: null,
       routingContext: null,
+      datasetMeta: { name: `Встроенный сценарий ${scenario}`, scenario, loadedAt: new Date().toISOString() },
       jobs: [],
       engineers: [],
       dataRevision: Number(state.dataRevision || 0) + 1,

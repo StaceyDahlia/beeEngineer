@@ -12,7 +12,7 @@
     if (!response.ok) {
       const rawDetail = body && (body.error?.message || body.detail || body.warnings?.[0]);
       const detail = typeof rawDetail === "string" ? rawDetail : rawDetail?.message;
-      throw new Error(detail || `Backend вернул HTTP ${response.status}`);
+      throw new Error(detail || "Сервис временно недоступен. Повторите попытку.");
     }
     return body;
   }

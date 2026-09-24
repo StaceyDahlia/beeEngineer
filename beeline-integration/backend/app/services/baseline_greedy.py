@@ -30,6 +30,18 @@ def _same_vehicle(required: str | None, actual: str) -> bool:
     return VEHICLE_ALIASES.get(required, required) == VEHICLE_ALIASES.get(actual, actual)
 
 
+def _has_equipment(job: dict[str, Any], engineer: dict[str, Any]) -> bool:
+    def counts(value: Any) -> dict[str, int]:
+        if isinstance(value, dict):
+            return {str(key): int(amount) for key, amount in value.items()}
+        result: dict[str, int] = {}
+        for item in value or []:
+            result[str(item)] = result.get(str(item), 0) + 1
+        return result
+    required, available = counts(job.get("required_equipment")), counts(engineer.get("equipment"))
+    return all(available.get(item, 0) >= amount for item, amount in required.items())
+
+
 def _format_reason(codes: list[str]) -> dict[str, Any]:
     unique = set(codes)
     if not codes or unique == {"NO_AVAILABLE_ENGINEER"}:
@@ -45,6 +57,9 @@ def _format_reason(codes: list[str]) -> dict[str, Any]:
     }:
         code = "NO_VEHICLE"
         message = "Нет доступного инженера с подходящими навыком и транспортом."
+    elif "NO_EQUIPMENT" in unique:
+        code = "NO_EQUIPMENT"
+        message = "Нет бригады с нужным оборудованием."
     elif "OUT_OF_WINDOW" in unique:
         code = "OUT_OF_WINDOW"
         message = "Подходящие инженеры не успевают начать работу в клиентском окне."
@@ -151,6 +166,9 @@ def build_baseline_plan(
             if not _same_vehicle(job.get("required_vehicle"), str(engineer.get("vehicle") or "")):
                 failures.append("NO_VEHICLE")
                 continue
+            if job.get("required_equipment") and not _has_equipment(job, engineer):
+                failures.append("NO_EQUIPMENT")
+                continue
 
             metric = matrix.get(
                 state["point_id"],
@@ -207,6 +225,11 @@ def build_baseline_plan(
                     "transport": {
                         "required": job.get("required_vehicle"),
                         "actual": engineer.get("vehicle"),
+                        "matched": True,
+                    },
+                    "equipment": {
+                        "required": job.get("required_equipment") or [],
+                        "available": engineer.get("equipment") or [],
                         "matched": True,
                     },
                     "time_window": {

@@ -56,6 +56,8 @@
       shiftEnd: hhmm(engineer.shift_end),
       startPoint: engineer.start_point,
       status: engineer.status,
+      equipment: Array.isArray(engineer.equipment) ? engineer.equipment : Object.keys(engineer.equipment || {}),
+      equipmentSource: engineer.equipment_source || null,
       color: engineer.color || stableRouteColor(engineer.id),
     };
   }
@@ -87,6 +89,7 @@
       priorityClass: job.priority_class || null,
       requiredSkill: SKILL_LABELS[job.skill] || job.skill,
       requiredVehicle: VEHICLE_LABELS[job.required_vehicle] || job.required_vehicle || "",
+      requiredEquipment: Array.isArray(job.required_equipment) ? job.required_equipment : Object.keys(job.required_equipment || {}),
       status: job.status,
       engineerId: job.assigned_engineer_id,
       planned,

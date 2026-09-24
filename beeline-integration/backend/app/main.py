@@ -184,7 +184,13 @@ def get_plan(plan_id: str) -> dict:
 def get_plan_history(plan_id: str) -> dict:
     try:
         plans = plan_store.history(plan_id)
-        return {"plan_id": plan_id, "count": len(plans), "plans": plans}
+        return {
+            "plan_id": plan_id,
+            "count": len(plans),
+            "plans": plans,
+            "storage": "in_memory",
+            "retention_message": "История хранится до перезапуска сервиса.",
+        }
     except PlanStoreError as exc:
         raise HTTPException(
             status_code=exc.status_code,

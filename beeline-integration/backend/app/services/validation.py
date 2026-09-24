@@ -23,6 +23,18 @@ def _same_vehicle(required: str | None, actual: str) -> bool:
     return VEHICLE_ALIASES.get(required, required) == VEHICLE_ALIASES.get(actual, actual)
 
 
+def _has_equipment(job: dict[str, Any], engineer: dict[str, Any]) -> bool:
+    def counts(value: Any) -> dict[str, int]:
+        if isinstance(value, dict):
+            return {str(key): int(amount) for key, amount in value.items()}
+        result: dict[str, int] = {}
+        for item in value or []:
+            result[str(item)] = result.get(str(item), 0) + 1
+        return result
+    required, available = counts(job.get("required_equipment")), counts(engineer.get("equipment"))
+    return all(available.get(item, 0) >= amount for item, amount in required.items())
+
+
 def validate_plan(plan: dict[str, Any]) -> None:
     """Проверяет инварианты результата независимо от алгоритма."""
     jobs = {str(job["id"]): job for job in plan["jobs"]}
@@ -59,6 +71,8 @@ def validate_plan(plan: dict[str, Any]) -> None:
                 job.get("required_vehicle"), str(engineer.get("vehicle") or "")
             ):
                 raise AssertionError(f"Транспорт не подходит для заявки {job_id}.")
+            if not _has_equipment(job, engineer):
+                raise AssertionError(f"Оборудование не подходит для заявки {job_id}.")
             arrival = _dt(stop["arrival_time"])
             start = _dt(stop["service_start"])
             end = _dt(stop["service_end"])

@@ -139,9 +139,9 @@ def test_demo_ui_contract_is_wired_and_timeout_copy_is_neutral() -> None:
     api = (ROOT / "frontend" / "src" / "api.js").read_text(encoding="utf-8")
     assert 'id="demo-emergency-button"' in html
     assert "'/static/demo-emergency.json'" in html
-    assert "previewScenario({event,label:'demo-emergency east'})" in html
+    assert "previewScenario({event,label:'демо аварии в регионе «Восток»'})" in html
     assert "Найден допустимый план за" in html
-    assert "оптимум не доказан" in html
+    assert "Глобальный оптимум не подтверждён" in html
     assert "лимит времени" not in html
     assert "Backend explanation" in html
     assert "Какие заявки изменились и почему" in html
