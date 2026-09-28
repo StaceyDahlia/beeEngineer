@@ -1,0 +1,21 @@
+{
+  "name": "demo-emergency-east",
+  "scenario": "east",
+  "base_engine": "ortools_vrptw",
+  "base_solve_time_limit_ms": 3000,
+  "preview_solve_time_limit_ms": 1500,
+  "expected_ordinary_changes": {
+    "min": 2,
+    "max": 6
+  },
+  "event": {
+    "event_id": "demo-emergency-east-v1",
+    "type": "emergency_job",
+    "event_time": "2026-08-17T19:30:00+03:00",
+    "title": "Аварийное восстановление узла связи",
+    "address": "Город Москва, пер.Маяковского, д. 2",
+    "coords": [55.7397743, 37.6599082],
+    "required_vehicle": null,
+    "solve_time_limit_ms": 1500
+  }
+}

@@ -1,0 +1,3979 @@
+{
+  "jobs": [
+    {
+      "id": "southeast:67472",
+      "original_id": "67472",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 2,
+      "input_order": 0,
+      "type": "Подключение",
+      "subtype": "Заказ подключения/Дозаказ оборудования",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Домодедово",
+      "district_raw": "Домодедово",
+      "address": "Домодедово, проезд.Советский 1-й, д. 1А",
+      "location_id": "southeast:loc-001",
+      "coords": [
+        55.440674,
+        37.770155
+      ],
+      "window_start": "2026-08-17T16:00:00+03:00",
+      "window_end": "2026-08-17T18:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_building",
+          "location_id": "southeast:loc-001"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southeast:84466",
+      "original_id": "84466",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 3,
+      "input_order": 1,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Орехово Борисово Южное",
+      "district_raw": "Орехово Борисово Южное",
+      "address": "Город Москва, проезд.Гурьевский, д. 23 к 1",
+      "location_id": "southeast:loc-002",
+      "coords": [
+        55.6074243,
+        37.7536622
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-002"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southeast:14416",
+      "original_id": "14416",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 4,
+      "input_order": 2,
+      "type": "Подключение",
+      "subtype": "Заказ подключения/Дозаказ оборудования",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Зябликово",
+      "district_raw": "Зябликово",
+      "address": "Город Москва, ул.Кустанайская, д. 8 к 1",
+      "location_id": "southeast:loc-003",
+      "coords": [
+        55.6188601,
+        37.7516036
+      ],
+      "window_start": "2026-08-17T16:00:00+03:00",
+      "window_end": "2026-08-17T18:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-003"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southeast:68359",
+      "original_id": "68359",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 5,
+      "input_order": 3,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Орехово Борисово Южное",
+      "district_raw": "Орехово Борисово Южное",
+      "address": "Город Москва, ш.Каширское, д. 136",
+      "location_id": "southeast:loc-004",
+      "coords": [
+        55.5996618,
+        37.7219087
+      ],
+      "window_start": "2026-08-17T16:00:00+03:00",
+      "window_end": "2026-08-17T18:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-004"
+        }
+      },
+      "required_equipment": {
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "southeast:66944",
+      "original_id": "66944",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 6,
+      "input_order": 4,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Домодедово",
+      "district_raw": "Домодедово",
+      "address": "Домодедово, ул.Зеленая, д. 85",
+      "location_id": "southeast:loc-005",
+      "coords": [
+        55.425109,
+        37.7700594
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-005"
+        }
+      },
+      "required_equipment": {
+        "router": 1,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "southeast:52041",
+      "original_id": "52041",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 7,
+      "input_order": 5,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Москворечье - Сабурово",
+      "district_raw": "Москворечье - Сабурово",
+      "address": "Город Москва, ул.Москворечье, д. 4 к 6",
+      "location_id": "southeast:loc-006",
+      "coords": [
+        55.643317,
+        37.6548482
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-006"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southeast:23807",
+      "original_id": "23807",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 8,
+      "input_order": 6,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Бирюлево Восточное",
+      "district_raw": "Бирюлево Восточное",
+      "address": "Город Москва, проезд.Загорьевский, д. 9",
+      "location_id": "southeast:loc-007",
+      "coords": [
+        55.5780853,
+        37.6775523
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-007"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:60484",
+      "original_id": "60484",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 9,
+      "input_order": 7,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Бирюлево Восточное",
+      "district_raw": "Бирюлево Восточное",
+      "address": "Город Москва, ул.6-я Радиальная, д. 5 к 3",
+      "location_id": "southeast:loc-008",
+      "coords": [
+        55.6048694,
+        37.6607974
+      ],
+      "window_start": "2026-08-17T14:00:00+03:00",
+      "window_end": "2026-08-17T16:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-008"
+        }
+      },
+      "required_equipment": {
+        "router": 1,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "southeast:63591",
+      "original_id": "63591",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 10,
+      "input_order": 8,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Бирюлево Восточное",
+      "district_raw": "Бирюлево Восточное",
+      "address": "Город Москва, ул.Бирюлёвская, д. 39",
+      "location_id": "southeast:loc-009",
+      "coords": [
+        55.5881256,
+        37.6658771
+      ],
+      "window_start": "2026-08-17T14:00:00+03:00",
+      "window_end": "2026-08-17T16:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-009"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southeast:53552",
+      "original_id": "53552",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 11,
+      "input_order": 9,
+      "type": "Подключение",
+      "subtype": "Заказ подключения/Дозаказ оборудования",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Кашира",
+      "district_raw": "Кашира",
+      "address": "Кашира, ул.Победы, д. 9",
+      "location_id": "southeast:loc-010",
+      "coords": [
+        54.8386455,
+        38.1934317
+      ],
+      "window_start": "2026-08-17T14:00:00+03:00",
+      "window_end": "2026-08-17T16:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-010"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southeast:58066",
+      "original_id": "58066",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 12,
+      "input_order": 10,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Братеево",
+      "district_raw": "Братеево",
+      "address": "Город Москва, ул.Братеевская, д. 18 к 1",
+      "location_id": "southeast:loc-011",
+      "coords": [
+        55.6362442,
+        37.7692583
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-011"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southeast:2915",
+      "original_id": "2915",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 13,
+      "input_order": 11,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Зябликово",
+      "district_raw": "Зябликово",
+      "address": "Город Москва, б-р.Ореховый, д. 35 к 1",
+      "location_id": "southeast:loc-012",
+      "coords": [
+        55.6149375,
+        37.7354256
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-012"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:3566",
+      "original_id": "3566",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 14,
+      "input_order": 12,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Зябликово",
+      "district_raw": "Зябликово",
+      "address": "Город Москва, б-р.Ореховый, д. 35 к 1",
+      "location_id": "southeast:loc-012",
+      "coords": [
+        55.6149375,
+        37.7354256
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-012"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southeast:68946",
+      "original_id": "68946",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 15,
+      "input_order": 13,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Царицыно",
+      "district_raw": "Царицыно",
+      "address": "Город Москва, пр-кт.Пролетарский, д. 14А",
+      "location_id": "southeast:loc-013",
+      "coords": [
+        55.6360111,
+        37.6533634
+      ],
+      "window_start": "2026-08-17T16:00:00+03:00",
+      "window_end": "2026-08-17T18:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-013"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:55454",
+      "original_id": "55454",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 16,
+      "input_order": 14,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Домодедово",
+      "district_raw": "Домодедово",
+      "address": "Домодедово, ул.Корнеева, д. 50",
+      "location_id": "southeast:loc-014",
+      "coords": [
+        55.4226672,
+        37.7779539
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-014"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southeast:35057",
+      "original_id": "35057",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 17,
+      "input_order": 15,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Домодедово",
+      "district_raw": "Домодедово",
+      "address": "Домодедово, ул.Корнеева, д. 40",
+      "location_id": "southeast:loc-015",
+      "coords": [
+        55.4255128,
+        37.7783486
+      ],
+      "window_start": "2026-08-17T14:00:00+03:00",
+      "window_end": "2026-08-17T16:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-015"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southeast:75745",
+      "original_id": "75745",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 18,
+      "input_order": 16,
+      "type": "Подключение",
+      "subtype": "Заказ подключения/Дозаказ оборудования",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Домодедово",
+      "district_raw": "Домодедово",
+      "address": "Домодедово, ул.Зеленая, д. 85",
+      "location_id": "southeast:loc-005",
+      "coords": [
+        55.425109,
+        37.7700594
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-005"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:65717",
+      "original_id": "65717",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 19,
+      "input_order": 17,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Царицыно",
+      "district_raw": "Царицыно",
+      "address": "Город Москва, ул.Ереванская, д. 29",
+      "location_id": "southeast:loc-016",
+      "coords": [
+        55.629584,
+        37.6790583
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-016"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southeast:44117",
+      "original_id": "44117",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 20,
+      "input_order": 18,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Царицыно",
+      "district_raw": "Царицыно",
+      "address": "Город Москва, ул.Севанская, д. 15 к 1",
+      "location_id": "southeast:loc-017",
+      "coords": [
+        55.6234951,
+        37.6538926
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-017"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southeast:76173",
+      "original_id": "76173",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 21,
+      "input_order": 19,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Бирюлево Восточное",
+      "district_raw": "Бирюлево Восточное",
+      "address": "Город Москва, ул.6-я Радиальная, д. 7/1 к 2",
+      "location_id": "southeast:loc-018",
+      "coords": [
+        55.6037747,
+        37.6510228
+      ],
+      "window_start": "2026-08-17T16:00:00+03:00",
+      "window_end": "2026-08-17T18:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-018"
+        }
+      },
+      "required_equipment": {
+        "router": 1,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "southeast:876",
+      "original_id": "876",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 22,
+      "input_order": 20,
+      "type": "Подключение",
+      "subtype": "Заказ подключения/Дозаказ оборудования",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Бирюлево Восточное",
+      "district_raw": "Бирюлево Восточное",
+      "address": "Город Москва, проезд.Загорьевский, д. 9",
+      "location_id": "southeast:loc-007",
+      "coords": [
+        55.5780853,
+        37.6775523
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-007"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southeast:62011",
+      "original_id": "62011",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 23,
+      "input_order": 21,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Кашира",
+      "district_raw": "Кашира",
+      "address": "Кашира, ул.Садовая, д. 18",
+      "location_id": "southeast:loc-019",
+      "coords": [
+        54.8423286,
+        38.2453976
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-019"
+        }
+      },
+      "required_equipment": {
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "southeast:57353",
+      "original_id": "57353",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 24,
+      "input_order": 22,
+      "type": "Подключение",
+      "subtype": "Заказ подключения/Дозаказ оборудования",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Кашира",
+      "district_raw": "Кашира",
+      "address": "Кашира, ул.Садовая, д. 2/11",
+      "location_id": "southeast:loc-020",
+      "coords": [
+        54.8500604,
+        38.2443522
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-020"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southeast:2245",
+      "original_id": "2245",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 25,
+      "input_order": 23,
+      "type": "Подключение",
+      "subtype": "Заявка на подключение",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Братеево",
+      "district_raw": "Братеево",
+      "address": "Город Москва, ул.Паромная, д. 9 к 1",
+      "location_id": "southeast:loc-021",
+      "coords": [
+        55.6369125,
+        37.7630982
+      ],
+      "window_start": "2026-08-17T14:00:00+03:00",
+      "window_end": "2026-08-17T16:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-021"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:14494",
+      "original_id": "14494",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 26,
+      "input_order": 24,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Братеево",
+      "district_raw": "Братеево",
+      "address": "Город Москва, ул.Братеевская, д. 16 к 1",
+      "location_id": "southeast:loc-022",
+      "coords": [
+        55.6343465,
+        37.7658937
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-022"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:78920",
+      "original_id": "78920",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 27,
+      "input_order": 25,
+      "type": "Подключение",
+      "subtype": "Заявка на подключение",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Братеево",
+      "district_raw": "Братеево",
+      "address": "Город Москва, ул.Борисовские Пруды, д. 20 к 1",
+      "location_id": "southeast:loc-023",
+      "coords": [
+        55.6379834,
+        37.7518423
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-023"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:78876",
+      "original_id": "78876",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 28,
+      "input_order": 26,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Кашира",
+      "district_raw": "Кашира",
+      "address": "Кашира, ул.Юбилейная, д. 9",
+      "location_id": "southeast:loc-024",
+      "coords": [
+        54.8400884,
+        38.2494867
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-024"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southeast:23094",
+      "original_id": "23094",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 29,
+      "input_order": 27,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Кашира",
+      "district_raw": "Кашира",
+      "address": "Кашира, ул.8 Марта, д. 22",
+      "location_id": "southeast:loc-025",
+      "coords": [
+        54.844548,
+        38.239748
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_building",
+          "location_id": "southeast:loc-025"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southeast:79144",
+      "original_id": "79144",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 30,
+      "input_order": 28,
+      "type": "Подключение",
+      "subtype": "Заявка на подключение",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Орехово Борисово Северное",
+      "district_raw": "Орехово Борисово Северное",
+      "address": "Город Москва, б-р.Ореховый, д. 7 к 1",
+      "location_id": "southeast:loc-026",
+      "coords": [
+        55.6096657,
+        37.7060471
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-026"
+        }
+      },
+      "required_equipment": {
+        "router": 1,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "southeast:60141",
+      "original_id": "60141",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 31,
+      "input_order": 29,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Орехово Борисово Северное",
+      "district_raw": "Орехово Борисово Северное",
+      "address": "Город Москва, ш.Каширское, д. 94 к 1",
+      "location_id": "southeast:loc-027",
+      "coords": [
+        55.614969,
+        37.7137838
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-027"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southeast:79450",
+      "original_id": "79450",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 32,
+      "input_order": 30,
+      "type": "Подключение",
+      "subtype": "Заказ подключения/Дозаказ оборудования",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Орехово Борисово Северное",
+      "district_raw": "Орехово Борисово Северное",
+      "address": "Город Москва, б-р.Ореховый, д. 11 к 1",
+      "location_id": "southeast:loc-028",
+      "coords": [
+        55.6108754,
+        37.7128459
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-028"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southeast:58129",
+      "original_id": "58129",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 33,
+      "input_order": 31,
+      "type": "Подключение",
+      "subtype": "Заявка на подключение",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Орехово Борисово Северное",
+      "district_raw": "Орехово Борисово Северное",
+      "address": "Город Москва, проезд.Борисовский, д. 44 к 3",
+      "location_id": "southeast:loc-029",
+      "coords": [
+        55.6144125,
+        37.7226952
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-029"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southeast:93798",
+      "original_id": "93798",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 34,
+      "input_order": 32,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Зябликово",
+      "district_raw": "Зябликово",
+      "address": "Город Москва, проезд.Ореховый, д. 41",
+      "location_id": "southeast:loc-030",
+      "coords": [
+        55.6165342,
+        37.7307244
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-030"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southeast:89696",
+      "original_id": "89696",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 35,
+      "input_order": 33,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Домодедово",
+      "district_raw": "Домодедово",
+      "address": "Домодедово, ул.Ильюшина, д. 20",
+      "location_id": "southeast:loc-031",
+      "coords": [
+        55.4105367,
+        37.8378227
+      ],
+      "window_start": "2026-08-17T14:00:00+03:00",
+      "window_end": "2026-08-17T16:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-031"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southeast:20362",
+      "original_id": "20362",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 36,
+      "input_order": 34,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Кашира",
+      "district_raw": "Кашира",
+      "address": "Кашира, ул.Юбилейная, д. 8",
+      "location_id": "southeast:loc-032",
+      "coords": [
+        54.8419626,
+        38.248056
+      ],
+      "window_start": "2026-08-17T14:00:00+03:00",
+      "window_end": "2026-08-17T16:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-032"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:40698",
+      "original_id": "40698",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 37,
+      "input_order": 35,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Зябликово",
+      "district_raw": "Зябликово",
+      "address": "Город Москва, ул.Кустанайская, д. 9 к 1",
+      "location_id": "southeast:loc-033",
+      "coords": [
+        55.6180751,
+        37.7543157
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-033"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southeast:2427",
+      "original_id": "2427",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 38,
+      "input_order": 36,
+      "type": "Дозаказ",
+      "subtype": "Дозаказ оборудования",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Царицыно",
+      "district_raw": "Царицыно",
+      "address": "Город Москва, пр-кт.Пролетарский, д. 18 к 4",
+      "location_id": "southeast:loc-034",
+      "coords": [
+        55.6338547,
+        37.6538396
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 20,
+      "norm_id": "norm-4",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_additional_order",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-034"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southeast:51603",
+      "original_id": "51603",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 39,
+      "input_order": 37,
+      "type": "Дозаказ",
+      "subtype": "Заказ подключения/Дозаказ оборудования",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Братеево",
+      "district_raw": "Братеево",
+      "address": "Город Москва, ул.Борисовские Пруды, д. 20 к 1",
+      "location_id": "southeast:loc-023",
+      "coords": [
+        55.6379834,
+        37.7518423
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 20,
+      "norm_id": "norm-4",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_additional_order",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-023"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southeast:13404",
+      "original_id": "13404",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 40,
+      "input_order": 38,
+      "type": "Дозаказ",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Кашира",
+      "district_raw": "Кашира",
+      "address": "Кашира, ул.Кржижановского, д. 7",
+      "location_id": "southeast:loc-035",
+      "coords": [
+        54.8398702,
+        38.2399045
+      ],
+      "window_start": "2026-08-17T20:00:00+03:00",
+      "window_end": "2026-08-17T22:00:00+03:00",
+      "duration_min": 20,
+      "norm_id": "norm-4",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_additional_order",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-035"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southeast:72476",
+      "original_id": "72476",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 41,
+      "input_order": 39,
+      "type": "Дозаказ",
+      "subtype": "Дозаказ оборудования",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Бирюлево Западное",
+      "district_raw": "Бирюлево Западное",
+      "address": "Город Москва, ул.Медынская, д. 5 к 1",
+      "location_id": "southeast:loc-036",
+      "coords": [
+        55.5899951,
+        37.6483741
+      ],
+      "window_start": "2026-08-17T14:00:00+03:00",
+      "window_end": "2026-08-17T16:00:00+03:00",
+      "duration_min": 20,
+      "norm_id": "norm-4",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_additional_order",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-036"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southeast:90989",
+      "original_id": "90989",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 42,
+      "input_order": 40,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Домодедово",
+      "district_raw": "Домодедово",
+      "address": "Домодедово, ул.Гагарина, д. 55/2",
+      "location_id": "southeast:loc-037",
+      "coords": [
+        55.451588,
+        37.739521
+      ],
+      "window_start": "2026-08-17T16:00:00+03:00",
+      "window_end": "2026-08-17T18:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_building",
+          "location_id": "southeast:loc-037"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:7660",
+      "original_id": "7660",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 43,
+      "input_order": 41,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Домодедово",
+      "district_raw": "Домодедово",
+      "address": "Домодедово, ул.1-я Коммунистическая, д. 39",
+      "location_id": "southeast:loc-038",
+      "coords": [
+        55.4546029,
+        37.7444395
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-038"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:89067",
+      "original_id": "89067",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 44,
+      "input_order": 42,
+      "type": "Локальная заявка",
+      "subtype": "Работа с кабелем",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Братеево",
+      "district_raw": "Братеево",
+      "address": "Город Москва, ул.Борисовские Пруды, д. 48 к 2",
+      "location_id": "southeast:loc-039",
+      "coords": [
+        55.6418225,
+        37.7747995
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-039"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:65268",
+      "original_id": "65268",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 45,
+      "input_order": 43,
+      "type": "Локальная заявка",
+      "subtype": "Работа с кабелем",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Ступино",
+      "district_raw": "Ступино",
+      "address": "Ступино, ул.Калинина, д. 34",
+      "location_id": "southeast:loc-040",
+      "coords": [
+        54.8917937,
+        38.0692054
+      ],
+      "window_start": "2026-08-17T20:00:00+03:00",
+      "window_end": "2026-08-17T22:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-040"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:33880",
+      "original_id": "33880",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 46,
+      "input_order": 44,
+      "type": "Локальная заявка",
+      "subtype": "Низкая скорость",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Орехово Борисово Южное",
+      "district_raw": "Орехово Борисово Южное",
+      "address": "Город Москва, проезд.Шипиловский, д. 59 к 2",
+      "location_id": "southeast:loc-041",
+      "coords": [
+        55.6060564,
+        37.7067109
+      ],
+      "window_start": "2026-08-17T20:00:00+03:00",
+      "window_end": "2026-08-17T22:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-041"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:37590",
+      "original_id": "37590",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 47,
+      "input_order": 45,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Бирюлево Западное",
+      "district_raw": "Бирюлево Западное",
+      "address": "Город Москва, проезд.Востряковский, д. 15 к 2",
+      "location_id": "southeast:loc-042",
+      "coords": [
+        55.5760549,
+        37.6461681
+      ],
+      "window_start": "2026-08-17T20:00:00+03:00",
+      "window_end": "2026-08-17T22:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-042"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:33507",
+      "original_id": "33507",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 48,
+      "input_order": 46,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Бирюлево Восточное",
+      "district_raw": "Бирюлево Восточное",
+      "address": "Город Москва, ул.Бирюлёвская, д. 58 к 3",
+      "location_id": "southeast:loc-043",
+      "coords": [
+        55.5806701,
+        37.6681476
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_address_multiple_buildings",
+          "location_id": "southeast:loc-043"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:88209",
+      "original_id": "88209",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 49,
+      "input_order": 47,
+      "type": "Локальная заявка",
+      "subtype": "Низкая скорость",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Орехово Борисово Южное",
+      "district_raw": "Орехово Борисово Южное",
+      "address": "Город Москва, ул.Домодедовская, д. 31",
+      "location_id": "southeast:loc-044",
+      "coords": [
+        55.6039003,
+        37.7161258
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-044"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:24482",
+      "original_id": "24482",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 50,
+      "input_order": 48,
+      "type": "Локальная заявка",
+      "subtype": "Рост ошибок на порту",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Царицыно",
+      "district_raw": "Царицыно",
+      "address": "Город Москва, ул.Весёлая, д. 33 к 7",
+      "location_id": "southeast:loc-045",
+      "coords": [
+        55.6235129,
+        37.6631328
+      ],
+      "window_start": "2026-08-17T20:00:00+03:00",
+      "window_end": "2026-08-17T22:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-045"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:40111",
+      "original_id": "40111",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 51,
+      "input_order": 49,
+      "type": "Локальная заявка",
+      "subtype": "Работа с кабелем",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Ступино",
+      "district_raw": "Ступино",
+      "address": "Ступино, ул.Калинина, д. 34",
+      "location_id": "southeast:loc-040",
+      "coords": [
+        54.8917937,
+        38.0692054
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-040"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:46199",
+      "original_id": "46199",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 52,
+      "input_order": 50,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Домодедово",
+      "district_raw": "Домодедово",
+      "address": "Домодедово, ул.Ильюшина, д. 11 к 2",
+      "location_id": "southeast:loc-046",
+      "coords": [
+        55.4144868,
+        37.8424754
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-046"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:75282",
+      "original_id": "75282",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 53,
+      "input_order": 51,
+      "type": "Локальная заявка",
+      "subtype": "Роутер. Замена техническим специалистом",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Бирюлево Западное",
+      "district_raw": "Бирюлево Западное",
+      "address": "Город Москва, проезд.Востряковский, д. 15 к 4",
+      "location_id": "southeast:loc-047",
+      "coords": [
+        55.5768738,
+        37.6492402
+      ],
+      "window_start": "2026-08-17T16:00:00+03:00",
+      "window_end": "2026-08-17T18:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "replacement_label_synthetic_quantity",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-047"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southeast:63577",
+      "original_id": "63577",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 54,
+      "input_order": 52,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Домодедово",
+      "district_raw": "Домодедово",
+      "address": "Домодедово, ул.Корнеева, д. 48",
+      "location_id": "southeast:loc-048",
+      "coords": [
+        55.4235837,
+        37.7782889
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-048"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:7610",
+      "original_id": "7610",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 55,
+      "input_order": 53,
+      "type": "Локальная заявка",
+      "subtype": "Переключение на Гбит/с",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Царицыно",
+      "district_raw": "Царицыно",
+      "address": "Город Москва, ул.Луганская, д. 4 к 1",
+      "location_id": "southeast:loc-049",
+      "coords": [
+        55.6248172,
+        37.665112
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-049"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:19216",
+      "original_id": "19216",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 56,
+      "input_order": 54,
+      "type": "Локальная заявка",
+      "subtype": "TVE/ENT. Замена приставки техником",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Царицыно",
+      "district_raw": "Царицыно",
+      "address": "Город Москва, ул.Луганская, д. 3 к 1",
+      "location_id": "southeast:loc-050",
+      "coords": [
+        55.6278364,
+        37.664554
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "replacement_label_synthetic_quantity",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-050"
+        }
+      },
+      "required_equipment": {
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "southeast:11872",
+      "original_id": "11872",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 57,
+      "input_order": 55,
+      "type": "Локальная заявка",
+      "subtype": "Рост ошибок на порту",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Царицыно",
+      "district_raw": "Царицыно",
+      "address": "Город Москва, ул.Весёлая, д. 33 к 7",
+      "location_id": "southeast:loc-045",
+      "coords": [
+        55.6235129,
+        37.6631328
+      ],
+      "window_start": "2026-08-17T14:00:00+03:00",
+      "window_end": "2026-08-17T16:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-045"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:54422",
+      "original_id": "54422",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 58,
+      "input_order": 56,
+      "type": "Локальная заявка",
+      "subtype": "IP-адрес 169...",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Царицыно",
+      "district_raw": "Царицыно",
+      "address": "Город Москва, ул.Луганская, д. 1",
+      "location_id": "southeast:loc-051",
+      "coords": [
+        55.6287028,
+        37.6637203
+      ],
+      "window_start": "2026-08-17T16:00:00+03:00",
+      "window_end": "2026-08-17T18:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-051"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:4724",
+      "original_id": "4724",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 59,
+      "input_order": 57,
+      "type": "Локальная заявка",
+      "subtype": "Низкая скорость",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Царицыно",
+      "district_raw": "Царицыно",
+      "address": "Город Москва, ул.Кантемировская, д. 5 к 2",
+      "location_id": "southeast:loc-052",
+      "coords": [
+        55.6351144,
+        37.6773965
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-052"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:11899",
+      "original_id": "11899",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 60,
+      "input_order": 58,
+      "type": "Локальная заявка",
+      "subtype": "Низкая скорость",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Бирюлево Восточное",
+      "district_raw": "Бирюлево Восточное",
+      "address": "Город Москва, проезд.Загорьевский, д. 7 к 2",
+      "location_id": "southeast:loc-053",
+      "coords": [
+        55.574132,
+        37.6663646
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-053"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:60886",
+      "original_id": "60886",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 61,
+      "input_order": 59,
+      "type": "Локальная заявка",
+      "subtype": "Переключение на Гбит/с",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Орехово Борисово Северное",
+      "district_raw": "Орехово Борисово Северное",
+      "address": "Город Москва, ул.Маршала Захарова, д. 18 к 1",
+      "location_id": "southeast:loc-054",
+      "coords": [
+        55.6204412,
+        37.6958848
+      ],
+      "window_start": "2026-08-17T16:00:00+03:00",
+      "window_end": "2026-08-17T18:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-054"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:32066",
+      "original_id": "32066",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 62,
+      "input_order": 60,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Орехово Борисово Южное",
+      "district_raw": "Орехово Борисово Южное",
+      "address": "Город Москва, ул.Генерала Белова, д. 45 к 2",
+      "location_id": "southeast:loc-055",
+      "coords": [
+        55.6072105,
+        37.7261342
+      ],
+      "window_start": "2026-08-17T14:00:00+03:00",
+      "window_end": "2026-08-17T16:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-055"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:63894",
+      "original_id": "63894",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 63,
+      "input_order": 61,
+      "type": "Локальная заявка",
+      "subtype": "IP-адрес 169...",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Орехово Борисово Северное",
+      "district_raw": "Орехово Борисово Северное",
+      "address": "Город Москва, ул.Шипиловская, д. 38",
+      "location_id": "southeast:loc-056",
+      "coords": [
+        55.6205105,
+        37.7245073
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-056"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:64168",
+      "original_id": "64168",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 64,
+      "input_order": 62,
+      "type": "Локальная заявка",
+      "subtype": "TVE/ENT. Замена приставки техником",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Орехово Борисово Южное",
+      "district_raw": "Орехово Борисово Южное",
+      "address": "Город Москва, проезд.Гурьевский, д. 19 к 2",
+      "location_id": "southeast:loc-057",
+      "coords": [
+        55.607134,
+        37.7503407
+      ],
+      "window_start": "2026-08-17T16:00:00+03:00",
+      "window_end": "2026-08-17T18:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "replacement_label_synthetic_quantity",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-057"
+        }
+      },
+      "required_equipment": {
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "southeast:40919",
+      "original_id": "40919",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 65,
+      "input_order": 63,
+      "type": "Локальная заявка",
+      "subtype": "Рост ошибок на порту",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Орехово Борисово Северное",
+      "district_raw": "Орехово Борисово Северное",
+      "address": "Город Москва, проезд.Борисовский, д. 44 к 3",
+      "location_id": "southeast:loc-029",
+      "coords": [
+        55.6144125,
+        37.7226952
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-029"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:36961",
+      "original_id": "36961",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 66,
+      "input_order": 64,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Зябликово",
+      "district_raw": "Зябликово",
+      "address": "Город Москва, проезд.Ореховый, д. 23 к 1",
+      "location_id": "southeast:loc-058",
+      "coords": [
+        55.6228247,
+        37.7313782
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-058"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:12329",
+      "original_id": "12329",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 67,
+      "input_order": 65,
+      "type": "Локальная заявка",
+      "subtype": "Разрывы",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Бирюлево Западное",
+      "district_raw": "Бирюлево Западное",
+      "address": "Город Москва, ул.Булатниковская, д. 4 к 1",
+      "location_id": "southeast:loc-059",
+      "coords": [
+        55.5812013,
+        37.6475142
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-059"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:95692",
+      "original_id": "95692",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 68,
+      "input_order": 66,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Зябликово",
+      "district_raw": "Зябликово",
+      "address": "Город Москва, б-р.Ореховый, д. 61 к 1",
+      "location_id": "southeast:loc-060",
+      "coords": [
+        55.6170816,
+        37.7583887
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-060"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:13583",
+      "original_id": "13583",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 69,
+      "input_order": 67,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Домодедово",
+      "district_raw": "Домодедово",
+      "address": "Домодедово, проезд.Кутузовский, д. 16",
+      "location_id": "southeast:loc-061",
+      "coords": [
+        55.4371874,
+        37.7619456
+      ],
+      "window_start": "2026-08-17T14:00:00+03:00",
+      "window_end": "2026-08-17T16:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-061"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:3151",
+      "original_id": "3151",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 70,
+      "input_order": 68,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Кашира",
+      "district_raw": "Кашира",
+      "address": "Кашира, ул.Ленина, д. 11 к 3",
+      "location_id": "southeast:loc-062",
+      "coords": [
+        54.8429121,
+        38.1907273
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-062"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:45778",
+      "original_id": "45778",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 71,
+      "input_order": 69,
+      "type": "Локальная заявка",
+      "subtype": "Рост ошибок на порту",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Кашира",
+      "district_raw": "Кашира",
+      "address": "Кашира, ул.Металлургов, д. 5 к 3",
+      "location_id": "southeast:loc-063",
+      "coords": [
+        54.8409976,
+        38.1897638
+      ],
+      "window_start": "2026-08-17T14:00:00+03:00",
+      "window_end": "2026-08-17T16:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-063"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:20055",
+      "original_id": "20055",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 72,
+      "input_order": 70,
+      "type": "Локальная заявка",
+      "subtype": "IP-адрес 169...",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Зябликово",
+      "district_raw": "Зябликово",
+      "address": "Город Москва, ул.Мусы Джалиля, д. 9 к 1",
+      "location_id": "southeast:loc-064",
+      "coords": [
+        55.6274499,
+        37.7437967
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-064"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:7258",
+      "original_id": "7258",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 73,
+      "input_order": 71,
+      "type": "Глобальная проблема",
+      "subtype": "Авария",
+      "skill": "emergency",
+      "priority": "Обычная",
+      "district": "Домодедово",
+      "district_raw": "Домодедово",
+      "address": "обл.Московская область, г.Домодедово, пгт.Востряково-1, ул.Жуковского, д. 14/18",
+      "location_id": "southeast:loc-065",
+      "coords": [
+        55.41209,
+        37.839621
+      ],
+      "window_start": "2026-08-17T20:00:00+03:00",
+      "window_end": "2026-08-17T22:00:00+03:00",
+      "duration_min": 80,
+      "norm_id": "norm-3",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_building",
+          "location_id": "southeast:loc-065"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:78673",
+      "original_id": "78673",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 74,
+      "input_order": 72,
+      "type": "Глобальная проблема",
+      "subtype": "Авария",
+      "skill": "emergency",
+      "priority": "Обычная",
+      "district": "Кашира",
+      "district_raw": "Кашира",
+      "address": "МО, г. Кашира Центральная ул. д. 21",
+      "location_id": "southeast:loc-066",
+      "coords": [
+        54.8421235,
+        38.2397671
+      ],
+      "window_start": "2026-08-17T00:01:00+03:00",
+      "window_end": "2026-08-17T23:59:00+03:00",
+      "duration_min": 80,
+      "norm_id": "norm-3",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-066"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:98998",
+      "original_id": "98998",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 75,
+      "input_order": 73,
+      "type": "Глобальная проблема",
+      "subtype": "Авария",
+      "skill": "emergency",
+      "priority": "Обычная",
+      "district": "Кашира",
+      "district_raw": "Кашира",
+      "address": "МО, г. Кашира Кржижановского ул. д. 5/1",
+      "location_id": "southeast:loc-067",
+      "coords": [
+        54.840976,
+        38.239527
+      ],
+      "window_start": "2026-08-17T00:01:00+03:00",
+      "window_end": "2026-08-17T23:59:00+03:00",
+      "duration_min": 80,
+      "norm_id": "norm-3",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_building",
+          "location_id": "southeast:loc-067"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:32589",
+      "original_id": "32589",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 76,
+      "input_order": 74,
+      "type": "Глобальная проблема",
+      "subtype": "Авария",
+      "skill": "emergency",
+      "priority": "Обычная",
+      "district": "Кашира",
+      "district_raw": "Кашира",
+      "address": "МО, г. Кашира Кржижановского ул. д. 7к2",
+      "location_id": "southeast:loc-068",
+      "coords": [
+        54.8399225,
+        38.2415926
+      ],
+      "window_start": "2026-08-17T00:01:00+03:00",
+      "window_end": "2026-08-17T23:59:00+03:00",
+      "duration_min": 80,
+      "norm_id": "norm-3",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-068"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:51774",
+      "original_id": "51774",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 77,
+      "input_order": 75,
+      "type": "Глобальная проблема",
+      "subtype": "Авария",
+      "skill": "emergency",
+      "priority": "Обычная",
+      "district": "Кашира",
+      "district_raw": "Кашира",
+      "address": "МО, г. Кашира Кржижановского ул. д. 5/3",
+      "location_id": "southeast:loc-069",
+      "coords": [
+        54.840831,
+        38.242986
+      ],
+      "window_start": "2026-08-17T00:01:00+03:00",
+      "window_end": "2026-08-17T23:59:00+03:00",
+      "duration_min": 80,
+      "norm_id": "norm-3",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_building",
+          "location_id": "southeast:loc-069"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:90915",
+      "original_id": "90915",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 78,
+      "input_order": 76,
+      "type": "Глобальная проблема",
+      "subtype": "Авария",
+      "skill": "emergency",
+      "priority": "Обычная",
+      "district": "Кашира",
+      "district_raw": "Кашира",
+      "address": "МО, г. Кашира Кржижановского ул. д. 5/2",
+      "location_id": "southeast:loc-070",
+      "coords": [
+        54.840664,
+        38.242023
+      ],
+      "window_start": "2026-08-17T00:01:00+03:00",
+      "window_end": "2026-08-17T23:59:00+03:00",
+      "duration_min": 80,
+      "norm_id": "norm-3",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_building",
+          "location_id": "southeast:loc-070"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:45243",
+      "original_id": "45243",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 79,
+      "input_order": 77,
+      "type": "Глобальная проблема",
+      "subtype": "Авария",
+      "skill": "emergency",
+      "priority": "Обычная",
+      "district": "Кашира",
+      "district_raw": "Кашира",
+      "address": "МО, г. Кашира Кржижановского ул. д. 5/1",
+      "location_id": "southeast:loc-067",
+      "coords": [
+        54.840976,
+        38.239527
+      ],
+      "window_start": "2026-08-17T00:01:00+03:00",
+      "window_end": "2026-08-17T23:59:00+03:00",
+      "duration_min": 80,
+      "norm_id": "norm-3",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_building",
+          "location_id": "southeast:loc-067"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:81698",
+      "original_id": "81698",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 80,
+      "input_order": 78,
+      "type": "Глобальная проблема",
+      "subtype": "Авария",
+      "skill": "emergency",
+      "priority": "Обычная",
+      "district": "Ступино",
+      "district_raw": "Ступино",
+      "address": "МО, г. Ступино Андропова ул. д. 37",
+      "location_id": "southeast:loc-071",
+      "coords": [
+        54.8858274,
+        38.0821597
+      ],
+      "window_start": "2026-08-17T00:01:00+03:00",
+      "window_end": "2026-08-17T23:59:00+03:00",
+      "duration_min": 80,
+      "norm_id": "norm-3",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-071"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:97168",
+      "original_id": "97168",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 81,
+      "input_order": 79,
+      "type": "Глобальная проблема",
+      "subtype": "Авария",
+      "skill": "emergency",
+      "priority": "Обычная",
+      "district": "Ступино",
+      "district_raw": "Ступино",
+      "address": "МО, г. Ступино Андропова ул. д. 33",
+      "location_id": "southeast:loc-072",
+      "coords": [
+        54.8857555,
+        38.082999
+      ],
+      "window_start": "2026-08-17T00:01:00+03:00",
+      "window_end": "2026-08-17T23:59:00+03:00",
+      "duration_min": 80,
+      "norm_id": "norm-3",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-072"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:65034",
+      "original_id": "65034",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 82,
+      "input_order": 80,
+      "type": "Глобальная проблема",
+      "subtype": "Авария",
+      "skill": "emergency",
+      "priority": "Обычная",
+      "district": "Кашира",
+      "district_raw": "Кашира",
+      "address": "МО, г. Кашира Центральная ул. д. 19",
+      "location_id": "southeast:loc-073",
+      "coords": [
+        54.8415134,
+        38.2407727
+      ],
+      "window_start": "2026-08-17T00:01:00+03:00",
+      "window_end": "2026-08-17T23:59:00+03:00",
+      "duration_min": 80,
+      "norm_id": "norm-3",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-073"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:1287",
+      "original_id": "1287",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 83,
+      "input_order": 81,
+      "type": "Глобальная проблема",
+      "subtype": "Авария",
+      "skill": "emergency",
+      "priority": "Обычная",
+      "district": "Бирюлево Восточное",
+      "district_raw": "Бирюлево Восточное",
+      "address": "Москва Бирюлевская ул. д. 44",
+      "location_id": "southeast:loc-074",
+      "coords": [
+        55.58642,
+        37.664394
+      ],
+      "window_start": "2026-08-17T00:01:00+03:00",
+      "window_end": "2026-08-17T23:59:00+03:00",
+      "duration_min": 80,
+      "norm_id": "norm-3",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "approximate_nearby_building",
+          "location_id": "southeast:loc-074"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southeast:31495",
+      "original_id": "31495",
+      "source": "southeast_synthetic",
+      "source_file": "Юго-восток Синтетические данные.csv",
+      "source_row": 84,
+      "input_order": 82,
+      "type": "Глобальная проблема",
+      "subtype": "Авария",
+      "skill": "emergency",
+      "priority": "Обычная",
+      "district": "Бирюлево Западное",
+      "district_raw": "Бирюлево Западное",
+      "address": "Москва Булатниковский пр-зд. д. 6к1",
+      "location_id": "southeast:loc-075",
+      "coords": [
+        55.5936117,
+        37.6513869
+      ],
+      "window_start": "2026-08-17T00:01:00+03:00",
+      "window_end": "2026-08-17T23:59:00+03:00",
+      "duration_min": 80,
+      "norm_id": "norm-3",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southeast:loc-075"
+        }
+      },
+      "required_equipment": {}
+    }
+  ]
+}

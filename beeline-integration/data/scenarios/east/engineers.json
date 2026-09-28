@@ -1,0 +1,784 @@
+{
+  "schema_version": "0.1",
+  "engineers": [
+    {
+      "id": "east:eng-001",
+      "name": "Бригада Соколов",
+      "scenario_id": "east",
+      "skills": [
+        "local",
+        "emergency"
+      ],
+      "vehicle": "ОТ",
+      "shift_start": "2026-08-17T10:00:00+03:00",
+      "shift_end": "2026-08-17T19:00:00+03:00",
+      "start_location_id": "east:office",
+      "start_address": "г. Москва, ул Юных Ленинцев, д 83с 4",
+      "start_point": [
+        55.702293,
+        37.77392
+      ],
+      "status": "Доступен",
+      "shift_profile": "early",
+      "provenance": {
+        "id": "scenario_scoped_observed_roster",
+        "name": "control_csv",
+        "start_address": "scenario_office_from_synthetic_csv",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_corrected",
+          "location_id": "east:office"
+        },
+        "skills": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "vehicle": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_start": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_end": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "status": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "inventory_start": {
+          "kind": "synthetic",
+          "rule": "skill_eligible_round_robin",
+          "version": "1.0"
+        }
+      },
+      "inventory_start": {
+        "router": 1,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "east:eng-002",
+      "name": "Бригада Мельников",
+      "scenario_id": "east",
+      "skills": [
+        "connect",
+        "local",
+        "emergency"
+      ],
+      "vehicle": "ОТ",
+      "shift_start": "2026-08-17T10:00:00+03:00",
+      "shift_end": "2026-08-17T19:00:00+03:00",
+      "start_location_id": "east:office",
+      "start_address": "г. Москва, ул Юных Ленинцев, д 83с 4",
+      "start_point": [
+        55.702293,
+        37.77392
+      ],
+      "status": "Доступен",
+      "shift_profile": "early",
+      "provenance": {
+        "id": "scenario_scoped_observed_roster",
+        "name": "control_csv",
+        "start_address": "scenario_office_from_synthetic_csv",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_corrected",
+          "location_id": "east:office"
+        },
+        "skills": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "vehicle": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_start": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_end": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "status": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "inventory_start": {
+          "kind": "synthetic",
+          "rule": "skill_eligible_round_robin",
+          "version": "1.0"
+        }
+      },
+      "inventory_start": {
+        "router": 2,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "east:eng-003",
+      "name": "Бригада Матвеев",
+      "scenario_id": "east",
+      "skills": [
+        "local"
+      ],
+      "vehicle": "Пешеход",
+      "shift_start": "2026-08-17T10:00:00+03:00",
+      "shift_end": "2026-08-17T19:00:00+03:00",
+      "start_location_id": "east:office",
+      "start_address": "г. Москва, ул Юных Ленинцев, д 83с 4",
+      "start_point": [
+        55.702293,
+        37.77392
+      ],
+      "status": "Доступен",
+      "shift_profile": "early",
+      "provenance": {
+        "id": "scenario_scoped_observed_roster",
+        "name": "control_csv",
+        "start_address": "scenario_office_from_synthetic_csv",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_corrected",
+          "location_id": "east:office"
+        },
+        "skills": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "vehicle": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_start": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_end": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "status": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "inventory_start": {
+          "kind": "synthetic",
+          "rule": "skill_eligible_round_robin",
+          "version": "1.0"
+        }
+      },
+      "inventory_start": {
+        "router": 2,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "east:eng-004",
+      "name": "Бригада Попов",
+      "scenario_id": "east",
+      "skills": [
+        "connect",
+        "local"
+      ],
+      "vehicle": "Велосипед",
+      "shift_start": "2026-08-17T13:00:00+03:00",
+      "shift_end": "2026-08-17T22:00:00+03:00",
+      "start_location_id": "east:office",
+      "start_address": "г. Москва, ул Юных Ленинцев, д 83с 4",
+      "start_point": [
+        55.702293,
+        37.77392
+      ],
+      "status": "Доступен",
+      "shift_profile": "late",
+      "provenance": {
+        "id": "scenario_scoped_observed_roster",
+        "name": "control_csv",
+        "start_address": "scenario_office_from_synthetic_csv",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_corrected",
+          "location_id": "east:office"
+        },
+        "skills": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "vehicle": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_start": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_end": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "status": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "inventory_start": {
+          "kind": "synthetic",
+          "rule": "skill_eligible_round_robin",
+          "version": "1.0"
+        }
+      },
+      "inventory_start": {
+        "router": 2,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "east:eng-005",
+      "name": "Бригада Арташкин",
+      "scenario_id": "east",
+      "skills": [
+        "connect",
+        "local",
+        "emergency"
+      ],
+      "vehicle": "Автомобиль",
+      "shift_start": "2026-08-17T13:00:00+03:00",
+      "shift_end": "2026-08-17T22:00:00+03:00",
+      "start_location_id": "east:office",
+      "start_address": "г. Москва, ул Юных Ленинцев, д 83с 4",
+      "start_point": [
+        55.702293,
+        37.77392
+      ],
+      "status": "Доступен",
+      "shift_profile": "late",
+      "provenance": {
+        "id": "scenario_scoped_observed_roster",
+        "name": "control_csv",
+        "start_address": "scenario_office_from_synthetic_csv",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_corrected",
+          "location_id": "east:office"
+        },
+        "skills": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "vehicle": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_start": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_end": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "status": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "inventory_start": {
+          "kind": "synthetic",
+          "rule": "skill_eligible_round_robin",
+          "version": "1.0"
+        }
+      },
+      "inventory_start": {
+        "router": 2,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "east:eng-006",
+      "name": "Бригада Комарь",
+      "scenario_id": "east",
+      "skills": [
+        "local"
+      ],
+      "vehicle": "Пешеход",
+      "shift_start": "2026-08-17T13:00:00+03:00",
+      "shift_end": "2026-08-17T22:00:00+03:00",
+      "start_location_id": "east:office",
+      "start_address": "г. Москва, ул Юных Ленинцев, д 83с 4",
+      "start_point": [
+        55.702293,
+        37.77392
+      ],
+      "status": "Доступен",
+      "shift_profile": "late",
+      "provenance": {
+        "id": "scenario_scoped_observed_roster",
+        "name": "control_csv",
+        "start_address": "scenario_office_from_synthetic_csv",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_corrected",
+          "location_id": "east:office"
+        },
+        "skills": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "vehicle": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_start": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_end": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "status": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "inventory_start": {
+          "kind": "synthetic",
+          "rule": "skill_eligible_round_robin",
+          "version": "1.0"
+        }
+      },
+      "inventory_start": {
+        "router": 1,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "east:eng-007",
+      "name": "Бригада Каушнян",
+      "scenario_id": "east",
+      "skills": [
+        "connect",
+        "emergency"
+      ],
+      "vehicle": "Автомобиль",
+      "shift_start": "2026-08-17T13:00:00+03:00",
+      "shift_end": "2026-08-17T22:00:00+03:00",
+      "start_location_id": "east:office",
+      "start_address": "г. Москва, ул Юных Ленинцев, д 83с 4",
+      "start_point": [
+        55.702293,
+        37.77392
+      ],
+      "status": "Доступен",
+      "shift_profile": "late",
+      "provenance": {
+        "id": "scenario_scoped_observed_roster",
+        "name": "control_csv",
+        "start_address": "scenario_office_from_synthetic_csv",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_corrected",
+          "location_id": "east:office"
+        },
+        "skills": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "vehicle": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_start": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_end": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "status": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "inventory_start": {
+          "kind": "synthetic",
+          "rule": "skill_eligible_round_robin",
+          "version": "1.0"
+        }
+      },
+      "inventory_start": {
+        "router": 2,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "east:eng-008",
+      "name": "Бригада Зверев",
+      "scenario_id": "east",
+      "skills": [
+        "connect",
+        "local"
+      ],
+      "vehicle": "ОТ",
+      "shift_start": "2026-08-17T10:00:00+03:00",
+      "shift_end": "2026-08-17T19:00:00+03:00",
+      "start_location_id": "east:office",
+      "start_address": "г. Москва, ул Юных Ленинцев, д 83с 4",
+      "start_point": [
+        55.702293,
+        37.77392
+      ],
+      "status": "Доступен",
+      "shift_profile": "early",
+      "provenance": {
+        "id": "scenario_scoped_observed_roster",
+        "name": "control_csv",
+        "start_address": "scenario_office_from_synthetic_csv",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_corrected",
+          "location_id": "east:office"
+        },
+        "skills": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "vehicle": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_start": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_end": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "status": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "inventory_start": {
+          "kind": "synthetic",
+          "rule": "skill_eligible_round_robin",
+          "version": "1.0"
+        }
+      },
+      "inventory_start": {
+        "router": 2,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "east:eng-009",
+      "name": "Бригада Перов",
+      "scenario_id": "east",
+      "skills": [
+        "connect"
+      ],
+      "vehicle": "ОТ",
+      "shift_start": "2026-08-17T13:00:00+03:00",
+      "shift_end": "2026-08-17T22:00:00+03:00",
+      "start_location_id": "east:office",
+      "start_address": "г. Москва, ул Юных Ленинцев, д 83с 4",
+      "start_point": [
+        55.702293,
+        37.77392
+      ],
+      "status": "Доступен",
+      "shift_profile": "late",
+      "provenance": {
+        "id": "scenario_scoped_observed_roster",
+        "name": "control_csv",
+        "start_address": "scenario_office_from_synthetic_csv",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_corrected",
+          "location_id": "east:office"
+        },
+        "skills": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "vehicle": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_start": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_end": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "status": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "inventory_start": {
+          "kind": "synthetic",
+          "rule": "skill_eligible_round_robin",
+          "version": "1.0"
+        }
+      },
+      "inventory_start": {
+        "router": 2,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "east:eng-010",
+      "name": "Бригада Белузин",
+      "scenario_id": "east",
+      "skills": [
+        "connect",
+        "local",
+        "emergency"
+      ],
+      "vehicle": "ОТ",
+      "shift_start": "2026-08-17T13:00:00+03:00",
+      "shift_end": "2026-08-17T22:00:00+03:00",
+      "start_location_id": "east:office",
+      "start_address": "г. Москва, ул Юных Ленинцев, д 83с 4",
+      "start_point": [
+        55.702293,
+        37.77392
+      ],
+      "status": "Доступен",
+      "shift_profile": "late",
+      "provenance": {
+        "id": "scenario_scoped_observed_roster",
+        "name": "control_csv",
+        "start_address": "scenario_office_from_synthetic_csv",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_corrected",
+          "location_id": "east:office"
+        },
+        "skills": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "vehicle": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_start": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_end": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "status": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "inventory_start": {
+          "kind": "synthetic",
+          "rule": "skill_eligible_round_robin",
+          "version": "1.0"
+        }
+      },
+      "inventory_start": {
+        "router": 1,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "east:eng-011",
+      "name": "Бригада Гусаковский",
+      "scenario_id": "east",
+      "skills": [
+        "connect"
+      ],
+      "vehicle": "Автомобиль",
+      "shift_start": "2026-08-17T10:00:00+03:00",
+      "shift_end": "2026-08-17T19:00:00+03:00",
+      "start_location_id": "east:office",
+      "start_address": "г. Москва, ул Юных Ленинцев, д 83с 4",
+      "start_point": [
+        55.702293,
+        37.77392
+      ],
+      "status": "Доступен",
+      "shift_profile": "early",
+      "provenance": {
+        "id": "scenario_scoped_observed_roster",
+        "name": "control_csv",
+        "start_address": "scenario_office_from_synthetic_csv",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_corrected",
+          "location_id": "east:office"
+        },
+        "skills": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "vehicle": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_start": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_end": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "status": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "inventory_start": {
+          "kind": "synthetic",
+          "rule": "skill_eligible_round_robin",
+          "version": "1.0"
+        }
+      },
+      "inventory_start": {
+        "router": 2,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "east:eng-012",
+      "name": "Бригада Свеженцев",
+      "scenario_id": "east",
+      "skills": [
+        "connect",
+        "local"
+      ],
+      "vehicle": "ОТ",
+      "shift_start": "2026-08-17T10:00:00+03:00",
+      "shift_end": "2026-08-17T19:00:00+03:00",
+      "start_location_id": "east:office",
+      "start_address": "г. Москва, ул Юных Ленинцев, д 83с 4",
+      "start_point": [
+        55.702293,
+        37.77392
+      ],
+      "status": "Доступен",
+      "shift_profile": "early",
+      "provenance": {
+        "id": "scenario_scoped_observed_roster",
+        "name": "control_csv",
+        "start_address": "scenario_office_from_synthetic_csv",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_corrected",
+          "location_id": "east:office"
+        },
+        "skills": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "vehicle": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_start": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_end": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "status": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "inventory_start": {
+          "kind": "synthetic",
+          "rule": "skill_eligible_round_robin",
+          "version": "1.0"
+        }
+      },
+      "inventory_start": {
+        "router": 2,
+        "tv_box": 1
+      }
+    }
+  ]
+}

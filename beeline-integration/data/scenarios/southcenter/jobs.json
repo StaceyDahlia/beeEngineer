@@ -1,0 +1,2691 @@
+{
+  "jobs": [
+    {
+      "id": "southcenter:32840",
+      "original_id": "32840",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 2,
+      "input_order": 0,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Даниловский",
+      "district_raw": "Даниловский",
+      "address": "Город Москва, проезд.3-й Павелецкий, д. 9",
+      "location_id": "southcenter:loc-001",
+      "coords": [
+        55.7107376,
+        37.6405504
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-001"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southcenter:78540",
+      "original_id": "78540",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 3,
+      "input_order": 1,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Даниловский",
+      "district_raw": "Даниловский",
+      "address": "Город Москва, ул.Восточная, д. 2 к 2",
+      "location_id": "southcenter:loc-002",
+      "coords": [
+        55.7169675,
+        37.6604783
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-002"
+        }
+      },
+      "required_equipment": {
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "southcenter:66376",
+      "original_id": "66376",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 4,
+      "input_order": 2,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Даниловский",
+      "district_raw": "GPON Даниловский",
+      "address": "Город Москва, ул.Дубининская, д. 59 к 2",
+      "location_id": "southcenter:loc-003",
+      "coords": [
+        55.7193551268,
+        37.6370701389
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_external_building",
+          "location_id": "southcenter:loc-003"
+        }
+      },
+      "required_equipment": {
+        "router": 1,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "southcenter:23637",
+      "original_id": "23637",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 5,
+      "input_order": 3,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Академический",
+      "district_raw": "Академический",
+      "address": "Город Москва, ул.Шверника, д. 18 к 2",
+      "location_id": "southcenter:loc-004",
+      "coords": [
+        55.6890678,
+        37.5927091
+      ],
+      "window_start": "2026-08-17T20:00:00+03:00",
+      "window_end": "2026-08-17T22:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-004"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southcenter:97770",
+      "original_id": "97770",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 6,
+      "input_order": 4,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Котловка",
+      "district_raw": "Котловка",
+      "address": "Город Москва, ул.Нагорная, д. 44 к 2",
+      "location_id": "southcenter:loc-005",
+      "coords": [
+        55.6702038,
+        37.5892003
+      ],
+      "window_start": "2026-08-17T20:00:00+03:00",
+      "window_end": "2026-08-17T22:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-005"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southcenter:55711",
+      "original_id": "55711",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 7,
+      "input_order": 5,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Зюзино",
+      "district_raw": "Зюзино",
+      "address": "Город Москва, ул.Херсонская, д. 18",
+      "location_id": "southcenter:loc-006",
+      "coords": [
+        55.6520916,
+        37.5678576
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-006"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southcenter:76944",
+      "original_id": "76944",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 8,
+      "input_order": 6,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Академический",
+      "district_raw": "Академический",
+      "address": "Город Москва, пр-кт.60-летия Октября, д. 18 к 2",
+      "location_id": "southcenter:loc-007",
+      "coords": [
+        55.6894338,
+        37.573364
+      ],
+      "window_start": "2026-08-17T16:00:00+03:00",
+      "window_end": "2026-08-17T18:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-007"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southcenter:75881",
+      "original_id": "75881",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 9,
+      "input_order": 7,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Академический",
+      "district_raw": "Академический",
+      "address": "Город Москва, ул.Дмитрия Ульянова, д. 27",
+      "location_id": "southcenter:loc-008",
+      "coords": [
+        55.6858472,
+        37.5809496
+      ],
+      "window_start": "2026-08-17T14:00:00+03:00",
+      "window_end": "2026-08-17T16:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-008"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southcenter:85188",
+      "original_id": "85188",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 10,
+      "input_order": 8,
+      "type": "Подключение",
+      "subtype": "Заказ подключения/Дозаказ оборудования",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Хамовники",
+      "district_raw": "Хамовники",
+      "address": "Город Москва, ул.Усачёва, д. 29 к 1",
+      "location_id": "southcenter:loc-009",
+      "coords": [
+        55.7242516,
+        37.5634155
+      ],
+      "window_start": "2026-08-17T16:00:00+03:00",
+      "window_end": "2026-08-17T18:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-009"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southcenter:19376",
+      "original_id": "19376",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 11,
+      "input_order": 9,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Академический",
+      "district_raw": "Академический",
+      "address": "Город Москва, ул.Винокурова, д. 12 к 4",
+      "location_id": "southcenter:loc-010",
+      "coords": [
+        55.6854662,
+        37.5883596
+      ],
+      "window_start": "2026-08-17T16:00:00+03:00",
+      "window_end": "2026-08-17T18:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-010"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southcenter:6185",
+      "original_id": "6185",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 12,
+      "input_order": 10,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Зюзино",
+      "district_raw": "Зюзино",
+      "address": "Город Москва, пр-кт.Балаклавский, д. 20 к 4",
+      "location_id": "southcenter:loc-011",
+      "coords": [
+        55.6423446,
+        37.5959185
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-011"
+        }
+      },
+      "required_equipment": {
+        "router": 1,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "southcenter:80548",
+      "original_id": "80548",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 13,
+      "input_order": 11,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Нагатино - Садовники",
+      "district_raw": "Нагатино - Садовники",
+      "address": "Город Москва, ул.Садовники, д. 10 к 1",
+      "location_id": "southcenter:loc-012",
+      "coords": [
+        55.6710631,
+        37.6527567
+      ],
+      "window_start": "2026-08-17T16:00:00+03:00",
+      "window_end": "2026-08-17T18:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-012"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southcenter:76452",
+      "original_id": "76452",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 14,
+      "input_order": 12,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Зюзино",
+      "district_raw": "Зюзино",
+      "address": "Город Москва, ул.Каховка, д. 7 к 1",
+      "location_id": "southcenter:loc-013",
+      "coords": [
+        55.6510015,
+        37.5899929
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-013"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southcenter:47560",
+      "original_id": "47560",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 15,
+      "input_order": 13,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Замоскворечье",
+      "district_raw": "Замоскворечье",
+      "address": "Город Москва, ул.Большая Пионерская, д. 33 к 2",
+      "location_id": "southcenter:loc-014",
+      "coords": [
+        55.7261963,
+        37.6351637
+      ],
+      "window_start": "2026-08-17T16:00:00+03:00",
+      "window_end": "2026-08-17T18:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-014"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southcenter:79707",
+      "original_id": "79707",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 16,
+      "input_order": 14,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Хамовники",
+      "district_raw": "Хамовники",
+      "address": "Город Москва, ул.Плющиха, д. 42",
+      "location_id": "southcenter:loc-015",
+      "coords": [
+        55.7411713,
+        37.5763858
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-015"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southcenter:23142",
+      "original_id": "23142",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 17,
+      "input_order": 15,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Нагатинский Затон",
+      "district_raw": "Нагатинский Затон",
+      "address": "Город Москва, ул.Судостроительная, д. 31 к 3",
+      "location_id": "southcenter:loc-016",
+      "coords": [
+        55.6848526,
+        37.6804749
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-016"
+        }
+      },
+      "required_equipment": {
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "southcenter:10776",
+      "original_id": "10776",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 18,
+      "input_order": 16,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Нагатинский Затон",
+      "district_raw": "Нагатинский Затон",
+      "address": "Город Москва, ул.Судостроительная, д. 36",
+      "location_id": "southcenter:loc-017",
+      "coords": [
+        55.6841931,
+        37.6875838
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-017"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southcenter:94447",
+      "original_id": "94447",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 19,
+      "input_order": 17,
+      "type": "Подключение",
+      "subtype": "Заказ подключения/Дозаказ оборудования",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Нагатинский Затон",
+      "district_raw": "Нагатинский Затон",
+      "address": "Город Москва, ул.Затонная, д. 11 к 3",
+      "location_id": "southcenter:loc-018",
+      "coords": [
+        55.6790858,
+        37.6884067
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-018"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southcenter:94575",
+      "original_id": "94575",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 20,
+      "input_order": 18,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Даниловский",
+      "district_raw": "Даниловский",
+      "address": "Город Москва, ул.Автозаводская, д. 11",
+      "location_id": "southcenter:loc-019",
+      "coords": [
+        55.706526,
+        37.6576591
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_address_multiple_buildings",
+          "location_id": "southcenter:loc-019"
+        }
+      },
+      "required_equipment": {
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "southcenter:94431",
+      "original_id": "94431",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 21,
+      "input_order": 19,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Академический",
+      "district_raw": "Академический",
+      "address": "Город Москва, ул.Шверника, д. 12/2 к 3",
+      "location_id": "southcenter:loc-020",
+      "coords": [
+        55.6913492,
+        37.5866891
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-020"
+        }
+      },
+      "required_equipment": {
+        "router": 1,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "southcenter:52576",
+      "original_id": "52576",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 22,
+      "input_order": 20,
+      "type": "Подключение",
+      "subtype": "Заявка на подключение",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Нагатинский Затон",
+      "district_raw": "Нагатинский Затон",
+      "address": "Город Москва, ул.Судостроительная, д. 27 к 2",
+      "location_id": "southcenter:loc-021",
+      "coords": [
+        55.683529,
+        37.6793639
+      ],
+      "window_start": "2026-08-17T20:00:00+03:00",
+      "window_end": "2026-08-17T22:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-021"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southcenter:66315",
+      "original_id": "66315",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 23,
+      "input_order": 21,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Академический",
+      "district_raw": "Академический",
+      "address": "Город Москва, ул.Шверника, д. 3",
+      "location_id": "southcenter:loc-022",
+      "coords": [
+        55.694198,
+        37.5818461
+      ],
+      "window_start": "2026-08-17T16:00:00+03:00",
+      "window_end": "2026-08-17T18:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-022"
+        }
+      },
+      "required_equipment": {
+        "router": 1,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "southcenter:93544",
+      "original_id": "93544",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 24,
+      "input_order": 22,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Зюзино",
+      "district_raw": "Зюзино",
+      "address": "Город Москва, б-р.Черноморский, д. 19 к 2",
+      "location_id": "southcenter:loc-023",
+      "coords": [
+        55.6448239,
+        37.5978906
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-023"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southcenter:19203",
+      "original_id": "19203",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 25,
+      "input_order": 23,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Зюзино",
+      "district_raw": "Зюзино",
+      "address": "Город Москва, ул.Керченская, д. 6 к 2",
+      "location_id": "southcenter:loc-024",
+      "coords": [
+        55.6572931,
+        37.583089
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-024"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southcenter:16024",
+      "original_id": "16024",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 26,
+      "input_order": 24,
+      "type": "Подключение",
+      "subtype": "Заявка на подключение",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Нагатинский Затон",
+      "district_raw": "Нагатинский Затон",
+      "address": "Город Москва, б-р.Кленовый, д. 10 к 1",
+      "location_id": "southcenter:loc-025",
+      "coords": [
+        55.6827402,
+        37.6732411
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-025"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southcenter:90373",
+      "original_id": "90373",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 27,
+      "input_order": 25,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Нагатинский Затон",
+      "district_raw": "Нагатинский Затон",
+      "address": "Город Москва, ул.Коломенская, д. 5",
+      "location_id": "southcenter:loc-026",
+      "coords": [
+        55.6821727,
+        37.704796
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-026"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southcenter:79719",
+      "original_id": "79719",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 28,
+      "input_order": 26,
+      "type": "Подключение",
+      "subtype": "Заказ подключения/Дозаказ оборудования",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Хамовники",
+      "district_raw": "Хамовники",
+      "address": "Город Москва, б-р.Смоленский, д. 17 стр. 1",
+      "location_id": "southcenter:loc-027",
+      "coords": [
+        55.742465,
+        37.5835089
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-027"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southcenter:6957",
+      "original_id": "6957",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 29,
+      "input_order": 27,
+      "type": "Подключение",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Хамовники",
+      "district_raw": "Хамовники",
+      "address": "Город Москва, ул.Усачёва, д. 25",
+      "location_id": "southcenter:loc-028",
+      "coords": [
+        55.7249586,
+        37.5651309
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 70,
+      "norm_id": "norm-2",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_connection_options",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-028"
+        }
+      },
+      "required_equipment": {
+        "router": 1,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "southcenter:78036",
+      "original_id": "78036",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 30,
+      "input_order": 28,
+      "type": "Дозаказ",
+      "subtype": "Конвергенция абонента",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Академический",
+      "district_raw": "Академический",
+      "address": "Город Москва, пр-кт.60-летия Октября, д. 17",
+      "location_id": "southcenter:loc-029",
+      "coords": [
+        55.6953306,
+        37.5798241
+      ],
+      "window_start": "2026-08-17T20:00:00+03:00",
+      "window_end": "2026-08-17T22:00:00+03:00",
+      "duration_min": 20,
+      "norm_id": "norm-4",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_additional_order",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-029"
+        }
+      },
+      "required_equipment": {
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "southcenter:49105",
+      "original_id": "49105",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 31,
+      "input_order": 29,
+      "type": "Дозаказ",
+      "subtype": "Заказ подключения/Дозаказ оборудования",
+      "skill": "connect",
+      "priority": "Обычная",
+      "district": "Котловка",
+      "district_raw": "Котловка",
+      "address": "Город Москва, ул.Ремизова, д. 15 к 2",
+      "location_id": "southcenter:loc-030",
+      "coords": [
+        55.6757919,
+        37.6040072
+      ],
+      "window_start": "2026-08-17T20:00:00+03:00",
+      "window_end": "2026-08-17T22:00:00+03:00",
+      "duration_min": 20,
+      "norm_id": "norm-4",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_additional_order",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-030"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southcenter:27023",
+      "original_id": "27023",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 32,
+      "input_order": 30,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Академический",
+      "district_raw": "Академический",
+      "address": "Город Москва, ул.Шверника, д. 5 к 2",
+      "location_id": "southcenter:loc-031",
+      "coords": [
+        55.6945964,
+        37.5827805
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-031"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southcenter:26177",
+      "original_id": "26177",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 33,
+      "input_order": 31,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Нагатино - Садовники",
+      "district_raw": "Нагатино - Садовники",
+      "address": "Город Москва, ул.Академика Миллионщикова, д. 13 к 1",
+      "location_id": "southcenter:loc-032",
+      "coords": [
+        55.6700206,
+        37.6498005
+      ],
+      "window_start": "2026-08-17T20:00:00+03:00",
+      "window_end": "2026-08-17T22:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-032"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southcenter:77795",
+      "original_id": "77795",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 34,
+      "input_order": 32,
+      "type": "Локальная заявка",
+      "subtype": "TVE/ENT. Другие ошибки",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Академический",
+      "district_raw": "Академический",
+      "address": "Город Москва, ул.Винокурова, д. 5/6 к 2",
+      "location_id": "southcenter:loc-033",
+      "coords": [
+        55.6898618,
+        37.5850112
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-033"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southcenter:24132",
+      "original_id": "24132",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 35,
+      "input_order": 33,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Зюзино",
+      "district_raw": "Зюзино",
+      "address": "Город Москва, пр-кт.Балаклавский, д. 50",
+      "location_id": "southcenter:loc-034",
+      "coords": [
+        55.6494293,
+        37.5705283
+      ],
+      "window_start": "2026-08-17T20:00:00+03:00",
+      "window_end": "2026-08-17T22:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-034"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southcenter:99841",
+      "original_id": "99841",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 36,
+      "input_order": 34,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Нагорный",
+      "district_raw": "Нагорный",
+      "address": "Город Москва, б-р.Симферопольский, д. 27",
+      "location_id": "southcenter:loc-035",
+      "coords": [
+        55.6486775,
+        37.6062192
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-035"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southcenter:20263",
+      "original_id": "20263",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 37,
+      "input_order": 35,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Нагорный",
+      "district_raw": "Нагорный",
+      "address": "Город Москва, ул.Болотниковская, д. 9 к 2",
+      "location_id": "southcenter:loc-036",
+      "coords": [
+        55.655272,
+        37.6095951
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-036"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southcenter:51133",
+      "original_id": "51133",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 38,
+      "input_order": 36,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Даниловский",
+      "district_raw": "Даниловский",
+      "address": "Город Москва, ул.Трофимова, д. 4А",
+      "location_id": "southcenter:loc-037",
+      "coords": [
+        55.7011084,
+        37.6614474
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-037"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southcenter:90709",
+      "original_id": "90709",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 39,
+      "input_order": 37,
+      "type": "Локальная заявка",
+      "subtype": "Разрывы",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Нагатинский Затон",
+      "district_raw": "Нагатинский Затон",
+      "address": "Город Москва, ул.Коломенская, д. 21",
+      "location_id": "southcenter:loc-038",
+      "coords": [
+        55.6777277,
+        37.6943031
+      ],
+      "window_start": "2026-08-17T16:00:00+03:00",
+      "window_end": "2026-08-17T18:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-038"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southcenter:84074",
+      "original_id": "84074",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 40,
+      "input_order": 38,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Нагатинский Затон",
+      "district_raw": "Нагатинский Затон",
+      "address": "Город Москва, наб.Нагатинская, д. 60 к 2",
+      "location_id": "southcenter:loc-039",
+      "coords": [
+        55.687915,
+        37.6872923
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-039"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southcenter:12263",
+      "original_id": "12263",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 41,
+      "input_order": 39,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Нагатино - Садовники",
+      "district_raw": "Нагатино - Садовники",
+      "address": "Город Москва, проезд.Коломенский, д. 27 к 3",
+      "location_id": "southcenter:loc-040",
+      "coords": [
+        55.6688423,
+        37.658283
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-040"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southcenter:95501",
+      "original_id": "95501",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 42,
+      "input_order": 40,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Нагатинский Затон",
+      "district_raw": "Нагатинский Затон",
+      "address": "Город Москва, ул.Затонная, д. 12 к 1",
+      "location_id": "southcenter:loc-041",
+      "coords": [
+        55.6771232,
+        37.6857562
+      ],
+      "window_start": "2026-08-17T20:00:00+03:00",
+      "window_end": "2026-08-17T22:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-041"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southcenter:86002",
+      "original_id": "86002",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 43,
+      "input_order": 41,
+      "type": "Локальная заявка",
+      "subtype": "Нет линка",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Даниловский",
+      "district_raw": "Даниловский",
+      "address": "Город Москва, ул.Городская, д. 9",
+      "location_id": "southcenter:loc-042",
+      "coords": [
+        55.7150778,
+        37.6180122
+      ],
+      "window_start": "2026-08-17T14:00:00+03:00",
+      "window_end": "2026-08-17T16:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-042"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southcenter:92618",
+      "original_id": "92618",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 44,
+      "input_order": 42,
+      "type": "Локальная заявка",
+      "subtype": "IP-адрес 169...",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Донской",
+      "district_raw": "Донской",
+      "address": "Город Москва, пр-кт.Севастопольский, д. 9 к 1",
+      "location_id": "southcenter:loc-043",
+      "coords": [
+        55.6911832,
+        37.6075362
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-043"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southcenter:26845",
+      "original_id": "26845",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 45,
+      "input_order": 43,
+      "type": "Локальная заявка",
+      "subtype": "Роутер. Замена техническим специалистом",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Даниловский",
+      "district_raw": "Даниловский",
+      "address": "Город Москва, проезд.3-й Павелецкий, д. 7 к 2",
+      "location_id": "southcenter:loc-044",
+      "coords": [
+        55.710645,
+        37.6418372
+      ],
+      "window_start": "2026-08-17T12:00:00+03:00",
+      "window_end": "2026-08-17T14:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "replacement_label_synthetic_quantity",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-044"
+        }
+      },
+      "required_equipment": {
+        "router": 1
+      }
+    },
+    {
+      "id": "southcenter:80308",
+      "original_id": "80308",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 46,
+      "input_order": 44,
+      "type": "Локальная заявка",
+      "subtype": "IP-адрес 169...",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Замоскворечье",
+      "district_raw": "Замоскворечье",
+      "address": "Город Москва, ул.Большая Серпуховская, д. 31 к 6",
+      "location_id": "southcenter:loc-045",
+      "coords": [
+        55.7233901,
+        37.6286049
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-045"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southcenter:93276",
+      "original_id": "93276",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 47,
+      "input_order": 45,
+      "type": "Локальная заявка",
+      "subtype": "Разрывы",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Даниловский",
+      "district_raw": "Даниловский",
+      "address": "Город Москва, ул.2-я Рощинская, д. 11",
+      "location_id": "southcenter:loc-046",
+      "coords": [
+        55.7092888,
+        37.6125848
+      ],
+      "window_start": "2026-08-17T16:00:00+03:00",
+      "window_end": "2026-08-17T18:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-046"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southcenter:61311",
+      "original_id": "61311",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 48,
+      "input_order": 46,
+      "type": "Локальная заявка",
+      "subtype": "ТВ. Замена приставки техником",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Даниловский",
+      "district_raw": "Даниловский",
+      "address": "Город Москва, пер.Ослябинский, д. 3",
+      "location_id": "southcenter:loc-047",
+      "coords": [
+        55.7131672,
+        37.6603865
+      ],
+      "window_start": "2026-08-17T16:00:00+03:00",
+      "window_end": "2026-08-17T18:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "replacement_label_synthetic_quantity",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-047"
+        }
+      },
+      "required_equipment": {
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "southcenter:46513",
+      "original_id": "46513",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 49,
+      "input_order": 47,
+      "type": "Локальная заявка",
+      "subtype": "Рост ошибок на порту",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Академический",
+      "district_raw": "Академический",
+      "address": "Город Москва, ул.Шверника, д. 14/1 к 2",
+      "location_id": "southcenter:loc-048",
+      "coords": [
+        55.6899877,
+        37.5902587
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-048"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southcenter:35265",
+      "original_id": "35265",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 50,
+      "input_order": 48,
+      "type": "Локальная заявка",
+      "subtype": "Работа с кабелем",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Академический",
+      "district_raw": "Академический",
+      "address": "Город Москва, ул.Профсоюзная, д. 8 к 2",
+      "location_id": "southcenter:loc-049",
+      "coords": [
+        55.6864404,
+        37.5694046
+      ],
+      "window_start": "2026-08-17T16:00:00+03:00",
+      "window_end": "2026-08-17T18:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_address_multiple_buildings",
+          "location_id": "southcenter:loc-049"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southcenter:13203",
+      "original_id": "13203",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 51,
+      "input_order": 49,
+      "type": "Локальная заявка",
+      "subtype": "ТВ. Замена приставки техником",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Академический",
+      "district_raw": "Академический",
+      "address": "Город Москва, пр-кт.Нахимовский, д. 50",
+      "location_id": "southcenter:loc-050",
+      "coords": [
+        55.6807498,
+        37.5590236
+      ],
+      "window_start": "2026-08-17T14:00:00+03:00",
+      "window_end": "2026-08-17T16:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "replacement_label_synthetic_quantity",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-050"
+        }
+      },
+      "required_equipment": {
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "southcenter:26896",
+      "original_id": "26896",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 52,
+      "input_order": 50,
+      "type": "Локальная заявка",
+      "subtype": "Переключение на Гбит/с",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Зюзино",
+      "district_raw": "Зюзино",
+      "address": "Город Москва, б-р.Чонгарский, д. 22 к 2",
+      "location_id": "southcenter:loc-051",
+      "coords": [
+        55.6543202,
+        37.6036892
+      ],
+      "window_start": "2026-08-17T18:00:00+03:00",
+      "window_end": "2026-08-17T20:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-051"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southcenter:87819",
+      "original_id": "87819",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 53,
+      "input_order": 51,
+      "type": "Локальная заявка",
+      "subtype": "Переключение на Гбит/с",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Замоскворечье",
+      "district_raw": "Замоскворечье",
+      "address": "Город Москва, ул.Люсиновская, д. 4",
+      "location_id": "southcenter:loc-052",
+      "coords": [
+        55.7273725,
+        37.6224055
+      ],
+      "window_start": "2026-08-17T14:00:00+03:00",
+      "window_end": "2026-08-17T16:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-052"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southcenter:5406",
+      "original_id": "5406",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 54,
+      "input_order": 52,
+      "type": "Локальная заявка",
+      "subtype": "Переключение на Гбит/с",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Котловка",
+      "district_raw": "Котловка",
+      "address": "Город Москва, ул.Ремизова, д. 15 к 2",
+      "location_id": "southcenter:loc-030",
+      "coords": [
+        55.6757919,
+        37.6040072
+      ],
+      "window_start": "2026-08-17T10:00:00+03:00",
+      "window_end": "2026-08-17T12:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-030"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southcenter:86864",
+      "original_id": "86864",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 55,
+      "input_order": 53,
+      "type": "Локальная заявка",
+      "subtype": "Работа с кабелем",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Нагорный",
+      "district_raw": "Нагорный",
+      "address": "Город Москва, б-р.Чонгарский, д. 1 к 4",
+      "location_id": "southcenter:loc-053",
+      "coords": [
+        55.6520362,
+        37.6157017
+      ],
+      "window_start": "2026-08-17T16:00:00+03:00",
+      "window_end": "2026-08-17T18:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-053"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southcenter:17896",
+      "original_id": "17896",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 56,
+      "input_order": 54,
+      "type": "Локальная заявка",
+      "subtype": "IP-адрес 169...",
+      "skill": "local",
+      "priority": "Обычная",
+      "district": "Зюзино",
+      "district_raw": "Зюзино",
+      "address": "Город Москва, ул.Керченская, д. 10 к 2",
+      "location_id": "southcenter:loc-054",
+      "coords": [
+        55.6556242,
+        37.5816709
+      ],
+      "window_start": "2026-08-17T14:00:00+03:00",
+      "window_end": "2026-08-17T16:00:00+03:00",
+      "duration_min": 30,
+      "norm_id": "norm-5",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-054"
+        }
+      },
+      "required_equipment": {}
+    },
+    {
+      "id": "southcenter:18023",
+      "original_id": "18023",
+      "source": "southcenter_synthetic",
+      "source_file": "Югоцентр Синтетические данные.csv",
+      "source_row": 57,
+      "input_order": 55,
+      "type": "Глобальная проблема",
+      "subtype": "Информация",
+      "skill": "emergency",
+      "priority": "Обычная",
+      "district": "Гагаринский",
+      "district_raw": "Гагаринский",
+      "address": "г.Город Москва, пр-кт.Ленинский, д. 70/11",
+      "location_id": "southcenter:loc-055",
+      "coords": [
+        55.6879261,
+        37.5407755
+      ],
+      "window_start": "2026-08-17T14:00:00+03:00",
+      "window_end": "2026-08-17T16:00:00+03:00",
+      "duration_min": 80,
+      "norm_id": "norm-3",
+      "required_vehicle": null,
+      "status": "planned",
+      "connection_type": null,
+      "gigabit": false,
+      "provenance": {
+        "duration_min": "norm_technical_plus_paperwork",
+        "priority": "default_no_source_priority",
+        "required_vehicle": "not_provided",
+        "input_order": "csv_order_not_observed_arrival_time",
+        "required_equipment": {
+          "kind": "synthetic",
+          "rule": "synthetic_no_devices",
+          "seed": 42,
+          "version": "1.0"
+        },
+        "coords": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:loc-055"
+        }
+      },
+      "required_equipment": {}
+    }
+  ]
+}

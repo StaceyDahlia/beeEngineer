@@ -1,0 +1,718 @@
+{
+  "schema_version": "0.1",
+  "engineers": [
+    {
+      "id": "southcenter:eng-001",
+      "name": "Капитанчук Александр",
+      "scenario_id": "southcenter",
+      "skills": [
+        "local"
+      ],
+      "vehicle": "ОТ",
+      "shift_start": "2026-08-17T13:00:00+03:00",
+      "shift_end": "2026-08-17T22:00:00+03:00",
+      "start_location_id": "southcenter:office",
+      "start_address": "г.Москва проезд Симферопольский, д.7",
+      "start_point": [
+        55.6647568,
+        37.6158385
+      ],
+      "status": "Доступен",
+      "shift_profile": "late",
+      "provenance": {
+        "id": "scenario_scoped_observed_roster",
+        "name": "control_csv",
+        "start_address": "scenario_office_from_synthetic_csv",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:office"
+        },
+        "skills": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "vehicle": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_start": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_end": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "status": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "inventory_start": {
+          "kind": "synthetic",
+          "rule": "skill_eligible_round_robin",
+          "version": "1.0"
+        }
+      },
+      "inventory_start": {
+        "router": 2,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "southcenter:eng-002",
+      "name": "Исхаков Денис",
+      "scenario_id": "southcenter",
+      "skills": [
+        "connect"
+      ],
+      "vehicle": "Пешеход",
+      "shift_start": "2026-08-17T13:00:00+03:00",
+      "shift_end": "2026-08-17T22:00:00+03:00",
+      "start_location_id": "southcenter:office",
+      "start_address": "г.Москва проезд Симферопольский, д.7",
+      "start_point": [
+        55.6647568,
+        37.6158385
+      ],
+      "status": "Доступен",
+      "shift_profile": "late",
+      "provenance": {
+        "id": "scenario_scoped_observed_roster",
+        "name": "control_csv",
+        "start_address": "scenario_office_from_synthetic_csv",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:office"
+        },
+        "skills": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "vehicle": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_start": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_end": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "status": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "inventory_start": {
+          "kind": "synthetic",
+          "rule": "skill_eligible_round_robin",
+          "version": "1.0"
+        }
+      },
+      "inventory_start": {
+        "router": 2,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "southcenter:eng-003",
+      "name": "Брюзгин Ярослав",
+      "scenario_id": "southcenter",
+      "skills": [
+        "connect",
+        "local"
+      ],
+      "vehicle": "Автомобиль",
+      "shift_start": "2026-08-17T10:00:00+03:00",
+      "shift_end": "2026-08-17T19:00:00+03:00",
+      "start_location_id": "southcenter:office",
+      "start_address": "г.Москва проезд Симферопольский, д.7",
+      "start_point": [
+        55.6647568,
+        37.6158385
+      ],
+      "status": "Доступен",
+      "shift_profile": "early",
+      "provenance": {
+        "id": "scenario_scoped_observed_roster",
+        "name": "control_csv",
+        "start_address": "scenario_office_from_synthetic_csv",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:office"
+        },
+        "skills": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "vehicle": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_start": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_end": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "status": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "inventory_start": {
+          "kind": "synthetic",
+          "rule": "skill_eligible_round_robin",
+          "version": "1.0"
+        }
+      },
+      "inventory_start": {
+        "router": 1,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "southcenter:eng-004",
+      "name": "Бахарев Андрей",
+      "scenario_id": "southcenter",
+      "skills": [
+        "connect",
+        "local",
+        "emergency"
+      ],
+      "vehicle": "Автомобиль",
+      "shift_start": "2026-08-17T13:00:00+03:00",
+      "shift_end": "2026-08-17T22:00:00+03:00",
+      "start_location_id": "southcenter:office",
+      "start_address": "г.Москва проезд Симферопольский, д.7",
+      "start_point": [
+        55.6647568,
+        37.6158385
+      ],
+      "status": "Доступен",
+      "shift_profile": "late",
+      "provenance": {
+        "id": "scenario_scoped_observed_roster",
+        "name": "control_csv",
+        "start_address": "scenario_office_from_synthetic_csv",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:office"
+        },
+        "skills": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "vehicle": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_start": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_end": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "status": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "inventory_start": {
+          "kind": "synthetic",
+          "rule": "skill_eligible_round_robin",
+          "version": "1.0"
+        }
+      },
+      "inventory_start": {
+        "router": 1,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "southcenter:eng-005",
+      "name": "Прокопенко Вячеслав",
+      "scenario_id": "southcenter",
+      "skills": [
+        "local",
+        "emergency"
+      ],
+      "vehicle": "ОТ",
+      "shift_start": "2026-08-17T10:00:00+03:00",
+      "shift_end": "2026-08-17T19:00:00+03:00",
+      "start_location_id": "southcenter:office",
+      "start_address": "г.Москва проезд Симферопольский, д.7",
+      "start_point": [
+        55.6647568,
+        37.6158385
+      ],
+      "status": "Доступен",
+      "shift_profile": "early",
+      "provenance": {
+        "id": "scenario_scoped_observed_roster",
+        "name": "control_csv",
+        "start_address": "scenario_office_from_synthetic_csv",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:office"
+        },
+        "skills": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "vehicle": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_start": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_end": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "status": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "inventory_start": {
+          "kind": "synthetic",
+          "rule": "skill_eligible_round_robin",
+          "version": "1.0"
+        }
+      },
+      "inventory_start": {
+        "router": 2,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "southcenter:eng-006",
+      "name": "Выговский Сергей",
+      "scenario_id": "southcenter",
+      "skills": [
+        "connect",
+        "emergency"
+      ],
+      "vehicle": "ОТ",
+      "shift_start": "2026-08-17T13:00:00+03:00",
+      "shift_end": "2026-08-17T22:00:00+03:00",
+      "start_location_id": "southcenter:office",
+      "start_address": "г.Москва проезд Симферопольский, д.7",
+      "start_point": [
+        55.6647568,
+        37.6158385
+      ],
+      "status": "Доступен",
+      "shift_profile": "late",
+      "provenance": {
+        "id": "scenario_scoped_observed_roster",
+        "name": "control_csv",
+        "start_address": "scenario_office_from_synthetic_csv",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:office"
+        },
+        "skills": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "vehicle": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_start": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_end": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "status": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "inventory_start": {
+          "kind": "synthetic",
+          "rule": "skill_eligible_round_robin",
+          "version": "1.0"
+        }
+      },
+      "inventory_start": {
+        "router": 2,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "southcenter:eng-007",
+      "name": "Данилов Даниил",
+      "scenario_id": "southcenter",
+      "skills": [
+        "connect",
+        "local"
+      ],
+      "vehicle": "Пешеход",
+      "shift_start": "2026-08-17T13:00:00+03:00",
+      "shift_end": "2026-08-17T22:00:00+03:00",
+      "start_location_id": "southcenter:office",
+      "start_address": "г.Москва проезд Симферопольский, д.7",
+      "start_point": [
+        55.6647568,
+        37.6158385
+      ],
+      "status": "Доступен",
+      "shift_profile": "late",
+      "provenance": {
+        "id": "scenario_scoped_observed_roster",
+        "name": "control_csv",
+        "start_address": "scenario_office_from_synthetic_csv",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:office"
+        },
+        "skills": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "vehicle": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_start": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_end": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "status": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "inventory_start": {
+          "kind": "synthetic",
+          "rule": "skill_eligible_round_robin",
+          "version": "1.0"
+        }
+      },
+      "inventory_start": {
+        "router": 2,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "southcenter:eng-008",
+      "name": "Переладов Алексей",
+      "scenario_id": "southcenter",
+      "skills": [
+        "connect"
+      ],
+      "vehicle": "Автомобиль",
+      "shift_start": "2026-08-17T10:00:00+03:00",
+      "shift_end": "2026-08-17T19:00:00+03:00",
+      "start_location_id": "southcenter:office",
+      "start_address": "г.Москва проезд Симферопольский, д.7",
+      "start_point": [
+        55.6647568,
+        37.6158385
+      ],
+      "status": "Доступен",
+      "shift_profile": "early",
+      "provenance": {
+        "id": "scenario_scoped_observed_roster",
+        "name": "control_csv",
+        "start_address": "scenario_office_from_synthetic_csv",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:office"
+        },
+        "skills": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "vehicle": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_start": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_end": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "status": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "inventory_start": {
+          "kind": "synthetic",
+          "rule": "skill_eligible_round_robin",
+          "version": "1.0"
+        }
+      },
+      "inventory_start": {
+        "router": 2,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "southcenter:eng-009",
+      "name": "Сакур Тимофей",
+      "scenario_id": "southcenter",
+      "skills": [
+        "local"
+      ],
+      "vehicle": "ОТ",
+      "shift_start": "2026-08-17T10:00:00+03:00",
+      "shift_end": "2026-08-17T19:00:00+03:00",
+      "start_location_id": "southcenter:office",
+      "start_address": "г.Москва проезд Симферопольский, д.7",
+      "start_point": [
+        55.6647568,
+        37.6158385
+      ],
+      "status": "Доступен",
+      "shift_profile": "early",
+      "provenance": {
+        "id": "scenario_scoped_observed_roster",
+        "name": "control_csv",
+        "start_address": "scenario_office_from_synthetic_csv",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:office"
+        },
+        "skills": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "vehicle": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_start": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_end": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "status": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "inventory_start": {
+          "kind": "synthetic",
+          "rule": "skill_eligible_round_robin",
+          "version": "1.0"
+        }
+      },
+      "inventory_start": {
+        "router": 2,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "southcenter:eng-010",
+      "name": "Рыбалкин Егор",
+      "scenario_id": "southcenter",
+      "skills": [
+        "connect",
+        "local",
+        "emergency"
+      ],
+      "vehicle": "ОТ",
+      "shift_start": "2026-08-17T10:00:00+03:00",
+      "shift_end": "2026-08-17T19:00:00+03:00",
+      "start_location_id": "southcenter:office",
+      "start_address": "г.Москва проезд Симферопольский, д.7",
+      "start_point": [
+        55.6647568,
+        37.6158385
+      ],
+      "status": "Доступен",
+      "shift_profile": "early",
+      "provenance": {
+        "id": "scenario_scoped_observed_roster",
+        "name": "control_csv",
+        "start_address": "scenario_office_from_synthetic_csv",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:office"
+        },
+        "skills": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "vehicle": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_start": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_end": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "status": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "inventory_start": {
+          "kind": "synthetic",
+          "rule": "skill_eligible_round_robin",
+          "version": "1.0"
+        }
+      },
+      "inventory_start": {
+        "router": 1,
+        "tv_box": 1
+      }
+    },
+    {
+      "id": "southcenter:eng-011",
+      "name": "Ионов Геннадий",
+      "scenario_id": "southcenter",
+      "skills": [
+        "connect",
+        "local"
+      ],
+      "vehicle": "Велосипед",
+      "shift_start": "2026-08-17T10:00:00+03:00",
+      "shift_end": "2026-08-17T19:00:00+03:00",
+      "start_location_id": "southcenter:office",
+      "start_address": "г.Москва проезд Симферопольский, д.7",
+      "start_point": [
+        55.6647568,
+        37.6158385
+      ],
+      "status": "Доступен",
+      "shift_profile": "early",
+      "provenance": {
+        "id": "scenario_scoped_observed_roster",
+        "name": "control_csv",
+        "start_address": "scenario_office_from_synthetic_csv",
+        "start_point": {
+          "kind": "external",
+          "provider": "OpenStreetMap / Nominatim",
+          "status": "matched_building",
+          "location_id": "southcenter:office"
+        },
+        "skills": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "vehicle": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_start": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "shift_end": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "status": {
+          "kind": "synthetic",
+          "config_version": "1.0",
+          "seed": 42
+        },
+        "inventory_start": {
+          "kind": "synthetic",
+          "rule": "skill_eligible_round_robin",
+          "version": "1.0"
+        }
+      },
+      "inventory_start": {
+        "router": 2,
+        "tv_box": 1
+      }
+    }
+  ]
+}
