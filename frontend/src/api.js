@@ -1,43 +1,56 @@
-// НАЗНАЧЕНИЕ: тонкая обёртка над fetch к backend.
-//
-// ВХОД:  BASE_URL из window.FRONTEND_API_BASE или http://localhost:8000
-// ВЫХОД: Promise<JSON>
-// СВЯЗИ: main.js, backend/app/api/routes_*.py
-//
-// ЭНДПОИНТЫ:
-//   getJobs()               GET  /api/v1/jobs
-//   getEngineers()          GET  /api/v1/engineers
-//   optimize(payload)       POST /api/v1/optimize
-//   replan(plan, event)     POST /api/v1/replan
-//
-// FALLBACK:
-//   если backend недоступен — читать public/demo-data.json
-//   (чтобы демо не падало на защите).
+(function () {
+  "use strict";
 
-const BASE = window.FRONTEND_API_BASE || "http://localhost:8000";
+  async function requestJson(url, options) {
+    const response = await fetch(url, options);
+    let body = null;
+    try {
+      body = await response.json();
+    } catch (_) {
+      body = null;
+    }
+    if (!response.ok) {
+      const rawDetail = body && (body.error?.message || body.detail || body.warnings?.[0]);
+      const detail = typeof rawDetail === "string" ? rawDetail : rawDetail?.message;
+      throw new Error(detail || "Сервис временно недоступен. Повторите попытку.");
+    }
+    return body;
+  }
 
-export async function getJobs() {
-  const r = await fetch(`${BASE}/api/v1/jobs`);
-  if (!r.ok) throw new Error("jobs unavailable");
-  return r.json();
-}
-
-export async function optimize(payload) {
-  const r = await fetch(`${BASE}/api/v1/optimize`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-  });
-  if (!r.ok) throw new Error("optimize failed");
-  return r.json();
-}
-
-export async function replan(plan, event) {
-  const r = await fetch(`${BASE}/api/v1/replan`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ plan, event }),
-  });
-  if (!r.ok) throw new Error("replan failed");
-  return r.json();
-}
+  window.BeelineApi = {
+    health: () => requestJson("/health"),
+    scenarios: () => requestJson("/data/scenarios"),
+    jobs: (scenario = "east") =>
+      requestJson(`/data/jobs?scenario=${encodeURIComponent(scenario)}`),
+    optimize: (scenario = "east", engine = "ortools_vrptw") =>
+      requestJson("/optimize", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ scenario, engine }),
+      }),
+    createPlan: (scenario = "east", engine = "ortools_vrptw", solveTimeLimitMs = null) =>
+      requestJson("/plans", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          scenario,
+          engine,
+          ...(solveTimeLimitMs ? { solve_time_limit_ms: solveTimeLimitMs } : {}),
+        }),
+      }),
+    previewEvent: (planId, event) =>
+      requestJson(`/plans/${encodeURIComponent(planId)}/events/preview`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(event),
+      }),
+    applyEvent: (planId, previewId) =>
+      requestJson(`/plans/${encodeURIComponent(planId)}/events/apply`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ preview_id: previewId }),
+      }),
+    history: (planId) =>
+      requestJson(`/plans/${encodeURIComponent(planId)}/history`),
+  };
+})();

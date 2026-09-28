@@ -1,9 +1,0 @@
-{
-  "_comment": "НАЗНАЧЕНИЕ: справочник типов транспорта. ВХОД: ТЗ п.2.4.1. ВЫХОД: constraints.py, distance.py (скорость по типу). СВЯЗИ: engineers.json.",
-  "vehicles": [
-    { "id": "car",   "name": "Автомобиль",         "avg_speed_kmh": 50 },
-    { "id": "foot",  "name": "Пешеход",            "avg_speed_kmh": 5 },
-    { "id": "bike",  "name": "Велосипед",          "avg_speed_kmh": 15 },
-    { "id": "trans", "name": "Общественный транспорт", "avg_speed_kmh": 40 }
-  ]
-}

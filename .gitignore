@@ -1,34 +1,6 @@
-# НАЗНАЧЕНИЕ: исключить из git мусор, секреты, кэши, большие файлы.
-# ВХОД/ВЫХОД: нет.
-# СВЯЗИ: влияет на всё дерево; особенно важно для data/processed и .env.
-
-# Python
+.venv/
 __pycache__/
 *.py[cod]
-.venv/
-venv/
 .pytest_cache/
-.mypy_cache/
-.ruff_cache/
-
-# Node
-node_modules/
-dist/
-.vite/
-
-# Env
-.env
-.env.local
-
-# Данные, которые не коммитим (кэш геокодинга, большие выгрузки)
-data/processed/geocode_cache.json
-data/processed/osrm_cache/
-*.log
-
-# IDE
-.idea/
-.vscode/
-.DS_Store
-
-# Jupyter
-.ipynb_checkpoints/
+ui-check*.png
+ui-error.png

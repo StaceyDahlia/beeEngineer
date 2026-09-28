@@ -1,8 +1,0 @@
-{
-  "_comment": "НАЗНАЧЕНИЕ: справочник навыков из ТЗ. ВХОД: ТЗ п.2.4.1. ВЫХОД: backend/app/services/constraints.py, prepare_data.py. СВЯЗИ: jobs.json, engineers.json.",
-  "skills": [
-    { "id": "local",     "name": "Локальные работы" },
-    { "id": "connect",   "name": "Работы на подключение и дознаказы" },
-    { "id": "emergency", "name": "Аварийные работы" }
-  ]
-}

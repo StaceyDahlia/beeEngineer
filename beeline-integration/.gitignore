@@ -1,6 +1,0 @@
-.venv/
-__pycache__/
-*.py[cod]
-.pytest_cache/
-ui-check*.png
-ui-error.png
