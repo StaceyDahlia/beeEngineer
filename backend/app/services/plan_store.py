@@ -175,6 +175,26 @@ class PlanStore(PlanHistoryRepository):
             preview.applied = True
             return copy.deepcopy(stored)
 
+    def save_revision(
+        self, *, base_plan_id: str, base_version: int, plan: dict[str, Any]
+    ) -> dict[str, Any]:
+        """Store a recalculation of the current data in the same lineage."""
+        with self._lock:
+            lineage_id = self.ensure_current(base_plan_id, base_version)
+            plan_id = self._id("plan")
+            stored = copy.deepcopy(plan)
+            stored.update(
+                plan_id=plan_id,
+                version=int(base_version) + 1,
+                parent_plan_id=base_plan_id,
+                event={"type": "reoptimize_current"},
+            )
+            self._plans[plan_id] = stored
+            self._lineage_by_plan[plan_id] = lineage_id
+            self._current_by_lineage[lineage_id] = plan_id
+            self._history_by_lineage[lineage_id].append(plan_id)
+            return copy.deepcopy(stored)
+
     def history(self, plan_id: str) -> list[dict[str, Any]]:
         with self._lock:
             if plan_id not in self._plans:

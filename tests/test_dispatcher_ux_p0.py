@@ -79,13 +79,13 @@ def test_plan_store_implements_history_repository() -> None:
     assert [record["version"] for record in history] == [1]
 
 
-def test_import_replaces_and_resets_previous_context() -> None:
-    assert 'value="replace" checked' in HTML
-    assert 'value="create" disabled' in HTML
-    assert "state.planHistory=[]" in HTML
-    assert "state.filter='all'" in HTML
-    assert "state.mapLayerMode='all'" in HTML
-    assert "Текущий сценарий заменён" in HTML
+def test_import_creates_backend_scenario_and_resets_previous_context() -> None:
+    assert 'id="import-button"' in HTML
+    assert "window.BeelineApi.importScenario(file)" in HTML
+    assert "state.planHistory = []" in HTML
+    assert "state.filter = 'all'" in HTML
+    assert "state.mapLayerMode = 'all'" in HTML
+    assert "backend валидирует и создаёт отдельный сценарий" in HTML
     payload = node_json(f"""
       const ux=require({json.dumps(str(HELPER))});
       const state={{jobs:[{{id:'old'}}],engineers:[{{id:'old-e'}}],planHistory:[{{version:1}}],lastPlan:{{}},baseline:{{}},planId:'old',version:2,selectedEngineerId:'old-e',filter:'attention',mapLayerMode:'problems'}};
@@ -102,7 +102,7 @@ def test_import_replaces_and_resets_previous_context() -> None:
 
 def test_emergency_demo_has_russian_user_facing_copy() -> None:
     assert '<span class="status assigned">Preview</span>' not in HTML
-    for text in ("Черновик перепланирования", "Применить перепланирование", "срочная аварийная заявка", "Глобальный оптимум не подтверждён"):
+    for text in ("Предпросмотр рассчитан", ">Применить</button>", "срочная аварийная заявка", "Глобальный оптимум не подтверждён"):
         assert text in HTML
 
 
@@ -124,7 +124,7 @@ def test_engineer_work_status_is_human_readable() -> None:
         ux.engineerWorkStatus({{id:'e1',status:'Недоступен'}},[])
       ]));
     """)
-    assert payload == ["Доступна", "В пути", "Выполняет работу", "Недоступна"]
+    assert payload == ["Доступна", "В пути (модель)", "Выполняет работу (модель)", "Недоступна"]
 
 
 def test_static_travel_time_matches_distance_and_vehicle_speed() -> None:

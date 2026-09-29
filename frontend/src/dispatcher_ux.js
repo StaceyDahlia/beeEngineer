@@ -38,8 +38,8 @@
     const raw = String(engineer?.status || "").toLowerCase();
     if (raw.includes("недоступ") || ["unavailable", "off_shift", "absent"].includes(raw)) return "Недоступна";
     const assigned = (jobs || []).filter(job => String(job?.engineerId || "") === String(engineer?.id || ""));
-    if (assigned.some(job => String(job.status).toLowerCase() === "in_progress")) return "Выполняет работу";
-    if (assigned.some(job => String(job.status).toLowerCase() === "en_route")) return "В пути";
+    if (assigned.some(job => String(job.status).toLowerCase() === "in_progress")) return "Выполняет работу (модель)";
+    if (assigned.some(job => String(job.status).toLowerCase() === "en_route")) return "В пути (модель)";
     return "Доступна";
   }
 
@@ -62,11 +62,22 @@
     return "Версия плана";
   }
 
+  function russianPlural(value, forms) {
+    const number = Math.abs(Number(value) || 0) % 100;
+    const last = number % 10;
+    if (number > 10 && number < 20) return forms[2];
+    if (last === 1) return forms[0];
+    if (last >= 2 && last <= 4) return forms[1];
+    return forms[2];
+  }
+
   function datasetSummary(meta, jobs, engineers) {
     const source = meta?.name || "Встроенный набор";
     const region = meta?.regionLabel || meta?.scenario || "Регион не указан";
     const loaded = meta?.loadedAt ? new Date(meta.loadedAt).toLocaleTimeString("ru-RU", { hour: "2-digit", minute: "2-digit" }) : "—";
-    return `${source} · ${region} · ${jobs?.length || 0} заявок · ${engineers?.length || 0} бригад · загружено ${loaded}`;
+    const jobCount = jobs?.length || 0;
+    const engineerCount = engineers?.length || 0;
+    return `${source} · ${region} · ${jobCount} ${russianPlural(jobCount, ["заявка", "заявки", "заявок"])} · ${engineerCount} ${russianPlural(engineerCount, ["бригада", "бригады", "бригад"])} · загружено ${loaded}`;
   }
 
   function buildRouteSheets(plan) {

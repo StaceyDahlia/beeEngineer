@@ -1,0 +1,41 @@
+{
+  "region": "Демо-импорт Москва",
+  "planning_date": "2026-08-17",
+  "jobs": [
+    {
+      "id": "IMP-1",
+      "type": "Подключение",
+      "skill": "connect",
+      "address": "Москва, Тверская улица, 1",
+      "coords": [55.757, 37.615],
+      "window_start": "15:00",
+      "window_end": "17:00",
+      "duration_min": 30,
+      "required_vehicle": "Автомобиль",
+      "required_equipment": {"router": 1}
+    },
+    {
+      "id": "IMP-2",
+      "type": "Локальная работа",
+      "skill": "local",
+      "address": "Москва, улица Покровка, 10",
+      "coords": [55.76, 37.64],
+      "window_start": "10:00",
+      "window_end": "16:00",
+      "duration_min": 30,
+      "required_equipment": {"fiber_splicer": 1}
+    }
+  ],
+  "engineers": [
+    {
+      "id": "ENG-1",
+      "name": "Бригада Импорт",
+      "skills": ["connect", "local"],
+      "vehicle": "Автомобиль",
+      "shift_start": "08:00",
+      "shift_end": "18:00",
+      "start_point": [55.75, 37.61],
+      "equipment": {"router": 1}
+    }
+  ]
+}

@@ -5,7 +5,7 @@ import time
 from datetime import datetime
 from typing import Literal
 
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
@@ -15,13 +15,16 @@ from .services.loader import (
     SCENARIO_LABELS,
     SUPPORTED_SCENARIOS,
     ScenarioNotFoundError,
+    list_scenarios,
     load_jobs,
     load_scenario,
+    register_imported_scenario,
 )
 from .services.ortools_vrptw import OrToolsSolveError, OrToolsUnavailableError
 from .services.plan_store import PlanStoreError, plan_store
 from .services.planner import build_plan_with_comparison
 from .services.replanner import ReplanValidationError, build_replanned_plan
+from .services.scenario_import import ScenarioImportError, parse_scenario_file
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -36,7 +39,7 @@ class OptimizeRequest(BaseModel):
 
 class ReplanEventRequest(BaseModel):
     event_id: str
-    type: Literal["cancel_job", "engineer_unavailable", "emergency_job"]
+    type: Literal["cancel_job", "engineer_unavailable", "emergency_job", "new_normal_job"]
     event_time: datetime
     base_version: int
     job_id: str | None = None
@@ -46,6 +49,10 @@ class ReplanEventRequest(BaseModel):
     address: str | None = None
     coords: list[float] | None = None
     required_vehicle: str | None = None
+    required_skill: Literal["local", "connect", "emergency"] | None = None
+    required_equipment: dict[str, int] | None = None
+    duration_min: int | None = None
+    window_end: datetime | None = None
     solve_time_limit_ms: int = 5_000
 
 
@@ -53,7 +60,13 @@ class ApplyPreviewRequest(BaseModel):
     preview_id: str
 
 
-app = FastAPI(title="Beeline Business Route Planner", version="0.4.0")
+class ReoptimizeRequest(BaseModel):
+    base_version: int
+    engine: Literal["baseline_greedy", "ortools_vrptw"] = "ortools_vrptw"
+    solve_time_limit_ms: int = 5_000
+
+
+app = FastAPI(title="Beeline Business Route Planner", version="0.5.0")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -78,12 +91,28 @@ def get_jobs(scenario: str = Query(default="east")) -> dict:
 
 @app.get("/data/scenarios")
 def get_scenarios() -> dict:
-    return {
-        "scenarios": [
-            {"id": scenario, "label": SCENARIO_LABELS[scenario]}
-            for scenario in SUPPORTED_SCENARIOS
-        ]
-    }
+    return {"scenarios": list_scenarios()}
+
+
+@app.post("/scenarios/import", status_code=201)
+async def import_scenario(request: Request) -> dict:
+    filename = request.headers.get("x-filename", "scenario.json")
+    content_type = request.headers.get("content-type", "application/octet-stream")
+    if not filename.lower().endswith((".json", ".csv")):
+        raise HTTPException(status_code=422, detail="Поддерживаются только файлы CSV и JSON.")
+    try:
+        scenario_id, region, jobs, engineers = parse_scenario_file(
+            await request.body(), filename=filename, content_type=content_type
+        )
+        return register_imported_scenario(
+            scenario_id,
+            region=region,
+            jobs=jobs,
+            engineers=engineers,
+            filename=filename,
+        )
+    except ScenarioImportError as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
 
 
 @app.post("/optimize")
@@ -178,6 +207,37 @@ def get_plan(plan_id: str) -> dict:
             status_code=exc.status_code,
             detail={"code": exc.code, "message": str(exc)},
         ) from exc
+
+
+@app.post("/plans/{plan_id}/reoptimize")
+def reoptimize_plan(plan_id: str, request: ReoptimizeRequest) -> dict:
+    """Rebuild the current plan data, including jobs added by applied events."""
+    try:
+        plan_store.ensure_current(plan_id, request.base_version)
+        parent = plan_store.get_plan(plan_id)
+        jobs = [
+            job for job in parent["jobs"]
+            if str(job.get("status") or "").lower() not in {"completed", "done", "cancelled"}
+        ]
+        plan = build_plan_with_comparison(
+            jobs,
+            parent["engineers"],
+            scenario=str(parent["scenario_id"]),
+            engine=request.engine,
+            solve_time_limit_ms=max(100, min(request.solve_time_limit_ms, 30_000)),
+        )
+        return plan_store.save_revision(
+            base_plan_id=plan_id, base_version=request.base_version, plan=plan
+        )
+    except PlanStoreError as exc:
+        raise HTTPException(
+            status_code=exc.status_code,
+            detail={"code": exc.code, "message": str(exc)},
+        ) from exc
+    except OrToolsUnavailableError as exc:
+        raise HTTPException(status_code=503, detail=str(exc)) from exc
+    except OrToolsSolveError as exc:
+        raise HTTPException(status_code=503, detail=str(exc)) from exc
 
 
 @app.get("/plans/{plan_id}/history")

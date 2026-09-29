@@ -5,7 +5,7 @@ from typing import Any, Literal
 
 from .baseline_greedy import build_baseline_plan
 from .ortools_vrptw import build_ortools_plan
-from .travel_matrix import StaticTravelMatrix
+from .travel_matrix import attach_route_geometry, build_routing_provider
 
 
 PlannerEngine = Literal["baseline_greedy", "ortools_vrptw"]
@@ -51,7 +51,7 @@ def build_plan_with_comparison(
     solve_time_limit_ms: int = 5_000,
 ) -> dict[str, Any]:
     """Запускает выбранный движок; OR-Tools сравнивается с точным baseline."""
-    shared_matrix = StaticTravelMatrix(jobs, engineers)
+    shared_matrix = build_routing_provider(jobs, engineers)
 
     baseline_started = time.perf_counter()
     baseline = build_baseline_plan(
@@ -95,4 +95,5 @@ def build_plan_with_comparison(
         "plan": _summary(selected),
         "delta_plan_minus_baseline": _delta(selected_metrics, baseline_metrics),
     }
+    attach_route_geometry(selected, shared_matrix)
     return selected

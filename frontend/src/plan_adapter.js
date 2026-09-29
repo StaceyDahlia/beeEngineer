@@ -100,6 +100,56 @@
     };
   }
 
+  function validateRouteGeometry(route, travelModel) {
+    const stops = route.stops || [];
+    const geometry = route.route_geometry || null;
+    const claimsOsrm = String(route.geometry_source || geometry?.source || "").toLowerCase() === "osrm";
+    if (!geometry) {
+      if (stops.length && claimsOsrm && travelModel?.geometry_complete !== false) {
+        throw new Error(`Маршрут ${route.engineer_id}: OSRM заявлен, но route_geometry отсутствует.`);
+      }
+      return null;
+    }
+    const features = geometry.type === "FeatureCollection" && Array.isArray(geometry.features)
+      ? geometry.features
+      : null;
+    if (!features || features.length !== stops.length) {
+      throw new Error(`Маршрут ${route.engineer_id}: некорректный FeatureCollection route_geometry.`);
+    }
+    let distanceM = 0;
+    features.forEach((feature, index) => {
+      const properties = feature?.properties || {};
+      const line = feature?.geometry;
+      const coordinates = line?.coordinates;
+      if (
+        feature?.type !== "Feature" ||
+        line?.type !== "LineString" ||
+        !Array.isArray(coordinates) ||
+        coordinates.length <= 2 ||
+        coordinates.some(point => !Array.isArray(point) || point.length < 2 || !point.every(Number.isFinite))
+      ) {
+        throw new Error(`Маршрут ${route.engineer_id}, сегмент ${index + 1}: OSRM должен вернуть LineString с промежуточными точками.`);
+      }
+      if (String(properties.source || "").toLowerCase() !== "osrm") {
+        throw new Error(`Маршрут ${route.engineer_id}, сегмент ${index + 1}: source должен быть osrm.`);
+      }
+      if (!properties.matrix_id || properties.matrix_id !== route.geometry_matrix_id) {
+        throw new Error(`Маршрут ${route.engineer_id}, сегмент ${index + 1}: matrix_id не совпадает.`);
+      }
+      if (
+        Number(properties.distance_m) !== Number(stops[index]?.distance_m_from_prev) ||
+        Number(properties.travel_min) !== Number(stops[index]?.travel_min_from_prev)
+      ) {
+        throw new Error(`Маршрут ${route.engineer_id}, сегмент ${index + 1}: метрики геометрии не совпадают с матрицей.`);
+      }
+      distanceM += Number(properties.distance_m);
+    });
+    if (distanceM !== Number(route.distance_m)) {
+      throw new Error(`Маршрут ${route.engineer_id}: KPI пробега не равен сумме OSRM-сегментов.`);
+    }
+    return geometry;
+  }
+
   function adapt(response) {
     const engineers = (response.engineers || []).map(engineerView);
     const jobs = (response.jobs || []).map(jobView);
@@ -112,6 +162,7 @@
 
     const planEngineers = (response.routes || []).map((route) => {
       const engineer = engineerById.get(String(route.engineer_id));
+      const routeGeometry = validateRouteGeometry(route, response.travel_model || {});
       const items = (route.stops || []).map((stop) => {
         const job = jobById.get(String(stop.job_id));
         return {
@@ -129,8 +180,13 @@
         items,
         distance: Number(route.distance_km || 0),
         route: [engineer.startPoint, ...items.map((item) => item.coords)],
-        routeSource: "Backend · статическая матрица",
-        routeMetricSource: "backend_static",
+        routeGeo: routeGeometry,
+        routeSource: routeGeometry
+          ? `Backend · дорожная геометрия ${route.geometry_source || "OSRM"}`
+          : "Дорожная геометрия недоступна · пунктирная расчётная связь",
+        routeMetricSource: routeGeometry ? "backend_road" : "backend_static",
+        routeGeometryFeatureCount: routeGeometry?.features?.length || 0,
+        geometryMatrixId: route.geometry_matrix_id || null,
       };
     });
 
@@ -174,6 +230,7 @@
         parentPlanId: response.parent_plan_id || null,
         diff: response.diff || null,
         event: response.event || null,
+        comparison: response.comparison || null,
       },
     };
 
@@ -211,5 +268,5 @@
     };
   }
 
-  window.BeelinePlanAdapter = { adapt };
+  window.BeelinePlanAdapter = { adapt, validateRouteGeometry };
 })();

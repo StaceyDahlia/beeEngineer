@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import copy
 import json
+import threading
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
@@ -16,6 +17,8 @@ SCENARIO_LABELS = {
     "southeast": "Юго-восток",
     "southcenter": "Югоцентр",
 }
+_IMPORTED_LOCK = threading.RLock()
+_IMPORTED_SCENARIOS: dict[str, dict[str, Any]] = {}
 
 
 class ScenarioNotFoundError(ValueError):
@@ -62,6 +65,10 @@ def _load_cached(scenario: str) -> tuple[list[dict[str, Any]], list[dict[str, An
 
 
 def load_scenario(scenario: str = "east") -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    with _IMPORTED_LOCK:
+        imported = _IMPORTED_SCENARIOS.get(scenario)
+        if imported:
+            return copy.deepcopy(imported["jobs"]), copy.deepcopy(imported["engineers"])
     _scenario_dir(scenario)
     jobs, engineers = _load_cached(scenario)
     # Планировщик изменяет только свои копии. Исходный сценарий остаётся неизменным.
@@ -79,3 +86,49 @@ def load_scenario(scenario: str = "east") -> tuple[list[dict[str, Any]], list[di
 
 def load_jobs(scenario: str = "east") -> list[dict[str, Any]]:
     return load_scenario(scenario)[0]
+
+
+def register_imported_scenario(
+    scenario_id: str,
+    *,
+    region: str,
+    jobs: list[dict[str, Any]],
+    engineers: list[dict[str, Any]],
+    filename: str,
+) -> dict[str, Any]:
+    with _IMPORTED_LOCK:
+        _IMPORTED_SCENARIOS[scenario_id] = {
+            "scenario_id": scenario_id,
+            "label": region,
+            "region": region,
+            "filename": filename,
+            "jobs": copy.deepcopy(jobs),
+            "engineers": copy.deepcopy(engineers),
+        }
+    return {
+        "scenario_id": scenario_id,
+        "label": region,
+        "region": region,
+        "filename": filename,
+        "jobs_count": len(jobs),
+        "engineers_count": len(engineers),
+        "isolated": True,
+    }
+
+
+def list_scenarios() -> list[dict[str, Any]]:
+    result = [
+        {"id": scenario, "label": SCENARIO_LABELS[scenario], "source": "built_in"}
+        for scenario in SUPPORTED_SCENARIOS
+    ]
+    with _IMPORTED_LOCK:
+        result.extend(
+            {
+                "id": value["scenario_id"],
+                "label": value["label"],
+                "source": "user_import",
+                "filename": value["filename"],
+            }
+            for value in _IMPORTED_SCENARIOS.values()
+        )
+    return result

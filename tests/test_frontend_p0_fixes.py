@@ -96,8 +96,9 @@ def test_point_confirmation_and_comparison_panel_are_wired() -> None:
     assert 'id="geocode-button"' in html and "Найти адрес" in html
     assert 'id="map-pick-button"' in html and "Указать на карте" in html
     assert "map.on('click'" in html
-    assert "pointConfirmed!=='true'" in html
+    assert "pointConfirmed !== 'true'" in html
     assert "buildEmergencyEvent" in html
-    assert 'class="comparison-table"' in html
-    for label in ("Показатель", "Было", "Стало", "Изменение", "Новых назначений"):
+    assert 'class="compare-grid"' in html
+    assert '<th>Изменение</th>' not in html
+    for label in ("Базовый сценарий", "Текущий план", "Изменения в оставшейся части смены", "Новых назначений"):
         assert label in html

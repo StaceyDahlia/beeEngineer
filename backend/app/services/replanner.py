@@ -6,7 +6,12 @@ from typing import Any
 
 from .ortools_vrptw import PRIORITY_LABELS, priority_class
 from .planner import build_plan_with_comparison
-from .validation import validate_plan
+from .travel_matrix import (
+    StaticRoutingProvider,
+    attach_route_geometry,
+    build_routing_provider,
+)
+from .validation import _has_equipment, _same_vehicle, validate_plan
 
 
 TERMINAL_STATUSES = {"completed", "done", "cancelled"}
@@ -90,6 +95,45 @@ def _event_job(event: dict[str, Any], jobs: list[dict[str, Any]]) -> dict[str, A
     }
 
 
+def _normal_event_job(event: dict[str, Any], jobs: list[dict[str, Any]]) -> dict[str, Any]:
+    event_time = _dt(event["event_time"])
+    coords = event.get("coords")
+    if not isinstance(coords, list) or len(coords) != 2:
+        raise ReplanValidationError("Для новой заявки нужны координаты [lat, lon].")
+    try:
+        coords = [float(coords[0]), float(coords[1])]
+    except (TypeError, ValueError) as exc:
+        raise ReplanValidationError("Координаты новой заявки должны быть числами.") from exc
+    skill = str(event.get("required_skill") or "")
+    if skill not in {"local", "connect", "emergency"}:
+        raise ReplanValidationError("Для новой заявки нужен навык local, connect или emergency.")
+    duration = int(event.get("duration_min") or 0)
+    if duration <= 0:
+        raise ReplanValidationError("Длительность новой заявки должна быть больше нуля.")
+    window_end = _dt(str(event.get("window_end") or ""))
+    if window_end <= event_time:
+        raise ReplanValidationError("Конец окна новой заявки должен быть позже времени события.")
+    return {
+        "id": f"normal:{event['event_id']}",
+        "input_order": max(
+            [int(job.get("input_order", index)) for index, job in enumerate(jobs)] or [0]
+        ) + 1,
+        "type": "Новая заявка",
+        "subtype": event.get("title") or "Обычная новая заявка",
+        "skill": skill,
+        "priority": "Обычная",
+        "address": event.get("address") or "Адрес новой заявки",
+        "coords": coords,
+        "window_start": event_time.isoformat(),
+        "window_end": window_end.isoformat(),
+        "duration_min": duration,
+        "required_vehicle": event.get("required_vehicle") or None,
+        "required_equipment": event.get("required_equipment") or {},
+        "status": "planned",
+        "created_by_event_id": event["event_id"],
+    }
+
+
 def _recompute_metrics(
     routes: list[dict[str, Any]], jobs: list[dict[str, Any]]
 ) -> dict[str, Any]:
@@ -123,6 +167,290 @@ def _recompute_metrics(
             str(route["engineer_id"]): len(route["stops"]) for route in routes
         },
     }
+
+
+def _event_scope_metrics(plan: dict[str, Any], event_time: datetime) -> dict[str, Any]:
+    scoped_routes: list[dict[str, Any]] = []
+    for route in plan["routes"]:
+        stops = [
+            stop
+            for stop in route["stops"]
+            if _dt(stop["service_end"]) > event_time
+        ]
+        scoped_routes.append(
+            {
+                "engineer_id": route["engineer_id"],
+                "stops": stops,
+                "distance_m": sum(int(stop["distance_m_from_prev"]) for stop in stops),
+                "travel_min": sum(int(stop["travel_min_from_prev"]) for stop in stops),
+                "waiting_min": sum(int(stop["waiting_min"]) for stop in stops),
+                "service_min": sum(int(stop["service_min"]) for stop in stops),
+            }
+        )
+    scoped_job_ids = {
+        str(stop["job_id"]) for route in scoped_routes for stop in route["stops"]
+    }
+    unassigned = sum(
+        str(job.get("status")) == "unassigned"
+        and _dt(job["window_end"]) >= event_time
+        for job in plan["jobs"]
+    )
+    total_distance_m = sum(route["distance_m"] for route in scoped_routes)
+    return {
+        "scope": "remaining_shift",
+        "horizon_start": event_time.isoformat(),
+        "assigned_count": len(scoped_job_ids),
+        "unassigned_count": unassigned,
+        "used_engineers": sum(bool(route["stops"]) for route in scoped_routes),
+        "total_distance_m": total_distance_m,
+        "total_distance_km": round(total_distance_m / 1000.0, 3),
+        "total_travel_min": sum(route["travel_min"] for route in scoped_routes),
+        "total_waiting_min": sum(route["waiting_min"] for route in scoped_routes),
+        "total_service_min": sum(route["service_min"] for route in scoped_routes),
+    }
+
+
+def _set_event_comparison(
+    before: dict[str, Any], after: dict[str, Any], event_time: datetime
+) -> None:
+    horizon_end = max(
+        _dt(engineer["shift_end"]) for engineer in after.get("engineers") or before["engineers"]
+    )
+    before_metrics = _event_scope_metrics(before, event_time)
+    after_metrics = _event_scope_metrics(after, event_time)
+    after.setdefault("comparison", {})["event_scope"] = {
+        "label": "Изменения в оставшейся части смены",
+        "scope": "remaining_shift",
+        "horizon_start": event_time.isoformat(),
+        "horizon_end": horizon_end.isoformat(),
+        "current_stage_policy": "Полная входящая дуга текущего этапа одинаково учтена с обеих сторон.",
+        "same_horizon": True,
+        "before": before_metrics,
+        "after": after_metrics,
+        "delta": _delta(after_metrics, before_metrics),
+    }
+
+
+def _normal_unassigned_reason(
+    job: dict[str, Any], engineers: list[dict[str, Any]]
+) -> dict[str, Any]:
+    available = [item for item in engineers if str(item.get("status")) == "Доступен"]
+    skilled = [item for item in available if job["skill"] in set(item.get("skills") or [])]
+    transported = [
+        item
+        for item in skilled
+        if _same_vehicle(job.get("required_vehicle"), str(item.get("vehicle") or ""))
+    ]
+    equipped = [item for item in transported if _has_equipment(job, item)]
+    if not skilled:
+        return {"code": "NO_SKILL", "message": "Нет доступной бригады с нужным навыком"}
+    if not transported:
+        return {"code": "NO_VEHICLE", "message": "Нет доступной бригады с нужным транспортом"}
+    if not equipped:
+        return {
+            "code": "NO_EQUIPMENT",
+            "message": "Нет доступной бригады с нужным оборудованием",
+        }
+    return {
+        "code": "NO_FREE_INTERVAL",
+        "message": "Нет свободного интервала, в который заявка помещается с учётом дороги, окна и смены",
+    }
+
+
+def _build_normal_insertion_plan(
+    parent: dict[str, Any], event: dict[str, Any]
+) -> tuple[dict[str, Any], dict[str, Any]]:
+    event_time = _dt(event["event_time"])
+    plan = copy.deepcopy(parent)
+    job = _normal_event_job(event, plan["jobs"])
+    jobs_with_new = plan["jobs"] + [job]
+    if str(parent.get("travel_model", {}).get("provider")) == "static_haversine":
+        matrix = StaticRoutingProvider(jobs_with_new, plan["engineers"])
+    else:
+        matrix = build_routing_provider(jobs_with_new, plan["engineers"])
+    candidates: list[dict[str, Any]] = []
+    for engineer in plan["engineers"]:
+        if str(engineer.get("status")) != "Доступен":
+            continue
+        if job["skill"] not in set(engineer.get("skills") or []):
+            continue
+        if not _same_vehicle(job.get("required_vehicle"), str(engineer.get("vehicle") or "")):
+            continue
+        if not _has_equipment(job, engineer):
+            continue
+        route = next(item for item in plan["routes"] if item["engineer_id"] == engineer["id"])
+        stops = route["stops"]
+        route_jobs = {str(item["id"]): item for item in plan["jobs"]}
+        first_insert = 0
+        for index, stop in enumerate(stops):
+            stop_status = str(route_jobs[str(stop["job_id"])].get("status") or "")
+            if stop_status in LOCKED_STATUSES or (
+                _dt(stop["service_start"]) <= event_time < _dt(stop["service_end"])
+            ):
+                first_insert = index + 1
+                break
+            if _dt(stop["service_end"]) <= event_time:
+                first_insert = index + 1
+        for position in range(first_insert, len(stops) + 1):
+            previous = stops[position - 1] if position else None
+            following = stops[position] if position < len(stops) else None
+            previous_id = (
+                matrix.job_point_id(str(previous["job_id"]))
+                if previous
+                else matrix.engineer_start_id(str(engineer["id"]))
+            )
+            previous_end = (
+                _dt(previous["service_end"])
+                if previous
+                else max(_dt(engineer["shift_start"]), event_time)
+            )
+            previous_end = max(previous_end, event_time)
+            vehicle = str(engineer["vehicle"])
+            incoming = matrix.get(previous_id, matrix.job_point_id(job["id"]), vehicle)
+            arrival = previous_end + timedelta(minutes=incoming.travel_min)
+            start = max(arrival, _dt(job["window_start"]))
+            end = start + timedelta(minutes=int(job["duration_min"]))
+            if start > _dt(job["window_end"]) or end > _dt(engineer["shift_end"]):
+                continue
+            outgoing = None
+            old_distance = 0
+            old_travel = 0
+            if following:
+                outgoing = matrix.get(
+                    matrix.job_point_id(job["id"]),
+                    matrix.job_point_id(str(following["job_id"])),
+                    vehicle,
+                )
+                if end + timedelta(minutes=outgoing.travel_min) > _dt(following["service_start"]):
+                    continue
+                old_distance = int(following["distance_m_from_prev"])
+                old_travel = int(following["travel_min_from_prev"])
+            delta_distance = incoming.distance_m + (outgoing.distance_m if outgoing else 0) - old_distance
+            candidates.append(
+                {
+                    "engineer": engineer,
+                    "route": route,
+                    "position": position,
+                    "incoming": incoming,
+                    "outgoing": outgoing,
+                    "arrival": arrival,
+                    "start": start,
+                    "end": end,
+                    "delta_distance": delta_distance,
+                    "delta_travel": incoming.travel_min
+                    + (outgoing.travel_min if outgoing else 0)
+                    - old_travel,
+                }
+            )
+    if candidates:
+        chosen = min(candidates, key=lambda item: (item["delta_distance"], item["start"]))
+        engineer, route, position = chosen["engineer"], chosen["route"], chosen["position"]
+        waiting = int((chosen["start"] - chosen["arrival"]).total_seconds() // 60)
+        stop = {
+            "job_id": job["id"],
+            "sequence": position + 1,
+            "coords": job["coords"],
+            "arrival_time": chosen["arrival"].isoformat(),
+            "service_start": chosen["start"].isoformat(),
+            "service_end": chosen["end"].isoformat(),
+            "departure_time": chosen["end"].isoformat(),
+            "arrival": chosen["start"].strftime("%H:%M"),
+            "departure": chosen["end"].strftime("%H:%M"),
+            "travel_min_from_prev": chosen["incoming"].travel_min,
+            "distance_m_from_prev": chosen["incoming"].distance_m,
+            "distance_km_from_prev": chosen["incoming"].distance_km,
+            "waiting_min": waiting,
+            "service_min": int(job["duration_min"]),
+        }
+        route["stops"].insert(position, stop)
+        if chosen["outgoing"] is not None:
+            following = route["stops"][position + 1]
+            following_arrival = chosen["end"] + timedelta(
+                minutes=chosen["outgoing"].travel_min
+            )
+            following["travel_min_from_prev"] = chosen["outgoing"].travel_min
+            following["distance_m_from_prev"] = chosen["outgoing"].distance_m
+            following["distance_km_from_prev"] = chosen["outgoing"].distance_km
+            following["arrival_time"] = following_arrival.isoformat()
+            following["waiting_min"] = int(
+                (_dt(following["service_start"]) - following_arrival).total_seconds() // 60
+            )
+        for sequence, item in enumerate(route["stops"], 1):
+            item["sequence"] = sequence
+        explanation = {
+            "summary": (
+                f"Заявка локально вставлена в свободный интервал бригады «{engineer['name']}»; "
+                "порядок остальных заявок и их плановое время не изменены."
+            ),
+            "selection_basis": "local_free_interval_insertion",
+            "checks": {
+                "skill": {"required": job["skill"], "matched": True},
+                "transport": {
+                    "required": job.get("required_vehicle"),
+                    "actual": engineer["vehicle"],
+                    "matched": True,
+                },
+                "equipment": {
+                    "required": job.get("required_equipment") or {},
+                    "available": engineer.get("equipment") or {},
+                    "matched": True,
+                },
+                "time_window": {"matched": True},
+                "shift": {"matched": True},
+            },
+            "route_impact": {"delta_distance_m": chosen["delta_distance"]},
+        }
+        job.update(
+            status="assigned",
+            assignment_status="assigned",
+            assigned_engineer_id=str(engineer["id"]),
+            arrival_time=chosen["arrival"].isoformat(),
+            service_start=chosen["start"].isoformat(),
+            service_end=chosen["end"].isoformat(),
+            waiting_min=waiting,
+            assignment_explanation=explanation,
+            explanation=explanation["summary"],
+            unassigned_reason=None,
+        )
+    else:
+        reason = _normal_unassigned_reason(job, plan["engineers"])
+        job.update(
+            status="unassigned",
+            assignment_status="unassigned",
+            assigned_engineer_id=None,
+            unassigned_reason=reason,
+            explanation=reason["message"],
+        )
+    plan["jobs"].append(job)
+    for route in plan["routes"]:
+        route["distance_m"] = sum(int(stop["distance_m_from_prev"]) for stop in route["stops"])
+        route["distance_km"] = round(route["distance_m"] / 1000.0, 3)
+        route["travel_min"] = sum(int(stop["travel_min_from_prev"]) for stop in route["stops"])
+        route["waiting_min"] = sum(int(stop["waiting_min"]) for stop in route["stops"])
+        route["service_min"] = sum(int(stop["service_min"]) for stop in route["stops"])
+        route["jobs_count"] = len(route["stops"])
+    plan["metrics"] = _recompute_metrics(plan["routes"], plan["jobs"])
+    plan["metrics"]["scope"] = "full_day"
+    plan["travel_model"] = matrix.metadata
+    attach_route_geometry(plan, matrix)
+    plan["replan"] = {
+        "event_time": event_time.isoformat(),
+        "scope": "local_insertion",
+        "locked_job_ids": [],
+        "completed_job_ids": sorted(_completed_ids(parent, event_time)),
+        "priority_event_job_id": None,
+    }
+    diff = build_diff(parent, plan, completed_ids=_completed_ids(parent, event_time))
+    # A sequence number shift caused solely by inserting one new stop is not a
+    # reorder of the pre-existing jobs: their relative order and service starts
+    # remain unchanged.
+    diff["reordered"] = []
+    diff["items"] = [item for item in diff["items"] if item["category"] != "reordered"]
+    diff["summary"]["reordered"] = 0
+    plan["diff"] = diff
+    _set_event_comparison(parent, plan, event_time)
+    validate_plan(plan)
+    return plan, diff
 
 
 def _merge_locked_metrics(
@@ -358,6 +686,8 @@ def build_replanned_plan(
     solve_time_limit_ms: int = 5_000,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     event_time = _dt(event["event_time"])
+    if event["type"] == "new_normal_job":
+        return _build_normal_insertion_plan(parent, event)
     jobs = copy.deepcopy(parent["jobs"])
     engineers = copy.deepcopy(parent["engineers"])
     jobs_by_id = {str(job["id"]): job for job in jobs}
@@ -514,8 +844,7 @@ def build_replanned_plan(
         for sequence, stop in enumerate(stops, start=1):
             stop["sequence"] = sequence
         distance_m = sum(int(stop["distance_m_from_prev"]) for stop in stops)
-        merged_routes.append(
-            {
+        merged_route = {
                 "engineer_id": engineer_id,
                 "start_point": copy.deepcopy(engineer["start_point"]),
                 "stops": stops,
@@ -526,7 +855,7 @@ def build_replanned_plan(
                 "service_min": sum(int(stop["service_min"]) for stop in stops),
                 "jobs_count": len(stops),
             }
-        )
+        merged_routes.append(merged_route)
 
     plan = copy.deepcopy(suffix)
     plan.update(
@@ -542,6 +871,27 @@ def build_replanned_plan(
             "priority_event_job_id": priority_event_job_id,
         },
     )
+    # The locked prefix and optimized suffix were calculated by different
+    # provider instances. Rebuild every final arc through one provider so KPI,
+    # matrix_id and GeoJSON always describe the same road segments.
+    final_provider = build_routing_provider(merged_jobs, engineers)
+    engineer_by_id = {str(item["id"]): item for item in engineers}
+    for route in merged_routes:
+        engineer_id = str(route["engineer_id"])
+        vehicle = str(engineer_by_id[engineer_id].get("vehicle") or "")
+        origin_id = StaticRoutingProvider.engineer_start_id(engineer_id)
+        for stop in route.get("stops") or []:
+            destination_id = StaticRoutingProvider.job_point_id(str(stop["job_id"]))
+            metric = final_provider.get(origin_id, destination_id, vehicle)
+            stop["distance_m_from_prev"] = metric.distance_m
+            stop["distance_km_from_prev"] = metric.distance_km
+            stop["travel_min_from_prev"] = metric.travel_min
+            origin_id = destination_id
+        route["distance_m"] = sum(int(s["distance_m_from_prev"]) for s in route["stops"])
+        route["distance_km"] = round(route["distance_m"] / 1000.0, 3)
+        route["travel_min"] = sum(int(s["travel_min_from_prev"]) for s in route["stops"])
+    plan["travel_model"] = final_provider.metadata
+    attach_route_geometry(plan, final_provider)
     plan["metrics"] = _recompute_metrics(merged_routes, merged_jobs)
     plan["baseline_metrics"] = _merge_locked_metrics(
         suffix["baseline_metrics"], locked_routes
@@ -561,6 +911,7 @@ def build_replanned_plan(
     )
     comparison["scope"] = "remaining_day_with_locked_current_stage"
     plan["comparison"] = comparison
+    _set_event_comparison(parent, plan, event_time)
 
     diff = build_diff(
         parent,

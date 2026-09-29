@@ -20,6 +20,7 @@ else:
 
 
 ENGINE = "ortools_vrptw"
+ZONE_TRANSITION_PENALTY_M = 20_000
 ACTIVE_STATUSES = {"planned", "assigned", "unassigned", "sent", "en_route"}
 EXCLUDED_STATUSES = {"completed", "done", "cancelled"}
 VEHICLE_ALIASES = {
@@ -41,6 +42,13 @@ PRIORITY_LABELS = {
     "connection": "подключение",
     "emergency": "авария",
 }
+
+
+def zone_transition_penalty(from_zone: str | None, to_zone: str | None) -> int:
+    """Soft objective penalty; it never makes a cross-zone arc infeasible."""
+    if not from_zone or not to_zone or from_zone == to_zone:
+        return 0
+    return ZONE_TRANSITION_PENALTY_M
 MAX_INT64 = 2**63 - 1
 
 
@@ -389,9 +397,14 @@ def build_ortools_plan(
             for to_node in range(job_count):
                 destination_id = matrix.job_point_id(str(solver_jobs[to_node]["id"]))
                 metric = matrix.get(origin_id, destination_id, vehicle)
-                arc_distance[(from_node, to_node)] = metric.distance_m
+                from_zone = (
+                    solver_jobs[from_node].get("zone") if from_node < job_count else None
+                )
+                to_zone = solver_jobs[to_node].get("zone")
+                objective_distance = metric.distance_m + zone_transition_penalty(from_zone, to_zone)
+                arc_distance[(from_node, to_node)] = objective_distance
                 arc_travel[(from_node, to_node)] = metric.travel_min
-                max_arc_distance = max(max_arc_distance, metric.distance_m)
+                max_arc_distance = max(max_arc_distance, objective_distance)
 
         def distance_callback(from_index: int, to_index: int, *, values=arc_distance) -> int:
             from_node = manager.IndexToNode(from_index)
@@ -686,12 +699,14 @@ def build_ortools_plan(
             "penalty_derivation": priority_weights,
             "vehicle_fixed_cost": vehicle_fixed_cost,
             "distance_unit_cost": 1,
+            "zone_transition_penalty_m": ZONE_TRANSITION_PENALTY_M,
             "global_optimum_claimed": False,
         },
         "assumptions": [
             "Маршруты открытые: возврат в офис после последней заявки не требуется.",
-            "Оборудование на этом этапе не проверяется.",
-            "Расстояния и время — статическая офлайн-оценка без пробок.",
+            "Оборудование — демонстрационный комплект без учёта расходования.",
+            "Переход между разными заполненными зонами получает мягкий штраф; запрета нет.",
+            matrix.metadata["assumption"],
         ],
     }
     validate_plan(plan)

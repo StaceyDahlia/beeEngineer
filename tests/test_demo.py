@@ -139,7 +139,7 @@ def test_demo_ui_contract_is_wired_and_timeout_copy_is_neutral() -> None:
     api = (ROOT / "frontend" / "src" / "api.js").read_text(encoding="utf-8")
     assert 'id="demo-emergency-button"' in html
     assert "'/static/demo-emergency.json'" in html
-    assert "previewScenario({event,label:'демо аварии в регионе «Восток»'})" in html
+    assert "previewScenario({ event, label: 'демо аварии в регионе «Восток»' })" in html
     assert "Найден допустимый план за" in html
     assert "Глобальный оптимум не подтверждён" in html
     assert "лимит времени" not in html
@@ -158,4 +158,5 @@ def test_demo_ui_contract_is_wired_and_timeout_copy_is_neutral() -> None:
         assert f'id="{button_id}"' in html
         assert f"$('{button_id}').addEventListener" in html
     assert "Произвольный импорт не входит" not in html
-    assert 'id="import-button"' not in html
+    assert 'id="import-button"' in html
+    assert "importScenario" in api

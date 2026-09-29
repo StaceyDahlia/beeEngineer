@@ -298,3 +298,65 @@ def test_ui_contract_receives_diff_and_applies_new_version() -> None:
     assert "Backend diff" in html
     assert "state.planHistory" in html
     assert "/events/preview" in api and "/events/apply" in api
+
+
+def test_applied_normal_job_is_visible_and_survives_reoptimization() -> None:
+    client = TestClient(app)
+    plan = _create_east_baseline(client)
+    event = {
+        "event_id": "normal-visible",
+        "type": "new_normal_job",
+        "event_time": "2026-08-17T14:00:00+03:00",
+        "window_end": "2026-08-17T18:00:00+03:00",
+        "base_version": plan["version"],
+        "title": "Обычная тестовая заявка",
+        "address": "Тестовый адрес",
+        "coords": [55.751, 37.611],
+        "required_skill": "connect",
+        "duration_min": 20,
+    }
+    preview = client.post(
+        f"/plans/{plan['plan_id']}/events/preview", json=event
+    )
+    assert preview.status_code == 200
+    candidate = preview.json()["plan"]
+    normal = next(job for job in candidate["jobs"] if job["id"] == "normal:normal-visible")
+    assert normal["assignment_status"] in {"assigned", "unassigned"}
+    if normal["assignment_status"] == "unassigned":
+        assert normal["unassigned_reason"]["message"]
+
+    applied = client.post(
+        f"/plans/{plan['plan_id']}/events/apply",
+        json={"preview_id": preview.json()["preview_id"]},
+    ).json()
+    rebuilt = client.post(
+        f"/plans/{applied['plan_id']}/reoptimize",
+        json={"base_version": applied["version"], "engine": "baseline_greedy"},
+    )
+    assert rebuilt.status_code == 200
+    assert any(job["id"] == "normal:normal-visible" for job in rebuilt.json()["jobs"])
+    assert rebuilt.json()["version"] == 3
+
+
+def test_applied_emergency_job_survives_reoptimization() -> None:
+    client = TestClient(app)
+    plan = _create_east_baseline(client)
+    event = {
+        "event_id": "urgent-kept",
+        "type": "emergency_job",
+        "event_time": "2026-08-17T07:00:00+03:00",
+        "base_version": plan["version"],
+        "title": "Авария",
+        "address": "Тестовый адрес",
+        "coords": [55.751, 37.611],
+    }
+    preview = client.post(f"/plans/{plan['plan_id']}/events/preview", json=event).json()
+    applied = client.post(
+        f"/plans/{plan['plan_id']}/events/apply",
+        json={"preview_id": preview["preview_id"]},
+    ).json()
+    rebuilt = client.post(
+        f"/plans/{applied['plan_id']}/reoptimize",
+        json={"base_version": applied["version"], "engine": "baseline_greedy"},
+    ).json()
+    assert any(job["id"] == "emergency:urgent-kept" for job in rebuilt["jobs"])
